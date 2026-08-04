@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Nowoczesna ilustracja szkoleń komputerowych i usług IT ZPCI</title>
+  <desc id="desc">Laptop z interfejsem kursu, kodem, wykresami, bazą danych i symbolami usług informatycznych w granatowo-niebieskiej kolorystyce.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071a3a"/>
+      <stop offset="0.55" stop-color="#123d78"/>
+      <stop offset="1" stop-color="#2f6edb"/>
+    </linearGradient>
+    <linearGradient id="screen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f9fcff"/>
+      <stop offset="1" stop-color="#dceaff"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffd65a"/>
+      <stop offset="1" stop-color="#f4be22"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#173f77"/>
+      <stop offset="1" stop-color="#0a234c"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="180%">
+      <feDropShadow dx="0" dy="26" stdDeviation="28" flood-color="#031022" flood-opacity="0.4"/>
+    </filter>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="60"/>
+    </filter>
+    <pattern id="grid" width="54" height="54" patternUnits="userSpaceOnUse">
+      <path d="M54 0H0V54" fill="none" stroke="#ffffff" stroke-opacity="0.07" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1600" height="1000" rx="70" fill="url(#bg)"/>
+  <rect width="1600" height="1000" rx="70" fill="url(#grid)"/>
+  <circle cx="1390" cy="120" r="300" fill="#ffd65a" opacity="0.1" filter="url(#soft)"/>
+  <circle cx="180" cy="860" r="330" fill="#5aa5ff" opacity="0.2" filter="url(#soft)"/>
+
+  <g opacity="0.55" fill="none" stroke="#a9ccff" stroke-width="3">
+    <path d="M100 190h210c45 0 66 42 102 42h128"/>
+    <path d="M1035 155h170c38 0 55 34 90 34h205"/>
+    <path d="M1180 820h155c44 0 68-38 112-38h85"/>
+  </g>
+  <g fill="#ffd65a">
+    <circle cx="100" cy="190" r="7"/><circle cx="540" cy="232" r="7"/>
+    <circle cx="1035" cy="155" r="7"/><circle cx="1500" cy="189" r="7"/>
+    <circle cx="1180" cy="820" r="7"/><circle cx="1532" cy="782" r="7"/>
+  </g>
+
+  <g transform="translate(120 175)">
+    <rect width="260" height="126" rx="28" fill="#ffffff" fill-opacity="0.96"/>
+    <circle cx="65" cy="63" r="34" fill="url(#gold)"/>
+    <path d="M48 62l12 12 23-27" fill="none" stroke="#071a3a" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="118" y="42" width="105" height="13" rx="6.5" fill="#0b2c5b"/>
+    <rect x="118" y="68" width="74" height="10" rx="5" fill="#6d88ad"/>
+  </g>
+
+  <g transform="translate(1180 245)">
+    <rect width="285" height="140" rx="28" fill="#ffffff" fill-opacity="0.96"/>
+    <g transform="translate(30 31)" fill="none" stroke="#2f6edb" stroke-width="8" stroke-linecap="round">
+      <ellipse cx="45" cy="15" rx="34" ry="14"/>
+      <path d="M11 15v46c0 8 15 14 34 14s34-6 34-14V15M11 38c0 8 15 14 34 14s34-6 34-14"/>
+    </g>
+    <rect x="130" y="43" width="112" height="13" rx="6.5" fill="#0b2c5b"/>
+    <rect x="130" y="70" width="80" height="10" rx="5" fill="#6d88ad"/>
+    <rect x="130" y="93" width="98" height="10" rx="5" fill="#a7b8ce"/>
+  </g>
+
+  <g transform="translate(103 680)">
+    <rect width="305" height="150" rx="30" fill="#ffffff" fill-opacity="0.96"/>
+    <g transform="translate(34 34)" fill="none" stroke="#2f6edb" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18 33l-16 16 16 16M70 33l16 16-16 16M55 18L34 80"/>
+    </g>
+    <rect x="140" y="47" width="118" height="13" rx="6.5" fill="#0b2c5b"/>
+    <rect x="140" y="76" width="92" height="10" rx="5" fill="#6d88ad"/>
+    <rect x="140" y="101" width="105" height="10" rx="5" fill="#a7b8ce"/>
+  </g>
+
+  <g transform="translate(1170 650)">
+    <rect width="310" height="162" rx="30" fill="#ffffff" fill-opacity="0.96"/>
+    <g transform="translate(30 30)">
+      <rect width="92" height="92" rx="24" fill="url(#gold)"/>
+      <path d="M46 23v46M23 46h46" stroke="#071a3a" stroke-width="9" stroke-linecap="round"/>
+      <circle cx="46" cy="46" r="30" fill="none" stroke="#071a3a" stroke-width="5" opacity="0.35"/>
+    </g>
+    <rect x="145" y="50" width="120" height="13" rx="6.5" fill="#0b2c5b"/>
+    <rect x="145" y="80" width="94" height="10" rx="5" fill="#6d88ad"/>
+    <rect x="145" y="106" width="107" height="10" rx="5" fill="#a7b8ce"/>
+  </g>
+
+  <g transform="translate(410 172)">
+    <path d="M120 0h560c32 0 58 26 58 58v430H62V58C62 26 88 0 120 0Z" fill="#07152e"/>
+    <rect x="86" y="28" width="628" height="430" rx="22" fill="url(#screen)"/>
+    <circle cx="400" cy="14" r="5" fill="#6e88a9"/>
+
+    <rect x="116" y="60" width="568" height="62" rx="18" fill="url(#panel)"/>
+    <circle cx="151" cy="91" r="18" fill="url(#gold)"/>
+    <path d="M142 91l7 7 13-15" fill="none" stroke="#07152e" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="186" y="75" width="185" height="12" rx="6" fill="#ffffff" fill-opacity="0.95"/>
+    <rect x="186" y="97" width="125" height="8" rx="4" fill="#c9dcf5"/>
+    <rect x="575" y="75" width="76" height="30" rx="15" fill="#ffffff" fill-opacity="0.12"/>
+
+    <rect x="116" y="150" width="210" height="260" rx="20" fill="#ffffff"/>
+    <rect x="142" y="178" width="120" height="13" rx="6.5" fill="#102b56"/>
+    <rect x="142" y="213" width="152" height="11" rx="5.5" fill="#d5e1ef"/>
+    <rect x="142" y="242" width="126" height="11" rx="5.5" fill="#d5e1ef"/>
+    <rect x="142" y="271" width="143" height="11" rx="5.5" fill="#d5e1ef"/>
+    <rect x="142" y="313" width="66" height="66" rx="18" fill="#e9f2ff"/>
+    <path d="M164 345l13 13 18-25" fill="none" stroke="#2f6edb" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="224" y="326" width="70" height="10" rx="5" fill="#6b85a9"/>
+    <rect x="224" y="348" width="52" height="8" rx="4" fill="#b2c2d5"/>
+
+    <rect x="350" y="150" width="334" height="125" rx="20" fill="#ffffff"/>
+    <rect x="375" y="176" width="108" height="12" rx="6" fill="#102b56"/>
+    <g transform="translate(378 211)">
+      <rect width="36" height="38" rx="8" fill="#c8daf4"/>
+      <rect x="50" y="18" width="36" height="20" rx="8" fill="#80adf2"/>
+      <rect x="100" y="4" width="36" height="34" rx="8" fill="#2f6edb"/>
+      <rect x="150" y="13" width="36" height="25" rx="8" fill="#f4be22"/>
+      <rect x="200" y="0" width="36" height="38" rx="8" fill="#163f79"/>
+      <rect x="250" y="9" width="36" height="29" rx="8" fill="#64a2ff"/>
+    </g>
+
+    <rect x="350" y="295" width="334" height="115" rx="20" fill="#0d2e60"/>
+    <g fill="none" stroke-linecap="round" stroke-width="8">
+      <path d="M385 337l24 18-24 18" stroke="#ffd65a"/>
+      <path d="M435 373h64" stroke="#70adff"/>
+      <path d="M524 328h115" stroke="#ffffff" stroke-opacity="0.85"/>
+      <path d="M524 354h82" stroke="#94b8e9"/>
+      <path d="M524 380h100" stroke="#5f8fcf"/>
+    </g>
+
+    <path d="M18 488h764l-56 63H74L18 488Z" fill="#d8e3f0"/>
+    <path d="M74 551h652l-48 24H122l-48-24Z" fill="#8ea6c2"/>
+    <rect x="329" y="505" width="142" height="24" rx="12" fill="#b4c5d8"/>
+  </g>
+
+  <g transform="translate(1320 92)">
+    <circle cx="72" cy="72" r="72" fill="#ffffff" fill-opacity="0.12"/>
+    <circle cx="72" cy="72" r="54" fill="none" stroke="#ffffff" stroke-opacity="0.5" stroke-width="3"/>
+    <text x="72" y="86" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="800">ZPCI</text>
+  </g>
+</svg>
