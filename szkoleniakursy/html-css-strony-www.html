@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Szkolenie HTML i CSS Szczecin – tworzenie stron WWW | ZPCI</title>
+
+    <meta
+        name="description"
+        content="Praktyczne szkolenie HTML i CSS w Szczecinie. Nauka tworzenia responsywnych stron WWW, formularzy, nawigacji, Flexbox, CSS Grid, podstaw SEO i publikacji witryny."
+    >
+
+    <meta
+        name="keywords"
+        content="szkolenie HTML CSS Szczecin, kurs HTML i CSS, tworzenie stron WWW, projektowanie stron internetowych, responsywne strony, Flexbox, CSS Grid, ZPCI"
+    >
+
+    <meta name="author" content="Zachodniopomorskie Centrum Informatyki">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#0b2148">
+
+    <link
+        rel="canonical"
+        href="https://www.zpci.pl/szkoleniakursy/html-css-projektowanie-stron-www.html"
+    >
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pl_PL">
+    <meta property="og:site_name" content="ZPCI">
+    <meta
+        property="og:title"
+        content="Szkolenie HTML i CSS – projektowanie stron WWW | ZPCI"
+    >
+    <meta
+        property="og:description"
+        content="Praktyczna nauka HTML5 i CSS3: responsywne strony, formularze, Flexbox, CSS Grid, dostępność, podstawy SEO i publikacja witryny."
+    >
+    <meta
+        property="og:url"
+        content="https://www.zpci.pl/szkoleniakursy/html-css-projektowanie-stron-www.html"
+    >
+    <meta
+        property="og:image"
+        content="https://www.zpci.pl/images/SzkolenieHTMLICSS-TWORZENIESTRONWWW.png"
+    >
+    <meta
+        property="og:image:alt"
+        content="Szkolenie HTML i CSS z tworzenia responsywnych stron internetowych"
+    >
+
+    <!-- X / Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta
+        name="twitter:title"
+        content="Szkolenie HTML i CSS – tworzenie stron WWW | ZPCI"
+    >
+    <meta
+        name="twitter:description"
+        content="Praktyczne szkolenie HTML5 i CSS3 z projektowania responsywnych stron internetowych."
+    >
+    <meta
+        name="twitter:image"
+        content="https://www.zpci.pl/images/SzkolenieHTMLICSS-TWORZENIESTRONWWW.png"
+    >
+
+    <!-- Dane strukturalne SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "EducationalOrganization",
+                "@id": "https://www.zpci.pl/#organization",
+                "name": "Zachodniopomorskie Centrum Informatyki",
+                "alternateName": "ZPCI",
+                "url": "https://www.zpci.pl/",
+                "email": "biuro@zpci.pl"
+            },
+            {
+                "@type": "Course",
+                "@id": "https://www.zpci.pl/szkoleniakursy/html-css-projektowanie-stron-www.html#course",
+                "name": "HTML i CSS – projektowanie stron WWW",
+                "description": "Praktyczne szkolenie z tworzenia responsywnych stron internetowych w HTML5 i CSS3, obejmujące semantyczną strukturę dokumentu, formularze, Flexbox, CSS Grid, dostępność, podstawy SEO i publikację witryny.",
+                "url": "https://www.zpci.pl/szkoleniakursy/html-css-projektowanie-stron-www.html",
+                "image": "https://www.zpci.pl/images/SzkolenieHTMLICSS-TWORZENIESTRONWWW.png",
+                "inLanguage": "pl-PL",
+                "educationalLevel": "Poziom podstawowy",
+                "provider": {
+                    "@id": "https://www.zpci.pl/#organization"
+                }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Strona główna",
+                        "item": "https://www.zpci.pl/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Szkolenia i kursy",
+                        "item": "https://www.zpci.pl/szkoleniakursy.html"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": "HTML i CSS – projektowanie stron WWW",
+                        "item": "https://www.zpci.pl/szkoleniakursy/html-css-projektowanie-stron-www.html"
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow-x: hidden;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f6f9;
+            color: #333;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        /* =========================
+           NAGŁÓWEK Z LOGO
+        ========================= */
+
+        .site-header {
+            position: relative;
+            overflow: hidden;
+            background:
+                radial-gradient(
+                    circle at 88% 15%,
+                    rgba(255, 255, 255, 0.13),
+                    transparent 31%
+                ),
+                linear-gradient(135deg, #0b2148, #1f3b73);
+            color: #fff;
+        }
+
+        .site-header::after {
+            content: "";
+            position: absolute;
+            top: -170px;
+            right: -120px;
+            width: 390px;
+            height: 390px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .header-inner {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            width: 100%;
+            max-width: 1200px;
+            min-height: 145px;
+            margin: 0 auto;
+            padding: 24px 25px;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .logo {
+            display: flex;
+            min-width: 0;
+            align-items: center;
+            gap: 16px;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .logo-image {
+            width: 88px;
+            height: 88px;
+            flex: 0 0 88px;
+            object-fit: contain;
+            border-radius: 50%;
+            background: #fff;
+            box-shadow: 0 6px 19px rgba(0, 0, 0, 0.25);
+        }
+
+        .logo-text {
+            min-width: 0;
+        }
+
+        .logo-text strong {
+            display: block;
+            margin-bottom: 5px;
+            color: #fff;
+            font-size: clamp(22px, 3vw, 32px);
+            line-height: 1.2;
+        }
+
+        .logo-text span {
+            display: block;
+            color: #dce8fa;
+            font-size: 16px;
+        }
+
+        .header-course {
+            max-width: 420px;
+            padding-left: 24px;
+            border-left: 1px solid rgba(255, 255, 255, 0.25);
+            text-align: right;
+        }
+
+        .header-course span {
+            display: block;
+            margin-bottom: 5px;
+            color: #dce8fa;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .header-course strong {
+            display: block;
+            color: #fff;
+            font-size: clamp(24px, 3vw, 36px);
+            line-height: 1.2;
+        }
+
+        /* =========================
+           MENU
+        ========================= */
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            background: #16315d;
+        }
+
+        nav a {
+            display: flex;
+            min-height: 52px;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 20px;
+            color: #fff;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            transition:
+                background-color 0.2s ease,
+                color 0.2s ease;
+        }
+
+        nav a:hover,
+        nav a:focus-visible {
+            background: #f2b705;
+            color: #0b2148;
+        }
+
+        nav a:focus-visible,
+        .print:focus-visible {
+            outline: 3px solid #f2b705;
+            outline-offset: 3px;
+        }
+
+        /* =========================
+           KONTENER
+        ========================= */
+
+        .container {
+            width: calc(100% - 40px);
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 35px;
+            border-radius: 12px;
+            background: #fff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* =========================
+           BANER
+        ========================= */
+
+        .banner {
+            overflow: hidden;
+            width: 100%;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            box-shadow: 0 12px 30px rgba(11, 33, 72, 0.16);
+        }
+
+        .banner img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* =========================
+           TYPOGRAFIA
+        ========================= */
+
+        h1 {
+            margin-bottom: 20px;
+            color: #1f3b73;
+            font-size: clamp(29px, 4vw, 42px);
+            line-height: 1.2;
+        }
+
+        h2 {
+            margin-top: 35px;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #1f3b73;
+            color: #1f3b73;
+            font-size: clamp(24px, 3vw, 31px);
+            line-height: 1.3;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        ul {
+            margin-bottom: 20px;
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* =========================
+           PROGRAM SZKOLENIA
+        ========================= */
+
+        .program-list {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px 18px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .program-list li {
+            position: relative;
+            min-height: 62px;
+            margin: 0;
+            padding: 14px 15px 14px 48px;
+            border: 1px solid #dce5ef;
+            border-radius: 10px;
+            background: #f8fbff;
+        }
+
+        .program-list li::before {
+            content: "\2713";
+            position: absolute;
+            top: 14px;
+            left: 15px;
+            display: flex;
+            width: 23px;
+            height: 23px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: #1f3b73;
+            color: #fff;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        /* =========================
+           TAKSONOMIA NAUCZANIA
+        ========================= */
+
+        .taxonomy-section {
+            margin-top: 40px;
+        }
+
+        .taxonomy-section > h2 {
+            margin-top: 0;
+        }
+
+        .taxonomy-intro {
+            margin-bottom: 24px;
+            color: #5d6976;
+        }
+
+        .taxonomy-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .taxonomy-card {
+            padding: 24px 20px;
+            border: 1px solid #dce5ef;
+            border-top: 5px solid #1f3b73;
+            border-radius: 14px;
+            background: linear-gradient(
+                180deg,
+                #ffffff,
+                #f7faff
+            );
+            box-shadow: 0 9px 24px rgba(11, 33, 72, 0.08);
+        }
+
+        .taxonomy-card:nth-child(2) {
+            border-top-color: #2878b5;
+        }
+
+        .taxonomy-card:nth-child(3) {
+            border-top-color: #f2b705;
+        }
+
+        .taxonomy-card:nth-child(4) {
+            border-top-color: #2d8a62;
+        }
+
+        .taxonomy-card h3 {
+            margin-bottom: 14px;
+            color: #0b2148;
+            font-size: 23px;
+            line-height: 1.25;
+        }
+
+        .taxonomy-card ul {
+            margin: 0;
+            padding-left: 21px;
+        }
+
+        .taxonomy-card li {
+            margin-bottom: 9px;
+            color: #52606d;
+        }
+
+        .taxonomy-card li:last-child {
+            margin-bottom: 0;
+        }
+
+        /* =========================
+           INFORMACJE
+        ========================= */
+
+        .info-box {
+            margin-top: 35px;
+            padding: 24px;
+            border-left: 6px solid #1f3b73;
+            border-radius: 10px;
+            background: #eef4ff;
+        }
+
+        .info-box strong {
+            color: #0b2148;
+        }
+
+        /* =========================
+           PRZYCISK
+        ========================= */
+
+        .button-box {
+            margin: 35px 0 5px;
+            text-align: center;
+        }
+
+        .print {
+            display: inline-flex;
+            min-height: 52px;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 35px;
+            border-radius: 999px;
+            background: #f2b705;
+            color: #0b2148;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            box-shadow: 0 9px 22px rgba(242, 183, 5, 0.25);
+            transition:
+                background-color 0.2s ease,
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+
+        .print:hover {
+            background: #ffd447;
+            box-shadow: 0 13px 28px rgba(242, 183, 5, 0.32);
+            transform: translateY(-2px);
+        }
+
+        /* =========================
+           STOPKA
+        ========================= */
+
+        footer {
+            margin-top: 40px;
+            padding: 25px 20px;
+            background: #1f3b73;
+            color: #fff;
+            text-align: center;
+        }
+
+        footer p {
+            margin-bottom: 5px;
+            color: #fff;
+        }
+
+        footer a {
+            color: #fff;
+        }
+
+        footer hr {
+            max-width: 700px;
+            height: 1px;
+            margin: 20px auto;
+            border: 0;
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        /* =========================
+           RESPONSYWNOŚĆ
+        ========================= */
+
+        @media (max-width: 1000px) {
+            .taxonomy-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                font-size: 17px;
+            }
+
+            .header-inner {
+                flex-direction: column;
+                min-height: auto;
+                padding: 25px 15px;
+                justify-content: center;
+                text-align: center;
+            }
+
+            .logo {
+                justify-content: center;
+            }
+
+            .header-course {
+                max-width: 700px;
+                padding-top: 20px;
+                padding-left: 0;
+                border-top: 1px solid rgba(255, 255, 255, 0.25);
+                border-left: 0;
+                text-align: center;
+            }
+
+            nav {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            nav a {
+                min-height: 49px;
+                padding: 10px 8px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                font-size: 14px;
+            }
+
+            .container {
+                width: calc(100% - 28px);
+                margin: 20px auto;
+                padding: 25px;
+            }
+
+            .program-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .logo {
+                flex-direction: column;
+                gap: 12px;
+                text-align: center;
+            }
+
+            .logo-image {
+                width: 76px;
+                height: 76px;
+                flex-basis: 76px;
+            }
+
+            .logo-text strong {
+                font-size: 21px;
+            }
+
+            .logo-text span {
+                font-size: 15px;
+            }
+
+            .header-course strong {
+                font-size: 25px;
+            }
+
+            nav {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                width: calc(100% - 20px);
+                padding: 20px 16px;
+                border-radius: 10px;
+            }
+
+            .banner {
+                margin-bottom: 24px;
+                border-radius: 9px;
+            }
+
+            .taxonomy-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .taxonomy-card {
+                padding: 22px 18px;
+            }
+
+            .info-box {
+                padding: 21px 17px;
+            }
+
+            .print {
+                width: 100%;
+                max-width: 420px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="site-header">
+
+        <div class="header-inner">
+
+            <a
+                class="logo"
+                href="../index.html"
+                aria-label="ZPCI – przejdź do strony głównej"
+            >
+
+                <img
+                    class="logo-image"
+                    src="../images/logo+zdjecia/logotypy/2_Logotypy_okrag.png"
+                    alt="Logo Zachodniopomorskiego Centrum Informatyki"
+                    width="200"
+                    height="200"
+                >
+
+                <div class="logo-text">
+
+                    <strong>
+                        Zachodniopomorskie Centrum Informatyki
+                    </strong>
+
+                    <span>
+                        Szkolenia komputerowe i usługi informatyczne
+                    </span>
+
+                </div>
+
+            </a>
+
+            <div class="header-course">
+
+                <span>Szkolenie z projektowania stron WWW</span>
+
+                <strong>HTML + CSS</strong>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <nav aria-label="Główna nawigacja">
+        <a href="../index.html">
+            Strona główna
+        </a>
+
+        <a href="../szkoleniakursy.html">
+            Szkolenia / Kursy
+        </a>
+
+        <a href="../uslugit.html">
+            Usługi IT
+        </a>
+
+        <a href="../kontakt.html">
+            Kontakt
+        </a>
+    </nav>
+
+    <main class="container">
+
+        <div class="banner">
+            <img
+                src="../images/SzkolenieHTMLICSS-TWORZENIESTRONWWW.png"
+                alt="Szkolenie HTML5 i CSS3 z tworzenia responsywnych stron internetowych w ZPCI"
+                width="1200"
+                height="750"
+                loading="eager"
+                fetchpriority="high"
+                decoding="async"
+            >
+        </div>
+
+        <h1>
+            HTML + CSS - Projektowanie stron WWW
+        </h1>
+
+        <h2>
+            Kogo zapraszamy?
+        </h2>
+
+        <p>
+            Szkolenie przeznaczone jest dla wszystkich osób chcących
+            rozpocząć naukę tworzenia stron internetowych
+            z wykorzystaniem technologii
+            <strong>HTML i CSS</strong>.
+        </p>
+
+        <p>
+            Kurs skierowany jest zarówno do osób początkujących,
+            jak i osób chcących zdobyć podstawowe umiejętności
+            potrzebne w pracy webmastera.
+        </p>
+
+        <h2>
+            Termin, organizacja i metodyka szkolenia
+        </h2>
+
+        <p>
+            Zajęcia organizowane są indywidualnie lub dla grup
+            zorganizowanych. Terminy ustalane są elastycznie
+            i dopasowywane do uczestników.
+        </p>
+
+        <p>
+            Szkolenie prowadzone jest w formie praktycznych ćwiczeń
+            komputerowych, podczas których uczestnik tworzy własne
+            strony internetowe.
+        </p>
+
+        <h2>
+            Zakres szkolenia
+        </h2>
+
+        <ul class="program-list">
+            <li>Podstawy języka HTML</li>
+            <li>Struktura dokumentu HTML</li>
+            <li>Znaczniki semantyczne HTML5</li>
+            <li>Formatowanie tekstu i elementów strony</li>
+            <li>Tworzenie linków i nawigacji</li>
+            <li>Wstawianie grafik i multimediów</li>
+            <li>Tworzenie tabel</li>
+            <li>Tworzenie formularzy internetowych</li>
+            <li>Podstawy języka CSS</li>
+            <li>Selektory, klasy i identyfikatory CSS</li>
+            <li>Kolory, tła, obramowania i cienie</li>
+            <li>Model pudełkowy CSS</li>
+            <li>Układ strony z wykorzystaniem Flexbox</li>
+            <li>Układ strony z wykorzystaniem CSS Grid</li>
+            <li>Responsywne projektowanie stron WWW</li>
+            <li>Zapytania medialne CSS</li>
+            <li>Podstawy dostępności stron internetowych</li>
+            <li>Podstawy optymalizacji SEO</li>
+            <li>Porządkowanie struktury plików witryny</li>
+            <li>Publikacja strony w Internecie</li>
+        </ul>
+
+        <!-- TAKSONOMIA NAUCZANIA -->
+
+        <section class="taxonomy-section">
+
+            <h2>
+                Po ukończeniu szkolenia uczestnik
+            </h2>
+
+            <p class="taxonomy-intro">
+                Uczestnik zdobywa wiedzę i praktyczne umiejętności
+                pozwalające na samodzielne projektowanie,
+                modyfikowanie i publikowanie prostych stron
+                internetowych.
+            </p>
+
+            <div class="taxonomy-grid">
+
+                <article class="taxonomy-card">
+
+                    <h3>Wie</h3>
+
+                    <ul>
+                        <li>
+                            Do czego służą języki HTML i CSS.
+                        </li>
+
+                        <li>
+                            Jak zbudowany jest dokument HTML.
+                        </li>
+
+                        <li>
+                            Jakie są podstawowe znaczniki HTML5.
+                        </li>
+
+                        <li>
+                            Jakie metody służą do publikowania
+                            stron internetowych.
+                        </li>
+                    </ul>
+
+                </article>
+
+                <article class="taxonomy-card">
+
+                    <h3>Rozumie</h3>
+
+                    <ul>
+                        <li>
+                            Różnicę pomiędzy strukturą HTML
+                            a wyglądem definiowanym w CSS.
+                        </li>
+
+                        <li>
+                            Zasady semantycznej budowy strony.
+                        </li>
+
+                        <li>
+                            Działanie modelu pudełkowego CSS.
+                        </li>
+
+                        <li>
+                            Znaczenie responsywności i dostępności
+                            strony internetowej.
+                        </li>
+                    </ul>
+
+                </article>
+
+                <article class="taxonomy-card">
+
+                    <h3>Umie</h3>
+
+                    <ul>
+                        <li>
+                            Tworzyć dokumenty HTML od podstaw.
+                        </li>
+
+                        <li>
+                            Formatować wygląd elementów za pomocą CSS.
+                        </li>
+
+                        <li>
+                            Dodawać tekst, grafiki, linki, listy
+                            i formularze.
+                        </li>
+
+                        <li>
+                            Korzystać z układów Flexbox i CSS Grid.
+                        </li>
+                    </ul>
+
+                </article>
+
+                <article class="taxonomy-card">
+
+                    <h3>Potrafi</h3>
+
+                    <ul>
+                        <li>
+                            Samodzielnie zaprojektować prostą
+                            stronę internetową.
+                        </li>
+
+                        <li>
+                            Dostosować stronę do komputerów,
+                            tabletów i telefonów.
+                        </li>
+
+                        <li>
+                            Modyfikować istniejący kod HTML i CSS.
+                        </li>
+
+                        <li>
+                            Przygotować pliki i opublikować stronę
+                            w Internecie.
+                        </li>
+                    </ul>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <div class="info-box">
+
+            <p>
+                <strong>Certyfikat:</strong>
+            </p>
+
+            <p>
+                Każdy kurs kończy się otrzymaniem Certyfikatu
+                Zachodniopomorskiego Centrum Informatyki.
+            </p>
+
+        </div>
+
+        <div class="button-box">
+
+            <a
+                class="print"
+                href="zapis-na-szkolenie.html"
+            >
+                Zapisz się na szkolenie
+            </a>
+
+        </div>
+
+    </main>
+
+    <footer>
+
+        <p>
+            <strong>
+                Zachodniopomorskie Centrum Informatyki
+            </strong>
+        </p>
+
+        <p>
+            ul. Przykładowa 1, 70-000 Szczecin
+        </p>
+
+        <p>
+            Tel.:
+            <a href="tel:+48910000000">
+                +48 91 000 00 00
+            </a>
+        </p>
+
+        <p>
+            E-mail:
+            <a href="mailto:biuro@zpci.pl">
+                biuro@zpci.pl
+            </a>
+        </p>
+
+        <hr>
+
+        <p>
+            &copy; 2026 Zachodniopomorskie Centrum Informatyki.
+            <br>
+            Wszelkie prawa zastrzeżone.
+        </p>
+
+    </footer>
+
+</body>
+</html>

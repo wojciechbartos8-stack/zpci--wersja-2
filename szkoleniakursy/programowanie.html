@@ -1,0 +1,1374 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Programowanie | Zachodniopomorskie Centrum Informatyki
+    </title>
+
+    <meta
+        name="description"
+        content="Szkolenia z programowania organizowane przez Zachodniopomorskie Centrum Informatyki. C++, C#, Java, JavaScript, PHP i MySQL."
+    >
+
+    <style>
+        :root {
+            --primary: #1f3b73;
+            --primary-dark: #0b2148;
+            --primary-light: #eef4ff;
+            --accent: #f2b705;
+            --accent-hover: #ffd447;
+            --background: #f4f7fb;
+            --white: #ffffff;
+            --text: #29333d;
+            --muted: #5d6976;
+            --border: #dce5ef;
+            --green: #24845c;
+            --radius: 18px;
+            --shadow: 0 14px 38px rgba(11, 33, 72, 0.12);
+            --shadow-hover: 0 22px 48px rgba(11, 33, 72, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            overflow-x: hidden;
+            font-family: Arial, Helvetica, sans-serif;
+            background:
+                linear-gradient(
+                    135deg,
+                    #edf4ff 0%,
+                    #f8fbff 48%,
+                    #ffffff 100%
+                );
+            color: var(--text);
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font: inherit;
+        }
+
+        .page-container {
+            width: calc(100% - 40px);
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* =========================
+           NAGLOWEK
+        ========================= */
+
+        .site-header {
+            position: relative;
+            overflow: hidden;
+            padding: 16px 24px;
+            background:
+                radial-gradient(
+                    circle at 86% 18%,
+                    rgba(255, 255, 255, 0.1),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    135deg,
+                    var(--primary-dark),
+                    var(--primary)
+                );
+            color: var(--white);
+        }
+
+        .site-header::before {
+            content: "";
+            position: absolute;
+            top: -130px;
+            right: -90px;
+            width: 340px;
+            height: 340px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .header-inner {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            min-height: 82px;
+            align-items: center;
+            justify-content: space-between;
+            gap: 28px;
+        }
+
+        .logo {
+            display: flex;
+            min-width: 0;
+            align-items: center;
+            gap: 17px;
+        }
+
+        .logo-image {
+            width: 110px;
+            height: 76px;
+            flex: 0 0 110px;
+            object-fit: contain;
+            filter: drop-shadow(
+                0 8px 12px rgba(0, 0, 0, 0.22)
+            );
+        }
+
+        .logo-text {
+            min-width: 0;
+        }
+
+        .logo-text h1 {
+            color: var(--white);
+            font-size: clamp(21px, 3vw, 30px);
+            line-height: 1.2;
+        }
+
+        .logo-text p {
+            margin-top: 4px;
+            color: #dbe7ff;
+            font-size: 15px;
+        }
+
+        /* =========================
+           MENU
+        ========================= */
+
+        .main-nav {
+            position: sticky;
+            top: 0;
+            z-index: 30;
+            background: #071b37;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.18);
+        }
+
+        .nav-inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .main-nav a {
+            display: flex;
+            min-height: 54px;
+            align-items: center;
+            justify-content: center;
+            padding: 13px 22px;
+            color: var(--white);
+            font-size: 16px;
+            font-weight: 700;
+            text-align: center;
+            transition:
+                background-color 0.2s ease,
+                color 0.2s ease;
+        }
+
+        .main-nav a:hover,
+        .main-nav a:focus-visible {
+            background: var(--accent);
+            color: var(--primary-dark);
+        }
+
+        .main-nav a:focus-visible,
+        .training-card:focus-visible,
+        .button:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 3px;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            position: relative;
+            overflow: hidden;
+            padding: 72px 0;
+            background:
+                radial-gradient(
+                    circle at 90% 14%,
+                    rgba(64, 150, 255, 0.23),
+                    transparent 31%
+                ),
+                linear-gradient(
+                    135deg,
+                    #071b37,
+                    #1f4d91
+                );
+            color: var(--white);
+        }
+
+        .hero::before {
+            content: "</>";
+            position: absolute;
+            top: 50%;
+            right: 7%;
+            color: rgba(255, 255, 255, 0.06);
+            font-family: Consolas, monospace;
+            font-size: clamp(130px, 20vw, 260px);
+            font-weight: 800;
+            line-height: 1;
+            transform: translateY(-50%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 810px;
+        }
+
+        .hero-label {
+            display: inline-block;
+            margin-bottom: 18px;
+            padding: 7px 15px;
+            border: 1px solid rgba(255, 255, 255, 0.32);
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+        }
+
+        .hero h2 {
+            margin-bottom: 20px;
+            font-size: clamp(39px, 6vw, 66px);
+            line-height: 1.08;
+        }
+
+        .hero p {
+            max-width: 760px;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: clamp(18px, 2.2vw, 22px);
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 29px;
+        }
+
+        /* =========================
+           GLOWNA TRESC
+        ========================= */
+
+        main {
+            padding: 55px 0;
+        }
+
+        .content-box {
+            padding: 44px;
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            background: var(--white);
+            box-shadow: var(--shadow);
+        }
+
+        .section-intro {
+            padding-bottom: 34px;
+            border-bottom: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .section-intro h2 {
+            margin-bottom: 18px;
+            color: var(--primary-dark);
+            font-size: clamp(30px, 4.5vw, 44px);
+            line-height: 1.2;
+        }
+
+        .section-intro p {
+            max-width: 920px;
+            margin: 0 auto 15px;
+            color: var(--muted);
+        }
+
+        .section-intro p:last-child {
+            margin-bottom: 0;
+        }
+
+        .content-section {
+            margin-top: 44px;
+        }
+
+        .content-section > h2 {
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary);
+            color: var(--primary-dark);
+            font-size: clamp(25px, 3.5vw, 34px);
+            line-height: 1.3;
+        }
+
+        .content-section > p {
+            margin-bottom: 18px;
+            color: var(--muted);
+        }
+
+        /* =========================
+           ZAKRES TEMATYCZNY
+        ========================= */
+
+        .topics-list {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 13px 18px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .topics-list li {
+            position: relative;
+            min-height: 64px;
+            padding: 15px 16px 15px 50px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: #f8fbff;
+        }
+
+        .topics-list li::before {
+            content: "\2713";
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            display: flex;
+            width: 24px;
+            height: 24px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: var(--primary);
+            color: var(--white);
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        /* =========================
+           KAFELKI SZKOLEN
+        ========================= */
+
+        .training-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .training-card {
+            position: relative;
+            display: flex;
+            min-width: 0;
+            min-height: 265px;
+            overflow: hidden;
+            flex-direction: column;
+            padding: 28px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background:
+                linear-gradient(
+                    145deg,
+                    #ffffff,
+                    #eef5ff
+                );
+            box-shadow: 0 10px 28px rgba(11, 33, 72, 0.09);
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease,
+                border-color 0.25s ease;
+        }
+
+        .training-card::before {
+            content: "";
+            position: absolute;
+            top: -72px;
+            right: -72px;
+            width: 165px;
+            height: 165px;
+            border-radius: 50%;
+            background: rgba(31, 59, 115, 0.08);
+            transition:
+                transform 0.3s ease,
+                background-color 0.3s ease;
+        }
+
+        .training-card:hover,
+        .training-card:focus-visible {
+            border-color: #b5c9e1;
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-8px);
+        }
+
+        .training-card:hover::before,
+        .training-card:focus-visible::before {
+            background: rgba(242, 183, 5, 0.18);
+            transform: scale(1.2);
+        }
+
+        .training-icon {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            width: 60px;
+            height: 60px;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 18px;
+            border-radius: 17px;
+            background: var(--primary);
+            color: var(--white);
+            font-family: Consolas, monospace;
+            font-size: 20px;
+            font-weight: 800;
+            box-shadow: 0 8px 18px rgba(31, 59, 115, 0.22);
+            transition:
+                background-color 0.25s ease,
+                color 0.25s ease,
+                transform 0.25s ease;
+        }
+
+        .training-card:hover .training-icon,
+        .training-card:focus-visible .training-icon {
+            background: var(--accent);
+            color: var(--primary-dark);
+            transform: rotate(-4deg) scale(1.06);
+        }
+
+        .training-card h3 {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 10px;
+            color: var(--primary-dark);
+            font-size: 24px;
+            line-height: 1.25;
+        }
+
+        .training-card p {
+            position: relative;
+            z-index: 1;
+            flex: 1;
+            color: var(--muted);
+            font-size: 16px;
+        }
+
+        .training-link {
+            position: relative;
+            z-index: 1;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 20px;
+            color: var(--primary);
+            font-weight: 800;
+        }
+
+        .training-link::after {
+            content: "\2192";
+            font-size: 20px;
+            transition: transform 0.2s ease;
+        }
+
+        .training-card:hover .training-link::after,
+        .training-card:focus-visible .training-link::after {
+            transform: translateX(6px);
+        }
+
+        /* =========================
+           TAKSONOMIA
+        ========================= */
+
+        .taxonomy-intro {
+            margin-bottom: 25px;
+            color: var(--muted);
+        }
+
+        .taxonomy-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 19px;
+        }
+
+        .taxonomy-card {
+            padding: 25px 21px;
+            border: 1px solid var(--border);
+            border-top: 5px solid var(--primary);
+            border-radius: 15px;
+            background:
+                linear-gradient(
+                    180deg,
+                    #ffffff,
+                    #f8fbff
+                );
+            box-shadow: 0 9px 24px rgba(11, 33, 72, 0.08);
+        }
+
+        .taxonomy-card:nth-child(2) {
+            border-top-color: #2878b5;
+        }
+
+        .taxonomy-card:nth-child(3) {
+            border-top-color: var(--accent);
+        }
+
+        .taxonomy-card:nth-child(4) {
+            border-top-color: var(--green);
+        }
+
+        .taxonomy-card h3 {
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+            font-size: 24px;
+            line-height: 1.25;
+        }
+
+        .taxonomy-card ul {
+            margin: 0;
+            padding-left: 21px;
+        }
+
+        .taxonomy-card li {
+            margin-bottom: 10px;
+            color: var(--muted);
+        }
+
+        .taxonomy-card li:last-child {
+            margin-bottom: 0;
+        }
+
+        /* =========================
+           KORZYSCI
+        ========================= */
+
+        .benefits-box {
+            padding: 31px;
+            border-left: 6px solid var(--accent);
+            border-radius: 15px;
+            background: var(--primary-light);
+        }
+
+        .benefits-box h2 {
+            margin-bottom: 16px;
+            color: var(--primary-dark);
+            font-size: clamp(25px, 3vw, 32px);
+            line-height: 1.3;
+        }
+
+        .benefits-box p {
+            margin-bottom: 15px;
+            color: #4d5d6c;
+        }
+
+        .benefits-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* =========================
+           PRZYCISKI
+        ========================= */
+
+        .button {
+            display: inline-flex;
+            min-height: 52px;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 27px;
+            border: 2px solid transparent;
+            border-radius: 999px;
+            background: var(--accent);
+            color: var(--primary-dark);
+            font-weight: 800;
+            line-height: 1.2;
+            text-align: center;
+            box-shadow: 0 9px 22px rgba(242, 183, 5, 0.25);
+            transition:
+                background-color 0.2s ease,
+                color 0.2s ease,
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+
+        .button:hover {
+            background: var(--accent-hover);
+            box-shadow: 0 13px 28px rgba(242, 183, 5, 0.32);
+            transform: translateY(-2px);
+        }
+
+        .button-secondary {
+            border-color: rgba(255, 255, 255, 0.55);
+            background: transparent;
+            color: var(--white);
+            box-shadow: none;
+        }
+
+        .button-secondary:hover {
+            border-color: var(--white);
+            background: var(--white);
+            color: var(--primary-dark);
+        }
+
+        .bottom-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 38px;
+        }
+
+        .back-button {
+            background: var(--primary);
+            color: var(--white);
+            box-shadow: 0 9px 22px rgba(31, 59, 115, 0.22);
+        }
+
+        .back-button:hover {
+            background: var(--primary-dark);
+        }
+
+        /* =========================
+           STOPKA
+        ========================= */
+
+        footer {
+            padding: 29px 20px;
+            background: var(--primary-dark);
+            color: rgba(255, 255, 255, 0.86);
+            text-align: center;
+        }
+
+        footer p + p {
+            margin-top: 5px;
+        }
+
+        /* =========================
+           RESPONSYWNOSC
+        ========================= */
+
+        @media (max-width: 1050px) {
+            .taxonomy-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 950px) {
+            .training-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 820px) {
+            body {
+                font-size: 17px;
+            }
+
+            .page-container {
+                width: calc(100% - 28px);
+            }
+
+            .header-inner {
+                min-height: 70px;
+            }
+
+            .logo-image {
+                width: 92px;
+                height: 64px;
+                flex-basis: 92px;
+            }
+
+            .logo-text p {
+                display: none;
+            }
+
+            .hero {
+                padding: 56px 0;
+            }
+
+            .content-box {
+                padding: 32px 24px;
+            }
+
+            .topics-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .page-container {
+                width: calc(100% - 20px);
+            }
+
+            .site-header {
+                padding: 11px 12px;
+            }
+
+            .header-inner {
+                min-height: 58px;
+            }
+
+            .logo {
+                gap: 10px;
+            }
+
+            .logo-image {
+                width: 68px;
+                height: 50px;
+                flex-basis: 68px;
+            }
+
+            .logo-text h1 {
+                font-size: 17px;
+            }
+
+            .nav-inner {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .main-nav a {
+                min-height: 49px;
+                padding: 10px 8px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+                font-size: 14px;
+            }
+
+            .hero {
+                padding: 45px 0;
+                text-align: center;
+            }
+
+            .hero::before {
+                right: 50%;
+                font-size: 150px;
+                transform: translate(50%, -50%);
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .hero-buttons .button {
+                width: 100%;
+            }
+
+            main {
+                padding: 25px 0 38px;
+            }
+
+            .content-box {
+                padding: 24px 17px;
+                border-radius: 15px;
+            }
+
+            .training-grid,
+            .taxonomy-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .training-card {
+                min-height: auto;
+                padding: 23px 20px;
+            }
+
+            .taxonomy-card,
+            .benefits-box {
+                padding: 22px 18px;
+            }
+
+            .bottom-buttons {
+                flex-direction: column;
+            }
+
+            .bottom-buttons .button {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 390px) {
+            .nav-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .main-nav a {
+                min-height: 45px;
+            }
+
+            .logo-image {
+                width: 58px;
+                height: 44px;
+                flex-basis: 58px;
+            }
+
+            .logo-text h1 {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAGLOWEK -->
+
+    <header class="site-header">
+        <div class="page-container header-inner">
+
+            <a
+                class="logo"
+                href="../index.html"
+                aria-label="ZPCI &ndash; strona g&#322;&oacute;wna"
+            >
+                <img
+                    class="logo-image"
+                    src="../images/logo+zdjecia/logotypy/2_Logotypy_okrag.png"
+                    alt="Logotyp Zachodniopomorskiego Centrum Informatyki"
+                    loading="eager"
+                    decoding="async"
+                >
+
+                <span class="logo-text">
+                    <h1>
+                        Zachodniopomorskie Centrum Informatyki
+                    </h1>
+
+                    <p>
+                        Szkolenia komputerowe &bull;
+                        Kursy IT &bull;
+                        Us&#322;ugi informatyczne
+                    </p>
+                </span>
+            </a>
+
+        </div>
+    </header>
+
+    <!-- NAWIGACJA -->
+
+    <nav
+        class="main-nav"
+        aria-label="G&#322;&oacute;wna nawigacja"
+    >
+        <div class="page-container nav-inner">
+
+            <a href="../index.html">
+                Strona g&#322;&oacute;wna
+            </a>
+
+            <a href="../szkoleniakursy.html">
+                Szkolenia / Kursy
+            </a>
+
+            <a href="../uslugit.html">
+                Us&#322;ugi IT
+            </a>
+
+            <a href="../kontakt.html">
+                Kontakt
+            </a>
+
+        </div>
+    </nav>
+
+    <!-- HERO -->
+
+    <section class="hero">
+        <div class="page-container">
+
+            <div class="hero-content">
+
+                <span class="hero-label">
+                    Praktyczna nauka programowania
+                </span>
+
+                <h2>
+                    Programowanie
+                </h2>
+
+                <p>
+                    Szkolenia z j&#281;zyk&oacute;w programowania,
+                    tworzenia aplikacji, stron internetowych
+                    oraz wsp&oacute;&#322;pracy z bazami danych.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a
+                        class="button"
+                        href="#szkolenia"
+                    >
+                        Zobacz dost&#281;pne szkolenia
+                    </a>
+
+                    <a
+                        class="button button-secondary"
+                        href="zapis-na-szkolenie.html"
+                    >
+                        Zapisz si&#281; na szkolenie
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <main>
+        <div class="page-container">
+
+            <article class="content-box">
+
+                <section class="section-intro">
+
+                    <h2>
+                        Szkolenia z programowania
+                    </h2>
+
+                    <p>
+                        Szkolenia z programowania organizowane przez
+                        Zachodniopomorskie Centrum Informatyki
+                        przeznaczone s&#261; dla os&oacute;b,
+                        kt&oacute;re chc&#261; rozpocz&#261;&#263;
+                        nauk&#281; tworzenia program&oacute;w,
+                        aplikacji oraz dynamicznych stron internetowych.
+                    </p>
+
+                    <p>
+                        Oferta obejmuje zar&oacute;wno podstawy
+                        programowania, jak i bardziej zaawansowane
+                        zagadnienia zwi&#261;zane z programowaniem
+                        obiektowym, bazami danych oraz tworzeniem
+                        aplikacji internetowych.
+                    </p>
+
+                </section>
+
+                <section class="content-section">
+
+                    <h2>
+                        Zakres tematyczny szkole&#324;
+                    </h2>
+
+                    <ul class="topics-list">
+
+                        <li>
+                            Podstawy algorytmiki i programowania
+                        </li>
+
+                        <li>
+                            Zmienne, typy danych i operatory
+                        </li>
+
+                        <li>
+                            Instrukcje warunkowe i p&#281;tle
+                        </li>
+
+                        <li>
+                            Funkcje, procedury i metody
+                        </li>
+
+                        <li>
+                            Tablice, kolekcje i struktury danych
+                        </li>
+
+                        <li>
+                            Programowanie obiektowe
+                        </li>
+
+                        <li>
+                            Klasy, obiekty i dziedziczenie
+                        </li>
+
+                        <li>
+                            Obs&#322;uga b&#322;&#281;d&oacute;w
+                            i wyj&#261;tk&oacute;w
+                        </li>
+
+                        <li>
+                            Praca z plikami i danymi
+                        </li>
+
+                        <li>
+                            Tworzenie interfejs&oacute;w u&#380;ytkownika
+                        </li>
+
+                        <li>
+                            Programowanie stron internetowych
+                        </li>
+
+                        <li>
+                            Wsp&oacute;&#322;praca z bazami danych
+                        </li>
+
+                        <li>
+                            Testowanie i usuwanie b&#322;&#281;d&oacute;w
+                        </li>
+
+                        <li>
+                            Organizacja i dokumentowanie kodu
+                        </li>
+
+                    </ul>
+
+                </section>
+
+                <!-- KAFELKI -->
+
+                <section
+                    class="content-section"
+                    id="szkolenia"
+                >
+
+                    <h2>
+                        Dost&#281;pne szkolenia
+                    </h2>
+
+                    <div class="training-grid">
+
+                        <a
+                            class="training-card"
+                            href="cpp.html"
+                        >
+                            <span
+                                class="training-icon"
+                                aria-hidden="true"
+                            >
+                                C++
+                            </span>
+
+                            <h3>C++</h3>
+
+                            <p>
+                                Podstawy programowania, algorytmy,
+                                funkcje, tablice, wska&#378;niki
+                                oraz programowanie obiektowe.
+                            </p>
+
+                            <span class="training-link">
+                                Zobacz szkolenie
+                            </span>
+                        </a>
+
+                        <a
+                            class="training-card"
+                            href="csharp-sharp.html"
+                        >
+                            <span
+                                class="training-icon"
+                                aria-hidden="true"
+                            >
+                                C#
+                            </span>
+
+                            <h3>C#</h3>
+
+                            <p>
+                                Tworzenie aplikacji w technologii
+                                .NET, klasy, obiekty, kolekcje,
+                                formularze i obs&#322;uga danych.
+                            </p>
+
+                            <span class="training-link">
+                                Zobacz szkolenie
+                            </span>
+                        </a>
+
+                        <a
+                            class="training-card"
+                            href="java.html"
+                        >
+                            <span
+                                class="training-icon"
+                                aria-hidden="true"
+                            >
+                                Java
+                            </span>
+
+                            <h3>Java</h3>
+
+                            <p>
+                                Programowanie obiektowe, klasy,
+                                dziedziczenie, kolekcje, wyj&#261;tki
+                                oraz tworzenie aplikacji.
+                            </p>
+
+                            <span class="training-link">
+                                Zobacz szkolenie
+                            </span>
+                        </a>
+
+                        <a
+                            class="training-card"
+                            href="javascript-programowanie-dynamiczne-strony.html"
+                        >
+                            <span
+                                class="training-icon"
+                                aria-hidden="true"
+                            >
+                                JS
+                            </span>
+
+                            <h3>JavaScript</h3>
+
+                            <p>
+                                Programowanie dynamicznych stron WWW,
+                                obs&#322;uga zdarze&#324;, formularzy
+                                oraz element&oacute;w dokumentu HTML.
+                            </p>
+
+                            <span class="training-link">
+                                Zobacz szkolenie
+                            </span>
+                        </a>
+
+                        <a
+                            class="training-card"
+                            href="php-mysql-programowanie-stron.html"
+                        >
+                            <span
+                                class="training-icon"
+                                aria-hidden="true"
+                            >
+                                PHP
+                            </span>
+
+                            <h3>PHP + MySQL</h3>
+
+                            <p>
+                                Programowanie stron po stronie serwera,
+                                formularze, sesje, logowanie oraz
+                                obs&#322;uga baz danych MySQL.
+                            </p>
+
+                            <span class="training-link">
+                                Zobacz szkolenie
+                            </span>
+                        </a>
+
+                    </div>
+
+                </section>
+
+                <!-- TAKSONOMIA -->
+
+                <section class="content-section">
+
+                    <h2>
+                        Po uko&#324;czeniu szkolenia uczestnik
+                    </h2>
+
+                    <p class="taxonomy-intro">
+                        Szczeg&oacute;&#322;owe efekty zale&#380;&#261;
+                        od wybranego j&#281;zyka i poziomu szkolenia,
+                        jednak ka&#380;dy kurs rozwija nast&#281;puj&#261;ce
+                        kompetencje.
+                    </p>
+
+                    <div class="taxonomy-grid">
+
+                        <article class="taxonomy-card">
+
+                            <h3>Wie</h3>
+
+                            <ul>
+                                <li>
+                                    Czym jest algorytm i program komputerowy.
+                                </li>
+
+                                <li>
+                                    Jakie s&#261; podstawowe typy danych.
+                                </li>
+
+                                <li>
+                                    Do czego s&#322;u&#380;&#261; instrukcje
+                                    warunkowe, p&#281;tle i funkcje.
+                                </li>
+
+                                <li>
+                                    Jakie s&#261; etapy tworzenia
+                                    programu lub aplikacji.
+                                </li>
+                            </ul>
+
+                        </article>
+
+                        <article class="taxonomy-card">
+
+                            <h3>Rozumie</h3>
+
+                            <ul>
+                                <li>
+                                    Zasady dzia&#322;ania kodu
+                                    wykonywanego przez komputer.
+                                </li>
+
+                                <li>
+                                    R&oacute;&#380;nice pomi&#281;dzy
+                                    podstawowymi konstrukcjami programu.
+                                </li>
+
+                                <li>
+                                    Zasady programowania strukturalnego
+                                    i obiektowego.
+                                </li>
+
+                                <li>
+                                    Znaczenie czytelno&#347;ci,
+                                    testowania i dokumentowania kodu.
+                                </li>
+                            </ul>
+
+                        </article>
+
+                        <article class="taxonomy-card">
+
+                            <h3>Umie</h3>
+
+                            <ul>
+                                <li>
+                                    Tworzy&#263; zmienne i wykonywa&#263;
+                                    operacje na danych.
+                                </li>
+
+                                <li>
+                                    Stosowa&#263; instrukcje warunkowe
+                                    oraz p&#281;tle.
+                                </li>
+
+                                <li>
+                                    Tworzy&#263; funkcje, procedury
+                                    i podstawowe klasy.
+                                </li>
+
+                                <li>
+                                    Odczytywa&#263; i modyfikowa&#263;
+                                    istniej&#261;cy kod programu.
+                                </li>
+                            </ul>
+
+                        </article>
+
+                        <article class="taxonomy-card">
+
+                            <h3>Potrafi</h3>
+
+                            <ul>
+                                <li>
+                                    Samodzielnie utworzy&#263; prosty
+                                    program lub aplikacj&#281;.
+                                </li>
+
+                                <li>
+                                    Zaplanowa&#263; rozwi&#261;zanie
+                                    problemu w postaci algorytmu.
+                                </li>
+
+                                <li>
+                                    Znale&#378;&#263; i poprawi&#263;
+                                    podstawowe b&#322;&#281;dy w kodzie.
+                                </li>
+
+                                <li>
+                                    Wykorzysta&#263; zdobyte umiej&#281;tno&#347;ci
+                                    podczas wykonywania zada&#324; zawodowych.
+                                </li>
+                            </ul>
+
+                        </article>
+
+                    </div>
+
+                </section>
+
+                <section class="content-section benefits-box">
+
+                    <h2>
+                        Korzy&#347;ci z uko&#324;czenia szkolenia
+                    </h2>
+
+                    <p>
+                        Umiej&#281;tno&#347;&#263; programowania pozwala
+                        automatyzowa&#263; zadania, tworzy&#263; aplikacje,
+                        przetwarza&#263; dane oraz rozwija&#263;
+                        strony internetowe i systemy informatyczne.
+                    </p>
+
+                    <p>
+                        Zdobyta wiedza mo&#380;e by&#263; wykorzystywana
+                        w pracy programisty, administratora stron WWW,
+                        testera oprogramowania, analityka danych,
+                        pracownika dzia&#322;u IT lub osoby prowadz&#261;cej
+                        w&#322;asn&#261; dzia&#322;alno&#347;&#263;.
+                    </p>
+
+                    <p>
+                        Szkolenia maj&#261; charakter praktyczny.
+                        Uczestnik wykonuje &#263;wiczenia przy komputerze
+                        i tworzy przyk&#322;adowe programy dopasowane
+                        do poziomu wybranego kursu.
+                    </p>
+
+                </section>
+
+                <div class="bottom-buttons">
+
+                    <a
+                        class="button back-button"
+                        href="../szkoleniakursy.html"
+                    >
+                        &lsaquo; Powr&oacute;t do listy szkole&#324;
+                    </a>
+
+                    <a
+                        class="button"
+                        href="zapis-na-szkolenie.html"
+                    >
+                        Zapisz si&#281; na szkolenie
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+    </main>
+
+    <footer>
+
+        <p>
+            <strong>
+                Zachodniopomorskie Centrum Informatyki
+            </strong>
+        </p>
+
+        <p>
+            &copy; 2026 ZPCI &ndash;
+            szkolenia komputerowe i programistyczne
+        </p>
+
+    </footer>
+
+</body>
+</html>

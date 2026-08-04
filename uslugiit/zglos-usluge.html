@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Zgłoś usługę IT | Zachodniopomorskie Centrum Informatyki</title>
+
+<meta
+    name="description"
+    content="Formularz zgłoszenia usługi informatycznej, serwisowej, internetowej lub marketingowej w Zachodniopomorskim Centrum Informatyki."
+>
+
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0b2148">
+
+<style>
+
+/* ==================================================
+   RESET I USTAWIENIA OGÓLNE
+================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7fb;
+    color: #333333;
+    line-height: 1.65;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* ==================================================
+   NAGŁÓWEK
+================================================== */
+
+header {
+    position: relative;
+    overflow: hidden;
+    padding: 38px 20px;
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(255, 255, 255, 0.13),
+            transparent 35%
+        ),
+        linear-gradient(135deg, #0b2148, #1f3b73);
+    color: #ffffff;
+    text-align: center;
+}
+
+.header-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+header h1 {
+    margin-bottom: 10px;
+    color: #ffffff;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    line-height: 1.2;
+}
+
+header p {
+    margin: 0;
+    color: #e6efff;
+    font-size: clamp(1rem, 2vw, 1.15rem);
+}
+
+/* ==================================================
+   MENU
+================================================== */
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 10px;
+    background: #16315d;
+}
+
+nav a {
+    display: block;
+    padding: 15px 20px;
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease;
+}
+
+nav a:hover,
+nav a:focus-visible {
+    background: #244b87;
+}
+
+nav a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #f2b705;
+    outline-offset: 2px;
+}
+
+/* ==================================================
+   GŁÓWNA TREŚĆ
+================================================== */
+
+main {
+    padding: 32px 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 35px;
+    background: #ffffff;
+    border: 1px solid #dce5ef;
+    border-radius: 14px;
+    box-shadow: 0 12px 32px rgba(11, 33, 72, 0.12);
+}
+
+/* ==================================================
+   BANER
+================================================== */
+
+.banner {
+    width: 100%;
+    margin-bottom: 30px;
+    padding: 8px;
+    overflow: hidden;
+    background: #f2f6fb;
+    border: 1px solid #dce5ef;
+    border-radius: 13px;
+}
+
+.banner img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 9px;
+}
+
+/* ==================================================
+   NAGŁÓWKI I TEKST
+================================================== */
+
+.form-heading {
+    margin-bottom: 12px;
+    color: #1f3b73;
+    font-size: clamp(1.7rem, 4vw, 2.35rem);
+    line-height: 1.2;
+    text-align: center;
+}
+
+.form-intro {
+    max-width: 760px;
+    margin: 0 auto 28px;
+    color: #566171;
+    text-align: center;
+}
+
+h2 {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    color: #1f3b73;
+    border-bottom: 2px solid #1f3b73;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+ul {
+    margin: 15px 0 20px 25px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+li::marker {
+    color: #1f3b73;
+}
+
+/* ==================================================
+   FORMULARZ
+================================================== */
+
+form {
+    margin-top: 25px;
+}
+
+.form-group {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 7px;
+    color: #26364e;
+    font-weight: bold;
+}
+
+.required-mark {
+    color: #b42318;
+}
+
+.field-note {
+    display: block;
+    margin-top: 6px;
+    color: #657180;
+    font-size: 0.9rem;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px 13px;
+    border: 1px solid #bfc9d6;
+    border-radius: 7px;
+    background: #ffffff;
+    color: #222222;
+    font-family: inherit;
+    font-size: 1rem;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+input:hover,
+select:hover,
+textarea:hover {
+    border-color: #8494a8;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #1f3b73;
+    box-shadow: 0 0 0 4px rgba(31, 59, 115, 0.12);
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #7a8490;
+}
+
+select {
+    min-height: 49px;
+    cursor: pointer;
+}
+
+textarea {
+    min-height: 165px;
+    resize: vertical;
+}
+
+input:invalid:not(:placeholder-shown),
+textarea:invalid:not(:placeholder-shown) {
+    border-color: #b42318;
+}
+
+input:valid:not(:placeholder-shown),
+textarea:valid:not(:placeholder-shown) {
+    border-color: #267044;
+}
+
+/* ==================================================
+   HONEYPOT – POLE PUŁAPKA NA BOTY
+================================================== */
+
+/*
+ * Pole "website" jest wymagane przez zabezpieczenia
+ * znajdujące się w send.php.
+ *
+ * Użytkownik go nie widzi i pozostawia puste.
+ * Bot może je automatycznie uzupełnić.
+ */
+
+.website-field {
+    position: absolute !important;
+    top: auto !important;
+    left: -10000px !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+/* ==================================================
+   PRZYCISK
+================================================== */
+
+.submit-button {
+    display: flex;
+    width: 100%;
+    min-height: 53px;
+    margin-top: 30px;
+    padding: 14px 22px;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 8px;
+    background: #1f3b73;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition:
+        background-color 0.25s ease,
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.submit-button:hover:not(:disabled) {
+    background: #16315d;
+    transform: translateY(-2px);
+}
+
+.submit-button:disabled {
+    background: #6e7e98;
+    cursor: wait;
+    opacity: 0.82;
+}
+
+/* ==================================================
+   INFORMACJA O FORMULARZU
+================================================== */
+
+.security-note {
+    margin-top: 20px;
+    padding: 15px 17px;
+    background: #eef4ff;
+    border-left: 4px solid #1f3b73;
+    border-radius: 7px;
+    color: #465466;
+    font-size: 0.92rem;
+}
+
+/* ==================================================
+   INFORMACJE KONTAKTOWE
+================================================== */
+
+.info-box {
+    margin-top: 34px;
+    padding: 24px;
+    background: #eef4ff;
+    border-left: 5px solid #1f3b73;
+    border-radius: 9px;
+}
+
+.info-box h2 {
+    margin-top: 0;
+}
+
+.info-box a {
+    color: #1f3b73;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.info-box a:hover {
+    text-decoration: underline;
+}
+
+/* ==================================================
+   STOPKA
+================================================== */
+
+footer {
+    margin-top: 40px;
+    padding: 24px 15px;
+    background: #1f3b73;
+    color: #ffffff;
+    text-align: center;
+}
+
+.footer-content {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+footer p {
+    margin-bottom: 5px;
+    color: #ffffff;
+}
+
+/* ==================================================
+   TABLETY
+================================================== */
+
+@media (max-width: 800px) {
+
+    .container {
+        padding: 28px;
+    }
+}
+
+/* ==================================================
+   TELEFONY
+================================================== */
+
+@media (max-width: 650px) {
+
+    header {
+        padding: 30px 15px;
+    }
+
+    header h1 {
+        font-size: 1.75rem;
+    }
+
+    nav {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    nav a {
+        width: 100%;
+        padding: 13px 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        text-align: center;
+    }
+
+    main {
+        padding: 18px 10px;
+    }
+
+    .container {
+        padding: 22px 16px;
+        border-radius: 10px;
+    }
+
+    .banner {
+        padding: 5px;
+        border-radius: 10px;
+    }
+
+    .form-heading {
+        font-size: 1.55rem;
+    }
+
+    input,
+    select,
+    textarea {
+        font-size: 16px;
+    }
+
+    .info-box {
+        padding: 20px 16px;
+    }
+}
+
+/* ==================================================
+   MAŁE TELEFONY
+================================================== */
+
+@media (max-width: 380px) {
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .container {
+        padding: 20px 13px;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="header-content">
+
+        <h1>Zachodniopomorskie Centrum Informatyki</h1>
+
+        <p>Usługi IT oraz marketing internetowy</p>
+
+    </div>
+
+</header>
+
+<nav aria-label="Menu główne">
+
+    <a href="../index.html">
+        Strona główna
+    </a>
+
+    <a href="../uslugiit.html">
+        Usługi IT
+    </a>
+
+    <a href="../szkoleniakursy.html">
+        Szkolenia / Kursy
+    </a>
+
+    <a href="../kontakt.html">
+        Kontakt
+    </a>
+
+</nav>
+
+<main>
+
+    <section class="container">
+
+        <div class="banner">
+
+            <img
+                src="../images/zglosusluge.png"
+                alt="Zgłoszenie usługi informatycznej lub marketingowej w ZPCI"
+                width="1200"
+                height="750"
+                loading="eager"
+                fetchpriority="high"
+                decoding="async"
+            >
+
+        </div>
+
+        <h2 class="form-heading">
+            Zgłoś usługę IT lub marketingową
+        </h2>
+
+        <p class="form-intro">
+            Wypełnij formularz, aby przesłać zapytanie dotyczące
+            usług informatycznych, internetowych, serwisowych lub
+            marketingowych.
+        </p>
+
+        <form
+            id="serviceForm"
+            action="../send.php"
+            method="post"
+            accept-charset="UTF-8"
+        >
+
+            <!--
+                Pole pozostaje puste.
+
+                send.php odczytuje brak pola szkolenie jako pustą wartość.
+                Dlatego nie trzeba przesyłać pola szkolenie w formularzu usługi.
+            -->
+
+            <!-- HONEYPOT DLA BOTÓW -->
+
+            <div
+                class="website-field"
+                aria-hidden="true"
+            >
+
+                <label for="website">
+                    Strona internetowa
+                </label>
+
+                <input
+                    type="text"
+                    id="website"
+                    name="website"
+                    value=""
+                    tabindex="-1"
+                    autocomplete="off"
+                >
+
+            </div>
+
+            <!-- IMIĘ -->
+
+            <div class="form-group">
+
+                <label for="imie">
+                    Imię
+                    <span class="required-mark" aria-hidden="true">*</span>
+                </label>
+
+                <input
+                    type="text"
+                    id="imie"
+                    name="imie"
+                    minlength="2"
+                    maxlength="100"
+                    autocomplete="given-name"
+                    placeholder="Wpisz imię"
+                    required
+                >
+
+            </div>
+
+            <!-- NAZWISKO -->
+
+            <div class="form-group">
+
+                <label for="nazwisko">
+                    Nazwisko
+                    <span class="required-mark" aria-hidden="true">*</span>
+                </label>
+
+                <input
+                    type="text"
+                    id="nazwisko"
+                    name="nazwisko"
+                    minlength="2"
+                    maxlength="100"
+                    autocomplete="family-name"
+                    placeholder="Wpisz nazwisko"
+                    required
+                >
+
+            </div>
+
+            <!-- TELEFON -->
+
+            <div class="form-group">
+
+                <label for="telefon">
+                    Telefon kontaktowy
+                    <span class="required-mark" aria-hidden="true">*</span>
+                </label>
+
+                <input
+                    type="tel"
+                    id="telefon"
+                    name="telefon"
+                    minlength="6"
+                    maxlength="25"
+                    autocomplete="tel"
+                    inputmode="tel"
+                    pattern="[0-9+() \-]{6,25}"
+                    placeholder="np. 503 840 567"
+                    required
+                >
+
+                <span class="field-note">
+                    Dozwolone są cyfry, spacje oraz znaki: + ( ) -
+                </span>
+
+            </div>
+
+            <!-- E-MAIL -->
+
+            <div class="form-group">
+
+                <label for="email">
+                    Adres e-mail
+                    <span class="required-mark" aria-hidden="true">*</span>
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    maxlength="254"
+                    autocomplete="email"
+                    inputmode="email"
+                    placeholder="np. jan.kowalski@example.com"
+                    required
+                >
+
+                <span class="field-note">
+                    Na ten adres możemy przesłać odpowiedź dotyczącą zgłoszenia.
+                </span>
+
+            </div>
+
+            <!-- RODZAJ USŁUGI -->
+
+            <div class="form-group">
+
+                <label for="usluga">
+                    Rodzaj usługi
+                    <span class="required-mark" aria-hidden="true">*</span>
+                </label>
+
+                <select
+                    id="usluga"
+                    name="usluga"
+                    required
+                >
+
+                    <option value="">
+                        -- Wybierz usługę --
+                    </option>
+
+                    <optgroup label="SERWIS I POMOC TECHNICZNA">
+
+                        <option value="Naprawa i serwis komputerów">
+                            Naprawa i serwis komputerów
+                        </option>
+
+                        <option value="Modernizacja sprzętu komputerowego">
+                            Modernizacja sprzętu komputerowego
+                        </option>
+
+                        <option value="Instalacja i konfiguracja oprogramowania">
+                            Instalacja i konfiguracja oprogramowania
+                        </option>
+
+                        <option value="Usuwanie problemów z komputerem">
+                            Usuwanie problemów z komputerem
+                        </option>
+
+                    </optgroup>
+
+                    <optgroup label="STRONY INTERNETOWE">
+
+                        <option value="Projektowanie stron WWW">
+                            Projektowanie stron WWW
+                        </option>
+
+                        <option value="Modernizacja stron internetowych">
+                            Modernizacja i aktualizacja stron internetowych
+                        </option>
+
+                        <option value="Opieka nad stroną internetową">
+                            Opieka nad stroną internetową
+                        </option>
+
+                        <option value="Naprawa błędów na stronie internetowej">
+                            Naprawa błędów na stronie internetowej
+                        </option>
+
+                    </optgroup>
+
+                    <optgroup label="DORADZTWO I ADMINISTRACJA">
+
+                        <option value="Doradztwo informatyczne">
+                            Doradztwo informatyczne
+                        </option>
+
+                        <option value="Projektowanie rozwiązania informatycznego">
+                            Projektowanie rozwiązania informatycznego
+                        </option>
+
+                        <option value="Administracja systemami komputerowymi">
+                            Administracja systemami komputerowymi
+                        </option>
+
+                    </optgroup>
+
+                    <optgroup label="MARKETING INTERNETOWY">
+
+                        <option value="Marketing internetowy">
+                            Marketing internetowy
+                        </option>
+
+                        <option value="Projektowanie kampanii internetowej">
+                            Projektowanie kampanii internetowej
+                        </option>
+
+                        <option value="SEO – pozycjonowanie stron">
+                            SEO – pozycjonowanie stron
+                        </option>
+
+                        <option value="Grafika komputerowa i materiały reklamowe">
+                            Grafika komputerowa i materiały reklamowe
+                        </option>
+
+                    </optgroup>
+
+                    <optgroup label="POZOSTAŁE">
+
+                        <option value="Inna usługa">
+                            Inna usługa
+                        </option>
+
+                    </optgroup>
+
+                </select>
+
+            </div>
+
+            <!-- OPIS ZGŁOSZENIA -->
+
+            <div class="form-group">
+
+                <label for="wiadomosc">
+                    Opis zapytania
+                    <span class="required-mark" aria-hidden="true">*</span>
+                </label>
+
+                <textarea
+                    id="wiadomosc"
+                    name="wiadomosc"
+                    minlength="10"
+                    maxlength="3000"
+                    placeholder="Opisz, jakiej pomocy lub usługi potrzebujesz."
+                    required
+                ></textarea>
+
+                <span class="field-note">
+                    Wpisz od 10 do 3000 znaków. Nie podawaj haseł,
+                    kodów dostępu ani innych poufnych danych.
+                </span>
+
+            </div>
+
+            <button
+                class="submit-button"
+                id="submitButton"
+                type="submit"
+            >
+                Wyślij zgłoszenie
+            </button>
+
+        </form>
+
+        <div class="security-note">
+
+            Formularz jest zabezpieczony przed automatycznym wysyłaniem.
+            Pola oznaczone gwiazdką są wymagane.
+
+        </div>
+
+        <section class="info-box">
+
+            <h2>Kontakt</h2>
+
+            <p>
+                E-mail:
+                <a href="mailto:biuro@zpci.pl">
+                    biuro@zpci.pl
+                </a>
+            </p>
+
+            <p>
+                Za pomocą formularza możesz zgłosić:
+            </p>
+
+            <ul>
+
+                <li>naprawę i serwis komputerów,</li>
+
+                <li>projektowanie strony internetowej,</li>
+
+                <li>modernizację istniejącej strony WWW,</li>
+
+                <li>doradztwo informatyczne,</li>
+
+                <li>administrację systemami komputerowymi,</li>
+
+                <li>marketing internetowy,</li>
+
+                <li>pozycjonowanie SEO,</li>
+
+                <li>wykonanie materiałów reklamowych i grafiki.</li>
+
+            </ul>
+
+            <p>
+                Po otrzymaniu zgłoszenia skontaktujemy się z Państwem
+                telefonicznie lub drogą e-mail.
+            </p>
+
+        </section>
+
+    </section>
+
+</main>
+
+<footer>
+
+    <div class="footer-content">
+
+        <p>
+            <strong>
+                Zachodniopomorskie Centrum Informatyki
+            </strong>
+        </p>
+
+        <p>
+            E-mail:
+            <a
+                href="mailto:biuro@zpci.pl"
+                style="color:#ffffff;"
+            >
+                biuro@zpci.pl
+            </a>
+        </p>
+
+        <p>
+            &copy;
+            <span id="rok"></span>
+            Zachodniopomorskie Centrum Informatyki.
+            Wszelkie prawa zastrzeżone.
+        </p>
+
+    </div>
+
+</footer>
+
+<script>
+
+const yearElement =
+    document.getElementById("rok");
+
+yearElement.textContent =
+    new Date().getFullYear();
+
+
+const serviceForm =
+    document.getElementById("serviceForm");
+
+const submitButton =
+    document.getElementById("submitButton");
+
+
+serviceForm.addEventListener(
+    "submit",
+    function () {
+
+        /*
+         * Zdarzenie submit uruchamia się dopiero wtedy,
+         * gdy formularz przeszedł walidację HTML.
+         */
+
+        submitButton.disabled = true;
+
+        submitButton.textContent =
+            "Wysyłanie zgłoszenia...";
+
+    }
+);
+
+
+/*
+ * Przywrócenie przycisku po powrocie
+ * przyciskiem „Wstecz” w przeglądarce.
+ */
+
+window.addEventListener(
+    "pageshow",
+    function () {
+
+        submitButton.disabled = false;
+
+        submitButton.textContent =
+            "Wyślij zgłoszenie";
+
+    }
+);
+
+</script>
+
+</body>
+
+</html>

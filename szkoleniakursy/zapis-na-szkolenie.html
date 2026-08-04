@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Zapis na szkolenie | Zachodniopomorskie Centrum Informatyki</title>
+
+<meta
+    name="description"
+    content="Formularz zapisu na szkolenia komputerowe i kursy IT organizowane przez Zachodniopomorskie Centrum Informatyki."
+>
+
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0b2148">
+
+<style>
+
+/* ==================================================
+   RESET
+================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7fb;
+    color: #333333;
+    line-height: 1.6;
+}
+
+/* ==================================================
+   NAGŁÓWEK
+================================================== */
+
+header {
+    position: relative;
+    overflow: hidden;
+    padding: 38px 20px;
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(255, 255, 255, 0.13),
+            transparent 35%
+        ),
+        linear-gradient(135deg, #0b2148, #1f3b73);
+    color: #ffffff;
+    text-align: center;
+}
+
+.header-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+header h1 {
+    margin-bottom: 9px;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    line-height: 1.2;
+}
+
+header p {
+    color: #e2ebfa;
+    font-size: clamp(1rem, 2vw, 1.15rem);
+}
+
+/* ==================================================
+   MENU
+================================================== */
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 10px;
+    background: #16315d;
+}
+
+nav a {
+    display: block;
+    padding: 15px 20px;
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease;
+}
+
+nav a:hover,
+nav a:focus-visible {
+    background: #244b87;
+}
+
+nav a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #f2b705;
+    outline-offset: 2px;
+}
+
+/* ==================================================
+   GŁÓWNA TREŚĆ
+================================================== */
+
+main {
+    padding: 36px 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 34px;
+    background: #ffffff;
+    border: 1px solid #dce5ef;
+    border-radius: 14px;
+    box-shadow: 0 12px 32px rgba(11, 33, 72, 0.12);
+}
+
+.form-heading {
+    margin-bottom: 10px;
+    color: #1f3b73;
+    font-size: clamp(1.6rem, 4vw, 2.25rem);
+    line-height: 1.2;
+    text-align: center;
+}
+
+.form-intro {
+    max-width: 680px;
+    margin: 0 auto 28px;
+    color: #5b6673;
+    text-align: center;
+}
+
+/* ==================================================
+   FORMULARZ
+================================================== */
+
+.form-group {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 7px;
+    color: #26364e;
+    font-weight: bold;
+}
+
+.required-mark {
+    color: #b42318;
+}
+
+.field-note {
+    display: block;
+    margin-top: 6px;
+    color: #657180;
+    font-size: 0.9rem;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px 13px;
+    border: 1px solid #bfc9d6;
+    border-radius: 7px;
+    background: #ffffff;
+    color: #222222;
+    font-family: inherit;
+    font-size: 1rem;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+input:hover,
+select:hover,
+textarea:hover {
+    border-color: #8494a8;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #1f3b73;
+    box-shadow: 0 0 0 4px rgba(31, 59, 115, 0.12);
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #7a8490;
+}
+
+select {
+    min-height: 49px;
+    cursor: pointer;
+}
+
+textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+input:invalid:not(:placeholder-shown),
+textarea:invalid:not(:placeholder-shown) {
+    border-color: #b42318;
+}
+
+input:valid:not(:placeholder-shown),
+textarea:valid:not(:placeholder-shown) {
+    border-color: #267044;
+}
+
+/* ==================================================
+   HONEYPOT – POLE DLA BOTÓW
+================================================== */
+
+/*
+ * Pole musi pozostać w formularzu.
+ * Zwykły użytkownik go nie zobaczy.
+ * Boty często automatycznie je wypełniają.
+ */
+
+.website-field {
+    position: absolute !important;
+    left: -10000px !important;
+    top: auto !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+/* ==================================================
+   PRZYCISK
+================================================== */
+
+.submit-button {
+    display: flex;
+    width: 100%;
+    min-height: 52px;
+    margin-top: 30px;
+    padding: 14px 22px;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 7px;
+    background: #1f3b73;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 1.08rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition:
+        background-color 0.25s ease,
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.submit-button:hover:not(:disabled) {
+    background: #16305d;
+    transform: translateY(-2px);
+}
+
+.submit-button:disabled {
+    background: #6e7e98;
+    cursor: wait;
+    opacity: 0.8;
+}
+
+/* ==================================================
+   INFORMACJA POD FORMULARZEM
+================================================== */
+
+.security-note {
+    margin-top: 20px;
+    padding: 15px 17px;
+    background: #eef4ff;
+    border-left: 4px solid #1f3b73;
+    border-radius: 7px;
+    color: #465466;
+    font-size: 0.92rem;
+}
+
+/* ==================================================
+   STOPKA
+================================================== */
+
+footer {
+    margin-top: 40px;
+    padding: 21px 15px;
+    background: #1f3b73;
+    color: #ffffff;
+    text-align: center;
+}
+
+footer p + p {
+    margin-top: 5px;
+}
+
+/* ==================================================
+   TABLETY
+================================================== */
+
+@media (max-width: 800px) {
+
+    .container {
+        padding: 28px;
+    }
+}
+
+/* ==================================================
+   TELEFONY
+================================================== */
+
+@media (max-width: 650px) {
+
+    header {
+        padding: 30px 15px;
+    }
+
+    header h1 {
+        font-size: 1.75rem;
+    }
+
+    nav {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    nav a {
+        width: 100%;
+        padding: 13px 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        text-align: center;
+    }
+
+    main {
+        padding: 18px 10px;
+    }
+
+    .container {
+        padding: 22px 16px;
+        border-radius: 10px;
+    }
+
+    .form-heading {
+        font-size: 1.55rem;
+    }
+
+    input,
+    select,
+    textarea {
+        font-size: 16px;
+    }
+}
+
+/* ==================================================
+   MAŁE TELEFONY
+================================================== */
+
+@media (max-width: 380px) {
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .container {
+        padding: 20px 13px;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="header-content">
+
+        <h1>Zachodniopomorskie Centrum Informatyki</h1>
+
+        <p>Zapis na szkolenie</p>
+
+    </div>
+
+</header>
+
+<nav aria-label="Menu główne">
+
+    <a href="../index.html">
+        Strona główna
+    </a>
+
+    <a href="../szkoleniakursy.html">
+        Szkolenia i kursy
+    </a>
+
+    <a href="../uslugiit.html">
+        Usługi IT
+    </a>
+
+    <a href="../kontakt.html">
+        Kontakt
+    </a>
+
+</nav>
+
+<main>
+
+    <section class="container">
+
+        <h2 class="form-heading">
+            Formularz zapisu na szkolenie
+        </h2>
+
+        <p class="form-intro">
+            Wypełnij poniższy formularz. Po otrzymaniu zgłoszenia
+            skontaktujemy się w sprawie terminu i organizacji szkolenia.
+        </p>
+
+        <form
+            id="trainingForm"
+            action="../send.php"
+            method="post"
+            accept-charset="UTF-8"
+        >
+
+            <!-- HONEYPOT DLA BOTÓW -->
+
+            <div
+                class="website-field"
+                aria-hidden="true"
+            >
+
+                <label for="website">
+                    Strona internetowa
+                </label>
+
+                <input
+                    type="text"
+                    id="website"
+                    name="website"
+                    value=""
+                    tabindex="-1"
+                    autocomplete="off"
+                >
+
+            </div>
+
+            <!-- WYBÓR SZKOLENIA -->
+
+            <div class="form-group">
+
+                <label for="szkolenie">
+                    Wybierz szkolenie
+                    <span class="required-mark" aria-hidden="true">*</span>
+                </label>
+
+                <select
+                    id="szkolenie"
+                    name="szkolenie"
+                    required
+                >
+
+                    <option value="">
+                        -- Wybierz szkolenie --
+                    </option>
+
+                    <optgroup label="PAKIETY BIUROWE">
+
+                        <option value="MS Office – poziom 1">
+                            MS Office – poziom 1
+                            (Word, Excel, PowerPoint, Outlook)
+                        </option>
+
+                        <option value="MS Office – poziom 2">
+                            MS Office – poziom 2
+                            (Word, Excel, PowerPoint, Outlook)
+                        </option>
+
+                        <option value="MS Excel">
+                            MS Excel
+                        </option>
+
+                        <option value="MS Excel VBA">
+                            MS Excel VBA
+                        </option>
+
+                        <option value="PowerPoint – profesjonalne prezentacje">
+                            PowerPoint – profesjonalne prezentacje
+                        </option>
+
+                    </optgroup>
+
+                    <optgroup label="PROGRAMY KSIĘGOWE">
+
+                        <option value="Płatnik ZUS">
+                            Obsługa programu Płatnik ZUS
+                        </option>
+
+                        <option value="Symfonia Faktura">
+                            Obsługa programu Symfonia Faktura
+                        </option>
+
+                    </optgroup>
+
+                    <optgroup label="PROGRAMOWANIE">
+
+                        <option value="Java">
+                            Java
+                        </option>
+
+                        <option value="C++">
+                            C++
+                        </option>
+
+                        <option value="C#">
+                            C#
+                        </option>
+
+                        <option value="HTML i CSS">
+                            HTML + CSS – projektowanie stron WWW
+                        </option>
+
+                        <option value="PHP i MySQL">
+                            PHP + MySQL
+                        </option>
+
+                        <option value="JavaScript">
+                            JavaScript – dynamiczne strony WWW
+                        </option>
+
+                    </optgroup>
+
+                    <optgroup label="GRAFIKA KOMPUTEROWA">
+
+                        <option value="Photoshop – cyfrowa obróbka zdjęć">
+                            Photoshop – cyfrowa obróbka zdjęć
+                        </option>
+
+                        <option value="GIMP – cyfrowa obróbka zdjęć">
+                            GIMP – cyfrowa obróbka zdjęć
+                        </option>
+
+                        <option value="CorelDRAW">
+                            CorelDRAW
+                        </option>
+
+                    </optgroup>
+
+                    <optgroup label="CAD">
+
+                        <option value="CAD – poziom podstawowy">
+                            CAD – poziom podstawowy
+                        </option>
+
+                        <option value="CAD – poziom zaawansowany">
+                            CAD – poziom zaawansowany
+                        </option>
+
+                    </optgroup>
+
+                    <optgroup label="POZOSTAŁE SZKOLENIA">
+
+                        <option value="E-learning">
+                            E-learning
+                        </option>
+
+                        <option value="Szkolenie dla seniorów">
+                            Kursy dla seniorów
+                        </option>
+
+                        <option value="Szkolenie dla osób z niepełnosprawnościami">
+                            Kursy dla osób z niepełnosprawnościami
+                        </option>
+
+                        <option value="Podstawy obsługi komputera i Internetu">
+                            Podstawy obsługi komputera i Internetu
+                        </option>
+
+                        <option value="Inne szkolenie">
+                            Inne szkolenie
+                        </option>
+
+                    </optgroup>
+
+                </select>
+
+            </div>
+
+            <!-- IMIĘ -->
+
+            <div class="form-group">
+
+                <label for="imie">
+                    Imię
+                    <span class="required-mark" aria-hidden="true">*</span>
+                </label>
+
+                <input
+                    type="text"
+                    id="imie"
+                    name="imie"
+                    minlength="2"
+                    maxlength="100"
+                    autocomplete="given-name"
+                    placeholder="Wpisz imię"
+                    required
+                >
+
+            </div>
+
+            <!-- NAZWISKO -->
+
+            <div class="form-group">
+
+                <label for="nazwisko">
+                    Nazwisko
+                    <span class="required-mark" aria-hidden="true">*</span>
+                </label>
+
+                <input
+                    type="text"
+                    id="nazwisko"
+                    name="nazwisko"
+                    minlength="2"
+                    maxlength="100"
+                    autocomplete="family-name"
+                    placeholder="Wpisz nazwisko"
+                    required
+                >
+
+            </div>
+
+            <!-- E-MAIL -->
+
+            <div class="form-group">
+
+                <label for="email">
+                    E-mail
+                    <span class="required-mark" aria-hidden="true">*</span>
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    maxlength="254"
+                    autocomplete="email"
+                    inputmode="email"
+                    placeholder="np. jan.kowalski@example.com"
+                    required
+                >
+
+                <span class="field-note">
+                    Na ten adres możemy przesłać informacje dotyczące szkolenia.
+                </span>
+
+            </div>
+
+            <!-- TELEFON -->
+
+            <div class="form-group">
+
+                <label for="telefon">
+                    Telefon
+                </label>
+
+                <input
+                    type="tel"
+                    id="telefon"
+                    name="telefon"
+                    minlength="6"
+                    maxlength="25"
+                    autocomplete="tel"
+                    inputmode="tel"
+                    pattern="[0-9+() \-]{6,25}"
+                    placeholder="np. 503 840 567"
+                >
+
+                <span class="field-note">
+                    Dozwolone są cyfry, spacje oraz znaki: + ( ) -
+                </span>
+
+            </div>
+
+            <!-- WIADOMOŚĆ -->
+
+            <div class="form-group">
+
+                <label for="wiadomosc">
+                    Dodatkowe informacje
+                </label>
+
+                <textarea
+                    id="wiadomosc"
+                    name="wiadomosc"
+                    maxlength="3000"
+                    placeholder="Podaj preferowany termin, poziom zaawansowania lub dodatkowe pytania."
+                ></textarea>
+
+                <span class="field-note">
+                    Maksymalnie 3000 znaków.
+                </span>
+
+            </div>
+
+            <button
+                class="submit-button"
+                id="submitButton"
+                type="submit"
+            >
+                Zapisz się na szkolenie
+            </button>
+
+        </form>
+
+        <div class="security-note">
+
+            Formularz jest chroniony przed automatycznym wysyłaniem.
+            Pola oznaczone gwiazdką są wymagane.
+
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+
+    <p>
+        &copy;
+        <span id="rok"></span>
+        Zachodniopomorskie Centrum Informatyki
+    </p>
+
+    <p>
+        Wszelkie prawa zastrzeżone.
+    </p>
+
+</footer>
+
+<script>
+
+const yearElement =
+    document.getElementById("rok");
+
+yearElement.textContent =
+    new Date().getFullYear();
+
+
+const trainingForm =
+    document.getElementById("trainingForm");
+
+const submitButton =
+    document.getElementById("submitButton");
+
+
+trainingForm.addEventListener(
+    "submit",
+    function () {
+
+        submitButton.disabled = true;
+
+        submitButton.textContent =
+            "Wysyłanie zgłoszenia...";
+
+    }
+);
+
+
+/*
+ * Przywrócenie przycisku po powrocie do strony
+ * za pomocą przycisku „Wstecz” w przeglądarce.
+ */
+window.addEventListener(
+    "pageshow",
+    function () {
+
+        submitButton.disabled = false;
+
+        submitButton.textContent =
+            "Zapisz się na szkolenie";
+
+    }
+);
+
+</script>
+
+</body>
+
+</html>

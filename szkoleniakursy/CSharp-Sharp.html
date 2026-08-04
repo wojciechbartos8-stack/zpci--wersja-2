@@ -1,0 +1,1568 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Szkolenie C# / C Sharp – programowanie | ZPCI Szczecin</title>
+
+<meta
+    name="description"
+    content="Praktyczne szkolenie z programowania w języku C#. Nauka Visual C#, programowania obiektowego, klas, interfejsów, aplikacji GUI i debugowania kodu."
+>
+
+<meta
+    name="keywords"
+    content="szkolenie C#, kurs C Sharp, programowanie C#, Visual C#, szkolenie programowanie Szczecin, ZPCI"
+>
+
+<meta name="author" content="Zachodniopomorskie Centrum Informatyki">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#0b2148">
+
+<style>
+
+/* ==================================================
+   ZMIENNE
+================================================== */
+
+:root {
+    --primary-dark: #0b2148;
+    --primary: #1f3b73;
+    --primary-medium: #16315d;
+    --primary-light: #eef4ff;
+    --accent: #f2b705;
+    --accent-dark: #c57c00;
+    --green: #267044;
+    --green-dark: #1c5734;
+    --background: #f4f6f9;
+    --white: #ffffff;
+    --text: #333333;
+    --muted: #5d6875;
+    --border: #dbe4ef;
+    --shadow: 0 12px 30px rgba(11, 33, 72, 0.12);
+}
+
+/* ==================================================
+   RESET
+================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: inherit;
+}
+
+/* ==================================================
+   NAGŁÓWEK Z LOGO
+================================================== */
+
+.site-header {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            circle at 90% 15%,
+            rgba(255, 255, 255, 0.13),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            var(--primary-dark),
+            var(--primary)
+        );
+    color: var(--white);
+}
+
+.site-header::after {
+    content: "";
+    position: absolute;
+    top: -170px;
+    right: -120px;
+    width: 390px;
+    height: 390px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.header-inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    min-height: 145px;
+    margin: 0 auto;
+    padding: 24px 25px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.logo {
+    display: flex;
+    min-width: 0;
+    align-items: center;
+    gap: 16px;
+    color: var(--white);
+    text-decoration: none;
+}
+
+.logo-image {
+    width: 88px;
+    height: 88px;
+    flex: 0 0 88px;
+    object-fit: contain;
+    border-radius: 50%;
+    background: var(--white);
+    box-shadow: 0 6px 19px rgba(0, 0, 0, 0.25);
+}
+
+.logo-text {
+    min-width: 0;
+}
+
+.logo-text strong {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--white);
+    font-size: clamp(1.35rem, 3vw, 2rem);
+    line-height: 1.2;
+}
+
+.logo-text span {
+    display: block;
+    color: #dce8fa;
+    font-size: 1rem;
+}
+
+.header-course {
+    max-width: 420px;
+    padding-left: 24px;
+    border-left: 1px solid rgba(255, 255, 255, 0.25);
+    text-align: right;
+}
+
+.header-course p {
+    margin-bottom: 4px;
+    color: #dce8fa;
+    font-size: 0.92rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.header-course h1 {
+    color: var(--white);
+    font-size: clamp(1.55rem, 3vw, 2.4rem);
+    line-height: 1.2;
+}
+
+/* ==================================================
+   MENU
+================================================== */
+
+.main-nav {
+    position: relative;
+    z-index: 10;
+    background: var(--primary-medium);
+}
+
+.nav-inner {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.main-nav a {
+    display: block;
+    padding: 15px 20px;
+    color: var(--white);
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease;
+}
+
+.main-nav a:hover,
+.main-nav a:focus-visible {
+    background: #244b87;
+}
+
+.main-nav a:focus-visible,
+.button:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+}
+
+/* ==================================================
+   GŁÓWNA TREŚĆ
+================================================== */
+
+main {
+    padding: 32px 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 35px;
+    background: var(--white);
+    border: 1px solid #e0e7f0;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+}
+
+/* ==================================================
+   BANER
+================================================== */
+
+.banner-wrapper {
+    width: 100%;
+    margin-bottom: 28px;
+    padding: 9px;
+    overflow: hidden;
+    background: #f1f5fa;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+}
+
+.training-banner {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 10px;
+    box-shadow: 0 7px 22px rgba(0, 0, 0, 0.15);
+}
+
+/* ==================================================
+   PRZYCISKI
+================================================== */
+
+.button-row {
+    display: flex;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.button {
+    display: inline-flex;
+    min-height: 48px;
+    padding: 12px 23px;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 7px;
+    color: var(--white);
+    font-weight: bold;
+    line-height: 1.25;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        background-color 0.25s ease;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+}
+
+.button-register {
+    background: var(--accent-dark);
+}
+
+.button-register:hover {
+    background: #965e00;
+}
+
+.button-price {
+    background: var(--green);
+}
+
+.button-price:hover {
+    background: var(--green-dark);
+}
+
+.button-home {
+    background: var(--primary);
+}
+
+.button-home:hover {
+    background: var(--primary-medium);
+}
+
+/* ==================================================
+   TYPOGRAFIA
+================================================== */
+
+h2 {
+    margin-top: 35px;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    color: var(--primary);
+    font-size: clamp(1.45rem, 3vw, 2rem);
+    line-height: 1.25;
+    border-bottom: 2px solid var(--border);
+}
+
+h3 {
+    margin-bottom: 11px;
+    color: var(--primary);
+    font-size: 1.2rem;
+    line-height: 1.3;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+ul {
+    margin: 15px 0 22px 25px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+li::marker {
+    color: var(--primary);
+}
+
+/* ==================================================
+   ORGANIZACJA SZKOLENIA
+================================================== */
+
+.organization-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 22px;
+}
+
+.organization-card {
+    height: 100%;
+    padding: 22px;
+    background: #f5f8fc;
+    border-left: 5px solid var(--primary);
+    border-radius: 11px;
+}
+
+.organization-card:nth-child(2) {
+    border-left-color: var(--accent-dark);
+}
+
+.organization-card:nth-child(3) {
+    border-left-color: var(--green);
+}
+
+.organization-card p:last-child {
+    margin-bottom: 0;
+}
+
+/* ==================================================
+   PROGRAM SZKOLENIA
+================================================== */
+
+.program-list {
+    columns: 2;
+    column-gap: 45px;
+}
+
+.program-list li {
+    break-inside: avoid;
+}
+
+/* ==================================================
+   TAKSONOMIA
+================================================== */
+
+.taxonomy-intro {
+    max-width: 900px;
+}
+
+.taxonomy-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 24px;
+}
+
+.taxonomy-card {
+    height: 100%;
+    padding: 22px;
+    background: #f5f8fc;
+    border-top: 5px solid var(--primary);
+    border-radius: 12px;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.taxonomy-card:nth-child(2),
+.taxonomy-card:nth-child(5) {
+    border-top-color: var(--accent-dark);
+}
+
+.taxonomy-card:nth-child(3),
+.taxonomy-card:nth-child(6) {
+    border-top-color: var(--green);
+}
+
+.taxonomy-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 11px 26px rgba(31, 59, 115, 0.14);
+}
+
+.taxonomy-card ul {
+    margin: 0 0 0 20px;
+}
+
+.taxonomy-card li::marker {
+    color: var(--accent-dark);
+}
+
+/* ==================================================
+   TABELA TAKSONOMII
+================================================== */
+
+.table-wrapper {
+    width: 100%;
+    margin-top: 30px;
+    overflow-x: auto;
+    border: 1px solid #d7e1ed;
+    border-radius: 11px;
+    -webkit-overflow-scrolling: touch;
+}
+
+.taxonomy-table {
+    width: 100%;
+    min-width: 760px;
+    border-collapse: collapse;
+    background: var(--white);
+}
+
+.taxonomy-table th,
+.taxonomy-table td {
+    padding: 14px;
+    border: 1px solid #d7e1ed;
+    text-align: left;
+    vertical-align: top;
+}
+
+.taxonomy-table th {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.taxonomy-table tbody tr:nth-child(even) {
+    background: #f5f8fc;
+}
+
+.taxonomy-table tbody tr:hover {
+    background: #eaf1fb;
+}
+
+/* ==================================================
+   ZASTOSOWANIE PRAKTYCZNE
+================================================== */
+
+.practice-box {
+    margin-top: 35px;
+    padding: 25px;
+    background: #fff8e5;
+    border-left: 5px solid var(--accent-dark);
+    border-radius: 11px;
+}
+
+.practice-box h2 {
+    margin-top: 0;
+}
+
+/* ==================================================
+   INFORMACJE DODATKOWE
+================================================== */
+
+.info-box {
+    margin-top: 35px;
+    padding: 26px;
+    background: var(--primary-light);
+    border-left: 5px solid var(--primary);
+    border-radius: 11px;
+}
+
+.info-box h2 {
+    margin-top: 0;
+}
+
+.info-box a:not(.button) {
+    color: var(--primary);
+    font-weight: bold;
+    overflow-wrap: anywhere;
+    text-decoration: none;
+}
+
+.info-box a:not(.button):hover {
+    text-decoration: underline;
+}
+
+.info-box hr {
+    height: 1px;
+    margin: 24px 0;
+    background: #cbd8e9;
+    border: 0;
+}
+
+/* ==================================================
+   CZAS I CENA
+================================================== */
+
+.training-details {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    margin: 22px 0;
+}
+
+.detail-card {
+    height: 100%;
+    padding: 24px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-top: 5px solid var(--primary);
+    border-radius: 12px;
+    box-shadow: 0 8px 22px rgba(31, 59, 115, 0.09);
+}
+
+.detail-card:nth-child(2) {
+    border-top-color: var(--green);
+}
+
+.detail-card ul {
+    margin-bottom: 0;
+}
+
+.price {
+    margin-bottom: 7px;
+    color: var(--green);
+    font-size: clamp(1.6rem, 3vw, 2.15rem);
+    font-weight: bold;
+}
+
+.price-note {
+    margin-bottom: 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+/* ==================================================
+   STOPKA
+================================================== */
+
+footer {
+    margin-top: 35px;
+    padding: 24px 15px;
+    background: var(--primary-dark);
+    color: var(--white);
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* ==================================================
+   TABLETY
+================================================== */
+
+@media (max-width: 900px) {
+
+    .header-inner {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .logo {
+        justify-content: center;
+    }
+
+    .header-course {
+        max-width: 700px;
+        padding-top: 20px;
+        padding-left: 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.25);
+        border-left: 0;
+        text-align: center;
+    }
+
+    .organization-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .taxonomy-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .program-list {
+        columns: 1;
+    }
+}
+
+/* ==================================================
+   TELEFONY
+================================================== */
+
+@media (max-width: 650px) {
+
+    .header-inner {
+        min-height: auto;
+        padding: 25px 15px;
+    }
+
+    .logo {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+
+    .logo-image {
+        width: 76px;
+        height: 76px;
+        flex-basis: 76px;
+    }
+
+    .logo-text strong {
+        font-size: 1.35rem;
+    }
+
+    .logo-text span {
+        font-size: 0.92rem;
+    }
+
+    .header-course h1 {
+        font-size: 1.65rem;
+    }
+
+    .nav-inner {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .main-nav a {
+        width: 100%;
+        padding: 13px 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    main {
+        padding: 18px 10px;
+    }
+
+    .container {
+        padding: 21px 16px;
+        border-radius: 10px;
+    }
+
+    .banner-wrapper {
+        padding: 6px;
+        border-radius: 11px;
+    }
+
+    .button-row {
+        flex-direction: column;
+    }
+
+    .button {
+        width: 100%;
+    }
+
+    .taxonomy-grid,
+    .training-details {
+        grid-template-columns: 1fr;
+    }
+
+    .taxonomy-card,
+    .organization-card,
+    .practice-box,
+    .info-box,
+    .detail-card {
+        padding: 20px 16px;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+}
+
+/* ==================================================
+   MAŁE TELEFONY
+================================================== */
+
+@media (max-width: 380px) {
+
+    .container {
+        padding: 18px 13px;
+    }
+
+    .logo-text strong {
+        font-size: 1.2rem;
+    }
+
+    ul {
+        margin-left: 20px;
+    }
+}
+
+/* ==================================================
+   DRUKOWANIE
+================================================== */
+
+@media print {
+
+    body {
+        background: var(--white);
+        color: #000000;
+        font-size: 12px;
+    }
+
+    .main-nav,
+    .button-row,
+    footer {
+        display: none;
+    }
+
+    .site-header {
+        background: var(--white);
+        color: #000000;
+    }
+
+    .header-inner {
+        min-height: auto;
+        padding: 10px 0 20px;
+    }
+
+    .logo-image {
+        width: 65px;
+        height: 65px;
+        flex-basis: 65px;
+        box-shadow: none;
+    }
+
+    .logo-text strong,
+    .logo-text span,
+    .header-course p,
+    .header-course h1 {
+        color: #000000;
+    }
+
+    main {
+        padding: 0;
+    }
+
+    .container {
+        max-width: 100%;
+        padding: 0;
+        border: 0;
+        box-shadow: none;
+    }
+
+    .banner-wrapper {
+        padding: 0;
+        border: 0;
+        background: var(--white);
+    }
+
+    .training-banner {
+        box-shadow: none;
+    }
+
+    h2,
+    h3,
+    .price {
+        color: #000000;
+    }
+
+    .organization-grid,
+    .taxonomy-grid,
+    .training-details {
+        display: block;
+    }
+
+    .organization-card,
+    .taxonomy-card,
+    .detail-card {
+        margin-bottom: 14px;
+        background: var(--white);
+        border: 1px solid #000000;
+        box-shadow: none;
+        break-inside: avoid;
+    }
+
+    .taxonomy-table {
+        min-width: 0;
+    }
+
+    .taxonomy-table th {
+        background: var(--white);
+        color: #000000;
+    }
+
+    .practice-box,
+    .info-box {
+        background: var(--white);
+        border: 1px solid #000000;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header class="site-header">
+
+    <div class="header-inner">
+
+        <a
+            class="logo"
+            href="../index.html"
+            aria-label="ZPCI – przejdź do strony głównej"
+        >
+
+            <img
+                class="logo-image"
+                src="../images/logo+zdjecia/logotypy/2_Logotypy_okrag.png"
+                alt="Logo Zachodniopomorskiego Centrum Informatyki"
+                width="200"
+                height="200"
+            >
+
+            <div class="logo-text">
+
+                <strong>
+                    Zachodniopomorskie Centrum Informatyki
+                </strong>
+
+                <span>
+                    Szkolenia komputerowe i usługi informatyczne
+                </span>
+
+            </div>
+
+        </a>
+
+        <div class="header-course">
+
+            <p>Szkolenie programistyczne</p>
+
+            <h1>C# / C Sharp</h1>
+
+        </div>
+
+    </div>
+
+</header>
+
+<nav
+    class="main-nav"
+    aria-label="Menu główne"
+>
+
+    <div class="nav-inner">
+
+        <a href="../index.html">
+            Strona główna
+        </a>
+
+        <a href="../szkoleniakursy.html">
+            Szkolenia / Kursy
+        </a>
+
+        <a href="../uslugit.html">
+            Usługi IT
+        </a>
+
+        <a href="../kontakt.html">
+            Kontakt
+        </a>
+
+    </div>
+
+</nav>
+
+<main>
+
+    <article class="container">
+
+        <!-- BANER SZKOLENIA -->
+
+        <div class="banner-wrapper">
+
+            <img
+                src="../images/szkolenieC%23.png"
+                alt="Szkolenie z programowania w języku C Sharp"
+                class="training-banner"
+                width="1200"
+                height="750"
+                loading="eager"
+                fetchpriority="high"
+                decoding="async"
+            >
+
+        </div>
+
+        <!-- PRZYCISKI -->
+
+        <div class="button-row">
+
+            <button
+                class="button button-home"
+                type="button"
+                onclick="window.print()"
+            >
+                Drukuj program
+            </button>
+
+            <a
+                class="button button-register"
+                href="zapis-na-szkolenie.html"
+            >
+                Zapisz się na szkolenie
+            </a>
+
+            <a
+                class="button button-price"
+                href="cennik-szkolen.html"
+            >
+                Cennik szkoleń
+            </a>
+
+        </div>
+
+        <!-- DLA KOGO -->
+
+        <section>
+
+            <h2>Kogo zapraszamy?</h2>
+
+            <p>
+                Szkolenie przeznaczone jest dla wszystkich osób
+                chcących rozpocząć naukę programowania w języku
+                <strong>C#</strong>.
+            </p>
+
+            <p>
+                Uczestnik zdobywa praktyczne umiejętności tworzenia
+                aplikacji od podstaw oraz pracy z nowoczesnym językiem
+                programowania obiektowego.
+            </p>
+
+            <p>
+                Kurs jest przeznaczony dla osób początkujących,
+                uczniów, studentów, pracowników firm oraz wszystkich,
+                którzy chcą poznać środowisko Visual C# i tworzyć
+                własne aplikacje.
+            </p>
+
+        </section>
+
+        <!-- ORGANIZACJA -->
+
+        <section>
+
+            <h2>Termin, organizacja i metodyka szkolenia</h2>
+
+            <div class="organization-grid">
+
+                <article class="organization-card">
+
+                    <h3>Forma szkolenia</h3>
+
+                    <p>
+                        Zajęcia realizowane są w trybie indywidualnym
+                        lub dla grup zorganizowanych.
+                    </p>
+
+                </article>
+
+                <article class="organization-card">
+
+                    <h3>Terminy</h3>
+
+                    <p>
+                        Terminy ustalane są indywidualnie i dopasowywane
+                        do potrzeb oraz dostępności uczestników.
+                    </p>
+
+                </article>
+
+                <article class="organization-card">
+
+                    <h3>Metodyka</h3>
+
+                    <p>
+                        Szkolenie prowadzone jest w formie praktycznych
+                        ćwiczeń programistycznych wykonywanych przy komputerze.
+                    </p>
+
+                </article>
+
+            </div>
+
+            <p>
+                Zapraszamy osoby prywatne, pracowników firm,
+                przedstawicieli instytucji, uczniów i studentów.
+            </p>
+
+        </section>
+
+        <!-- KWALIFIKACJE -->
+
+        <section>
+
+            <h2>Kwalifikacje po ukończeniu szkolenia</h2>
+
+            <p>
+                Po zakończeniu szkolenia uczestnik otrzymuje certyfikat
+                w języku polskim i angielskim.
+            </p>
+
+            <p>
+                Możliwe jest również przygotowanie certyfikatu
+                w innych wersjach językowych.
+            </p>
+
+            <p>
+                Uczestnik zdobywa praktyczne umiejętności projektowania,
+                pisania, uruchamiania, testowania i debugowania aplikacji
+                tworzonych w języku C#.
+            </p>
+
+        </section>
+
+        <!-- PROGRAM -->
+
+        <section>
+
+            <h2>Przykładowe zagadnienia szkolenia</h2>
+
+            <ul class="program-list">
+
+                <li>Wprowadzenie do języka C#</li>
+
+                <li>Środowisko Visual Studio</li>
+
+                <li>Tworzenie pierwszego projektu</li>
+
+                <li>Budowa i uruchamianie aplikacji</li>
+
+                <li>Składnia języka C#</li>
+
+                <li>Typy danych i zmienne</li>
+
+                <li>Stałe i operatory</li>
+
+                <li>Konwersja typów danych</li>
+
+                <li>Wprowadzanie i wyprowadzanie danych</li>
+
+                <li>Instrukcje warunkowe</li>
+
+                <li>Instrukcja switch</li>
+
+                <li>Pętle i kontrola przepływu</li>
+
+                <li>Pętla for</li>
+
+                <li>Pętla while</li>
+
+                <li>Pętla do while</li>
+
+                <li>Tablice jednowymiarowe</li>
+
+                <li>Tablice wielowymiarowe</li>
+
+                <li>Kolekcje danych</li>
+
+                <li>Listy i słowniki</li>
+
+                <li>Metody i parametry</li>
+
+                <li>Wartości zwracane przez metody</li>
+
+                <li>Przeciążanie metod</li>
+
+                <li>Programowanie obiektowe</li>
+
+                <li>Klasy i obiekty</li>
+
+                <li>Pola i właściwości</li>
+
+                <li>Metody klas</li>
+
+                <li>Konstruktory</li>
+
+                <li>Hermetyzacja danych</li>
+
+                <li>Dziedziczenie i hierarchia klas</li>
+
+                <li>Polimorfizm</li>
+
+                <li>Interfejsy</li>
+
+                <li>Klasy abstrakcyjne</li>
+
+                <li>Przestrzenie nazw</li>
+
+                <li>Struktury</li>
+
+                <li>Typy wyliczeniowe</li>
+
+                <li>Obsługa wyjątków</li>
+
+                <li>Operacje na plikach</li>
+
+                <li>Tworzenie aplikacji GUI</li>
+
+                <li>Obsługa kontrolek formularza</li>
+
+                <li>Obsługa zdarzeń</li>
+
+                <li>Obsługa obiektów zewnętrznych</li>
+
+                <li>Debugowanie aplikacji</li>
+
+                <li>Analiza i poprawianie kodu</li>
+
+                <li>Dobre praktyki programistyczne</li>
+
+                <li>Organizacja projektu</li>
+
+                <li>Projekt własnej aplikacji</li>
+
+            </ul>
+
+        </section>
+
+        <!-- TAKSONOMIA -->
+
+        <section>
+
+            <h2>Taksonomia efektów kształcenia</h2>
+
+            <p class="taxonomy-intro">
+                Po ukończeniu szkolenia uczestnik osiąga efekty
+                kształcenia w zakresie wiedzy, rozumienia, praktycznego
+                stosowania, analizowania, oceniania oraz samodzielnego
+                tworzenia aplikacji w języku C#.
+            </p>
+
+            <div class="taxonomy-grid">
+
+                <article class="taxonomy-card">
+
+                    <h3>Uczestnik wie</h3>
+
+                    <ul>
+                        <li>czym jest język C# i platforma .NET,</li>
+                        <li>jak zbudowany jest projekt w Visual Studio,</li>
+                        <li>czym są typy danych, zmienne i operatory,</li>
+                        <li>jak działają instrukcje warunkowe i pętle,</li>
+                        <li>czym są klasy, obiekty i interfejsy,</li>
+                        <li>jak uruchamiany jest program w języku C#.</li>
+                    </ul>
+
+                </article>
+
+                <article class="taxonomy-card">
+
+                    <h3>Uczestnik rozumie</h3>
+
+                    <ul>
+                        <li>zasady programowania obiektowego,</li>
+                        <li>różnicę między klasą a obiektem,</li>
+                        <li>znaczenie hermetyzacji i dziedziczenia,</li>
+                        <li>sposób przekazywania danych do metod,</li>
+                        <li>zasady obsługi zdarzeń w aplikacji,</li>
+                        <li>znaczenie wyjątków i obsługi błędów.</li>
+                    </ul>
+
+                </article>
+
+                <article class="taxonomy-card">
+
+                    <h3>Uczestnik stosuje</h3>
+
+                    <ul>
+                        <li>zmienne, operatory i typy danych,</li>
+                        <li>instrukcje warunkowe oraz pętle,</li>
+                        <li>metody, parametry i wartości zwracane,</li>
+                        <li>tablice, listy i inne kolekcje,</li>
+                        <li>klasy, obiekty, właściwości i interfejsy,</li>
+                        <li>narzędzia Visual Studio do tworzenia kodu.</li>
+                    </ul>
+
+                </article>
+
+                <article class="taxonomy-card">
+
+                    <h3>Uczestnik analizuje</h3>
+
+                    <ul>
+                        <li>treść zadania programistycznego,</li>
+                        <li>strukturę projektu i zależności między klasami,</li>
+                        <li>przepływ danych w aplikacji,</li>
+                        <li>przyczyny błędów kompilacji,</li>
+                        <li>przyczyny nieprawidłowego działania programu,</li>
+                        <li>działanie przygotowanych metod i algorytmów.</li>
+                    </ul>
+
+                </article>
+
+                <article class="taxonomy-card">
+
+                    <h3>Uczestnik ocenia</h3>
+
+                    <ul>
+                        <li>poprawność działania aplikacji,</li>
+                        <li>czytelność i organizację kodu,</li>
+                        <li>zgodność programu z wymaganiami,</li>
+                        <li>dobór klas, metod i kolekcji,</li>
+                        <li>możliwość uproszczenia rozwiązania,</li>
+                        <li>jakość obsługi błędów i wyjątków.</li>
+                    </ul>
+
+                </article>
+
+                <article class="taxonomy-card">
+
+                    <h3>Uczestnik tworzy</h3>
+
+                    <ul>
+                        <li>własne projekty w środowisku Visual Studio,</li>
+                        <li>klasy i obiekty reprezentujące dane,</li>
+                        <li>aplikacje wykorzystujące kolekcje i pliki,</li>
+                        <li>interfejsy graficzne z obsługą zdarzeń,</li>
+                        <li>programy wykorzystujące dziedziczenie,</li>
+                        <li>aplikacje dostosowane do określonych wymagań.</li>
+                    </ul>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- TABELA TAKSONOMII -->
+
+        <section>
+
+            <h2>Poziomy taksonomii szkolenia</h2>
+
+            <div
+                class="table-wrapper"
+                role="region"
+                aria-label="Tabela poziomów taksonomii szkolenia C Sharp"
+                tabindex="0"
+            >
+
+                <table class="taxonomy-table">
+
+                    <thead>
+
+                        <tr>
+                            <th scope="col">Poziom</th>
+                            <th scope="col">Efekt kształcenia</th>
+                            <th scope="col">Przykład praktyczny</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>1. Wiedza</td>
+
+                            <td>
+                                Uczestnik zna podstawowe elementy
+                                języka C# i środowiska Visual Studio.
+                            </td>
+
+                            <td>
+                                Rozpoznaje zmienne, metody, klasy,
+                                obiekty, interfejsy i instrukcje sterujące.
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>2. Rozumienie</td>
+
+                            <td>
+                                Uczestnik rozumie sposób działania
+                                aplikacji obiektowej.
+                            </td>
+
+                            <td>
+                                Wyjaśnia zależności między klasami,
+                                obiektami, metodami i zdarzeniami.
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>3. Zastosowanie</td>
+
+                            <td>
+                                Uczestnik wykorzystuje elementy języka
+                                podczas pisania kodu.
+                            </td>
+
+                            <td>
+                                Tworzy program wykorzystujący metody,
+                                kolekcje, klasy i obsługę wyjątków.
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>4. Analiza</td>
+
+                            <td>
+                                Uczestnik analizuje strukturę kodu
+                                i przyczyny występujących błędów.
+                            </td>
+
+                            <td>
+                                Lokalizuje błąd logiczny, składniowy
+                                lub problem w obsłudze zdarzenia.
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>5. Ocena</td>
+
+                            <td>
+                                Uczestnik ocenia poprawność i jakość
+                                przygotowanego rozwiązania.
+                            </td>
+
+                            <td>
+                                Porównuje różne sposoby wykonania zadania
+                                i wybiera czytelniejsze rozwiązanie.
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>6. Tworzenie</td>
+
+                            <td>
+                                Uczestnik samodzielnie projektuje
+                                i wykonuje aplikację w języku C#.
+                            </td>
+
+                            <td>
+                                Przygotowuje projekt zawierający klasy,
+                                interfejs użytkownika i obsługę danych.
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+        <!-- ZASTOSOWANIE -->
+
+        <section class="practice-box">
+
+            <h2>Zastosowanie umiejętności w praktyce</h2>
+
+            <p>
+                Uczestnik potrafi samodzielnie utworzyć projekt
+                w środowisku Visual Studio, zaprojektować strukturę
+                programu, napisać kod oraz uruchomić aplikację.
+            </p>
+
+            <p>
+                Potrafi tworzyć klasy i obiekty, wykorzystywać metody,
+                kolekcje, instrukcje sterujące, obsługę wyjątków oraz
+                elementy graficznego interfejsu użytkownika.
+            </p>
+
+            <p>
+                Zdobyte umiejętności mogą być wykorzystane podczas
+                tworzenia aplikacji biurowych, narzędziowych,
+                edukacyjnych, bazodanowych oraz programów wspierających
+                zadania wykonywane w pracy.
+            </p>
+
+        </section>
+
+        <!-- INFORMACJE DODATKOWE -->
+
+        <section class="info-box">
+
+            <h2>Dodatkowe informacje</h2>
+
+            <p>
+                W celu uzyskania szczegółowego programu szkolenia
+                prosimy o kontakt:
+            </p>
+
+            <p>
+                <a href="mailto:biuro@zpci.pl">
+                    biuro@zpci.pl
+                </a>
+            </p>
+
+            <p>
+                Program szkolenia może zostać dopasowany do poziomu
+                wiedzy, potrzeb uczestnika oraz rodzaju projektów,
+                które chce wykonywać.
+            </p>
+
+            <hr>
+
+            <div class="training-details">
+
+                <article class="detail-card">
+
+                    <h3>Czas trwania</h3>
+
+                    <ul>
+
+                        <li>
+                            Grupy zorganizowane:
+                            <strong>30 godzin</strong>
+                        </li>
+
+                        <li>
+                            Szkolenia indywidualne:
+                            <strong>18 godzin</strong>
+                        </li>
+
+                    </ul>
+
+                </article>
+
+                <article class="detail-card">
+
+                    <h3>Cena szkolenia</h3>
+
+                    <p class="price">
+                        949 zł
+                    </p>
+
+                    <p class="price-note">
+                        Na życzenie wystawiamy fakturę VAT.
+                    </p>
+
+                </article>
+
+            </div>
+
+            <div class="button-row">
+
+                <a
+                    class="button button-register"
+                    href="zapis-na-szkolenie.html"
+                >
+                    Zapisz się na szkolenie
+                </a>
+
+                <a
+                    class="button button-price"
+                    href="cennik-szkolen.html"
+                >
+                    Zobacz cennik szkoleń
+                </a>
+
+                <a
+                    class="button button-home"
+                    href="../index.html"
+                >
+                    Powrót do strony głównej
+                </a>
+
+            </div>
+
+        </section>
+
+    </article>
+
+</main>
+
+<footer>
+
+    <p>
+        &copy;
+        <span id="year"></span>
+        Zachodniopomorskie Centrum Informatyki.
+        Wszelkie prawa zastrzeżone.
+    </p>
+
+</footer>
+
+<script>
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        E-learning w edukacji | Zachodniopomorskie Centrum Informatyki
+    </title>
+
+    <meta
+        name="description"
+        content="Praktyczne szkolenie z wykorzystania e-learningu w edukacji. Tworzenie materiałów online, prowadzenie zajęć zdalnych i obsługa platform edukacyjnych."
+    >
+
+    <style>
+        :root {
+            --primary: #1f5fa8;
+            --primary-dark: #0b2148;
+            --primary-light: #eaf3ff;
+            --accent: #f2b705;
+            --accent-hover: #ffd34a;
+            --background: #f4f7fb;
+            --white: #ffffff;
+            --text: #263238;
+            --muted: #5e6b78;
+            --border: #dce5ef;
+            --radius: 18px;
+            --shadow: 0 14px 36px rgba(11, 33, 72, 0.11);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            overflow-x: hidden;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px;
+            line-height: 1.7;
+            background: var(--background);
+            color: var(--text);
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: calc(100% - 40px);
+            max-width: 1120px;
+            margin: 0 auto;
+        }
+
+        /* =========================
+           NAGŁÓWEK
+        ========================= */
+
+        .site-header {
+            position: relative;
+            overflow: hidden;
+            padding: 42px 20px;
+            background:
+                radial-gradient(
+                    circle at 85% 20%,
+                    rgba(255, 255, 255, 0.12),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    135deg,
+                    var(--primary-dark),
+                    var(--primary)
+                );
+            color: var(--white);
+            text-align: center;
+        }
+
+        .site-header::before {
+            content: "";
+            position: absolute;
+            top: -120px;
+            right: -90px;
+            width: 330px;
+            height: 330px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .site-header h1 {
+            margin-bottom: 8px;
+            font-size: clamp(28px, 5vw, 44px);
+            line-height: 1.15;
+        }
+
+        .site-header p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: clamp(17px, 2.5vw, 21px);
+        }
+
+        /* =========================
+           NAWIGACJA
+        ========================= */
+
+        .main-nav {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            background: #071b37;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.18);
+        }
+
+        .nav-inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .main-nav a {
+            display: flex;
+            min-height: 54px;
+            align-items: center;
+            justify-content: center;
+            padding: 13px 20px;
+            color: var(--white);
+            font-size: 16px;
+            font-weight: 700;
+            text-align: center;
+            transition:
+                background-color 0.2s ease,
+                color 0.2s ease;
+        }
+
+        .main-nav a:hover,
+        .main-nav a:focus-visible {
+            background: var(--accent);
+            color: var(--primary-dark);
+        }
+
+        .main-nav a:focus-visible,
+        .btn:focus-visible,
+        summary:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: -3px;
+        }
+
+        /* =========================
+           BANER
+        ========================= */
+
+        .banner-section {
+            padding: 32px 0 0;
+        }
+
+        .banner-box {
+            overflow: hidden;
+            border: 5px solid var(--white);
+            border-radius: 20px;
+            background: var(--white);
+            box-shadow: 0 18px 46px rgba(11, 33, 72, 0.2);
+        }
+
+        .banner-box img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* =========================
+           GŁÓWNA ZAWARTOŚĆ
+        ========================= */
+
+        main {
+            padding: 32px 0 50px;
+        }
+
+        .content-box {
+            padding: 42px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background: var(--white);
+            box-shadow: var(--shadow);
+        }
+
+        .intro {
+            margin-bottom: 34px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .intro h2 {
+            margin-bottom: 14px;
+            color: var(--primary-dark);
+            font-size: clamp(28px, 4vw, 40px);
+            line-height: 1.2;
+        }
+
+        .intro p {
+            max-width: 900px;
+            color: var(--muted);
+            font-size: 19px;
+        }
+
+        .section {
+            margin-top: 38px;
+        }
+
+        .section h2 {
+            margin-bottom: 18px;
+            color: var(--primary-dark);
+            font-size: clamp(24px, 3vw, 31px);
+            line-height: 1.3;
+        }
+
+        .section p {
+            color: var(--muted);
+        }
+
+        /* =========================
+           KARTY TEMATYCZNE
+        ========================= */
+
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+            list-style: none;
+        }
+
+        .topics-grid li {
+            position: relative;
+            min-height: 86px;
+            padding: 20px 20px 20px 58px;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            background: #f9fbfe;
+        }
+
+        .topics-grid li::before {
+            content: "\2713";
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            width: 25px;
+            height: 25px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: var(--primary);
+            color: var(--white);
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        /* =========================
+           INFORMACJE
+        ========================= */
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px;
+            margin-top: 38px;
+        }
+
+        .info-card {
+            padding: 28px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background: var(--primary-light);
+        }
+
+        .info-card h2 {
+            margin-bottom: 14px;
+            color: var(--primary-dark);
+            font-size: 25px;
+        }
+
+        .info-card p {
+            color: #455463;
+        }
+
+        /* =========================
+           EFEKTY SZKOLENIA
+        ========================= */
+
+        .outcomes {
+            padding: 30px;
+            border: 1px solid #cfddec;
+            border-radius: var(--radius);
+            background:
+                linear-gradient(
+                    135deg,
+                    #edf5ff,
+                    #ffffff
+                );
+        }
+
+        .outcomes-list {
+            display: grid;
+            gap: 12px;
+            list-style: none;
+        }
+
+        .outcomes-list li {
+            position: relative;
+            padding: 15px 16px 15px 50px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: var(--white);
+        }
+
+        .outcomes-list li::before {
+            content: "\2713";
+            position: absolute;
+            top: 14px;
+            left: 16px;
+            display: flex;
+            width: 24px;
+            height: 24px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: var(--primary);
+            color: var(--white);
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .outcomes-list strong {
+            color: var(--primary-dark);
+        }
+
+        /* =========================
+           PRZYCISK I CTA
+        ========================= */
+
+        .cta-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 26px;
+            margin-top: 40px;
+            padding: 28px;
+            border-left: 6px solid var(--accent);
+            border-radius: 14px;
+            background: #eef4fb;
+        }
+
+        .cta-box h2 {
+            margin-bottom: 5px;
+            color: var(--primary-dark);
+            font-size: 26px;
+        }
+
+        .cta-box p {
+            color: var(--muted);
+        }
+
+        .btn {
+            display: inline-flex;
+            min-height: 50px;
+            flex-shrink: 0;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 24px;
+            border: 2px solid transparent;
+            border-radius: 999px;
+            background: var(--primary);
+            color: var(--white);
+            font-weight: 700;
+            line-height: 1.2;
+            text-align: center;
+            transition:
+                background-color 0.2s ease,
+                transform 0.2s ease;
+        }
+
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* =========================
+           STOPKA
+        ========================= */
+
+        footer {
+            padding: 27px 20px;
+            background: var(--primary-dark);
+            color: rgba(255, 255, 255, 0.85);
+            text-align: center;
+        }
+
+        footer strong {
+            color: var(--white);
+        }
+
+        /* =========================
+           TABLETY
+        ========================= */
+
+        @media (max-width: 820px) {
+            .container {
+                width: calc(100% - 28px);
+            }
+
+            .content-box {
+                padding: 32px 24px;
+            }
+
+            .topics-grid,
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-box {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .cta-box .btn {
+                width: 100%;
+            }
+        }
+
+        /* =========================
+           TELEFONY
+        ========================= */
+
+        @media (max-width: 600px) {
+            body {
+                font-size: 17px;
+            }
+
+            .container {
+                width: calc(100% - 20px);
+            }
+
+            .site-header {
+                padding: 34px 14px;
+            }
+
+            .nav-inner {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .main-nav a {
+                min-height: 50px;
+                padding: 11px 8px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+                font-size: 14px;
+            }
+
+            .banner-section {
+                padding-top: 20px;
+            }
+
+            .banner-box {
+                border-width: 3px;
+                border-radius: 13px;
+            }
+
+            main {
+                padding-top: 20px;
+            }
+
+            .content-box {
+                padding: 25px 17px;
+                border-radius: 14px;
+            }
+
+            .intro p {
+                font-size: 17px;
+            }
+
+            .topics-grid li {
+                padding: 18px 15px 18px 52px;
+            }
+
+            .topics-grid li::before {
+                top: 18px;
+                left: 16px;
+            }
+
+            .info-card,
+            .outcomes,
+            .cta-box {
+                padding: 22px 18px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .nav-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .main-nav a {
+                min-height: 46px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="header-content">
+            <h1>Zachodniopomorskie Centrum Informatyki</h1>
+            <p>Praktyczne szkolenia informatyczne</p>
+        </div>
+    </header>
+
+    <nav class="main-nav" aria-label="Główna nawigacja">
+        <div class="container nav-inner">
+            <a href="../index.html">
+                Strona g&lstrok;&oacute;wna
+            </a>
+
+            <a href="../szkoleniakursy.html">
+                Szkolenia / Kursy
+            </a>
+
+            <a href="../uslugit.html">
+                Us&lstrok;ugi IT
+            </a>
+
+            <a href="../kontakt.html">
+                Kontakt
+            </a>
+        </div>
+    </nav>
+
+    <!-- BANER SZKOLENIA -->
+    <section
+        class="banner-section"
+        aria-label="Baner szkolenia e-learning"
+    >
+        <div class="container">
+            <div class="banner-box">
+                <img
+                    src="../images/szkoleniee-learning.png"
+                    alt="Szkolenie e-learning z wykorzystania nowoczesnych narzędzi edukacyjnych"
+                    width="1680"
+                    height="896"
+                    loading="eager"
+                    fetchpriority="high"
+                >
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <div class="container">
+
+            <article class="content-box">
+
+                <section class="intro">
+                    <h2>E-learning w edukacji</h2>
+
+                    <p>
+                        Szkolenie przeznaczone jest dla os&oacute;b
+                        zainteresowanych wykorzystaniem nowoczesnych
+                        technologii informacyjnych w procesie nauczania
+                        i organizacji edukacji.
+                    </p>
+                </section>
+
+                <section class="section" id="program">
+                    <h2>Zakres szkolenia</h2>
+
+                    <ul class="topics-grid">
+                        <li>
+                            Podstawy nauczania z wykorzystaniem platform
+                            internetowych
+                        </li>
+
+                        <li>
+                            Tworzenie i organizacja materia&lstrok;&oacute;w
+                            edukacyjnych online
+                        </li>
+
+                        <li>
+                            Komunikacja z uczestnikami kurs&oacute;w przez
+                            Internet
+                        </li>
+
+                        <li>
+                            Narz&eogon;dzia do prowadzenia szkole&nacute;
+                            zdalnych
+                        </li>
+
+                        <li>
+                            Przygotowanie materia&lstrok;&oacute;w
+                            multimedialnych
+                        </li>
+
+                        <li>
+                            Bezpiecze&nacute;stwo i organizacja pracy
+                            w &sacute;rodowisku cyfrowym
+                        </li>
+
+                        <li>
+                            Planowanie struktury kursu internetowego
+                        </li>
+
+                        <li>
+                            Organizowanie test&oacute;w, zada&nacute;
+                            i materia&lstrok;&oacute;w dodatkowych
+                        </li>
+                    </ul>
+                </section>
+
+                <div class="info-grid">
+
+                    <section class="info-card">
+                        <h2>Dla kogo?</h2>
+
+                        <p>
+                            Szkolenie skierowane jest do nauczycieli,
+                            trener&oacute;w, wyk&lstrok;adowc&oacute;w,
+                            pracownik&oacute;w plac&oacute;wek edukacyjnych
+                            oraz os&oacute;b chc&aogon;cych wykorzystać
+                            e-learning w swojej pracy.
+                        </p>
+                    </section>
+
+                    <section class="info-card">
+                        <h2>Forma szkolenia</h2>
+
+                        <p>
+                            Zajęcia mają formę praktycznych
+                            warsztat&oacute;w. Uczestnicy poznają narzędzia
+                            potrzebne do przygotowywania kurs&oacute;w,
+                            materiał&oacute;w i zajęć prowadzonych przez
+                            Internet.
+                        </p>
+                    </section>
+
+                </div>
+
+                <section class="section outcomes">
+                    <h2>Efekty szkolenia</h2>
+
+                    <ul class="outcomes-list">
+                        <li>
+                            <strong>Wie,</strong> czym jest e-learning
+                            i jak można wykorzystywać go w edukacji.
+                        </li>
+
+                        <li>
+                            <strong>Rozumie,</strong> zasady organizowania
+                            nauczania zdalnego i pracy z uczestnikami kursu.
+                        </li>
+
+                        <li>
+                            <strong>Umie</strong> przygotować
+                            materia&lstrok;y edukacyjne dostępne przez
+                            Internet.
+                        </li>
+
+                        <li>
+                            <strong>Potrafi</strong> korzystać
+                            z narz&eogon;dzi wspieraj&aogon;cych naukę
+                            zdaln&aogon;.
+                        </li>
+
+                        <li>
+                            <strong>Potrafi</strong> zaplanować strukturę
+                            kursu, lekcji i materiał&oacute;w
+                            multimedialnych.
+                        </li>
+
+                        <li>
+                            <strong>Umie</strong> bezpiecznie organizować
+                            pracę w &sacute;rodowisku cyfrowym.
+                        </li>
+                    </ul>
+                </section>
+
+                <div class="cta-box">
+
+                    <div>
+                        <h2>Zapisz się na szkolenie</h2>
+
+                        <p>
+                            Poznaj nowoczesne metody prowadzenia zajęć
+                            i przygotowywania materiał&oacute;w edukacyjnych
+                            online.
+                        </p>
+                    </div>
+
+                    <a
+                        class="btn"
+                        href="../zapisnaszkolenie.html"
+                    >
+                        Zapisz się na szkolenie
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>
+            <strong>Zachodniopomorskie Centrum Informatyki</strong>
+        </p>
+
+        <p>
+            &copy; <span id="year"></span> ZPCI
+            &ndash; szkolenia informatyczne
+        </p>
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+    </script>
+
+</body>
+</html>

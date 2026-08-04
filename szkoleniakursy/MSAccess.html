@@ -1,0 +1,1462 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Szkolenie MS Access – projektowanie baz danych | ZPCI Szczecin</title>
+
+<meta name="description" content="Praktyczne szkolenie MS Access w Szczecinie. Projektowanie relacyjnych baz danych, tabele, relacje, formularze, raporty, kwerendy SQL, makra i podstawy VBA.">
+<meta name="keywords" content="szkolenie MS Access, kurs MS Access, Microsoft Access Szczecin, projektowanie baz danych, relacyjne bazy danych, formularze Access, raporty Access, kwerendy SQL, VBA Access, ZPCI">
+<meta name="author" content="Zachodniopomorskie Centrum Informatyki">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#65070c">
+
+<link rel="canonical" href="https://www.zpci.pl/szkoleniakursy/ms-access.html">
+
+<!-- OPEN GRAPH -->
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:site_name" content="ZPCI">
+
+<meta
+    property="og:title"
+    content="Szkolenie MS Access – projektowanie baz danych | ZPCI Szczecin"
+>
+
+<meta
+    property="og:description"
+    content="Praktyczny kurs Microsoft Access: tabele, relacje, formularze, raporty, kwerendy SQL, makra i podstawy VBA."
+>
+
+<meta
+    property="og:url"
+    content="https://www.zpci.pl/szkoleniakursy/ms-access.html"
+>
+
+<meta
+    property="og:image"
+    content="https://www.zpci.pl/images/szkoleniemsaccess.png"
+>
+
+<meta
+    property="og:image:alt"
+    content="Szkolenie Microsoft Access w Zachodniopomorskim Centrum Informatyki"
+>
+
+<!-- X / TWITTER -->
+
+<meta name="twitter:card" content="summary_large_image">
+
+<meta
+    name="twitter:title"
+    content="Szkolenie MS Access | ZPCI Szczecin"
+>
+
+<meta
+    name="twitter:description"
+    content="Projektowanie i obsługa relacyjnych baz danych Microsoft Access – tabele, relacje, formularze, raporty, SQL, makra i VBA."
+>
+
+<meta
+    name="twitter:image"
+    content="https://www.zpci.pl/images/szkoleniemsaccess.png"
+>
+
+<!-- DANE STRUKTURALNE SEO -->
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "EducationalOrganization",
+            "@id": "https://www.zpci.pl/#organization",
+            "name": "Zachodniopomorskie Centrum Informatyki",
+            "alternateName": "ZPCI",
+            "url": "https://www.zpci.pl/",
+            "email": "biuro@zpci.pl"
+        },
+        {
+            "@type": "Course",
+            "@id": "https://www.zpci.pl/szkoleniakursy/ms-access.html#course",
+            "name": "Szkolenie MS Access – projektowanie relacyjnych baz danych",
+            "description": "Praktyczne szkolenie z Microsoft Access obejmujące projektowanie tabel i relacji, formularze, raporty, kwerendy SQL, import i eksport danych, makra oraz podstawy VBA.",
+            "url": "https://www.zpci.pl/szkoleniakursy/ms-access.html",
+            "image": "https://www.zpci.pl/images/szkoleniemsaccess.png",
+            "inLanguage": "pl-PL",
+            "educationalLevel": "Poziom podstawowy i średnio zaawansowany",
+            "provider": {
+                "@id": "https://www.zpci.pl/#organization"
+            },
+            "offers": {
+                "@type": "Offer",
+                "price": "399.00",
+                "priceCurrency": "PLN",
+                "availability": "https://schema.org/InStock",
+                "url": "https://www.zpci.pl/szkoleniakursy/ms-access.html"
+            }
+        },
+        {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Strona główna",
+                    "item": "https://www.zpci.pl/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Szkolenia i kursy",
+                    "item": "https://www.zpci.pl/szkoleniakursy.html"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "MS Access",
+                    "item": "https://www.zpci.pl/szkoleniakursy/ms-access.html"
+                }
+            ]
+        }
+    ]
+}
+</script>
+
+<style>
+
+:root {
+    --primary: #9d1018;
+    --primary-dark: #65070c;
+    --primary-medium: #c62828;
+    --primary-light: #fff1f2;
+    --accent: #f2b705;
+    --accent-hover: #ffd447;
+    --white: #ffffff;
+    --background: #f4f6f8;
+    --text: #29333d;
+    --muted: #5d6976;
+    --border: #ead8d9;
+    --green: #24845c;
+    --blue: #2878b5;
+    --shadow: 0 15px 38px rgba(101, 7, 12, 0.12);
+    --shadow-hover: 0 22px 46px rgba(101, 7, 12, 0.2);
+}
+
+/* RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    background:
+        linear-gradient(
+            135deg,
+            #fff1f2 0%,
+            #f8fafc 50%,
+            #ffffff 100%
+        );
+    color: var(--text);
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.page-container {
+    width: calc(100% - 40px);
+    max-width: 1160px;
+    margin: 0 auto;
+}
+
+/* NAGŁÓWEK Z LOGO */
+
+.site-header {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            circle at 88% 18%,
+            rgba(255, 255, 255, 0.13),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            var(--primary-dark),
+            var(--primary-medium)
+        );
+    color: var(--white);
+}
+
+.site-header::before {
+    content: "";
+    position: absolute;
+    top: -155px;
+    right: -100px;
+    width: 390px;
+    height: 390px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.header-inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    min-height: 145px;
+    margin: 0 auto;
+    padding: 24px 25px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.logo {
+    display: flex;
+    min-width: 0;
+    align-items: center;
+    gap: 16px;
+    color: var(--white);
+}
+
+.logo-image {
+    width: 88px;
+    height: 88px;
+    flex: 0 0 88px;
+    object-fit: contain;
+    border-radius: 50%;
+    background: var(--white);
+    box-shadow: 0 6px 19px rgba(0, 0, 0, 0.25);
+}
+
+.logo-text {
+    min-width: 0;
+}
+
+.logo-text strong {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--white);
+    font-size: clamp(1.35rem, 3vw, 2rem);
+    line-height: 1.2;
+}
+
+.logo-text span {
+    display: block;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+}
+
+.header-course {
+    max-width: 470px;
+    padding-left: 24px;
+    border-left: 1px solid rgba(255, 255, 255, 0.25);
+    text-align: right;
+}
+
+.header-course p {
+    margin-bottom: 5px;
+    color: rgba(255, 255, 255, 0.86);
+    font-size: 0.92rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.header-course h1 {
+    color: var(--white);
+    font-size: clamp(1.55rem, 3vw, 2.45rem);
+    line-height: 1.2;
+}
+
+/* NAWIGACJA */
+
+.main-nav {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background: #4d070a;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.2);
+}
+
+.nav-inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.main-nav a {
+    display: flex;
+    min-height: 54px;
+    align-items: center;
+    justify-content: center;
+    padding: 13px 22px;
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.main-nav a:hover,
+.main-nav a:focus-visible {
+    background: var(--accent);
+    color: var(--primary-dark);
+}
+
+.main-nav a:focus-visible,
+.btn:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+}
+
+/* BANER */
+
+.banner-section {
+    padding: 32px 0 0;
+}
+
+.banner-box {
+    overflow: hidden;
+    border: 5px solid var(--white);
+    border-radius: 23px;
+    background: var(--white);
+    box-shadow: 0 21px 50px rgba(101, 7, 12, 0.2);
+}
+
+.banner-box img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* GŁÓWNA TREŚĆ */
+
+main {
+    padding: 32px 0 58px;
+}
+
+.content-box {
+    padding: 42px;
+    border: 1px solid var(--border);
+    border-radius: 23px;
+    background: var(--white);
+    box-shadow: var(--shadow);
+}
+
+.intro {
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+}
+
+.intro h2 {
+    margin-bottom: 17px;
+    color: var(--primary-dark);
+    font-size: clamp(30px, 4.5vw, 44px);
+    line-height: 1.2;
+}
+
+.intro p {
+    max-width: 900px;
+    margin: 0 auto 14px;
+    color: var(--muted);
+}
+
+.content-section {
+    margin-top: 42px;
+}
+
+.content-section > h2 {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--primary);
+    color: var(--primary-dark);
+    font-size: clamp(25px, 3.2vw, 33px);
+    line-height: 1.3;
+}
+
+.taxonomy-intro {
+    margin-bottom: 25px;
+    color: var(--muted);
+}
+
+/* PROGRAM SZKOLENIA */
+
+.program-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px 18px;
+}
+
+.program-card {
+    position: relative;
+    min-height: 78px;
+    padding: 17px 17px 17px 56px;
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #fff5f5
+        );
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.program-card:hover {
+    border-color: #d7aeb1;
+    box-shadow: 0 10px 24px rgba(101, 7, 12, 0.1);
+    transform: translateY(-3px);
+}
+
+.program-card::before {
+    content: "?";
+    position: absolute;
+    top: 18px;
+    left: 17px;
+    display: flex;
+    width: 26px;
+    height: 26px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--primary);
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.program-card h3 {
+    margin-bottom: 4px;
+    color: var(--primary-dark);
+    font-size: 19px;
+    line-height: 1.3;
+}
+
+.program-card p {
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.55;
+}
+
+/* TAKSONOMIA */
+
+.taxonomy-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 19px;
+}
+
+.taxonomy-card {
+    padding: 25px 21px;
+    border: 1px solid var(--border);
+    border-top: 5px solid var(--primary);
+    border-radius: 15px;
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff,
+            #fff8f8
+        );
+    box-shadow: 0 9px 24px rgba(101, 7, 12, 0.08);
+    transition:
+        transform 0.22s ease,
+        box-shadow 0.22s ease;
+}
+
+.taxonomy-card:nth-child(2) {
+    border-top-color: var(--blue);
+}
+
+.taxonomy-card:nth-child(3) {
+    border-top-color: var(--accent);
+}
+
+.taxonomy-card:nth-child(4) {
+    border-top-color: var(--green);
+}
+
+.taxonomy-card:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-5px);
+}
+
+.taxonomy-card h3 {
+    margin-bottom: 15px;
+    color: var(--primary-dark);
+    font-size: 24px;
+    line-height: 1.25;
+}
+
+.taxonomy-card ul {
+    padding-left: 21px;
+}
+
+.taxonomy-card li {
+    margin-bottom: 10px;
+    color: var(--muted);
+}
+
+/* DLA KOGO */
+
+.audience-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 19px;
+}
+
+.audience-card {
+    padding: 25px 21px;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    background: #fff8f8;
+    text-align: center;
+}
+
+.audience-icon {
+    display: flex;
+    width: 54px;
+    height: 54px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    border-radius: 15px;
+    background: var(--primary);
+    color: var(--white);
+    font-size: 25px;
+}
+
+.audience-card h3 {
+    margin-bottom: 8px;
+    color: var(--primary-dark);
+    font-size: 20px;
+}
+
+.audience-card p {
+    color: var(--muted);
+    font-size: 16px;
+}
+
+/* INFORMACJE DODATKOWE */
+
+.details-box {
+    margin-top: 42px;
+    padding: 30px;
+    border-left: 6px solid var(--primary);
+    border-radius: 16px;
+    background: var(--primary-light);
+}
+
+.details-box h2 {
+    margin-bottom: 15px;
+    color: var(--primary-dark);
+    font-size: clamp(25px, 3vw, 32px);
+    line-height: 1.3;
+}
+
+.details-box p {
+    margin-bottom: 13px;
+    color: #515e69;
+}
+
+.price-box {
+    display: flex;
+    margin-top: 22px;
+    padding: 22px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    border: 1px solid #e1c4c6;
+    border-radius: 14px;
+    background: var(--white);
+}
+
+.price-label {
+    color: var(--muted);
+    font-size: 16px;
+}
+
+.price {
+    color: var(--primary-dark);
+    font-size: clamp(33px, 5vw, 46px);
+    font-weight: 800;
+    line-height: 1.1;
+    white-space: nowrap;
+}
+
+/* PRZYCISKI */
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 38px;
+}
+
+.btn {
+    display: inline-flex;
+    min-height: 52px;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 27px;
+    border: 2px solid transparent;
+    border-radius: 999px;
+    background: var(--accent);
+    color: var(--primary-dark);
+    font-weight: 800;
+    line-height: 1.2;
+    text-align: center;
+    box-shadow: 0 9px 22px rgba(242, 183, 5, 0.25);
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.btn:hover {
+    background: var(--accent-hover);
+    box-shadow: 0 13px 28px rgba(242, 183, 5, 0.32);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: var(--primary);
+    color: var(--white);
+    box-shadow: 0 9px 22px rgba(157, 16, 24, 0.23);
+}
+
+.btn-secondary:hover {
+    background: var(--primary-dark);
+}
+
+/* STOPKA */
+
+footer {
+    padding: 28px 20px;
+    background: #2d080a;
+    color: rgba(255, 255, 255, 0.87);
+    text-align: center;
+}
+
+footer p + p {
+    margin-top: 5px;
+}
+
+/* RESPONSYWNOŚĆ */
+
+@media (max-width: 1050px) {
+
+    .taxonomy-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 850px) {
+
+    body {
+        font-size: 17px;
+    }
+
+    .header-inner {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .logo {
+        justify-content: center;
+    }
+
+    .header-course {
+        max-width: 760px;
+        padding-top: 20px;
+        padding-left: 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.25);
+        border-left: 0;
+        text-align: center;
+    }
+
+    .page-container {
+        width: calc(100% - 28px);
+    }
+
+    .content-box {
+        padding: 32px 24px;
+    }
+
+    .audience-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 680px) {
+
+    .program-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .price-box {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .page-container {
+        width: calc(100% - 20px);
+    }
+
+    .header-inner {
+        min-height: auto;
+        padding: 25px 15px;
+    }
+
+    .logo {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+
+    .logo-image {
+        width: 76px;
+        height: 76px;
+        flex-basis: 76px;
+    }
+
+    .logo-text strong {
+        font-size: 1.35rem;
+    }
+
+    .logo-text span {
+        font-size: 0.92rem;
+    }
+
+    .header-course h1 {
+        font-size: 1.6rem;
+    }
+
+    .nav-inner {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .main-nav a {
+        min-height: 49px;
+        padding: 10px 8px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        font-size: 14px;
+    }
+
+    .banner-section {
+        padding-top: 20px;
+    }
+
+    .banner-box {
+        border-width: 3px;
+        border-radius: 14px;
+    }
+
+    main {
+        padding: 20px 0 38px;
+    }
+
+    .content-box {
+        padding: 24px 17px;
+        border-radius: 15px;
+    }
+
+    .taxonomy-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .taxonomy-card,
+    .details-box {
+        padding: 22px 18px;
+    }
+
+    .program-card {
+        min-height: auto;
+        padding-right: 14px;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    .buttons .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 390px) {
+
+    .nav-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .main-nav a {
+        min-height: 45px;
+    }
+
+    .logo-text strong {
+        font-size: 1.2rem;
+    }
+
+    .header-course h1 {
+        font-size: 1.4rem;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAGŁÓWEK Z LOGO -->
+
+<header class="site-header">
+
+    <div class="header-inner">
+
+        <a
+            class="logo"
+            href="../index.html"
+            aria-label="ZPCI – przejdź do strony głównej"
+        >
+
+            <img
+                class="logo-image"
+                src="../images/logo+zdjecia/logotypy/2_Logotypy_okrag.png"
+                alt="Logo Zachodniopomorskiego Centrum Informatyki"
+                width="200"
+                height="200"
+            >
+
+            <div class="logo-text">
+
+                <strong>
+                    Zachodniopomorskie Centrum Informatyki
+                </strong>
+
+                <span>
+                    Szkolenia komputerowe i usługi informatyczne
+                </span>
+
+            </div>
+
+        </a>
+
+        <div class="header-course">
+
+            <p>
+                Szkolenie z baz danych
+            </p>
+
+            <h1>
+                MS Access – projektowanie relacyjnych baz danych
+            </h1>
+
+        </div>
+
+    </div>
+
+</header>
+
+<!-- NAWIGACJA -->
+
+<nav
+    class="main-nav"
+    aria-label="Główna nawigacja"
+>
+
+    <div class="page-container nav-inner">
+
+        <a href="../index.html">
+            Strona główna
+        </a>
+
+        <a href="../szkoleniakursy.html">
+            Szkolenia / Kursy
+        </a>
+
+        <a href="../uslugit.html">
+            Usługi IT
+        </a>
+
+        <a href="../kontakt.html">
+            Kontakt
+        </a>
+
+    </div>
+
+</nav>
+
+<!-- BANER -->
+
+<section
+    class="banner-section"
+    aria-label="Baner szkolenia Microsoft Access"
+>
+
+    <div class="page-container">
+
+        <div class="banner-box">
+
+            <img
+                src="../images/szkoleniemsaccess.png"
+                alt="Szkolenie Microsoft Access – projektowanie relacyjnych baz danych w ZPCI Szczecin"
+                width="1200"
+                height="750"
+                loading="eager"
+                fetchpriority="high"
+                decoding="async"
+            >
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- GŁÓWNA TREŚĆ -->
+
+<main>
+
+    <div class="page-container">
+
+        <article class="content-box">
+
+            <section class="intro">
+
+                <h2>
+                    Szkolenie MS Access
+                </h2>
+
+                <p>
+                    Praktyczne szkolenie z programu Microsoft Access,
+                    podczas którego uczestnik poznaje zasady projektowania,
+                    tworzenia i obsługi relacyjnych baz danych.
+                </p>
+
+                <p>
+                    Kurs obejmuje tworzenie tabel, relacji, formularzy,
+                    raportów, kwerend oraz automatyzację pracy przy
+                    wykorzystaniu makr i podstaw języka VBA.
+                </p>
+
+            </section>
+
+            <!-- PROGRAM -->
+
+            <section class="content-section">
+
+                <h2>
+                    Zakres szkolenia
+                </h2>
+
+                <div class="program-grid">
+
+                    <article class="program-card">
+
+                        <h3>
+                            Projektowanie baz danych
+                        </h3>
+
+                        <p>
+                            Planowanie struktury bazy i organizacji
+                            przechowywanych informacji.
+                        </p>
+
+                    </article>
+
+                    <article class="program-card">
+
+                        <h3>
+                            Tworzenie tabel
+                        </h3>
+
+                        <p>
+                            Pola, typy danych, właściwości
+                            i reguły poprawności.
+                        </p>
+
+                    </article>
+
+                    <article class="program-card">
+
+                        <h3>
+                            Relacje pomiędzy tabelami
+                        </h3>
+
+                        <p>
+                            Relacje jeden do jednego, jeden do wielu
+                            oraz integralność danych.
+                        </p>
+
+                    </article>
+
+                    <article class="program-card">
+
+                        <h3>
+                            Klucze i indeksy
+                        </h3>
+
+                        <p>
+                            Klucze główne, klucze obce
+                            oraz przyspieszanie wyszukiwania.
+                        </p>
+
+                    </article>
+
+                    <article class="program-card">
+
+                        <h3>
+                            Formularze użytkownika
+                        </h3>
+
+                        <p>
+                            Tworzenie wygodnych formularzy
+                            do wprowadzania i edycji danych.
+                        </p>
+
+                    </article>
+
+                    <article class="program-card">
+
+                        <h3>
+                            Raporty i wydruki
+                        </h3>
+
+                        <p>
+                            Prezentowanie, grupowanie oraz drukowanie
+                            informacji z bazy.
+                        </p>
+
+                    </article>
+
+                    <article class="program-card">
+
+                        <h3>
+                            Kwerendy
+                        </h3>
+
+                        <p>
+                            Filtrowanie, sortowanie, obliczenia
+                            oraz przetwarzanie danych.
+                        </p>
+
+                    </article>
+
+                    <article class="program-card">
+
+                        <h3>
+                            Zapytania SQL
+                        </h3>
+
+                        <p>
+                            Podstawowe instrukcje SELECT, WHERE,
+                            ORDER BY i GROUP BY.
+                        </p>
+
+                    </article>
+
+                    <article class="program-card">
+
+                        <h3>
+                            Import i eksport danych
+                        </h3>
+
+                        <p>
+                            Wymiana danych z programem Excel,
+                            plikami tekstowymi i innymi bazami.
+                        </p>
+
+                    </article>
+
+                    <article class="program-card">
+
+                        <h3>
+                            Makra
+                        </h3>
+
+                        <p>
+                            Automatyzowanie czynności wykonywanych
+                            przez użytkownika.
+                        </p>
+
+                    </article>
+
+                    <article class="program-card">
+
+                        <h3>
+                            Podstawy VBA
+                        </h3>
+
+                        <p>
+                            Wprowadzenie do programowania
+                            i rozszerzania funkcjonalności bazy.
+                        </p>
+
+                    </article>
+
+                    <article class="program-card">
+
+                        <h3>
+                            Bezpieczeństwo danych
+                        </h3>
+
+                        <p>
+                            Ochrona informacji, kopie zapasowe
+                            i utrzymanie poprawności bazy.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- TAKSONOMIA -->
+
+            <section class="content-section">
+
+                <h2>
+                    Po ukończeniu szkolenia uczestnik
+                </h2>
+
+                <p class="taxonomy-intro">
+                    Uczestnik zdobywa wiedzę i praktyczne umiejętności
+                    umożliwiające samodzielne tworzenie i obsługę
+                    baz danych Microsoft Access.
+                </p>
+
+                <div class="taxonomy-grid">
+
+                    <article class="taxonomy-card">
+
+                        <h3>
+                            Wie
+                        </h3>
+
+                        <ul>
+                            <li>
+                                Czym jest relacyjna baza danych.
+                            </li>
+
+                            <li>
+                                Jakie funkcje pełnią tabele,
+                                formularze, raporty i kwerendy.
+                            </li>
+
+                            <li>
+                                Do czego służą klucze główne i obce.
+                            </li>
+
+                            <li>
+                                Jakie typy danych są dostępne
+                                w programie Access.
+                            </li>
+                        </ul>
+
+                    </article>
+
+                    <article class="taxonomy-card">
+
+                        <h3>
+                            Rozumie
+                        </h3>
+
+                        <ul>
+                            <li>
+                                Zasady poprawnego projektowania
+                                struktury bazy danych.
+                            </li>
+
+                            <li>
+                                Znaczenie relacji pomiędzy tabelami.
+                            </li>
+
+                            <li>
+                                Zasady integralności i spójności danych.
+                            </li>
+
+                            <li>
+                                Znaczenie wykonywania kopii zapasowych.
+                            </li>
+                        </ul>
+
+                    </article>
+
+                    <article class="taxonomy-card">
+
+                        <h3>
+                            Umie
+                        </h3>
+
+                        <ul>
+                            <li>
+                                Tworzyć tabele i określać typy danych.
+                            </li>
+
+                            <li>
+                                Definiować relacje pomiędzy tabelami.
+                            </li>
+
+                            <li>
+                                Budować formularze, raporty i kwerendy.
+                            </li>
+
+                            <li>
+                                Importować i eksportować dane.
+                            </li>
+                        </ul>
+
+                    </article>
+
+                    <article class="taxonomy-card">
+
+                        <h3>
+                            Potrafi
+                        </h3>
+
+                        <ul>
+                            <li>
+                                Samodzielnie zaprojektować własną
+                                bazę danych.
+                            </li>
+
+                            <li>
+                                Przygotować wygodny interfejs
+                                do wprowadzania danych.
+                            </li>
+
+                            <li>
+                                Tworzyć zestawienia i raporty
+                                potrzebne w pracy.
+                            </li>
+
+                            <li>
+                                Automatyzować podstawowe czynności
+                                za pomocą makr i VBA.
+                            </li>
+                        </ul>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- DLA KOGO -->
+
+            <section class="content-section">
+
+                <h2>
+                    Dla kogo jest szkolenie?
+                </h2>
+
+                <div class="audience-grid">
+
+                    <article class="audience-card">
+
+                        <span
+                            class="audience-icon"
+                            aria-hidden="true"
+                        >
+                            ??
+                        </span>
+
+                        <h3>
+                            Osoby początkujące
+                        </h3>
+
+                        <p>
+                            Dla osób, które chcą rozpocząć pracę
+                            z bazami danych.
+                        </p>
+
+                    </article>
+
+                    <article class="audience-card">
+
+                        <span
+                            class="audience-icon"
+                            aria-hidden="true"
+                        >
+                            ??
+                        </span>
+
+                        <h3>
+                            Pracownicy firm
+                        </h3>
+
+                        <p>
+                            Dla pracowników administracji, biur,
+                            księgowości i działów analiz.
+                        </p>
+
+                    </article>
+
+                    <article class="audience-card">
+
+                        <span
+                            class="audience-icon"
+                            aria-hidden="true"
+                        >
+                            ??
+                        </span>
+
+                        <h3>
+                            Osoby pracujące z danymi
+                        </h3>
+
+                        <p>
+                            Dla osób tworzących zestawienia,
+                            ewidencje, raporty i rejestry.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- INFORMACJE DODATKOWE -->
+
+            <section class="details-box">
+
+                <h2>
+                    Informacje dodatkowe
+                </h2>
+
+                <p>
+                    Zajęcia prowadzone są w formie praktycznych ćwiczeń
+                    przy komputerze. Każdy uczestnik tworzy podczas
+                    szkolenia przykładową bazę danych.
+                </p>
+
+                <p>
+                    Program może zostać dostosowany do potrzeb
+                    uczestników indywidualnych oraz grup zorganizowanych.
+                </p>
+
+                <p>
+                    Zdobyte umiejętności są przydatne podczas wykonywania
+                    zadań zawodowych związanych z przechowywaniem,
+                    porządkowaniem i analizą danych.
+                </p>
+
+                <div class="price-box">
+
+                    <div>
+
+                        <p class="price-label">
+                            Cena szkolenia
+                        </p>
+
+                        <p>
+                            Szczegółowe warunki i terminy ustalane są
+                            indywidualnie.
+                        </p>
+
+                    </div>
+
+                    <strong class="price">
+                        399 zł
+                    </strong>
+
+                </div>
+
+            </section>
+
+            <!-- PRZYCISKI -->
+
+            <div class="buttons">
+
+                <a
+                    class="btn"
+                    href="zapis-na-szkolenie.html"
+                >
+                    Zapisz się na szkolenie
+                </a>
+
+                <a
+                    class="btn btn-secondary"
+                    href="../szkoleniakursy.html"
+                >
+                    Powrót do listy szkoleń
+                </a>
+
+                <a
+                    class="btn btn-secondary"
+                    href="../index.html"
+                >
+                    Powrót do strony głównej
+                </a>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</main>
+
+<!-- STOPKA -->
+
+<footer>
+
+    <p>
+        &copy;
+        <span id="year"></span>
+        Zachodniopomorskie Centrum Informatyki
+    </p>
+
+    <p>
+        Microsoft Access &bull;
+        Bazy danych &bull;
+        Szkolenia komputerowe
+    </p>
+
+</footer>
+
+<script>
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cennik szkoleń | ZPCI</title>
+
+<meta
+    name="description"
+    content="Cennik szkoleń komputerowych i informatycznych Zachodniopomorskiego Centrum Informatyki."
+>
+
+<style>
+
+/* RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7fb;
+    color: #333333;
+    line-height: 1.7;
+}
+
+/* NAGŁÓWEK */
+
+header {
+    position: relative;
+    overflow: hidden;
+    padding: 38px 20px;
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(255, 255, 255, 0.13),
+            transparent 35%
+        ),
+        linear-gradient(135deg, #0b2148, #1f3b73);
+    color: #ffffff;
+    text-align: center;
+}
+
+.header-content {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+header h1 {
+    margin-bottom: 8px;
+    font-size: clamp(1.9rem, 4vw, 3rem);
+    line-height: 1.2;
+}
+
+header p {
+    max-width: 760px;
+    margin: 0 auto;
+    color: #e4ecfa;
+    font-size: 1.05rem;
+}
+
+/* MENU */
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background: #16315d;
+    padding: 0 12px;
+}
+
+nav a {
+    display: block;
+    padding: 15px 20px;
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.25s ease;
+}
+
+nav a:hover,
+nav a:focus {
+    background: #244b87;
+}
+
+/* GŁÓWNA TREŚĆ */
+
+main {
+    width: min(1300px, calc(100% - 40px));
+    margin: 30px auto;
+    padding: 35px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.11);
+}
+
+/* NAGŁÓWKI */
+
+h2 {
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    color: #1f3b73;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    border-bottom: 2px solid #1f3b73;
+}
+
+h3 {
+    margin-bottom: 12px;
+    color: #1f3b73;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+/* WPROWADZENIE */
+
+.price-intro {
+    margin-bottom: 25px;
+    padding: 20px;
+    background: #eef5ff;
+    border-left: 5px solid #1f3b73;
+    border-radius: 8px;
+}
+
+/* TABELA */
+
+.table-wrapper {
+    width: 100%;
+    margin-top: 20px;
+    overflow-x: auto;
+    border: 1px solid #d8e1ed;
+    border-radius: 10px;
+    -webkit-overflow-scrolling: touch;
+}
+
+table {
+    width: 100%;
+    min-width: 760px;
+    border-collapse: collapse;
+    background: #ffffff;
+}
+
+th,
+td {
+    padding: 13px 12px;
+    border: 1px solid #dddddd;
+    text-align: left;
+    vertical-align: middle;
+}
+
+th {
+    background: #1f3b73;
+    color: #ffffff;
+    font-size: 0.98rem;
+}
+
+tbody tr:nth-child(even) {
+    background: #f8f8f8;
+}
+
+tbody tr:hover {
+    background: #eaf1fb;
+}
+
+td:first-child {
+    min-width: 270px;
+    font-weight: bold;
+    color: #1f3b73;
+}
+
+td:nth-child(2),
+td:nth-child(3),
+td:nth-child(4) {
+    white-space: nowrap;
+}
+
+td:last-child {
+    font-weight: bold;
+}
+
+/* INFORMACJE DODATKOWE */
+
+.info {
+    margin-top: 32px;
+    padding: 24px;
+    background: #eef5ff;
+    border-left: 5px solid #1f3b73;
+    border-radius: 9px;
+}
+
+.info ul {
+    margin: 12px 0 0 24px;
+}
+
+.info li {
+    margin-bottom: 10px;
+}
+
+.info li::marker {
+    color: #1f3b73;
+}
+
+/* PRZYCISKI */
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 21px;
+    background: #1f3b73;
+    border-radius: 6px;
+    color: #ffffff;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    transition:
+        background-color 0.25s ease,
+        transform 0.2s ease;
+}
+
+.btn:hover,
+.btn:focus {
+    background: #16305d;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: #c57c00;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+    background: #9f6400;
+}
+
+/* STOPKA */
+
+footer {
+    margin-top: 40px;
+    padding: 20px 15px;
+    background: #1f3b73;
+    color: #ffffff;
+    text-align: center;
+}
+
+/* TABLETY */
+
+@media (max-width: 900px) {
+
+    main {
+        width: calc(100% - 30px);
+        padding: 28px;
+    }
+
+    th,
+    td {
+        padding: 11px 10px;
+    }
+}
+
+/* TELEFONY */
+
+@media (max-width: 650px) {
+
+    header {
+        padding: 30px 15px;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    nav {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    nav a {
+        width: 100%;
+        padding: 13px 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        text-align: center;
+    }
+
+    main {
+        width: calc(100% - 20px);
+        margin: 18px auto;
+        padding: 20px 14px;
+        border-radius: 8px;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    .price-intro,
+    .info {
+        padding: 18px 15px;
+    }
+
+    .table-wrapper {
+        margin-top: 15px;
+    }
+
+    table {
+        min-width: 720px;
+        font-size: 0.92rem;
+    }
+
+    th,
+    td {
+        padding: 10px 9px;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
+
+/* MAŁE TELEFONY */
+
+@media (max-width: 380px) {
+
+    header h1 {
+        font-size: 1.55rem;
+    }
+
+    main {
+        padding: 18px 12px;
+    }
+
+    .info ul {
+        margin-left: 20px;
+    }
+}
+
+/* DRUKOWANIE */
+
+@media print {
+
+    body {
+        background: #ffffff;
+        color: #000000;
+        font-size: 12px;
+    }
+
+    nav,
+    .buttons,
+    footer {
+        display: none;
+    }
+
+    header {
+        padding: 10px 0 20px;
+        background: #ffffff;
+        color: #000000;
+    }
+
+    header h1,
+    header p {
+        color: #000000;
+    }
+
+    main {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+    }
+
+    .table-wrapper {
+        overflow: visible;
+        border: none;
+    }
+
+    table {
+        min-width: 0;
+    }
+
+    th {
+        background: #ffffff;
+        color: #000000;
+    }
+
+    th,
+    td {
+        padding: 6px;
+        border: 1px solid #000000;
+    }
+
+    .price-intro,
+    .info {
+        background: #ffffff;
+        border: 1px solid #000000;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="header-content">
+
+        <h1>Cennik szkoleń</h1>
+
+        <p>
+            Ceny oraz orientacyjny czas trwania szkoleń indywidualnych
+            i grupowych
+        </p>
+
+    </div>
+
+</header>
+
+<nav aria-label="Menu główne">
+
+    <a href="../index.html">Strona główna</a>
+
+    <a href="../szkoleniakursy.html">Szkolenia / Kursy</a>
+
+    <a href="../uslugiit.html">Usługi IT</a>
+
+    <a href="../kontakt.html">Kontakt</a>
+
+</nav>
+
+<main>
+
+    <section>
+
+        <h2>Szkolenia otwarte</h2>
+
+        <div class="price-intro">
+
+            <p>
+                Poniższa tabela przedstawia orientacyjny czas trwania
+                szkoleń indywidualnych i grupowych oraz ceny netto.
+            </p>
+
+            <p>
+                Na urządzeniach mobilnych tabelę można przesuwać
+                poziomo palcem.
+            </p>
+
+        </div>
+
+        <div
+            class="table-wrapper"
+            role="region"
+            aria-label="Cennik szkoleń"
+            tabindex="0"
+        >
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th scope="col">Szkolenie</th>
+                        <th scope="col">Indywidualnie</th>
+                        <th scope="col">Grupa</th>
+                        <th scope="col">Cena netto</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>CorelDRAW</td>
+                        <td>15 h</td>
+                        <td>20 h</td>
+                        <td>349 zł</td>
+                    </tr>
+
+                    <tr>
+                        <td>MS Office – poziom 1</td>
+                        <td>14 h</td>
+                        <td>20 h</td>
+                        <td>285 zł</td>
+                    </tr>
+
+                    <tr>
+                        <td>MS Office – poziom 2</td>
+                        <td>14 h</td>
+                        <td>20 h</td>
+                        <td>299 zł</td>
+                    </tr>
+
+                    <tr>
+                        <td>MS Office Professional</td>
+                        <td>14 h</td>
+                        <td>20 h</td>
+                        <td>299 zł</td>
+                    </tr>
+
+                    <tr>
+                        <td>MS Excel</td>
+                        <td>10 h</td>
+                        <td>12 h</td>
+                        <td>269 zł</td>
+                    </tr>
+
+                    <tr>
+                        <td>MS Excel VBA</td>
+                        <td>16 h</td>
+                        <td>20 h</td>
+                        <td>499 zł</td>
+                    </tr>
+
+                    <tr>
+                        <td>MS Project</td>
+                        <td>12 h</td>
+                        <td>—</td>
+                        <td>379 zł</td>
+                    </tr>
+
+                    <tr>
+                        <td>Pisanie bezwzrokowe</td>
+                        <td>15 h</td>
+                        <td>20 h</td>
+                        <td>349 zł</td>
+                    </tr>
+
+                    <tr>
+                        <td>Narzędzia IT w edukacji</td>
+                        <td>12 h</td>
+                        <td>20 h</td>
+                        <td>299 zł</td>
+                    </tr>
+
+                    <tr>
+                        <td>Obróbka cyfrowa zdjęć</td>
+                        <td>14 h</td>
+                        <td>20 h</td>
+                        <td>249 zł</td>
+                    </tr>
+
+                    <tr>
+                        <td>CAD – poziom I</td>
+                        <td>18 h</td>
+                        <td>—</td>
+                        <td>399 zł</td>
+                    </tr>
+
+                    <tr>
+                        <td>CAD – poziom II</td>
+                        <td>18 h</td>
+                        <td>—</td>
+                        <td>399 zł</td>
+                    </tr>
+
+                    <tr>
+                        <td>Adobe Photoshop</td>
+                        <td>18 h</td>
+                        <td>—</td>
+                        <td>349 zł</td>
+                    </tr>
+
+                    <tr>
+                        <td>LibreOffice / OpenOffice</td>
+                        <td>14 h</td>
+                        <td>20 h</td>
+                        <td>299 zł</td>
+                    </tr>
+
+                    <tr>
+                        <td>Podstawy obsługi komputera i Internetu</td>
+                        <td>14 h</td>
+                        <td>20 h</td>
+                        <td>249 zł</td>
+                    </tr>
+
+                    <tr>
+                        <td>PowerPoint – profesjonalne prezentacje</td>
+                        <td>8 h</td>
+                        <td>10 h</td>
+                        <td>199 zł</td>
+                    </tr>
+
+                    <tr>
+                        <td>Płatnik ZUS</td>
+                        <td>6 h</td>
+                        <td>10 h</td>
+                        <td>149 zł</td>
+                    </tr>
+
+                    <tr>
+                        <td>Symfonia</td>
+                        <td>10 h</td>
+                        <td>18 h</td>
+                        <td>249 zł</td>
+                    </tr>
+
+                    <tr>
+                        <td>Programowanie C++</td>
+                        <td>16 h</td>
+                        <td>30 h</td>
+                        <td>949 zł</td>
+                    </tr>
+
+                    <tr>
+                        <td>Programowanie C#</td>
+                        <td>18 h</td>
+                        <td>30 h</td>
+                        <td>949 zł</td>
+                    </tr>
+
+                    <tr>
+                        <td>Programowanie Java</td>
+                        <td>16 h</td>
+                        <td>30 h</td>
+                        <td>949 zł</td>
+                    </tr>
+
+                    <tr>
+                        <td>MS Access + SQL</td>
+                        <td>14 h</td>
+                        <td>20 h</td>
+                        <td>399 zł</td>
+                    </tr>
+
+                    <tr>
+                        <td>PL/SQL</td>
+                        <td>16 h</td>
+                        <td>25 h</td>
+                        <td>649 zł</td>
+                    </tr>
+
+                    <tr>
+                        <td>HTML + CSS</td>
+                        <td>14 h</td>
+                        <td>22 h</td>
+                        <td>399 zł</td>
+                    </tr>
+
+                    <tr>
+                        <td>JavaScript</td>
+                        <td>16 h</td>
+                        <td>22 h</td>
+                        <td>499 zł</td>
+                    </tr>
+
+                    <tr>
+                        <td>PHP</td>
+                        <td>16 h</td>
+                        <td>25 h</td>
+                        <td>499 zł</td>
+                    </tr>
+
+                    <tr>
+                        <td>Konsultacje indywidualne</td>
+                        <td>1 h</td>
+                        <td>—</td>
+                        <td>od 45 zł</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+    <section class="info">
+
+        <h3>Informacje dodatkowe</h3>
+
+        <ul>
+
+            <li>
+                Szkolenia prowadzone w języku angielskim:
+                <strong>+65% ceny podstawowej.</strong>
+            </li>
+
+            <li>
+                Wszystkie podane ceny są cenami netto.
+            </li>
+
+            <li>
+                Zakres materiału na szkoleniach indywidualnych jest taki
+                sam jak podczas szkoleń grupowych.
+            </li>
+
+            <li>
+                Płatność możliwa jest przelewem na konto
+                Zachodniopomorskiego Centrum Informatyki.
+            </li>
+
+            <li>
+                W celu uzyskania numeru rachunku bankowego prosimy
+                o kontakt z biurem.
+            </li>
+
+            <li>
+                Program, liczba godzin i cena szkolenia mogą zostać
+                dostosowane do indywidualnych potrzeb uczestnika
+                lub firmy.
+            </li>
+
+            <li>
+                Przedstawiony cennik ma charakter informacyjny i nie stanowi
+                oferty handlowej w rozumieniu Kodeksu cywilnego.
+            </li>
+
+        </ul>
+
+    </section>
+
+    <div class="buttons">
+
+        <a
+            href="kontakt.html"
+            class="btn btn-secondary"
+        >
+            Skontaktuj się z nami
+        </a>
+
+        <a
+            href="index.html"
+            class="btn"
+        >
+            Powrót do strony głównej
+        </a>
+
+    </div>
+
+</main>
+
+<footer>
+
+    &copy;
+    <span id="year"></span>
+    Zachodniopomorskie Centrum Informatyki
+
+</footer>
+
+<script>
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+</script>
+
+</body>
+
+</html>

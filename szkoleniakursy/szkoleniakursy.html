@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Szkolenia i kursy &ndash; Zachodniopomorskie Centrum Informatyki
+    </title>
+
+    <meta
+        name="description"
+        content="Szkolenia informatyczne i kursy komputerowe ZPCI. Office, Excel, VBA, grafika komputerowa, programowanie, bazy danych, CAD i szkolenia dla seniorów."
+    >
+
+    <style>
+        :root {
+            --primary: #1f3b73;
+            --primary-dark: #0b2148;
+            --primary-light: #edf4ff;
+            --accent: #f2b705;
+            --background: #f4f7fb;
+            --white: #ffffff;
+            --text: #263238;
+            --muted: #5f6b7a;
+            --border: #dce4ed;
+            --radius: 16px;
+            --shadow: 0 12px 30px rgba(11, 33, 72, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            overflow-x: hidden;
+            font-family: Arial, Helvetica, sans-serif;
+            background:
+                linear-gradient(
+                    135deg,
+                    #eef5ff 0%,
+                    #ffffff 45%,
+                    #f4f7fb 100%
+                );
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: calc(100% - 40px);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* =========================
+           NAGŁÓWEK
+        ========================= */
+
+        header {
+            position: relative;
+            overflow: hidden;
+            padding: 48px 20px;
+            background:
+                radial-gradient(
+                    circle at 85% 20%,
+                    rgba(255, 255, 255, 0.12),
+                    transparent 28%
+                ),
+                linear-gradient(
+                    135deg,
+                    var(--primary-dark),
+                    var(--primary)
+                );
+            color: var(--white);
+            text-align: center;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: -130px;
+            right: -90px;
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .header-inner {
+            position: relative;
+            z-index: 1;
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+            font-size: clamp(30px, 5vw, 48px);
+            line-height: 1.15;
+        }
+
+        header p {
+            color: rgba(255, 255, 255, 0.88);
+            font-size: clamp(17px, 2.3vw, 21px);
+        }
+
+        /* =========================
+           NAWIGACJA
+        ========================= */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: #071b37;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.18);
+        }
+
+        .nav-inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        nav a {
+            display: flex;
+            min-height: 54px;
+            align-items: center;
+            justify-content: center;
+            padding: 13px 21px;
+            color: var(--white);
+            font-size: 16px;
+            font-weight: 700;
+            text-align: center;
+            transition:
+                background-color 0.2s ease,
+                color 0.2s ease;
+        }
+
+        nav a:hover,
+        nav a:focus-visible {
+            background: var(--accent);
+            color: var(--primary-dark);
+        }
+
+        nav a.active {
+            background: var(--primary);
+        }
+
+        nav a:focus-visible,
+        .course-card:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: -3px;
+        }
+
+        /* =========================
+           GŁÓWNA ZAWARTOŚĆ
+        ========================= */
+
+        main {
+            padding: 42px 0 55px;
+        }
+
+        .content-box {
+            padding: 40px;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.96);
+            box-shadow: var(--shadow);
+        }
+
+        .intro {
+            max-width: 900px;
+            margin-bottom: 38px;
+        }
+
+        .intro h2 {
+            margin-bottom: 14px;
+            color: var(--primary-dark);
+            font-size: clamp(27px, 4vw, 38px);
+            line-height: 1.25;
+        }
+
+        .intro p {
+            color: var(--muted);
+            font-size: 18px;
+        }
+
+        /* =========================
+           SIATKA MINIATUR
+        ========================= */
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 24px;
+            list-style: none;
+        }
+
+        .course-item {
+            min-width: 0;
+        }
+
+        .course-card {
+            display: flex;
+            height: 100%;
+            overflow: hidden;
+            flex-direction: column;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background: var(--white);
+            box-shadow: 0 8px 24px rgba(11, 33, 72, 0.08);
+            transition:
+                transform 0.22s ease,
+                box-shadow 0.22s ease,
+                border-color 0.22s ease;
+        }
+
+        .course-card:hover {
+            border-color: #a9bfd9;
+            box-shadow: 0 16px 36px rgba(11, 33, 72, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .course-thumbnail {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background:
+                linear-gradient(
+                    135deg,
+                    #dce9f8,
+                    #f3f7fc
+                );
+        }
+
+        .course-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.35s ease;
+        }
+
+        .course-card:hover .course-thumbnail img {
+            transform: scale(1.04);
+        }
+
+        .course-content {
+            display: flex;
+            min-height: 126px;
+            flex: 1;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .course-title {
+            color: var(--primary-dark);
+            font-size: 19px;
+            font-weight: 700;
+            line-height: 1.35;
+        }
+
+        .course-link-text {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 16px;
+            color: var(--primary);
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+        .course-link-text::after {
+            content: "\2192";
+            font-size: 19px;
+            transition: transform 0.2s ease;
+        }
+
+        .course-card:hover .course-link-text::after {
+            transform: translateX(4px);
+        }
+
+        /* =========================
+           INFORMACJA POD LISTĄ
+        ========================= */
+
+        .additional-info {
+            margin-top: 42px;
+            padding: 28px;
+            border-left: 6px solid var(--accent);
+            border-radius: 14px;
+            background: var(--primary-light);
+        }
+
+        .additional-info p {
+            margin-bottom: 12px;
+            color: #465666;
+        }
+
+        .additional-info p:last-child {
+            margin-bottom: 0;
+        }
+
+        .additional-info strong {
+            color: var(--primary-dark);
+        }
+
+        .additional-info a {
+            color: var(--primary);
+            font-weight: 700;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        /* =========================
+           STOPKA
+        ========================= */
+
+        footer {
+            padding: 28px 20px;
+            background: var(--primary-dark);
+            color: rgba(255, 255, 255, 0.85);
+            text-align: center;
+        }
+
+        footer strong {
+            color: var(--white);
+        }
+
+        /* =========================
+           TABLETY
+        ========================= */
+
+        @media (max-width: 950px) {
+            .courses-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .content-box {
+                padding: 32px 26px;
+            }
+        }
+
+        /* =========================
+           TELEFONY
+        ========================= */
+
+        @media (max-width: 650px) {
+            .container {
+                width: calc(100% - 20px);
+            }
+
+            header {
+                padding: 36px 14px;
+            }
+
+            .nav-inner {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            nav a {
+                min-height: 50px;
+                padding: 10px 8px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+                font-size: 14px;
+            }
+
+            main {
+                padding: 22px 0 35px;
+            }
+
+            .content-box {
+                padding: 24px 16px;
+                border-radius: 15px;
+            }
+
+            .intro {
+                margin-bottom: 27px;
+            }
+
+            .intro p {
+                font-size: 17px;
+            }
+
+            .courses-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+            .course-content {
+                min-height: auto;
+                padding: 18px;
+            }
+
+            .course-title {
+                font-size: 18px;
+            }
+
+            .additional-info {
+                margin-top: 30px;
+                padding: 22px 18px;
+            }
+        }
+
+        @media (max-width: 390px) {
+            .nav-inner {
+                grid-template-columns: 1fr;
+            }
+
+            nav a {
+                min-height: 46px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <h1>Szkolenia informatyczne i kursy komputerowe</h1>
+
+            <p>
+                Praktyczna nauka program&oacute;w, technologii i narzędzi IT
+            </p>
+        </div>
+    </header>
+
+    <nav aria-label="Główna nawigacja">
+        <div class="container nav-inner">
+
+            <a href="index.html">
+                Strona gł&oacute;wna
+            </a>
+
+            <a class="active" href="szkoleniakursy.html">
+                Szkolenia / Kursy
+            </a>
+
+            <a href="uslugit.html">
+                Usługi IT
+            </a>
+
+            <a href="kontakt.html">
+                Kontakt
+            </a>
+
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+
+            <section class="content-box">
+
+                <div class="intro">
+                    <h2>Wybierz interesujące Cię szkolenie</h2>
+
+                    <p>
+                        Zachodniopomorskie Centrum Informatyki realizuje kursy
+                        i szkolenia grupowe w salach wykładowych, szkolenia
+                        w siedzibie klienta oraz zajęcia indywidualne
+                        dopasowane do potrzeb uczestnika.
+                    </p>
+                </div>
+
+                <ul class="courses-grid">
+
+                    <li class="course-item">
+                        <a
+                            class="course-card"
+                            href="szkoleniakursy/ms-office-poziom-1.html"
+                        >
+                            <div class="course-thumbnail">
+                                <img
+                                    src="images/ms-office-poziom1.png"
+                                    alt="Szkolenie MS Office poziom 1"
+                                    loading="lazy"
+                                >
+                            </div>
+
+                            <div class="course-content">
+                                <span class="course-title">
+                                    MS Office &ndash; poziom 1
+                                    (Word, Excel, PowerPoint, Outlook)
+                                </span>
+
+                                <span class="course-link-text">
+                                    Zobacz szkolenie
+                                </span>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="course-item">
+                        <a
+                            class="course-card"
+                            href="szkoleniakursy/msoffice2.html"
+                        >
+                            <div class="course-thumbnail">
+                                <img
+                                    src="images/ms-office-poziom2.png"
+                                    alt="Szkolenie MS Office poziom 2"
+                                    loading="lazy"
+                                >
+                            </div>
+
+                            <div class="course-content">
+                                <span class="course-title">
+                                    MS Office &ndash; poziom 2
+                                    (Word, Excel, PowerPoint, Outlook, Access)
+                                </span>
+
+                                <span class="course-link-text">
+                                    Zobacz szkolenie
+                                </span>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="course-item">
+                        <a
+                            class="course-card"
+                            href="szkoleniakursy/msexcel.html"
+                        >
+                            <div class="course-thumbnail">
+                                <img
+                                    src="images/szkolenieExcel.png"
+                                    alt="Szkolenie Microsoft Excel"
+                                    loading="lazy"
+                                >
+                            </div>
+
+                            <div class="course-content">
+                                <span class="course-title">
+                                    MS Excel &ndash; różne poziomy
+                                    zaawansowania
+                                </span>
+
+                                <span class="course-link-text">
+                                    Zobacz szkolenie
+                                </span>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="course-item">
+                        <a
+                            class="course-card"
+                            href="szkoleniakursy/vba.html"
+                        >
+                            <div class="course-thumbnail">
+                                <img
+                                    src="images/excel-vba.png"
+                                    alt="Szkolenie Excel VBA"
+                                    loading="lazy"
+                                >
+                            </div>
+
+                            <div class="course-content">
+                                <span class="course-title">
+                                    MS Excel &ndash; VBA i automatyzacja pracy
+                                </span>
+
+                                <span class="course-link-text">
+                                    Zobacz szkolenie
+                                </span>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="course-item">
+                        <a
+                            class="course-card"
+                            href="szkoleniakursy/Grafika.html"
+                        >
+                            <div class="course-thumbnail">
+                                <img
+                                    src="images/grafika.png"
+                                    alt="Szkolenie z grafiki komputerowej"
+                                    loading="lazy"
+                                >
+                            </div>
+
+                            <div class="course-content">
+                                <span class="course-title">
+                                    Grafika komputerowa
+                                    (CorelDRAW, GIMP, Photoshop)
+                                </span>
+
+                                <span class="course-link-text">
+                                    Zobacz szkolenie
+                                </span>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="course-item">
+                        <a
+                            class="course-card"
+                            href="szkoleniakursy/cad-poziom-1.html"
+                        >
+                            <div class="course-thumbnail">
+                                <img
+                                    src="images/szkolenieCAD.png"
+                                    alt="Szkolenie z narzędzi CAD"
+                                    loading="lazy"
+                                >
+                            </div>
+
+                            <div class="course-content">
+                                <span class="course-title">
+                                    Narzędzia CAD &ndash; poziom podstawowy
+                                    i zaawansowany
+                                </span>
+
+                                <span class="course-link-text">
+                                    Zobacz szkolenie
+                                </span>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="course-item">
+                        <a
+                            class="course-card"
+                            href="szkoleniakursy/pisanie.html"
+                        >
+                            <div class="course-thumbnail">
+                                <img
+                                    src="images/pisanie.png"
+                                    alt="Szkolenie z bezwzrokowego pisania"
+                                    loading="lazy"
+                                >
+                            </div>
+
+                            <div class="course-content">
+                                <span class="course-title">
+                                    Bezwzrokowe pisanie na klawiaturze
+                                </span>
+
+                                <span class="course-link-text">
+                                    Zobacz szkolenie
+                                </span>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="course-item">
+                        <a
+                            class="course-card"
+                            href="szkoleniakursy/platnik.html"
+                        >
+                            <div class="course-thumbnail">
+                                <img
+                                    src="images/platnik.png"
+                                    alt="Szkolenie z programu Płatnik"
+                                    loading="lazy"
+                                >
+                            </div>
+
+                            <div class="course-content">
+                                <span class="course-title">
+                                    Program Płatnik &ndash; praktyczne warsztaty
+                                </span>
+
+                                <span class="course-link-text">
+                                    Zobacz szkolenie
+                                </span>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="course-item">
+                        <a
+                            class="course-card"
+                            href="szkoleniakursy/programowanie.html"
+                        >
+                            <div class="course-thumbnail">
+                                <img
+                                    src="images/programowanie.png"
+                                    alt="Szkolenia z programowania"
+                                    loading="lazy"
+                                >
+                            </div>
+
+                            <div class="course-content">
+                                <span class="course-title">
+                                    Programowanie Java, C++, C#
+                                    oraz inne języki
+                                </span>
+
+                                <span class="course-link-text">
+                                    Zobacz szkolenie
+                                </span>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="course-item">
+                        <a
+                            class="course-card"
+                            href="szkoleniakursy/powerpoint.html"
+                        >
+                            <div class="course-thumbnail">
+                                <img
+                                    src="images/powerpoint.png"
+                                    alt="Profesjonalne prezentacje PowerPoint"
+                                    loading="lazy"
+                                >
+                            </div>
+
+                            <div class="course-content">
+                                <span class="course-title">
+                                    Profesjonalne prezentacje PowerPoint
+                                </span>
+
+                                <span class="course-link-text">
+                                    Zobacz szkolenie
+                                </span>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="course-item">
+                        <a
+                            class="course-card"
+                            href="szkoleniakursy/elearning.html"
+                        >
+                            <div class="course-thumbnail">
+                                <img
+                                    src="images/elearning.png"
+                                    alt="Szkolenie e-learning w edukacji"
+                                    loading="lazy"
+                                >
+                            </div>
+
+                            <div class="course-content">
+                                <span class="course-title">
+                                    E-learning w edukacji
+                                </span>
+
+                                <span class="course-link-text">
+                                    Zobacz szkolenie
+                                </span>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="course-item">
+                        <a
+                            class="course-card"
+                            href="szkoleniakursy/podstawy-komputera.html"
+                        >
+                            <div class="course-thumbnail">
+                                <img
+                                    src="images/podstawy-komputera.png"
+                                    alt="Podstawy obsługi komputera i Internetu"
+                                    loading="lazy"
+                                >
+                            </div>
+
+                            <div class="course-content">
+                                <span class="course-title">
+                                    Podstawy obsługi komputera i Internetu
+                                </span>
+
+                                <span class="course-link-text">
+                                    Zobacz szkolenie
+                                </span>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="course-item">
+                        <a
+                            class="course-card"
+                            href="szkoleniakursy/MSAccess.html"
+                        >
+                            <div class="course-thumbnail">
+                                <img
+                                    src="images/access.png"
+                                    alt="Szkolenie Microsoft Access"
+                                    loading="lazy"
+                                >
+                            </div>
+
+                            <div class="course-content">
+                                <span class="course-title">
+                                    MS Access &ndash; projektowanie baz danych
+                                </span>
+
+                                <span class="course-link-text">
+                                    Zobacz szkolenie
+                                </span>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="course-item">
+                        <a
+                            class="course-card"
+                            href="szkoleniakursy/sql-plsql.html"
+                        >
+                            <div class="course-thumbnail">
+                                <img
+                                    src="images/sql.png"
+                                    alt="Szkolenie SQL i PL SQL"
+                                    loading="lazy"
+                                >
+                            </div>
+
+                            <div class="course-content">
+                                <span class="course-title">
+                                    SQL i PL/SQL &ndash; programowanie baz danych
+                                </span>
+
+                                <span class="course-link-text">
+                                    Zobacz szkolenie
+                                </span>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="course-item">
+                        <a
+                            class="course-card"
+                            href="szkoleniakursy/html-css-strony-www.html"
+                        >
+                            <div class="course-thumbnail">
+                                <img
+                                    src="images/szkolenieHTMLICSS-TWORZENIESTRONWWW.png"
+                                    alt="Szkolenie HTML i CSS"
+                                    loading="lazy"
+                                >
+                            </div>
+
+                            <div class="course-content">
+                                <span class="course-title">
+                                    Tworzenie stron WWW &ndash; HTML i CSS
+                                </span>
+
+                                <span class="course-link-text">
+                                    Zobacz szkolenie
+                                </span>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="course-item">
+                        <a
+                            class="course-card"
+                            href="szkoleniakursy/php-mysql-programowanie-stron.html"
+                        >
+                            <div class="course-thumbnail">
+                                <img
+                                    src="images/phpmysql.png"
+                                    alt="Szkolenie PHP i MySQL"
+                                    loading="lazy"
+                                >
+                            </div>
+
+                            <div class="course-content">
+                                <span class="course-title">
+                                    Programowanie stron WWW &ndash; PHP i MySQL
+                                </span>
+
+                                <span class="course-link-text">
+                                    Zobacz szkolenie
+                                </span>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="course-item">
+                        <a
+                            class="course-card"
+                            href="szkoleniakursy/seniorzy.html"
+                        >
+                            <div class="course-thumbnail">
+                                <img
+                                    src="images/seniorzy.png"
+                                    alt="Kursy komputerowe dla seniorów"
+                                    loading="lazy"
+                                >
+                            </div>
+
+                            <div class="course-content">
+                                <span class="course-title">
+                                    Kursy komputerowe dla senior&oacute;w
+                                </span>
+
+                                <span class="course-link-text">
+                                    Zobacz szkolenie
+                                </span>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="course-item">
+                        <a
+                            class="course-card"
+                            href="szkoleniakursy/niepelnosprawni.html"
+                        >
+                            <div class="course-thumbnail">
+                                <img
+                                    src="images/niepelnosprawni.png"
+                                    alt="Kursy komputerowe dla osób z niepełnosprawnościami"
+                                    loading="lazy"
+                                >
+                            </div>
+
+                            <div class="course-content">
+                                <span class="course-title">
+                                    Kursy komputerowe dla os&oacute;b
+                                    z niepełnosprawnościami
+                                </span>
+
+                                <span class="course-link-text">
+                                    Zobacz szkolenie
+                                </span>
+                            </div>
+                        </a>
+                    </li>
+
+                </ul>
+
+                <div class="additional-info">
+                    <p>
+                        Jeśli interesuje Cię szkolenie, kt&oacute;rego nie ma
+                        na liście, napisz do nas przez
+                        <a href="kontakt.html">formularz kontaktowy</a>.
+                    </p>
+
+                    <p>
+                        Realizujemy także szkolenia typu
+                        <strong>custom training</strong>, dopasowane do potrzeb
+                        jednej osoby, grupy lub przedsiębiorstwa.
+                    </p>
+
+                    <p>
+                        Każdy kurs kończy się otrzymaniem certyfikatu
+                        Zachodniopomorskiego Centrum Informatyki.
+                    </p>
+                </div>
+
+            </section>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>
+            <strong>Zachodniopomorskie Centrum Informatyki</strong>
+        </p>
+
+        <p>
+            &copy; <span id="year"></span> ZPCI
+        </p>
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+    </script>
+
+</body>
+</html>

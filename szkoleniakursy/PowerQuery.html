@@ -1,0 +1,1364 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Szkolenie Power Query w Excelu Szczecin | ZPCI</title>
+
+<meta
+    name="description"
+    content="Praktyczne szkolenie Power Query w Excelu w Szczecinie: importowanie, czyszczenie, łączenie i automatyczne przekształcanie danych, język M, parametry i własne funkcje."
+>
+
+<meta
+    name="keywords"
+    content="szkolenie Power Query Szczecin, kurs Power Query Excel, import danych Excel, czyszczenie danych, łączenie plików, język M, automatyzacja raportów, ZPCI"
+>
+
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Zachodniopomorskie Centrum Informatyki">
+<meta name="theme-color" content="#0b2148">
+
+<link rel="canonical" href="https://www.zpci.pl/szkoleniakursy/power-query.html">
+<link rel="icon" type="image/png" href="../images/Logo+zdjecia/Logotypy/2_Logotypy_okrag.png">
+<link rel="apple-touch-icon" href="../images/Logo+zdjecia/Logotypy/2_Logotypy_okrag.png">
+
+<meta property="og:locale" content="pl_PL">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ZPCI">
+<meta property="og:title" content="Szkolenie Power Query w Excelu | ZPCI">
+<meta property="og:description" content="Importowanie, czyszczenie, łączenie i automatyczne przekształcanie danych, parametry, język M i własne funkcje.">
+<meta property="og:url" content="https://www.zpci.pl/szkoleniakursy/power-query.html">
+<meta property="og:image" content="https://www.zpci.pl/images/szkoleniepowerquery.png">
+<meta property="og:image:alt" content="Szkolenie Power Query w Excelu w ZPCI">
+<meta property="og:image:type" content="image/png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Szkolenie Power Query w Excelu | ZPCI">
+<meta name="twitter:description" content="Praktyczna nauka importowania, czyszczenia, łączenia i automatycznego przekształcania danych w Excelu.">
+<meta name="twitter:image" content="https://www.zpci.pl/images/szkoleniepowerquery.png">
+<meta name="twitter:image:alt" content="Szkolenie Power Query w Excelu w ZPCI">
+
+<!-- DANE STRUKTURALNE SEO -->
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "EducationalOrganization",
+            "@id": "https://www.zpci.pl/#organization",
+            "name": "Zachodniopomorskie Centrum Informatyki",
+            "alternateName": "ZPCI",
+            "url": "https://www.zpci.pl/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.zpci.pl/images/Logo+zdjecia/Logotypy/2_Logotypy_okrag.png"
+            },
+            "email": "biuro@zpci.pl"
+        },
+        {
+            "@type": "WebSite",
+            "@id": "https://www.zpci.pl/#website",
+            "url": "https://www.zpci.pl/",
+            "name": "Zachodniopomorskie Centrum Informatyki",
+            "alternateName": "ZPCI",
+            "inLanguage": "pl-PL",
+            "publisher": {
+                "@id": "https://www.zpci.pl/#organization"
+            }
+        },
+        {
+            "@type": "WebPage",
+            "@id": "https://www.zpci.pl/szkoleniakursy/power-query.html#webpage",
+            "url": "https://www.zpci.pl/szkoleniakursy/power-query.html",
+            "name": "Szkolenie Power Query w Excelu",
+            "description": "Praktyczne szkolenie z importowania, czyszczenia, łączenia i automatycznego przekształcania danych w Microsoft Excel.",
+            "inLanguage": "pl-PL",
+            "isPartOf": {
+                "@id": "https://www.zpci.pl/#website"
+            },
+            "about": {
+                "@id": "https://www.zpci.pl/szkoleniakursy/power-query.html#course"
+            },
+            "primaryImageOfPage": {
+                "@type": "ImageObject",
+                "url": "https://www.zpci.pl/images/szkoleniepowerquery.png"
+            }
+        },
+        {
+            "@type": "Course",
+            "@id": "https://www.zpci.pl/szkoleniakursy/power-query.html#course",
+            "name": "Power Query w Microsoft Excel",
+            "description": "Szkolenie obejmujące importowanie danych z plików, folderów, stron internetowych i baz danych, czyszczenie i łączenie danych, parametry, język M, własne funkcje oraz optymalizację zapytań.",
+            "url": "https://www.zpci.pl/szkoleniakursy/power-query.html",
+            "inLanguage": "pl-PL",
+            "provider": {
+                "@id": "https://www.zpci.pl/#organization"
+            },
+            "educationalLevel": "Poziom podstawowy i średniozaawansowany",
+            "teaches": [
+                "Importowanie danych z Excela, CSV, TXT, PDF i folderów",
+                "Łączenie z bazami danych i stronami internetowymi",
+                "Czyszczenie i przekształcanie danych",
+                "Scalanie i dołączanie zapytań",
+                "Tworzenie parametrów",
+                "Automatyczne odświeżanie danych",
+                "Podstawy języka M",
+                "Tworzenie własnych funkcji",
+                "Obsługa błędów i optymalizacja zapytań"
+            ]
+        },
+        {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Strona główna",
+                    "item": "https://www.zpci.pl/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Szkolenia i kursy",
+                    "item": "https://www.zpci.pl/szkoleniakursy.html"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Power Query",
+                    "item": "https://www.zpci.pl/szkoleniakursy/power-query.html"
+                }
+            ]
+        }
+    ]
+}
+</script>
+
+<style>
+
+/* RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #eef5ff, #ffffff);
+    color: #222222;
+    line-height: 1.7;
+}
+
+/* NAGŁÓWEK */
+
+header {
+    position: relative;
+    overflow: hidden;
+    padding: 40px 20px;
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(255, 255, 255, 0.14),
+            transparent 35%
+        ),
+        linear-gradient(135deg, #0b2148, #1f3b73);
+    color: #ffffff;
+    text-align: center;
+}
+
+.header-content {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+
+/* LOGO ZPCI */
+
+.header-brand {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 24px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.brand-logo {
+    width: 96px;
+    height: 96px;
+    flex: 0 0 96px;
+    border: 4px solid rgba(255, 255, 255, 0.95);
+    border-radius: 50%;
+    background: #ffffff;
+    object-fit: contain;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.header-brand:hover .brand-logo {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.32);
+}
+
+.brand-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.brand-name {
+    max-width: 620px;
+    font-size: clamp(21px, 3vw, 31px);
+    font-weight: 900;
+    line-height: 1.15;
+}
+
+.brand-subtitle {
+    margin-top: 6px;
+    color: rgba(255, 255, 255, 0.86);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+}
+
+.header-brand:focus-visible {
+    outline: 3px solid #f2b705;
+    outline-offset: 7px;
+    border-radius: 20px;
+}
+
+header h1 {
+    margin-bottom: 10px;
+    color: #ffffff;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    line-height: 1.2;
+}
+
+header p {
+    max-width: 780px;
+    margin: 0 auto;
+    color: #e4ecfa;
+    font-size: clamp(1rem, 2vw, 1.15rem);
+}
+
+/* MENU */
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 10px;
+    background: #16315d;
+}
+
+nav a {
+    display: block;
+    padding: 15px 20px;
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover,
+nav a:focus {
+    background: #244b87;
+}
+
+/* GŁÓWNA TREŚĆ */
+
+main {
+    padding: 35px 20px;
+}
+
+.box {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 35px;
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* BANER */
+
+.banner-wrapper {
+    width: 100%;
+    margin-bottom: 30px;
+    padding: 10px;
+    background: #f3f7fc;
+    border: 1px solid #dce5f1;
+    border-radius: 15px;
+}
+
+.course-banner {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 10px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.14);
+}
+
+/* PRZYCISKI */
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.button {
+    display: inline-block;
+    padding: 11px 19px;
+    background: #1f3b73;
+    border: none;
+    border-radius: 6px;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition:
+        background-color 0.3s ease,
+        transform 0.2s ease;
+}
+
+.button:hover,
+.button:focus {
+    background: #16305d;
+    transform: translateY(-2px);
+}
+
+.button-register {
+    background: #c57c00;
+}
+
+.button-register:hover,
+.button-register:focus {
+    background: #9f6400;
+}
+
+/* NAGŁÓWKI I TEKST */
+
+h2 {
+    margin-top: 32px;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    color: #1f3b73;
+    font-size: clamp(1.45rem, 3vw, 2rem);
+    border-bottom: 2px solid #dce5f1;
+}
+
+h3 {
+    margin-bottom: 10px;
+    color: #1f3b73;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+ul {
+    margin: 15px 0 25px 25px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+li::marker {
+    color: #1f3b73;
+}
+
+/* INFORMACJE ORGANIZACYJNE */
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.info-card {
+    height: 100%;
+    padding: 21px;
+    background: #f4f7fc;
+    border-left: 5px solid #1f3b73;
+    border-radius: 9px;
+}
+
+.info-card h3 {
+    margin-bottom: 10px;
+}
+
+/* PROGRAM SZKOLENIA */
+
+.program-list {
+    columns: 2;
+    column-gap: 45px;
+}
+
+.program-list li {
+    break-inside: avoid;
+}
+
+/* TAKSONOMIA */
+
+.taxonomy-intro {
+    margin-bottom: 22px;
+}
+
+.taxonomy-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.taxonomy-card {
+    height: 100%;
+    padding: 22px;
+    background: #f4f7fc;
+    border-top: 5px solid #1f3b73;
+    border-radius: 11px;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.taxonomy-card:nth-child(2),
+.taxonomy-card:nth-child(5) {
+    border-top-color: #c57c00;
+}
+
+.taxonomy-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(31, 59, 115, 0.15);
+}
+
+.taxonomy-card h3 {
+    margin-bottom: 12px;
+    font-size: 1.2rem;
+}
+
+.taxonomy-card ul {
+    margin: 0 0 0 20px;
+}
+
+.taxonomy-card li::marker {
+    color: #c57c00;
+}
+
+/* TABELA TAKSONOMII */
+
+.taxonomy-table-wrapper {
+    width: 100%;
+    margin-top: 30px;
+    overflow-x: auto;
+    border: 1px solid #d8e1ed;
+    border-radius: 10px;
+    -webkit-overflow-scrolling: touch;
+}
+
+.taxonomy-table {
+    width: 100%;
+    min-width: 740px;
+    border-collapse: collapse;
+}
+
+.taxonomy-table th,
+.taxonomy-table td {
+    padding: 14px;
+    border: 1px solid #d8e1ed;
+    text-align: left;
+    vertical-align: top;
+}
+
+.taxonomy-table th {
+    background: #1f3b73;
+    color: #ffffff;
+}
+
+.taxonomy-table tbody tr:nth-child(even) {
+    background: #f4f7fc;
+}
+
+.taxonomy-table tbody tr:hover {
+    background: #eaf1fb;
+}
+
+/* ZASTOSOWANIE W PRAKTYCE */
+
+.practice-box {
+    margin-top: 32px;
+    padding: 24px;
+    background: #fff8e8;
+    border-left: 5px solid #c57c00;
+    border-radius: 10px;
+}
+
+.practice-box h2 {
+    margin-top: 0;
+}
+
+/* KONTAKT */
+
+.contact-box {
+    margin-top: 32px;
+    padding: 26px;
+    background: #eef4ff;
+    border-left: 5px solid #1f3b73;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.contact-box h2 {
+    margin-top: 0;
+}
+
+.contact-box a:not(.button) {
+    color: #1f3b73;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.contact-box a:not(.button):hover,
+.contact-box a:not(.button):focus {
+    text-decoration: underline;
+}
+
+/* STOPKA */
+
+footer {
+    margin-top: 30px;
+    padding: 20px 15px;
+    background: #1f3b73;
+    color: #ffffff;
+    text-align: center;
+}
+
+/* TABLETY */
+
+@media (max-width: 900px) {
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .taxonomy-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .box {
+        padding: 28px;
+    }
+}
+
+/* TELEFONY */
+
+@media (max-width: 650px) {
+
+    header {
+        padding: 30px 15px;
+    }
+
+    .header-brand {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .brand-logo {
+        width: 84px;
+        height: 84px;
+        flex-basis: 84px;
+    }
+
+    .brand-copy {
+        align-items: center;
+        text-align: center;
+    }
+
+    .brand-name {
+        font-size: 22px;
+    }
+
+    .brand-subtitle {
+        font-size: 12px;
+    }
+
+    header h1 {
+        font-size: 1.75rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    nav {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    nav a {
+        width: 100%;
+        padding: 13px 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        text-align: center;
+    }
+
+    main {
+        padding: 18px 10px;
+    }
+
+    .box {
+        padding: 20px 16px;
+        border-radius: 9px;
+    }
+
+    .banner-wrapper {
+        margin-bottom: 22px;
+        padding: 6px;
+        border-radius: 10px;
+    }
+
+    .course-banner {
+        width: 100%;
+        height: auto;
+        border-radius: 7px;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    .button {
+        width: 100%;
+    }
+
+    .program-list {
+        columns: 1;
+    }
+
+    .taxonomy-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .taxonomy-card,
+    .info-card,
+    .practice-box,
+    .contact-box {
+        padding: 20px 16px;
+    }
+
+    h2 {
+        font-size: 1.35rem;
+    }
+}
+
+/* MAŁE TELEFONY */
+
+@media (max-width: 380px) {
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .box {
+        padding: 18px 13px;
+    }
+
+    ul {
+        margin-left: 20px;
+    }
+}
+
+/* DRUKOWANIE */
+
+@media print {
+
+    body {
+        background: #ffffff;
+        color: #000000;
+    }
+
+    nav,
+    .buttons,
+    footer {
+        display: none;
+    }
+
+    header {
+        padding: 15px 0;
+        background: #ffffff;
+        color: #000000;
+    }
+
+    .brand-logo {
+        width: 72px;
+        height: 72px;
+        border: 1px solid #cccccc;
+        box-shadow: none;
+    }
+
+    .brand-name,
+    .brand-subtitle,
+    header h1,
+    header p {
+        color: #000000;
+    }
+
+    main {
+        padding: 0;
+    }
+
+    .box {
+        max-width: 100%;
+        padding: 0;
+        box-shadow: none;
+    }
+
+    .banner-wrapper {
+        padding: 0;
+        background: #ffffff;
+        border: none;
+    }
+
+    .course-banner {
+        width: 100%;
+        height: auto;
+        box-shadow: none;
+    }
+
+    h2,
+    h3 {
+        color: #000000;
+    }
+
+    .info-grid,
+    .taxonomy-grid {
+        display: block;
+    }
+
+    .info-card,
+    .taxonomy-card {
+        margin-bottom: 15px;
+        background: #ffffff;
+        border: 1px solid #000000;
+        box-shadow: none;
+        break-inside: avoid;
+    }
+
+    .program-list {
+        columns: 1;
+    }
+
+    .taxonomy-table {
+        min-width: 0;
+    }
+
+    .taxonomy-table th {
+        background: #ffffff;
+        color: #000000;
+    }
+
+    .practice-box,
+    .contact-box {
+        background: #ffffff;
+        border: 1px solid #000000;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="header-content">
+
+        <a
+            class="header-brand"
+            href="../index.html"
+            aria-label="ZPCI – przejdź do strony głównej"
+        >
+            <img
+                class="brand-logo"
+                src="../images/Logo+zdjecia/Logotypy/2_Logotypy_okrag.png"
+                alt="Logo Zachodniopomorskiego Centrum Informatyki"
+                width="96"
+                height="96"
+                loading="eager"
+                decoding="async"
+            >
+            <span class="brand-copy">
+                <span class="brand-name">Zachodniopomorskie Centrum Informatyki</span>
+                <span class="brand-subtitle">Szkolenia informatyczne i usługi IT</span>
+            </span>
+        </a>
+
+        <h1>Power Query</h1>
+
+        <p>
+            Importowanie, czyszczenie, łączenie i automatyczne
+            przekształcanie danych w programie Microsoft Excel
+        </p>
+
+    </div>
+
+</header>
+
+<nav aria-label="Menu główne">
+
+    <a href="../index.html">
+        Strona główna
+    </a>
+
+    <a href="../szkoleniakursy.html">
+        Szkolenia / Kursy
+    </a>
+
+    <a href="../uslugit.html">
+        Usługi IT
+    </a>
+
+    <a href="../kontakt.html">
+        Kontakt
+    </a>
+
+</nav>
+
+<main>
+
+    <article class="box">
+
+        <div class="banner-wrapper">
+
+            <img
+                class="course-banner"
+                src="../images/szkoleniepowerquery.png"
+                alt="Szkolenie Power Query w programie Microsoft Excel w ZPCI Szczecin"
+                width="1536"
+                height="1024"
+                loading="eager"
+                fetchpriority="high"
+                decoding="async"
+            >
+
+        </div>
+
+        <div class="buttons">
+
+            <button
+                class="button"
+                type="button"
+                onclick="window.print()"
+            >
+                Drukuj
+            </button>
+
+            <a
+                class="button button-register"
+                href="zapis-na-szkolenie.html"
+            >
+                Zapisz się na szkolenie
+            </a>
+
+        </div>
+
+        <section>
+
+            <h2>Kogo zapraszamy?</h2>
+
+            <p>
+                Szkolenie przeznaczone jest dla osób chcących poznać
+                i praktycznie wykorzystywać Power Query w programie
+                Microsoft Excel.
+            </p>
+
+            <p>
+                Kurs będzie szczególnie przydatny osobom, które regularnie
+                pobierają, porządkują, łączą i analizują dane pochodzące
+                z różnych plików, arkuszy, folderów lub baz danych.
+            </p>
+
+            <p>
+                Szkolenie skierowane jest między innymi do pracowników
+                działów księgowych, finansowych, handlowych, logistycznych,
+                administracyjnych, kadrowych i analitycznych.
+            </p>
+
+        </section>
+
+        <section>
+
+            <h2>Informacje organizacyjne</h2>
+
+            <div class="info-grid">
+
+                <article class="info-card">
+
+                    <h3>Organizacja</h3>
+
+                    <p>
+                        Zajęcia prowadzone są indywidualnie lub grupowo,
+                        z możliwością dopasowania terminów do uczestników.
+                    </p>
+
+                </article>
+
+                <article class="info-card">
+
+                    <h3>Metodyka</h3>
+
+                    <p>
+                        Szkolenie ma formę praktycznych warsztatów
+                        prowadzonych na rzeczywistych przykładach
+                        importowania i przekształcania danych.
+                    </p>
+
+                </article>
+
+                <article class="info-card">
+
+                    <h3>Certyfikaty</h3>
+
+                    <p>
+                        Po zakończeniu szkolenia uczestnik otrzymuje
+                        certyfikat w języku polskim i angielskim.
+                        Możliwe są również dodatkowe wersje językowe.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <section>
+
+            <h2>Program szkolenia</h2>
+
+            <ul class="program-list">
+
+                <li>Wprowadzenie do Power Query</li>
+
+                <li>Uruchamianie edytora Power Query</li>
+
+                <li>Interfejs i podstawowe narzędzia edytora</li>
+
+                <li>Importowanie danych z arkuszy Excel</li>
+
+                <li>Importowanie danych z tabel programu Excel</li>
+
+                <li>Importowanie danych z plików CSV i TXT</li>
+
+                <li>Importowanie danych z folderu</li>
+
+                <li>Pobieranie danych z plików PDF</li>
+
+                <li>Importowanie danych ze stron internetowych</li>
+
+                <li>Łączenie z bazami danych</li>
+
+                <li>Określanie typów danych</li>
+
+                <li>Zmiana nazw kolumn</li>
+
+                <li>Usuwanie zbędnych kolumn i wierszy</li>
+
+                <li>Usuwanie pustych wartości</li>
+
+                <li>Usuwanie duplikatów</li>
+
+                <li>Zastępowanie wartości</li>
+
+                <li>Dzielenie kolumn</li>
+
+                <li>Scalanie kolumn</li>
+
+                <li>Formatowanie tekstu</li>
+
+                <li>Praca z datami i godzinami</li>
+
+                <li>Filtrowanie danych</li>
+
+                <li>Sortowanie danych</li>
+
+                <li>Grupowanie danych</li>
+
+                <li>Tworzenie kolumn niestandardowych</li>
+
+                <li>Tworzenie kolumn warunkowych</li>
+
+                <li>Dodawanie kolumn indeksu</li>
+
+                <li>Scalanie zapytań</li>
+
+                <li>Dołączanie zapytań</li>
+
+                <li>Łączenie wielu plików z jednego folderu</li>
+
+                <li>Tworzenie parametrów</li>
+
+                <li>Odświeżanie danych źródłowych</li>
+
+                <li>Automatyzowanie powtarzalnych operacji</li>
+
+                <li>Ładowanie danych do arkusza Excel</li>
+
+                <li>Ładowanie danych do modelu danych</li>
+
+                <li>Podstawy języka M</li>
+
+                <li>Składnia i struktura języka M</li>
+
+                <li>Edytor zaawansowany</li>
+
+                <li>Modyfikowanie kodu zapytania</li>
+
+                <li>Tworzenie własnych funkcji</li>
+
+                <li>Obsługa błędów w zapytaniach</li>
+
+                <li>Optymalizacja zapytań Power Query</li>
+
+                <li>Praktyczne przygotowanie procesu importowania danych</li>
+
+            </ul>
+
+        </section>
+
+        <section>
+
+            <h2>Taksonomia efektów kształcenia</h2>
+
+            <p class="taxonomy-intro">
+                Po zakończeniu szkolenia uczestnik osiąga efekty
+                kształcenia w zakresie wiedzy, rozumienia, praktycznego
+                zastosowania, analizy, oceny oraz samodzielnego tworzenia
+                procesów importowania i przekształcania danych.
+            </p>
+
+            <div class="taxonomy-grid">
+
+                <article class="taxonomy-card">
+
+                    <h3>Uczestnik wie</h3>
+
+                    <ul>
+                        <li>czym jest Power Query i do czego służy,</li>
+                        <li>jakie źródła danych obsługuje Power Query,</li>
+                        <li>czym jest zapytanie i krok transformacji,</li>
+                        <li>jakie typy danych można stosować,</li>
+                        <li>czym jest język M,</li>
+                        <li>jak działa odświeżanie danych.</li>
+                    </ul>
+
+                </article>
+
+                <article class="taxonomy-card">
+
+                    <h3>Uczestnik rozumie</h3>
+
+                    <ul>
+                        <li>kolejność wykonywania kroków zapytania,</li>
+                        <li>znaczenie prawidłowego określania typów danych,</li>
+                        <li>różnicę między scalaniem a dołączaniem danych,</li>
+                        <li>sposób działania źródeł danych,</li>
+                        <li>zasady automatycznego odświeżania zapytań,</li>
+                        <li>wpływ transformacji na wynik końcowy.</li>
+                    </ul>
+
+                </article>
+
+                <article class="taxonomy-card">
+
+                    <h3>Uczestnik stosuje</h3>
+
+                    <ul>
+                        <li>importowanie danych z różnych źródeł,</li>
+                        <li>filtrowanie i sortowanie danych,</li>
+                        <li>czyszczenie i formatowanie wartości,</li>
+                        <li>scalanie oraz dołączanie zapytań,</li>
+                        <li>kolumny niestandardowe i warunkowe,</li>
+                        <li>automatyczne odświeżanie wyników.</li>
+                    </ul>
+
+                </article>
+
+                <article class="taxonomy-card">
+
+                    <h3>Uczestnik analizuje</h3>
+
+                    <ul>
+                        <li>strukturę danych źródłowych,</li>
+                        <li>jakość i kompletność importowanych danych,</li>
+                        <li>kolejność zastosowanych transformacji,</li>
+                        <li>przyczyny błędów w zapytaniach,</li>
+                        <li>zgodność typów danych,</li>
+                        <li>możliwości automatyzacji procesu.</li>
+                    </ul>
+
+                </article>
+
+                <article class="taxonomy-card">
+
+                    <h3>Uczestnik ocenia</h3>
+
+                    <ul>
+                        <li>poprawność przygotowanego zapytania,</li>
+                        <li>jakość danych po transformacji,</li>
+                        <li>przydatność zastosowanych kroków,</li>
+                        <li>wydajność procesu importowania danych,</li>
+                        <li>czy zapytanie można uprościć,</li>
+                        <li>czy wynik odpowiada potrzebom użytkownika.</li>
+                    </ul>
+
+                </article>
+
+                <article class="taxonomy-card">
+
+                    <h3>Uczestnik tworzy</h3>
+
+                    <ul>
+                        <li>własne zapytania Power Query,</li>
+                        <li>automatyczne procesy czyszczenia danych,</li>
+                        <li>połączenia między wieloma źródłami,</li>
+                        <li>zapytania korzystające z parametrów,</li>
+                        <li>własne funkcje języka M,</li>
+                        <li>rozwiązania dopasowane do zadań zawodowych.</li>
+                    </ul>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <section>
+
+            <h2>Poziomy taksonomii szkolenia</h2>
+
+            <div
+                class="taxonomy-table-wrapper"
+                role="region"
+                aria-label="Tabela poziomów taksonomii szkolenia Power Query"
+                tabindex="0"
+            >
+
+                <table class="taxonomy-table">
+
+                    <thead>
+
+                        <tr>
+                            <th scope="col">Poziom</th>
+                            <th scope="col">Efekt kształcenia</th>
+                            <th scope="col">Przykład praktyczny</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>1. Wiedza</td>
+
+                            <td>
+                                Uczestnik zna podstawowe funkcje
+                                i możliwości Power Query.
+                            </td>
+
+                            <td>
+                                Rozpoznaje źródła danych, typy danych,
+                                zapytania i kroki transformacji.
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>2. Rozumienie</td>
+
+                            <td>
+                                Uczestnik rozumie sposób wykonywania
+                                kolejnych etapów zapytania.
+                            </td>
+
+                            <td>
+                                Wyjaśnia, w jaki sposób zmiana jednego
+                                kroku wpływa na końcowy wynik.
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>3. Zastosowanie</td>
+
+                            <td>
+                                Uczestnik wykorzystuje poznane narzędzia
+                                podczas przygotowywania danych.
+                            </td>
+
+                            <td>
+                                Importuje plik, usuwa błędy, filtruje
+                                dane i ładuje wynik do programu Excel.
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>4. Analiza</td>
+
+                            <td>
+                                Uczestnik analizuje strukturę danych
+                                oraz sposób działania zapytania.
+                            </td>
+
+                            <td>
+                                Wyszukuje nieprawidłowe wartości,
+                                duplikaty i błędy typów danych.
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>5. Ocena</td>
+
+                            <td>
+                                Uczestnik ocenia poprawność
+                                i wydajność przygotowanego procesu.
+                            </td>
+
+                            <td>
+                                Sprawdza, czy zapytanie wykonuje
+                                wszystkie transformacje bez błędów.
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>6. Tworzenie</td>
+
+                            <td>
+                                Uczestnik projektuje własny proces
+                                importowania i przekształcania danych.
+                            </td>
+
+                            <td>
+                                Buduje zapytanie łączące wiele plików
+                                i automatycznie odświeżające wyniki.
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+        <section class="practice-box">
+
+            <h2>Zastosowanie umiejętności w pracy</h2>
+
+            <p>
+                Uczestnik potrafi samodzielnie importować dane pochodzące
+                z różnych plików i systemów, porządkować je, usuwać błędy,
+                łączyć tabele oraz przygotowywać dane do dalszej analizy.
+            </p>
+
+            <p>
+                Zdobyte umiejętności mogą zostać wykorzystane do
+                automatycznego przygotowywania raportów, zestawień
+                sprzedażowych, danych księgowych, informacji kadrowych,
+                raportów logistycznych oraz analiz biznesowych.
+            </p>
+
+            <p>
+                Power Query ogranicza konieczność ręcznego powtarzania
+                tych samych operacji, ponieważ przygotowany proces można
+                ponownie uruchomić poprzez odświeżenie danych.
+            </p>
+
+        </section>
+
+        <section class="contact-box">
+
+            <h2>Kontakt</h2>
+
+            <p>
+                W sprawie terminów, programu i organizacji szkolenia napisz:
+            </p>
+
+            <p>
+                <a href="mailto:biuro@zpci.pl">
+                    biuro@zpci.pl
+                </a>
+            </p>
+
+            <a
+                class="button button-register"
+                href="zapis-na-szkolenie.html"
+            >
+                Zapisz się na szkolenie
+            </a>
+
+        </section>
+
+    </article>
+
+</main>
+
+<footer>
+
+    &copy;
+    <span id="year"></span>
+    Zachodniopomorskie Centrum Informatyki
+
+</footer>
+
+<script>
+
+const yearElement = document.getElementById("year");
+
+if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
+}
+
+</script>
+
+</body>
+
+</html>

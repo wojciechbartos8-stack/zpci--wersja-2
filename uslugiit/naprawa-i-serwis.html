@@ -1,0 +1,1537 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Naprawa i serwis komputerów – pomoc IT | ZPCI Szczecin</title>
+
+<meta
+    name="description"
+    content="Naprawa i serwis komputerów stacjonarnych oraz laptopów. Diagnostyka, instalacja systemów, usuwanie wirusów, modernizacja sprzętu, konfiguracja urządzeń i odzyskiwanie danych."
+>
+
+<meta
+    name="keywords"
+    content="naprawa komputerów Szczecin, serwis komputerowy, naprawa laptopów, diagnostyka komputerów, instalacja systemu, usuwanie wirusów, odzyskiwanie danych, pomoc informatyczna, ZPCI"
+>
+
+<meta
+    name="author"
+    content="Zachodniopomorskie Centrum Informatyki"
+>
+
+<meta
+    name="robots"
+    content="index, follow, max-image-preview:large"
+>
+
+<meta
+    name="theme-color"
+    content="#0b2148"
+>
+
+<link
+    rel="canonical"
+    href="https://www.zpci.pl/uslugiit/naprawa-i-serwis.html"
+>
+
+<!-- OPEN GRAPH -->
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:site_name" content="ZPCI">
+
+<meta
+    property="og:title"
+    content="Naprawa i serwis komputerów | ZPCI"
+>
+
+<meta
+    property="og:description"
+    content="Diagnostyka, naprawa i modernizacja komputerów oraz laptopów. Instalacja systemów, usuwanie wirusów, konfiguracja sprzętu i odzyskiwanie danych."
+>
+
+<meta
+    property="og:url"
+    content="https://www.zpci.pl/uslugiit/naprawa-i-serwis.html"
+>
+
+<meta
+    property="og:image"
+    content="https://www.zpci.pl/images/naprawaiserwis.png"
+>
+
+<meta
+    property="og:image:alt"
+    content="Naprawa i serwis komputerów przez ZPCI"
+>
+
+<!-- X / TWITTER -->
+
+<meta name="twitter:card" content="summary_large_image">
+
+<meta
+    name="twitter:title"
+    content="Naprawa i serwis komputerów | ZPCI"
+>
+
+<meta
+    name="twitter:description"
+    content="Profesjonalna pomoc informatyczna, diagnostyka, naprawa komputerów, konfiguracja sprzętu i odzyskiwanie danych."
+>
+
+<meta
+    name="twitter:image"
+    content="https://www.zpci.pl/images/naprawaiserwis.png"
+>
+
+<!-- DANE STRUKTURALNE SEO -->
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Organization",
+            "@id": "https://www.zpci.pl/#organization",
+            "name": "Zachodniopomorskie Centrum Informatyki",
+            "alternateName": "ZPCI",
+            "url": "https://www.zpci.pl/",
+            "email": "biuro@zpci.pl",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.zpci.pl/images/logo+zdjecia/logotypy/2_Logotypy_okrag.png"
+            }
+        },
+        {
+            "@type": "Service",
+            "@id": "https://www.zpci.pl/uslugiit/naprawa-i-serwis.html#service",
+            "name": "Naprawa i serwis komputerów",
+            "description": "Diagnostyka, naprawa i modernizacja komputerów stacjonarnych oraz laptopów, instalacja systemów, usuwanie wirusów, konfiguracja urządzeń i odzyskiwanie danych.",
+            "url": "https://www.zpci.pl/uslugiit/naprawa-i-serwis.html",
+            "image": "https://www.zpci.pl/images/naprawaiserwis.png",
+            "serviceType": "Naprawa i serwis sprzętu komputerowego",
+            "provider": {
+                "@id": "https://www.zpci.pl/#organization"
+            },
+            "areaServed": {
+                "@type": "Country",
+                "name": "Polska"
+            },
+            "inLanguage": "pl-PL"
+        },
+        {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Strona główna",
+                    "item": "https://www.zpci.pl/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Usługi IT",
+                    "item": "https://www.zpci.pl/uslugit.html"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Naprawa i serwis komputerów",
+                    "item": "https://www.zpci.pl/uslugiit/naprawa-i-serwis.html"
+                }
+            ]
+        }
+    ]
+}
+</script>
+
+<style>
+
+/* ==================================================
+   ZMIENNE
+================================================== */
+
+:root {
+    --primary-dark: #0b2148;
+    --primary: #1f3b73;
+    --primary-medium: #3159a0;
+    --primary-light: #eef4ff;
+    --accent: #f2b705;
+    --accent-hover: #ffd447;
+    --green: #267044;
+    --white: #ffffff;
+    --background: #f4f7fb;
+    --text: #303841;
+    --muted: #5c6875;
+    --border: #dbe5ef;
+    --shadow: 0 14px 38px rgba(11, 33, 72, 0.12);
+    --shadow-hover: 0 20px 45px rgba(11, 33, 72, 0.18);
+}
+
+/* ==================================================
+   RESET
+================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    background:
+        linear-gradient(
+            135deg,
+            #edf4ff 0%,
+            #f8fbff 52%,
+            #ffffff 100%
+        );
+    color: var(--text);
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ==================================================
+   LINK DOSTĘPNOŚCI
+================================================== */
+
+.skip-link {
+    position: fixed;
+    top: -100px;
+    left: 15px;
+    z-index: 9999;
+    padding: 12px 18px;
+    border-radius: 0 0 8px 8px;
+    background: var(--accent);
+    color: var(--primary-dark);
+    font-weight: bold;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* ==================================================
+   KONTENER
+================================================== */
+
+.page-container {
+    width: calc(100% - 40px);
+    max-width: 1160px;
+    margin: 0 auto;
+}
+
+/* ==================================================
+   NAGŁÓWEK Z LOGO
+================================================== */
+
+.site-header {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            circle at 88% 18%,
+            rgba(255, 255, 255, 0.14),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            var(--primary-dark),
+            var(--primary-medium)
+        );
+    color: var(--white);
+}
+
+.site-header::before {
+    content: "";
+    position: absolute;
+    top: -170px;
+    right: -110px;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.header-inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    min-height: 150px;
+    margin: 0 auto;
+    padding: 25px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.logo {
+    display: flex;
+    min-width: 0;
+    align-items: center;
+    gap: 16px;
+    color: var(--white);
+}
+
+.logo-image {
+    width: 88px;
+    height: 88px;
+    flex: 0 0 88px;
+    object-fit: contain;
+    border-radius: 50%;
+    background: var(--white);
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.25);
+}
+
+.logo-text {
+    min-width: 0;
+}
+
+.logo-text strong {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--white);
+    font-size: clamp(1.35rem, 3vw, 2rem);
+    line-height: 1.2;
+}
+
+.logo-text span {
+    display: block;
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 1rem;
+}
+
+.header-service {
+    max-width: 500px;
+    padding-left: 25px;
+    border-left: 1px solid rgba(255, 255, 255, 0.25);
+    text-align: right;
+}
+
+.header-service p {
+    margin-bottom: 6px;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.92rem;
+    font-weight: bold;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+}
+
+.header-service h1 {
+    color: var(--white);
+    font-size: clamp(1.55rem, 3vw, 2.45rem);
+    line-height: 1.2;
+}
+
+/* ==================================================
+   NAWIGACJA
+================================================== */
+
+.main-nav {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background: #071b37;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.18);
+}
+
+.nav-inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.main-nav a {
+    display: flex;
+    min-height: 54px;
+    padding: 13px 22px;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.main-nav a:hover,
+.main-nav a:focus-visible {
+    background: var(--accent);
+    color: var(--primary-dark);
+}
+
+.main-nav a:focus-visible,
+.btn:focus-visible,
+.logo:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+}
+
+/* ==================================================
+   BANER
+================================================== */
+
+.banner-section {
+    padding: 32px 0 0;
+}
+
+.banner-box {
+    overflow: hidden;
+    padding: 7px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    background: var(--white);
+    box-shadow: 0 20px 48px rgba(11, 33, 72, 0.18);
+}
+
+.banner-box img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 13px;
+}
+
+/* ==================================================
+   GŁÓWNA TREŚĆ
+================================================== */
+
+main {
+    padding: 32px 0 55px;
+}
+
+.content-box {
+    padding: 40px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    background: var(--white);
+    box-shadow: var(--shadow);
+}
+
+/* ==================================================
+   WPROWADZENIE
+================================================== */
+
+.intro {
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+}
+
+.intro h2 {
+    margin-bottom: 18px;
+    color: var(--primary-dark);
+    font-size: clamp(1.8rem, 4.5vw, 2.7rem);
+    line-height: 1.2;
+}
+
+.intro p {
+    max-width: 930px;
+    margin: 0 auto 15px;
+    color: var(--muted);
+}
+
+.intro p:last-child {
+    margin-bottom: 0;
+}
+
+/* ==================================================
+   SEKCJE
+================================================== */
+
+.content-section {
+    margin-top: 42px;
+}
+
+.content-section > h2 {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--primary);
+    color: var(--primary-dark);
+    font-size: clamp(1.45rem, 3.2vw, 2rem);
+    line-height: 1.3;
+}
+
+.content-section > p {
+    margin-bottom: 15px;
+    color: var(--muted);
+}
+
+.content-section > p:last-child {
+    margin-bottom: 0;
+}
+
+/* ==================================================
+   DLA KOGO
+================================================== */
+
+.audience-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 19px;
+}
+
+.audience-card {
+    height: 100%;
+    padding: 24px 21px;
+    border: 1px solid var(--border);
+    border-top: 5px solid var(--primary);
+    border-radius: 14px;
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff,
+            #f7faff
+        );
+    box-shadow: 0 8px 22px rgba(11, 33, 72, 0.08);
+    transition:
+        transform 0.22s ease,
+        box-shadow 0.22s ease;
+}
+
+.audience-card:nth-child(2) {
+    border-top-color: var(--accent);
+}
+
+.audience-card:nth-child(3) {
+    border-top-color: var(--green);
+}
+
+.audience-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.audience-card h3 {
+    margin-bottom: 11px;
+    color: var(--primary-dark);
+    font-size: 1.2rem;
+    line-height: 1.3;
+}
+
+.audience-card p {
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+/* ==================================================
+   ZAKRES USŁUG
+================================================== */
+
+.service-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px 18px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.service-list li {
+    position: relative;
+    min-height: 68px;
+    padding: 16px 17px 16px 52px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: #f8fbff;
+}
+
+.service-list li::before {
+    content: "?";
+    position: absolute;
+    top: 17px;
+    left: 16px;
+    display: flex;
+    width: 25px;
+    height: 25px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--primary);
+    color: var(--white);
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* ==================================================
+   OBSZARY SERWISU
+================================================== */
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.service-card {
+    position: relative;
+    min-height: 125px;
+    padding: 23px 20px 21px 65px;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #f1f6ff
+        );
+    box-shadow: 0 8px 22px rgba(11, 33, 72, 0.08);
+}
+
+.service-card::before {
+    content: "IT";
+    position: absolute;
+    top: 23px;
+    left: 20px;
+    display: flex;
+    width: 33px;
+    height: 31px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: var(--primary);
+    color: var(--white);
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.service-card h3 {
+    margin-bottom: 7px;
+    color: var(--primary-dark);
+    font-size: 1.1rem;
+    line-height: 1.3;
+}
+
+.service-card p {
+    color: var(--muted);
+    font-size: 0.92rem;
+}
+
+/* ==================================================
+   INFORMACJA
+================================================== */
+
+.info-box {
+    margin-top: 42px;
+    padding: 28px;
+    border-left: 6px solid var(--accent);
+    border-radius: 15px;
+    background: var(--primary-light);
+}
+
+.info-box h2 {
+    margin-bottom: 15px;
+    color: var(--primary-dark);
+    font-size: clamp(1.45rem, 3vw, 1.9rem);
+    line-height: 1.3;
+}
+
+.info-box p {
+    margin-bottom: 13px;
+    color: #4d5d6c;
+}
+
+.info-box p:last-child {
+    margin-bottom: 0;
+}
+
+/* ==================================================
+   PRZYCISKI
+================================================== */
+
+.buttons {
+    display: flex;
+    margin-top: 38px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.btn {
+    display: inline-flex;
+    min-height: 52px;
+    padding: 14px 27px;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid transparent;
+    border-radius: 999px;
+    background: var(--accent);
+    color: var(--primary-dark);
+    font-weight: bold;
+    line-height: 1.2;
+    text-align: center;
+    box-shadow: 0 9px 22px rgba(242, 183, 5, 0.25);
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.btn:hover {
+    background: var(--accent-hover);
+    box-shadow: 0 13px 28px rgba(242, 183, 5, 0.32);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: var(--primary);
+    color: var(--white);
+    box-shadow: 0 9px 22px rgba(31, 59, 115, 0.22);
+}
+
+.btn-secondary:hover {
+    background: var(--primary-dark);
+}
+
+/* ==================================================
+   STOPKA
+================================================== */
+
+footer {
+    padding: 28px 20px;
+    background: var(--primary-dark);
+    color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer p + p {
+    margin-top: 5px;
+}
+
+footer a {
+    color: var(--white);
+    font-weight: bold;
+}
+
+footer a:hover,
+footer a:focus-visible {
+    text-decoration: underline;
+}
+
+/* ==================================================
+   TABLETY
+================================================== */
+
+@media (max-width: 950px) {
+
+    .audience-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 820px) {
+
+    body {
+        font-size: 17px;
+    }
+
+    .header-inner {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .logo {
+        justify-content: center;
+    }
+
+    .header-service {
+        max-width: 800px;
+        padding-top: 20px;
+        padding-left: 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.25);
+        border-left: 0;
+        text-align: center;
+    }
+
+    .page-container {
+        width: calc(100% - 28px);
+    }
+
+    .content-box {
+        padding: 32px 24px;
+    }
+
+    .service-list,
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==================================================
+   TELEFONY
+================================================== */
+
+@media (max-width: 600px) {
+
+    .page-container {
+        width: calc(100% - 20px);
+    }
+
+    .header-inner {
+        min-height: auto;
+        padding: 25px 15px;
+    }
+
+    .logo {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+
+    .logo-image {
+        width: 76px;
+        height: 76px;
+        flex-basis: 76px;
+    }
+
+    .logo-text strong {
+        font-size: 1.35rem;
+    }
+
+    .logo-text span {
+        font-size: 0.92rem;
+    }
+
+    .header-service h1 {
+        font-size: 1.5rem;
+    }
+
+    .nav-inner {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .main-nav a {
+        min-height: 49px;
+        padding: 10px 8px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        font-size: 14px;
+    }
+
+    .banner-section {
+        padding-top: 20px;
+    }
+
+    .banner-box {
+        padding: 4px;
+        border-radius: 13px;
+    }
+
+    main {
+        padding: 20px 0 36px;
+    }
+
+    .content-box {
+        padding: 23px 16px;
+        border-radius: 14px;
+    }
+
+    .intro {
+        padding-bottom: 25px;
+    }
+
+    .audience-card,
+    .info-box {
+        padding: 21px 17px;
+    }
+
+    .service-card {
+        min-height: auto;
+        padding: 22px 17px 20px 61px;
+    }
+
+    .service-card::before {
+        top: 22px;
+        left: 17px;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    .buttons .btn {
+        width: 100%;
+    }
+}
+
+/* ==================================================
+   MAŁE TELEFONY
+================================================== */
+
+@media (max-width: 390px) {
+
+    .nav-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .main-nav a {
+        min-height: 45px;
+    }
+
+    .logo-text strong {
+        font-size: 1.2rem;
+    }
+
+    .header-service h1 {
+        font-size: 1.3rem;
+    }
+
+    .content-box {
+        padding: 20px 13px;
+    }
+}
+
+/* ==================================================
+   DRUKOWANIE
+================================================== */
+
+@media print {
+
+    body {
+        background: var(--white);
+        color: #000000;
+        font-size: 12px;
+    }
+
+    .skip-link,
+    .main-nav,
+    .buttons,
+    footer {
+        display: none;
+    }
+
+    .site-header {
+        background: var(--white);
+        color: #000000;
+    }
+
+    .header-inner {
+        min-height: auto;
+        padding: 10px 0 20px;
+    }
+
+    .logo-image {
+        width: 65px;
+        height: 65px;
+        flex-basis: 65px;
+        box-shadow: none;
+    }
+
+    .logo-text strong,
+    .logo-text span,
+    .header-service p,
+    .header-service h1 {
+        color: #000000;
+    }
+
+    .banner-section,
+    main {
+        padding: 0;
+    }
+
+    .banner-box,
+    .content-box {
+        padding: 0;
+        border: 0;
+        box-shadow: none;
+    }
+
+    .audience-grid,
+    .service-list,
+    .service-grid {
+        display: block;
+    }
+
+    .audience-card,
+    .service-list li,
+    .service-card {
+        margin-bottom: 12px;
+        background: var(--white);
+        border: 1px solid #000000;
+        box-shadow: none;
+        break-inside: avoid;
+    }
+
+    .info-box {
+        background: var(--white);
+        border: 1px solid #000000;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<a
+    class="skip-link"
+    href="#main-content"
+>
+    Przejdź do treści
+</a>
+
+<!-- NAGŁÓWEK Z LOGO -->
+
+<header class="site-header">
+
+    <div class="header-inner">
+
+        <a
+            class="logo"
+            href="../index.html"
+            aria-label="ZPCI – przejdź do strony głównej"
+        >
+
+            <img
+                class="logo-image"
+                src="../images/logo+zdjecia/logotypy/2_Logotypy_okrag.png"
+                alt="Logo Zachodniopomorskiego Centrum Informatyki"
+                width="200"
+                height="200"
+            >
+
+            <div class="logo-text">
+
+                <strong>
+                    Zachodniopomorskie Centrum Informatyki
+                </strong>
+
+                <span>
+                    Szkolenia komputerowe i usługi informatyczne
+                </span>
+
+            </div>
+
+        </a>
+
+        <div class="header-service">
+
+            <p>
+                Profesjonalna pomoc informatyczna
+            </p>
+
+            <h1>
+                Naprawa i serwis komputerów
+            </h1>
+
+        </div>
+
+    </div>
+
+</header>
+
+<!-- NAWIGACJA -->
+
+<nav
+    class="main-nav"
+    aria-label="Główna nawigacja"
+>
+
+    <div class="page-container nav-inner">
+
+        <a href="../index.html">
+            Strona główna
+        </a>
+
+        <a href="../szkoleniakursy.html">
+            Szkolenia / Kursy
+        </a>
+
+        <a href="../uslugit.html">
+            Usługi IT
+        </a>
+
+        <a href="../kontakt.html">
+            Kontakt
+        </a>
+
+    </div>
+
+</nav>
+
+<!-- BANER -->
+
+<section
+    class="banner-section"
+    aria-label="Baner usługi naprawy i serwisu komputerów"
+>
+
+    <div class="page-container">
+
+        <div class="banner-box">
+
+            <img
+                src="../images/naprawaiserwis.png"
+                alt="Naprawa i serwis komputerów stacjonarnych oraz laptopów przez ZPCI"
+                width="1536"
+                height="1024"
+                loading="eager"
+                fetchpriority="high"
+                decoding="async"
+            >
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- GŁÓWNA TREŚĆ -->
+
+<main id="main-content">
+
+    <div class="page-container">
+
+        <article class="content-box">
+
+            <!-- WPROWADZENIE -->
+
+            <section class="intro">
+
+                <h2>
+                    Profesjonalny serwis komputerowy
+                </h2>
+
+                <p>
+                    Oferujemy diagnostykę, naprawę, konserwację
+                    i modernizację komputerów stacjonarnych oraz laptopów.
+                </p>
+
+                <p>
+                    Pomagamy w rozwiązywaniu problemów ze sprzętem,
+                    systemem operacyjnym, oprogramowaniem, sterownikami,
+                    urządzeniami peryferyjnymi oraz połączeniem sieciowym.
+                </p>
+
+                <p>
+                    Zakres usługi dobieramy indywidualnie po zapoznaniu się
+                    z objawami usterki i stanem urządzenia.
+                </p>
+
+            </section>
+
+            <!-- DLA KOGO -->
+
+            <section class="content-section">
+
+                <h2>
+                    Dla kogo przeznaczona jest usługa?
+                </h2>
+
+                <div class="audience-grid">
+
+                    <article class="audience-card">
+
+                        <h3>
+                            Osoby prywatne
+                        </h3>
+
+                        <p>
+                            Pomoc w naprawie domowych komputerów,
+                            laptopów, drukarek i urządzeń dodatkowych.
+                        </p>
+
+                    </article>
+
+                    <article class="audience-card">
+
+                        <h3>
+                            Firmy
+                        </h3>
+
+                        <p>
+                            Konfiguracja i serwis stanowisk komputerowych,
+                            oprogramowania oraz urządzeń biurowych.
+                        </p>
+
+                    </article>
+
+                    <article class="audience-card">
+
+                        <h3>
+                            Instytucje
+                        </h3>
+
+                        <p>
+                            Wsparcie techniczne, modernizacja sprzętu
+                            i pomoc w rozwiązywaniu problemów użytkowników.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ZAKRES USŁUG -->
+
+            <section class="content-section">
+
+                <h2>
+                    Zakres świadczonych usług
+                </h2>
+
+                <ul class="service-list">
+
+                    <li>
+                        Diagnostyka komputerów stacjonarnych i laptopów
+                    </li>
+
+                    <li>
+                        Naprawa usterek sprzętowych
+                    </li>
+
+                    <li>
+                        Instalacja i konfiguracja systemów operacyjnych
+                    </li>
+
+                    <li>
+                        Aktualizacja systemów operacyjnych
+                    </li>
+
+                    <li>
+                        Instalacja sterowników
+                    </li>
+
+                    <li>
+                        Instalacja programów użytkowych
+                    </li>
+
+                    <li>
+                        Usuwanie wirusów i złośliwego oprogramowania
+                    </li>
+
+                    <li>
+                        Czyszczenie i konserwacja komputerów
+                    </li>
+
+                    <li>
+                        Modernizacja komputerów i laptopów
+                    </li>
+
+                    <li>
+                        Wymiana podzespołów komputerowych
+                    </li>
+
+                    <li>
+                        Konfiguracja drukarek i skanerów
+                    </li>
+
+                    <li>
+                        Konfiguracja urządzeń peryferyjnych
+                    </li>
+
+                    <li>
+                        Konfiguracja sieci komputerowych
+                    </li>
+
+                    <li>
+                        Konfiguracja połączenia internetowego
+                    </li>
+
+                    <li>
+                        Tworzenie kopii bezpieczeństwa danych
+                    </li>
+
+                    <li>
+                        Pomoc w odzyskiwaniu utraconych danych
+                    </li>
+
+                </ul>
+
+            </section>
+
+            <!-- OBSZARY SERWISU -->
+
+            <section class="content-section">
+
+                <h2>
+                    Obszary pomocy informatycznej
+                </h2>
+
+                <div class="service-grid">
+
+                    <article class="service-card">
+
+                        <h3>
+                            Sprzęt komputerowy
+                        </h3>
+
+                        <p>
+                            Diagnostyka podzespołów, wymiana dysków,
+                            pamięci RAM, zasilaczy i innych elementów.
+                        </p>
+
+                    </article>
+
+                    <article class="service-card">
+
+                        <h3>
+                            System operacyjny
+                        </h3>
+
+                        <p>
+                            Instalacja, aktualizacja, konfiguracja
+                            i rozwiązywanie problemów z systemem.
+                        </p>
+
+                    </article>
+
+                    <article class="service-card">
+
+                        <h3>
+                            Oprogramowanie
+                        </h3>
+
+                        <p>
+                            Instalacja programów, konfiguracja ustawień
+                            i usuwanie błędów aplikacji.
+                        </p>
+
+                    </article>
+
+                    <article class="service-card">
+
+                        <h3>
+                            Bezpieczeństwo
+                        </h3>
+
+                        <p>
+                            Usuwanie zagrożeń, aktualizacja zabezpieczeń
+                            i pomoc w ochronie danych użytkownika.
+                        </p>
+
+                    </article>
+
+                    <article class="service-card">
+
+                        <h3>
+                            Urządzenia biurowe
+                        </h3>
+
+                        <p>
+                            Konfiguracja drukarek, skanerów, monitorów
+                            i innych urządzeń współpracujących z komputerem.
+                        </p>
+
+                    </article>
+
+                    <article class="service-card">
+
+                        <h3>
+                            Sieć i Internet
+                        </h3>
+
+                        <p>
+                            Pomoc w konfiguracji połączeń sieciowych,
+                            routerów oraz udostępniania zasobów.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ADMINISTRACJA -->
+
+            <section class="content-section">
+
+                <h2>
+                    Administracja i wsparcie informatyczne
+                </h2>
+
+                <p>
+                    Oferujemy pomoc w konfiguracji stanowisk komputerowych,
+                    aktualizacji systemów oraz bieżącym rozwiązywaniu
+                    problemów informatycznych.
+                </p>
+
+                <p>
+                    Wsparcie może obejmować przygotowanie nowego komputera
+                    do pracy, przeniesienie danych, instalację programów,
+                    podłączenie drukarki i konfigurację dostępu do sieci.
+                </p>
+
+                <p>
+                    Zakres usług może zostać indywidualnie dopasowany
+                    do potrzeb klienta, firmy lub instytucji.
+                </p>
+
+            </section>
+
+            <!-- DLACZEGO ZPCI -->
+
+            <section class="content-section">
+
+                <h2>
+                    Dlaczego warto wybrać ZPCI?
+                </h2>
+
+                <ul class="service-list">
+
+                    <li>
+                        Profesjonalna diagnostyka problemów
+                    </li>
+
+                    <li>
+                        Indywidualne podejście do klienta
+                    </li>
+
+                    <li>
+                        Pomoc dla użytkowników prywatnych i firm
+                    </li>
+
+                    <li>
+                        Jasne ustalenie zakresu prac
+                    </li>
+
+                    <li>
+                        Możliwość modernizacji urządzenia
+                    </li>
+
+                    <li>
+                        Wsparcie techniczne po wykonaniu usługi
+                    </li>
+
+                </ul>
+
+            </section>
+
+            <!-- INFORMACJA -->
+
+            <section class="info-box">
+
+                <h2>
+                    Zgłoszenie usługi
+                </h2>
+
+                <p>
+                    Aby zamówić naprawę lub uzyskać wstępną informację,
+                    wypełnij formularz zgłoszeniowy.
+                </p>
+
+                <p>
+                    W opisie zgłoszenia podaj rodzaj urządzenia, objawy
+                    usterki oraz informację, od kiedy występuje problem.
+                </p>
+
+                <p>
+                    Szczegółowy zakres prac i koszt usługi ustalane są
+                    po zapoznaniu się ze zgłoszeniem lub po przeprowadzeniu
+                    diagnostyki urządzenia.
+                </p>
+
+            </section>
+
+            <!-- PRZYCISKI -->
+
+            <div class="buttons">
+
+                <a
+                    class="btn"
+                    href="zglos-usluge.html"
+                >
+                    Zgłoś usługę
+                </a>
+
+                <a
+                    class="btn btn-secondary"
+                    href="../kontakt.html"
+                >
+                    Skontaktuj się z nami
+                </a>
+
+                <a
+                    class="btn btn-secondary"
+                    href="../uslugit.html"
+                >
+                    Pozostałe usługi IT
+                </a>
+
+                <a
+                    class="btn btn-secondary"
+                    href="../index.html"
+                >
+                    Strona główna
+                </a>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</main>
+
+<!-- STOPKA -->
+
+<footer>
+
+    <p>
+        <strong>
+            Zachodniopomorskie Centrum Informatyki
+        </strong>
+    </p>
+
+    <p>
+        E-mail:
+        <a href="mailto:biuro@zpci.pl">
+            biuro@zpci.pl
+        </a>
+    </p>
+
+    <p>
+        &copy;
+        <span id="year"></span>
+        Zachodniopomorskie Centrum Informatyki.
+        Wszelkie prawa zastrzeżone.
+    </p>
+
+</footer>
+
+<script>
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+</script>
+
+</body>
+
+</html>

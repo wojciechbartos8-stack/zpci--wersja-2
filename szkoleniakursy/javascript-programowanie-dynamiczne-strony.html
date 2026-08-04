@@ -1,0 +1,1605 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Szkolenie JavaScript Szczecin – dynamiczne strony WWW | ZPCI</title>
+
+    <meta
+        name="description"
+        content="Praktyczne szkolenie JavaScript w Szczecinie. Zmienne, funkcje, pętle, tablice, DOM, zdarzenia, formularze i tworzenie interaktywnych stron WWW."
+    >
+
+    <meta name="author" content="Zachodniopomorskie Centrum Informatyki">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#0b2148">
+
+    <link
+        rel="canonical"
+        href="https://www.zpci.pl/szkoleniakursy/javascript-programowanie-dynamiczne-strony.html"
+    >
+
+    <!-- OPEN GRAPH -->
+
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pl_PL">
+    <meta property="og:site_name" content="ZPCI">
+
+    <meta
+        property="og:title"
+        content="Szkolenie JavaScript Szczecin – dynamiczne strony WWW | ZPCI"
+    >
+
+    <meta
+        property="og:description"
+        content="Praktyczna nauka JavaScript: DOM, zdarzenia, funkcje, tablice, walidacja formularzy i tworzenie interaktywnych stron internetowych."
+    >
+
+    <meta
+        property="og:url"
+        content="https://www.zpci.pl/szkoleniakursy/javascript-programowanie-dynamiczne-strony.html"
+    >
+
+    <meta
+        property="og:image"
+        content="https://www.zpci.pl/images/szkoleniejavascript-tworzeniestronwww.png"
+    >
+
+    <meta
+        property="og:image:alt"
+        content="Szkolenie JavaScript z tworzenia dynamicznych stron internetowych"
+    >
+
+    <!-- X / TWITTER -->
+
+    <meta name="twitter:card" content="summary_large_image">
+
+    <meta
+        name="twitter:title"
+        content="Szkolenie JavaScript Szczecin | ZPCI"
+    >
+
+    <meta
+        name="twitter:description"
+        content="Praktyczne szkolenie z JavaScript, DOM, zdarzeń, formularzy i tworzenia interaktywnych stron WWW."
+    >
+
+    <meta
+        name="twitter:image"
+        content="https://www.zpci.pl/images/szkoleniejavascript-tworzeniestronwww.png"
+    >
+
+    <!-- DANE STRUKTURALNE SEO -->
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "EducationalOrganization",
+                "@id": "https://www.zpci.pl/#organization",
+                "name": "Zachodniopomorskie Centrum Informatyki",
+                "alternateName": "ZPCI",
+                "url": "https://www.zpci.pl/",
+                "email": "biuro@zpci.pl"
+            },
+            {
+                "@type": "Course",
+                "@id": "https://www.zpci.pl/szkoleniakursy/javascript-programowanie-dynamiczne-strony.html#course",
+                "name": "JavaScript – programowanie dynamicznych stron internetowych",
+                "description": "Praktyczne szkolenie z języka JavaScript obejmujące zmienne, funkcje, pętle, tablice, obiekty, DOM, zdarzenia, formularze i tworzenie interaktywnych stron WWW.",
+                "url": "https://www.zpci.pl/szkoleniakursy/javascript-programowanie-dynamiczne-strony.html",
+                "image": "https://www.zpci.pl/images/szkoleniejavascript-tworzeniestronwww.png",
+                "inLanguage": "pl-PL",
+                "provider": {
+                    "@id": "https://www.zpci.pl/#organization"
+                },
+                "offers": {
+                    "@type": "Offer",
+                    "price": "499.00",
+                    "priceCurrency": "PLN",
+                    "availability": "https://schema.org/InStock",
+                    "url": "https://www.zpci.pl/szkoleniakursy/javascript-programowanie-dynamiczne-strony.html"
+                },
+                "hasCourseInstance": [
+                    {
+                        "@type": "CourseInstance",
+                        "name": "Szkolenie grupowe JavaScript",
+                        "courseMode": "onsite",
+                        "courseWorkload": "PT22H"
+                    },
+                    {
+                        "@type": "CourseInstance",
+                        "name": "Szkolenie indywidualne JavaScript",
+                        "courseMode": "onsite",
+                        "courseWorkload": "PT16H"
+                    }
+                ]
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Strona główna",
+                        "item": "https://www.zpci.pl/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Szkolenia i kursy",
+                        "item": "https://www.zpci.pl/szkoleniakursy.html"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": "JavaScript",
+                        "item": "https://www.zpci.pl/szkoleniakursy/javascript-programowanie-dynamiczne-strony.html"
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --primary: #1f3b73;
+            --primary-dark: #0b2148;
+            --primary-medium: #2c65b0;
+            --primary-light: #eef5ff;
+            --javascript: #f2cf1d;
+            --javascript-hover: #ffe052;
+            --white: #ffffff;
+            --background: #f4f7fb;
+            --text: #29333d;
+            --muted: #5d6976;
+            --border: #dce5ef;
+            --green: #24845c;
+            --blue: #2878b5;
+            --radius: 18px;
+            --shadow: 0 15px 38px rgba(11, 33, 72, 0.12);
+            --shadow-hover: 0 22px 46px rgba(11, 33, 72, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            overflow-x: hidden;
+            font-family: Arial, Helvetica, sans-serif;
+            background:
+                linear-gradient(
+                    135deg,
+                    #edf4ff 0%,
+                    #f8fbff 50%,
+                    #ffffff 100%
+                );
+            color: var(--text);
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .page-container {
+            width: calc(100% - 40px);
+            max-width: 1160px;
+            margin: 0 auto;
+        }
+
+        /* =========================
+           NAGŁÓWEK Z LOGO
+        ========================= */
+
+        .site-header {
+            position: relative;
+            overflow: hidden;
+            background:
+                radial-gradient(
+                    circle at 88% 18%,
+                    rgba(255, 255, 255, 0.13),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    135deg,
+                    var(--primary-dark),
+                    var(--primary-medium)
+                );
+            color: var(--white);
+        }
+
+        .site-header::before {
+            content: "JS";
+            position: absolute;
+            top: 50%;
+            right: 7%;
+            color: rgba(255, 255, 255, 0.055);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: clamp(120px, 18vw, 230px);
+            font-weight: 900;
+            line-height: 1;
+            transform: translateY(-50%);
+        }
+
+        .header-inner {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            width: calc(100% - 40px);
+            max-width: 1160px;
+            min-height: 150px;
+            margin: 0 auto;
+            padding: 25px 0;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .brand {
+            display: flex;
+            min-width: 0;
+            align-items: center;
+            gap: 16px;
+            color: var(--white);
+        }
+
+        .logo-image {
+            width: 88px;
+            height: 88px;
+            flex: 0 0 88px;
+            object-fit: contain;
+            border-radius: 50%;
+            background: var(--white);
+            box-shadow: 0 7px 21px rgba(0, 0, 0, 0.25);
+        }
+
+        .brand-text {
+            min-width: 0;
+        }
+
+        .brand-text strong {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--white);
+            font-size: clamp(21px, 3vw, 31px);
+            line-height: 1.2;
+        }
+
+        .brand-text span {
+            display: block;
+            color: rgba(255, 255, 255, 0.88);
+            font-size: 16px;
+        }
+
+        .header-course {
+            max-width: 470px;
+            padding-left: 25px;
+            border-left: 1px solid rgba(255, 255, 255, 0.28);
+            text-align: right;
+        }
+
+        .header-course p {
+            margin-bottom: 5px;
+            color: rgba(255, 255, 255, 0.86);
+            font-size: 14px;
+            font-weight: 800;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+        }
+
+        .header-course h1 {
+            color: var(--white);
+            font-size: clamp(26px, 4vw, 42px);
+            line-height: 1.15;
+        }
+
+        /* =========================
+           NAWIGACJA
+        ========================= */
+
+        .main-nav {
+            position: sticky;
+            top: 0;
+            z-index: 40;
+            background: #071b37;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.18);
+        }
+
+        .nav-inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .main-nav a {
+            display: flex;
+            min-height: 54px;
+            align-items: center;
+            justify-content: center;
+            padding: 13px 22px;
+            color: var(--white);
+            font-size: 16px;
+            font-weight: 700;
+            text-align: center;
+            transition:
+                background-color 0.2s ease,
+                color 0.2s ease;
+        }
+
+        .main-nav a:hover,
+        .main-nav a:focus-visible {
+            background: var(--javascript);
+            color: var(--primary-dark);
+        }
+
+        .main-nav a:focus-visible,
+        .button:focus-visible,
+        .email-link:focus-visible {
+            outline: 3px solid var(--javascript);
+            outline-offset: 3px;
+        }
+
+        /* =========================
+           BANER
+        ========================= */
+
+        .banner-section {
+            padding: 32px 0 0;
+        }
+
+        .banner-box {
+            overflow: hidden;
+            border: 5px solid var(--white);
+            border-radius: 23px;
+            background: var(--white);
+            box-shadow: 0 21px 50px rgba(11, 33, 72, 0.2);
+        }
+
+        .banner-box img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        /* =========================
+           GLOWNA TRESC
+        ========================= */
+
+        main {
+            padding: 32px 0 58px;
+        }
+
+        .content-box {
+            padding: 42px;
+            border: 1px solid var(--border);
+            border-radius: 23px;
+            background: var(--white);
+            box-shadow: var(--shadow);
+        }
+
+        .intro {
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .intro h2 {
+            margin-bottom: 17px;
+            color: var(--primary-dark);
+            font-size: clamp(30px, 4.5vw, 44px);
+            line-height: 1.2;
+        }
+
+        .intro p {
+            max-width: 920px;
+            margin: 0 auto 14px;
+            color: var(--muted);
+        }
+
+        .intro p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* =========================
+           SEKCJE
+        ========================= */
+
+        .content-section {
+            margin-top: 42px;
+        }
+
+        .content-section > h2 {
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary);
+            color: var(--primary-dark);
+            font-size: clamp(25px, 3.2vw, 33px);
+            line-height: 1.3;
+        }
+
+        .content-section > p {
+            margin-bottom: 15px;
+            color: var(--muted);
+        }
+
+        .content-section > p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* =========================
+           INFORMACJE WSTEPNE
+        ========================= */
+
+        .information-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 21px;
+            margin-top: 35px;
+        }
+
+        .information-card {
+            padding: 27px;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            background:
+                linear-gradient(
+                    145deg,
+                    #ffffff,
+                    #f2f7ff
+                );
+        }
+
+        .information-card h2 {
+            margin-bottom: 13px;
+            color: var(--primary-dark);
+            font-size: 25px;
+            line-height: 1.3;
+        }
+
+        .information-card p {
+            margin-bottom: 12px;
+            color: var(--muted);
+        }
+
+        .information-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* =========================
+           PROGRAM SZKOLENIA
+        ========================= */
+
+        .program-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 15px 18px;
+        }
+
+        .program-card {
+            position: relative;
+            min-height: 82px;
+            padding: 17px 17px 17px 57px;
+            border: 1px solid var(--border);
+            border-radius: 13px;
+            background:
+                linear-gradient(
+                    145deg,
+                    #ffffff,
+                    #f4f8ff
+                );
+            transition:
+                transform 0.2s ease,
+                border-color 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+
+        .program-card:hover {
+            border-color: #b8cce4;
+            box-shadow: 0 10px 24px rgba(11, 33, 72, 0.11);
+            transform: translateY(-3px);
+        }
+
+        .program-card::before {
+            content: "JS";
+            position: absolute;
+            top: 18px;
+            left: 16px;
+            display: flex;
+            width: 29px;
+            height: 29px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            background: var(--javascript);
+            color: #1f2630;
+            font-size: 11px;
+            font-weight: 900;
+        }
+
+        .program-card h3 {
+            margin-bottom: 4px;
+            color: var(--primary-dark);
+            font-size: 19px;
+            line-height: 1.3;
+        }
+
+        .program-card p {
+            color: var(--muted);
+            font-size: 15px;
+            line-height: 1.55;
+        }
+
+        /* =========================
+           TAKSONOMIA NAUCZANIA
+        ========================= */
+
+        .taxonomy-intro {
+            margin-bottom: 25px;
+            color: var(--muted);
+        }
+
+        .taxonomy-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 19px;
+        }
+
+        .taxonomy-card {
+            padding: 25px 21px;
+            border: 1px solid var(--border);
+            border-top: 5px solid var(--primary);
+            border-radius: 15px;
+            background:
+                linear-gradient(
+                    180deg,
+                    #ffffff,
+                    #f8fbff
+                );
+            box-shadow: 0 9px 24px rgba(11, 33, 72, 0.08);
+            transition:
+                transform 0.22s ease,
+                box-shadow 0.22s ease;
+        }
+
+        .taxonomy-card:nth-child(2) {
+            border-top-color: var(--blue);
+        }
+
+        .taxonomy-card:nth-child(3) {
+            border-top-color: var(--javascript);
+        }
+
+        .taxonomy-card:nth-child(4) {
+            border-top-color: var(--green);
+        }
+
+        .taxonomy-card:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-5px);
+        }
+
+        .taxonomy-card h3 {
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+            font-size: 24px;
+            line-height: 1.25;
+        }
+
+        .taxonomy-card ul {
+            padding-left: 21px;
+        }
+
+        .taxonomy-card li {
+            margin-bottom: 10px;
+            color: var(--muted);
+        }
+
+        .taxonomy-card li:last-child {
+            margin-bottom: 0;
+        }
+
+        /* =========================
+           CERTYFIKAT
+        ========================= */
+
+        .certificate-box {
+            margin-top: 42px;
+            padding: 29px;
+            border-left: 6px solid var(--javascript);
+            border-radius: 16px;
+            background:
+                linear-gradient(
+                    135deg,
+                    #fffbea,
+                    #ffffff
+                );
+        }
+
+        .certificate-box h2 {
+            margin-bottom: 14px;
+            color: var(--primary-dark);
+            font-size: clamp(25px, 3vw, 31px);
+            line-height: 1.3;
+        }
+
+        .certificate-box p {
+            margin-bottom: 12px;
+            color: var(--muted);
+        }
+
+        .certificate-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* =========================
+           INFORMACJE DODATKOWE
+        ========================= */
+
+        .details-box {
+            margin-top: 42px;
+            padding: 30px;
+            border-left: 6px solid var(--primary);
+            border-radius: 16px;
+            background: var(--primary-light);
+        }
+
+        .details-box > h2 {
+            margin-bottom: 19px;
+            color: var(--primary-dark);
+            font-size: clamp(25px, 3vw, 32px);
+            line-height: 1.3;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 21px;
+        }
+
+        .detail-card {
+            padding: 24px;
+            border: 1px solid #d4e0ed;
+            border-radius: 14px;
+            background: var(--white);
+        }
+
+        .detail-card h3 {
+            margin-bottom: 13px;
+            color: var(--primary-dark);
+            font-size: 22px;
+            line-height: 1.3;
+        }
+
+        .detail-card ul {
+            padding-left: 22px;
+        }
+
+        .detail-card li {
+            margin-bottom: 8px;
+        }
+
+        .detail-card li:last-child {
+            margin-bottom: 0;
+        }
+
+        .price-label {
+            margin-bottom: 4px;
+            color: var(--muted);
+            font-size: 16px;
+        }
+
+        .price {
+            display: block;
+            margin-bottom: 10px;
+            color: var(--primary-dark);
+            font-size: clamp(35px, 5vw, 47px);
+            font-weight: 900;
+            line-height: 1.1;
+        }
+
+        .details-text {
+            margin-top: 23px;
+        }
+
+        .details-text p {
+            margin-bottom: 12px;
+            color: #4d5d6c;
+        }
+
+        .details-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .email-link,
+        .text-link {
+            color: var(--primary);
+            font-weight: 800;
+            text-decoration: underline;
+            text-decoration-thickness: 2px;
+            text-underline-offset: 4px;
+        }
+
+        /* =========================
+           PRZYCISKI
+        ========================= */
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 34px;
+        }
+
+        .button {
+            display: inline-flex;
+            min-height: 52px;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 27px;
+            border: 2px solid transparent;
+            border-radius: 999px;
+            background: var(--javascript);
+            color: #18202a;
+            font-weight: 800;
+            line-height: 1.2;
+            text-align: center;
+            box-shadow: 0 9px 22px rgba(242, 207, 29, 0.28);
+            transition:
+                background-color 0.2s ease,
+                color 0.2s ease,
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+
+        .button:hover {
+            background: var(--javascript-hover);
+            box-shadow: 0 13px 28px rgba(242, 207, 29, 0.36);
+            transform: translateY(-2px);
+        }
+
+        .button-secondary {
+            background: var(--primary);
+            color: var(--white);
+            box-shadow: 0 9px 22px rgba(31, 59, 115, 0.22);
+        }
+
+        .button-secondary:hover {
+            background: var(--primary-dark);
+        }
+
+        /* =========================
+           STOPKA
+        ========================= */
+
+        footer {
+            padding: 28px 20px;
+            background: var(--primary-dark);
+            color: rgba(255, 255, 255, 0.87);
+            text-align: center;
+        }
+
+        footer p + p {
+            margin-top: 5px;
+        }
+
+        /* =========================
+           RESPONSYWNOSC
+        ========================= */
+
+        @media (max-width: 1050px) {
+            .taxonomy-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 850px) {
+            body {
+                font-size: 17px;
+            }
+
+            .header-inner {
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+            }
+
+            .brand {
+                justify-content: center;
+            }
+
+            .header-course {
+                max-width: 760px;
+                padding-top: 20px;
+                padding-left: 0;
+                border-top: 1px solid rgba(255, 255, 255, 0.25);
+                border-left: 0;
+                text-align: center;
+            }
+
+            .page-container {
+                width: calc(100% - 28px);
+            }
+
+            .content-box {
+                padding: 32px 24px;
+            }
+
+            .information-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .program-grid,
+            .details-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .page-container {
+                width: calc(100% - 20px);
+            }
+
+            .header-inner {
+                width: calc(100% - 28px);
+                min-height: auto;
+                padding: 25px 0;
+            }
+
+            .brand {
+                flex-direction: column;
+                gap: 12px;
+                text-align: center;
+            }
+
+            .logo-image {
+                width: 76px;
+                height: 76px;
+                flex-basis: 76px;
+            }
+
+            .brand-text strong {
+                font-size: 22px;
+            }
+
+            .brand-text span {
+                font-size: 14px;
+            }
+
+            .header-course h1 {
+                font-size: 28px;
+            }
+
+            .site-header::before {
+                right: 50%;
+                transform: translate(50%, -50%);
+            }
+
+            .nav-inner {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .main-nav a {
+                min-height: 49px;
+                padding: 10px 8px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+                font-size: 14px;
+            }
+
+            .banner-section {
+                padding-top: 20px;
+            }
+
+            .banner-box {
+                border-width: 3px;
+                border-radius: 14px;
+            }
+
+            main {
+                padding: 20px 0 38px;
+            }
+
+            .content-box {
+                padding: 24px 17px;
+                border-radius: 15px;
+            }
+
+            .intro {
+                padding-bottom: 25px;
+            }
+
+            .information-card,
+            .certificate-box,
+            .details-box,
+            .detail-card {
+                padding: 22px 18px;
+            }
+
+            .taxonomy-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .taxonomy-card {
+                padding: 22px 18px;
+            }
+
+            .program-card {
+                min-height: auto;
+                padding-right: 14px;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+            .buttons .button {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 390px) {
+            .nav-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .main-nav a {
+                min-height: 45px;
+            }
+
+            .header-course h1 {
+                font-size: 25px;
+            }
+
+            .brand-text strong {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAGŁÓWEK Z LOGO -->
+
+    <header class="site-header">
+        <div class="header-inner">
+
+            <a
+                class="brand"
+                href="../index.html"
+                aria-label="ZPCI – przejdź do strony głównej"
+            >
+                <img
+                    class="logo-image"
+                    src="../images/logo+zdjecia/logotypy/2_Logotypy_okrag.png"
+                    alt="Logo Zachodniopomorskiego Centrum Informatyki"
+                    width="200"
+                    height="200"
+                >
+
+                <div class="brand-text">
+                    <strong>
+                        Zachodniopomorskie Centrum Informatyki
+                    </strong>
+
+                    <span>
+                        Szkolenia komputerowe i usługi informatyczne
+                    </span>
+                </div>
+            </a>
+
+            <div class="header-course">
+                <p>Szkolenie programistyczne</p>
+
+                <h1>
+                    JavaScript – dynamiczne strony WWW
+                </h1>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- NAWIGACJA -->
+
+    <nav
+        class="main-nav"
+        aria-label="G&#322;&oacute;wna nawigacja"
+    >
+        <div class="page-container nav-inner">
+
+            <a href="../index.html">
+                Strona g&#322;&oacute;wna
+            </a>
+
+            <a href="../szkoleniakursy.html">
+                Szkolenia / Kursy
+            </a>
+
+            <a href="../uslugit.html">
+                Us&#322;ugi IT
+            </a>
+
+            <a href="../kontakt.html">
+                Kontakt
+            </a>
+
+        </div>
+    </nav>
+
+    <!-- BANER -->
+
+    <section
+        class="banner-section"
+        aria-label="Baner szkolenia JavaScript"
+    >
+        <div class="page-container">
+
+            <div class="banner-box">
+                <img
+                    src="../images/szkoleniejavascript-tworzeniestronwww.png"
+                    alt="Szkolenie JavaScript z tworzenia dynamicznych i interaktywnych stron internetowych w ZPCI"
+                    width="1200"
+                    height="750"
+                    loading="eager"
+                    fetchpriority="high"
+                >
+            </div>
+
+        </div>
+    </section>
+
+    <!-- GLOWNA TRESC -->
+
+    <main>
+        <div class="page-container">
+
+            <article class="content-box">
+
+                <section class="intro">
+
+                    <h2>
+                        JavaScript &ndash; programowanie dynamicznych stron
+                    </h2>
+
+                    <p>
+                        Praktyczne szkolenie przygotowuj&#261;ce
+                        do tworzenia dynamicznych i interaktywnych
+                        stron internetowych z wykorzystaniem
+                        j&#281;zyka JavaScript.
+                    </p>
+
+                    <p>
+                        Uczestnik poznaje podstawy programowania,
+                        obs&#322;ug&#281; modelu DOM, zdarzenia,
+                        formularze oraz sposoby modyfikowania
+                        element&oacute;w strony internetowej.
+                    </p>
+
+                </section>
+
+                <div class="information-grid">
+
+                    <section class="information-card">
+
+                        <h2>Kogo zapraszamy?</h2>
+
+                        <p>
+                            Szkolenie przeznaczone jest dla os&oacute;b
+                            znaj&#261;cych podstawy HTML i CSS,
+                            kt&oacute;re chc&#261; rozszerzy&#263;
+                            swoje umiej&#281;tno&#347;ci
+                            o programowanie w JavaScript.
+                        </p>
+
+                        <p>
+                            Kurs skierowany jest do przysz&#322;ych
+                            tw&oacute;rc&oacute;w stron WWW,
+                            webmaster&oacute;w, pracownik&oacute;w
+                            dzia&#322;&oacute;w IT oraz os&oacute;b
+                            rozwijaj&#261;cych w&#322;asne serwisy
+                            internetowe.
+                        </p>
+
+                    </section>
+
+                    <section class="information-card">
+
+                        <h2>Organizacja i metodyka</h2>
+
+                        <p>
+                            Zaj&#281;cia realizowane s&#261;
+                            w trybie indywidualnym lub grupowym.
+                            Terminy ustalane s&#261; elastycznie
+                            i dopasowywane do uczestnik&oacute;w.
+                        </p>
+
+                        <p>
+                            Szkolenie prowadzone jest w formie
+                            praktycznych &#263;wicze&#324;
+                            komputerowych z naciskiem na tworzenie
+                            interaktywnych element&oacute;w stron WWW.
+                        </p>
+
+                    </section>
+
+                </div>
+
+                <!-- PROGRAM SZKOLENIA -->
+
+                <section class="content-section">
+
+                    <h2>
+                        Ramowy program szkolenia
+                    </h2>
+
+                    <div class="program-grid">
+
+                        <article class="program-card">
+                            <h3>JavaScript w dokumencie HTML</h3>
+
+                            <p>
+                                Do&#322;&#261;czanie skrypt&oacute;w
+                                wewn&#281;trznych i zewn&#281;trznych.
+                            </p>
+                        </article>
+
+                        <article class="program-card">
+                            <h3>Zmienne i sta&#322;e</h3>
+
+                            <p>
+                                Deklarowanie danych za pomoc&#261;
+                                let, const oraz var.
+                            </p>
+                        </article>
+
+                        <article class="program-card">
+                            <h3>Typy danych</h3>
+
+                            <p>
+                                Teksty, liczby, warto&#347;ci logiczne,
+                                tablice i obiekty.
+                            </p>
+                        </article>
+
+                        <article class="program-card">
+                            <h3>Operatory</h3>
+
+                            <p>
+                                Operacje matematyczne, logiczne,
+                                por&oacute;wnania i przypisania.
+                            </p>
+                        </article>
+
+                        <article class="program-card">
+                            <h3>Instrukcje warunkowe</h3>
+
+                            <p>
+                                Stosowanie instrukcji if, else
+                                oraz switch.
+                            </p>
+                        </article>
+
+                        <article class="program-card">
+                            <h3>P&#281;tle</h3>
+
+                            <p>
+                                Wykorzystanie p&#281;tli for,
+                                while, do while i forEach.
+                            </p>
+                        </article>
+
+                        <article class="program-card">
+                            <h3>Funkcje</h3>
+
+                            <p>
+                                Tworzenie funkcji, parametry,
+                                warto&#347;ci zwracane i funkcje
+                                strza&#322;kowe.
+                            </p>
+                        </article>
+
+                        <article class="program-card">
+                            <h3>Tablice</h3>
+
+                            <p>
+                                Dodawanie, usuwanie, filtrowanie
+                                i przetwarzanie danych.
+                            </p>
+                        </article>
+
+                        <article class="program-card">
+                            <h3>Operacje na tekstach</h3>
+
+                            <p>
+                                Konkatenacja, szablony tekstowe
+                                i metody obiektu String.
+                            </p>
+                        </article>
+
+                        <article class="program-card">
+                            <h3>Model DOM</h3>
+
+                            <p>
+                                Odczytywanie i modyfikowanie
+                                element&oacute;w dokumentu HTML.
+                            </p>
+                        </article>
+
+                        <article class="program-card">
+                            <h3>Obs&#322;uga zdarze&#324;</h3>
+
+                            <p>
+                                Klikni&#281;cia, zmiany p&oacute;l,
+                                klawiatura i zdarzenia formularzy.
+                            </p>
+                        </article>
+
+                        <article class="program-card">
+                            <h3>Walidacja formularzy</h3>
+
+                            <p>
+                                Sprawdzanie poprawno&#347;ci danych
+                                wprowadzanych przez u&#380;ytkownika.
+                            </p>
+                        </article>
+
+                        <article class="program-card">
+                            <h3>Style i klasy CSS</h3>
+
+                            <p>
+                                Dynamiczne zmienianie wygl&#261;du
+                                element&oacute;w strony.
+                            </p>
+                        </article>
+
+                        <article class="program-card">
+                            <h3>Programowanie obiektowe</h3>
+
+                            <p>
+                                Obiekty, w&#322;a&#347;ciwo&#347;ci,
+                                metody, klasy i konstruktory.
+                            </p>
+                        </article>
+
+                        <article class="program-card">
+                            <h3>Break i continue</h3>
+
+                            <p>
+                                Sterowanie przebiegiem wykonywania
+                                p&#281;tli.
+                            </p>
+                        </article>
+
+                        <article class="program-card">
+                            <h3>Interaktywne strony WWW</h3>
+
+                            <p>
+                                Tworzenie praktycznych element&oacute;w
+                                i prostych aplikacji internetowych.
+                            </p>
+                        </article>
+
+                    </div>
+
+                </section>
+
+                <!-- TAKSONOMIA -->
+
+                <section class="content-section">
+
+                    <h2>
+                        Po uko&#324;czeniu szkolenia uczestnik
+                    </h2>
+
+                    <p class="taxonomy-intro">
+                        Uczestnik zdobywa wiedz&#281; oraz praktyczne
+                        umiej&#281;tno&#347;ci umo&#380;liwiaj&#261;ce
+                        samodzielne tworzenie interaktywnych element&oacute;w
+                        stron internetowych.
+                    </p>
+
+                    <div class="taxonomy-grid">
+
+                        <article class="taxonomy-card">
+
+                            <h3>Wie</h3>
+
+                            <ul>
+                                <li>
+                                    Do czego s&#322;u&#380;y j&#281;zyk
+                                    JavaScript.
+                                </li>
+
+                                <li>
+                                    Jakie s&#261; podstawowe typy danych.
+                                </li>
+
+                                <li>
+                                    Do czego s&#322;u&#380;&#261; zmienne,
+                                    funkcje, p&#281;tle i instrukcje
+                                    warunkowe.
+                                </li>
+
+                                <li>
+                                    Czym jest model DOM dokumentu HTML.
+                                </li>
+                            </ul>
+
+                        </article>
+
+                        <article class="taxonomy-card">
+
+                            <h3>Rozumie</h3>
+
+                            <ul>
+                                <li>
+                                    Zasady wykonywania kodu JavaScript
+                                    przez przegl&#261;dark&#281;.
+                                </li>
+
+                                <li>
+                                    R&oacute;&#380;nic&#281; pomi&#281;dzy
+                                    struktur&#261; HTML, stylami CSS
+                                    i logik&#261; JavaScript.
+                                </li>
+
+                                <li>
+                                    Mechanizm zdarze&#324; wyst&#281;puj&#261;cych
+                                    na stronie.
+                                </li>
+
+                                <li>
+                                    Znaczenie walidacji danych
+                                    w formularzach.
+                                </li>
+                            </ul>
+
+                        </article>
+
+                        <article class="taxonomy-card">
+
+                            <h3>Umie</h3>
+
+                            <ul>
+                                <li>
+                                    Deklarowa&#263; zmienne
+                                    i wykonywa&#263; operacje na danych.
+                                </li>
+
+                                <li>
+                                    Stosowa&#263; instrukcje warunkowe
+                                    oraz p&#281;tle.
+                                </li>
+
+                                <li>
+                                    Tworzy&#263; funkcje, tablice
+                                    i podstawowe obiekty.
+                                </li>
+
+                                <li>
+                                    Pobiera&#263; i modyfikowa&#263;
+                                    elementy strony za pomoc&#261; DOM.
+                                </li>
+                            </ul>
+
+                        </article>
+
+                        <article class="taxonomy-card">
+
+                            <h3>Potrafi</h3>
+
+                            <ul>
+                                <li>
+                                    Samodzielnie stworzy&#263;
+                                    interaktywny element strony WWW.
+                                </li>
+
+                                <li>
+                                    Obs&#322;ugiwa&#263; klikni&#281;cia,
+                                    formularze i inne zdarzenia.
+                                </li>
+
+                                <li>
+                                    Sprawdza&#263; poprawno&#347;&#263;
+                                    danych formularza.
+                                </li>
+
+                                <li>
+                                    Wykorzysta&#263; JavaScript
+                                    podczas tworzenia w&#322;asnej
+                                    strony internetowej.
+                                </li>
+                            </ul>
+
+                        </article>
+
+                    </div>
+
+                </section>
+
+                <!-- CERTYFIKAT -->
+
+                <section class="certificate-box">
+
+                    <h2>
+                        Kwalifikacje i certyfikat
+                    </h2>
+
+                    <p>
+                        Po uko&#324;czeniu szkolenia uczestnik
+                        otrzymuje certyfikat Zachodniopomorskiego
+                        Centrum Informatyki w j&#281;zyku polskim
+                        oraz angielskim.
+                    </p>
+
+                    <p>
+                        Istnieje mo&#380;liwo&#347;&#263; przygotowania
+                        rozszerzonej wersji programu szkolenia,
+                        dopasowanej do potrzeb uczestnika lub firmy.
+                    </p>
+
+                </section>
+
+                <!-- INFORMACJE DODATKOWE -->
+
+                <section class="details-box">
+
+                    <h2>
+                        Informacje dodatkowe
+                    </h2>
+
+                    <div class="details-grid">
+
+                        <article class="detail-card">
+
+                            <h3>Czas trwania</h3>
+
+                            <ul>
+                                <li>
+                                    <strong>Grupy zorganizowane:</strong>
+                                    22 godziny dydaktyczne
+                                </li>
+
+                                <li>
+                                    <strong>Szkolenie indywidualne:</strong>
+                                    16 godzin dydaktycznych
+                                </li>
+                            </ul>
+
+                        </article>
+
+                        <article class="detail-card">
+
+                            <h3>Cena szkolenia</h3>
+
+                            <p class="price-label">
+                                Cena szkolenia indywidualnego
+                            </p>
+
+                            <strong class="price">
+                                499&nbsp;z&#322;
+                            </strong>
+
+                            <p>
+                                Na &#380;yczenie klienta wystawiamy
+                                faktury VAT.
+                            </p>
+
+                        </article>
+
+                    </div>
+
+                    <div class="details-text">
+
+                        <p>
+                            W celu uzyskania szczeg&oacute;&#322;owego
+                            programu szkolenia prosimy o kontakt:
+                        </p>
+
+                        <p>
+                            <a
+                                class="email-link"
+                                href="mailto:biuro@zpci.pl"
+                            >
+                                biuro@zpci.pl
+                            </a>
+                        </p>
+
+                        <p>
+                            Dla szkole&#324; indywidualnych oraz grup
+                            zamkni&#281;tych istnieje mo&#380;liwo&#347;&#263;
+                            dostosowania programu do potrzeb
+                            uczestnik&oacute;w.
+                        </p>
+
+                        <p>
+                            Zobacz r&oacute;wnie&#380;
+                            <a
+                                class="text-link"
+                                href="cennik-szkolen.html"
+                            >
+                                pe&#322;ny cennik szkole&#324;
+                            </a>
+                            oraz aktualne promocje i rabaty.
+                        </p>
+
+                    </div>
+
+                    <div class="buttons">
+
+                        <a
+                            class="button"
+                            href="zapis-na-szkolenie.html"
+                        >
+                            Zapisz si&#281; na szkolenie
+                        </a>
+
+                        <a
+                            class="button button-secondary"
+                            href="../szkoleniakursy.html"
+                        >
+                            Powr&oacute;t do listy szkole&#324;
+                        </a>
+
+                        <a
+                            class="button button-secondary"
+                            href="../index.html"
+                        >
+                            Powr&oacute;t do strony g&#322;&oacute;wnej
+                        </a>
+
+                    </div>
+
+                </section>
+
+            </article>
+
+        </div>
+    </main>
+
+    <!-- STOPKA -->
+
+    <footer>
+
+        <p>
+            &copy; 2026 Zachodniopomorskie Centrum Informatyki.
+            Wszelkie prawa zastrze&#380;one.
+        </p>
+
+        <p>
+            JavaScript &bull;
+            Programowanie &bull;
+            Dynamiczne strony internetowe
+        </p>
+
+    </footer>
+
+</body>
+</html>
