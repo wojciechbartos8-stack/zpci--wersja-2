@@ -1,0 +1,1491 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        CS – Centrum Zgłoszeń | ZPCI
+    </title>
+
+    <meta
+        name="description"
+        content="CS – Centrum Zgłoszeń ZPCI. W jednym miejscu zapisz się na szkolenie lub zgłoś zapotrzebowanie na usługę IT."
+    >
+
+    <meta
+        name="robots"
+        content="index, follow"
+    >
+
+    <meta
+        name="theme-color"
+        content="#0b2148"
+    >
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="images/Logo+zdjecia/Logotypy/2_Logotypy_okrag.png"
+    >
+
+    <style>
+
+        /* =========================================
+           RESET
+        ========================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #eef5ff,
+                    #ffffff
+                );
+
+            color: #222;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================================
+           NAGŁÓWEK
+        ========================================= */
+
+        header {
+            position: relative;
+
+            overflow: hidden;
+
+            background:
+                radial-gradient(
+                    circle at top right,
+                    rgba(255, 255, 255, 0.14),
+                    transparent 35%
+                ),
+                linear-gradient(
+                    135deg,
+                    #0b2148,
+                    #1f3b73
+                );
+
+            color: white;
+
+            padding: 42px 20px;
+
+            text-align: center;
+        }
+
+        .header-content {
+            width: 100%;
+            max-width: 1100px;
+
+            margin: 0 auto;
+        }
+
+
+        /* =========================================
+           LOGO
+        ========================================= */
+
+        .header-brand {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            gap: 16px;
+
+            margin-bottom: 24px;
+
+            color: white;
+
+            text-decoration: none;
+        }
+
+        .brand-logo {
+            width: 96px;
+            height: 96px;
+
+            flex: 0 0 96px;
+
+            border:
+                4px solid
+                rgba(255, 255, 255, 0.95);
+
+            border-radius: 50%;
+
+            background: white;
+
+            object-fit: contain;
+
+            box-shadow:
+                0 14px 30px
+                rgba(0, 0, 0, 0.25);
+        }
+
+        .brand-copy {
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: flex-start;
+
+            text-align: left;
+        }
+
+        .brand-name {
+            max-width: 620px;
+
+            font-size:
+                clamp(
+                    21px,
+                    3vw,
+                    31px
+                );
+
+            font-weight: 900;
+
+            line-height: 1.15;
+        }
+
+        .brand-subtitle {
+            margin-top: 6px;
+
+            color:
+                rgba(255, 255, 255, 0.86);
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            letter-spacing: 0.07em;
+
+            text-transform: uppercase;
+        }
+
+        header h1 {
+            color: white;
+
+            font-size:
+                clamp(
+                    1.8rem,
+                    4vw,
+                    3rem
+                );
+
+            line-height: 1.2;
+
+            margin-bottom: 12px;
+        }
+
+        header p {
+            max-width: 760px;
+
+            margin: 0 auto;
+
+            color: #e4ecfa;
+
+            font-size:
+                clamp(
+                    1rem,
+                    2vw,
+                    1.15rem
+                );
+        }
+
+
+        /* =========================================
+           MENU
+        ========================================= */
+
+        nav {
+            background: #16315d;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            display: block;
+
+            padding: 15px 20px;
+
+            color: white;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            transition:
+                background-color 0.3s ease;
+        }
+
+        nav a:hover,
+        nav a:focus {
+            background: #244b87;
+        }
+
+
+        /* =========================================
+           TREŚĆ
+        ========================================= */
+
+        main {
+            padding: 35px 20px;
+        }
+
+        .box {
+            width: 100%;
+            max-width: 1000px;
+
+            margin: 0 auto;
+
+            padding: 35px;
+
+            background: white;
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 8px 25px
+                rgba(0, 0, 0, 0.12);
+        }
+
+
+        /* =========================================
+           KOMUNIKAT PO WYSŁANIU
+        ========================================= */
+
+        .form-message {
+            display: none;
+
+            padding: 20px;
+
+            margin-bottom: 25px;
+
+            border-radius: 8px;
+
+            font-weight: bold;
+
+            text-align: center;
+        }
+
+        .form-message.success {
+            display: block;
+
+            background: #eef8f0;
+
+            border-left:
+                5px solid
+                #2f7d32;
+
+            color: #1f5f25;
+        }
+
+        .form-message.error {
+            display: block;
+
+            background: #fff0f0;
+
+            border-left:
+                5px solid
+                #c62828;
+
+            color: #8b1c1c;
+        }
+
+
+        /* =========================================
+           WPROWADZENIE
+        ========================================= */
+
+        .form-intro {
+            margin-bottom: 30px;
+        }
+
+        .form-intro h2 {
+            color: #1f3b73;
+
+            margin-bottom: 10px;
+        }
+
+
+        /* =========================================
+           FORMULARZ
+        ========================================= */
+
+        form {
+            width: 100%;
+        }
+
+        fieldset {
+            border:
+                1px solid
+                #dce5f3;
+
+            border-radius: 10px;
+
+            padding: 25px;
+
+            margin-bottom: 25px;
+        }
+
+        legend {
+            padding: 0 10px;
+
+            color: #1f3b73;
+
+            font-weight: bold;
+
+            font-size: 1.1rem;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+
+            margin-bottom: 7px;
+
+            color: #1f3b73;
+
+            font-weight: bold;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+
+            padding: 12px 14px;
+
+            border:
+                1px solid
+                #cfd9e8;
+
+            border-radius: 6px;
+
+            font-family: inherit;
+
+            font-size: 1rem;
+
+            background: white;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+
+            border-color: #1f3b73;
+
+            box-shadow:
+                0 0 0 3px
+                rgba(31, 59, 115, 0.12);
+        }
+
+        textarea {
+            min-height: 150px;
+
+            resize: vertical;
+        }
+
+
+        /* =========================================
+           WYBÓR RODZAJU ZGŁOSZENIA
+        ========================================= */
+
+        .type-options {
+            display: flex;
+
+            gap: 15px;
+
+            flex-wrap: wrap;
+        }
+
+        .type-option {
+            flex: 1;
+
+            min-width: 220px;
+
+            padding: 18px;
+
+            border:
+                2px solid
+                #dce5f3;
+
+            border-radius: 10px;
+
+            cursor: pointer;
+
+            transition:
+                border-color 0.2s ease,
+                background-color 0.2s ease;
+        }
+
+        .type-option:hover {
+            border-color: #1f3b73;
+
+            background: #f4f7fc;
+        }
+
+        .type-option input {
+            width: auto;
+
+            margin-right: 8px;
+        }
+
+
+        /* =========================================
+           POLA ZALEŻNE OD WYBORU
+        ========================================= */
+
+        .conditional-field {
+            display: none;
+        }
+
+        .conditional-field.active {
+            display: block;
+        }
+
+
+        /* =========================================
+           DANE OSOBOWE
+        ========================================= */
+
+        .form-row {
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    2,
+                    1fr
+                );
+
+            gap: 20px;
+        }
+
+
+        /* =========================================
+           ZGODA
+        ========================================= */
+
+        .agreement {
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 10px;
+
+            margin-bottom: 25px;
+
+            font-size: 0.95rem;
+        }
+
+        .agreement input {
+            width: auto;
+
+            margin-top: 7px;
+        }
+
+        .agreement label {
+            color: #222;
+
+            font-weight: normal;
+        }
+
+
+        /* =========================================
+           PRZYCISK
+        ========================================= */
+
+        .button-submit {
+            width: 100%;
+
+            padding: 15px 20px;
+
+            border: none;
+
+            border-radius: 7px;
+
+            background: #c57c00;
+
+            color: white;
+
+            font-family: inherit;
+
+            font-size: 1.1rem;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition:
+                background-color 0.3s ease,
+                transform 0.2s ease;
+        }
+
+        .button-submit:hover,
+        .button-submit:focus {
+            background: #9f6400;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================================
+           HONEYPOT
+        ========================================= */
+
+        .website-field {
+            position: absolute;
+
+            left: -9999px;
+
+            width: 1px;
+            height: 1px;
+
+            overflow: hidden;
+        }
+
+
+        /* =========================================
+           STOPKA
+        ========================================= */
+
+        footer {
+            margin-top: 30px;
+
+            padding: 20px 15px;
+
+            background: #1f3b73;
+
+            color: white;
+
+            text-align: center;
+        }
+
+
+        /* =========================================
+           TABLETY
+        ========================================= */
+
+        @media (max-width: 700px) {
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .type-options {
+                flex-direction: column;
+            }
+
+        }
+
+
+        /* =========================================
+           TELEFONY
+        ========================================= */
+
+        @media (max-width: 600px) {
+
+            header {
+                padding: 30px 15px;
+            }
+
+            .header-brand {
+                flex-direction: column;
+
+                gap: 12px;
+            }
+
+            .brand-copy {
+                align-items: center;
+
+                text-align: center;
+            }
+
+            .brand-logo {
+                width: 84px;
+                height: 84px;
+
+                flex-basis: 84px;
+            }
+
+            .brand-name {
+                font-size: 22px;
+            }
+
+            .brand-subtitle {
+                font-size: 12px;
+            }
+
+            nav {
+                flex-direction: column;
+            }
+
+            nav a {
+                width: 100%;
+
+                text-align: center;
+
+                border-bottom:
+                    1px solid
+                    rgba(
+                        255,
+                        255,
+                        255,
+                        0.12
+                    );
+            }
+
+            main {
+                padding: 20px 10px;
+            }
+
+            .box {
+                padding: 22px 15px;
+
+                border-radius: 8px;
+            }
+
+            fieldset {
+                padding: 18px 14px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+    <!-- =========================================
+         NAGŁÓWEK
+    ========================================= -->
+
+    <header>
+
+        <div class="header-content">
+
+            <a
+                class="header-brand"
+                href="index.html"
+                aria-label="ZPCI – przejdź do strony głównej"
+            >
+
+                <img
+                    class="brand-logo"
+                    src="images/Logo+zdjecia/Logotypy/2_Logotypy_okrag.png"
+                    alt="Logo Zachodniopomorskiego Centrum Informatyki"
+                    width="96"
+                    height="96"
+                >
+
+                <span class="brand-copy">
+
+                    <span class="brand-name">
+                        Zachodniopomorskie Centrum Informatyki
+                    </span>
+
+                    <span class="brand-subtitle">
+                        Szkolenia informatyczne i usługi IT
+                    </span>
+
+                </span>
+
+            </a>
+
+
+            <h1>
+                CS – Centrum Zgłoszeń
+            </h1>
+
+
+            <p>
+                W jednym miejscu możesz zapisać się na szkolenie
+                lub zgłosić zapotrzebowanie na usługę IT.
+            </p>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================================
+         MENU
+    ========================================= -->
+
+    <nav aria-label="Menu główne">
+
+        <a href="index.html">
+            Strona główna
+        </a>
+
+        <a href="szkoleniakursy.html">
+            Szkolenia / Kursy
+        </a>
+
+        <a href="uslugit.html">
+            Usługi IT
+        </a>
+
+        <a href="kontakt.html">
+            Kontakt
+        </a>
+
+    </nav>
+
+
+    <!-- =========================================
+         TREŚĆ
+    ========================================= -->
+
+    <main>
+
+        <article class="box">
+
+
+            <!-- =====================================
+                 KOMUNIKAT ZWROTNY
+            ====================================== -->
+
+            <div
+                id="formMessage"
+                class="form-message"
+                aria-live="polite"
+            ></div>
+
+
+            <!-- =====================================
+                 WPROWADZENIE
+            ====================================== -->
+
+            <div class="form-intro">
+
+                <h2>
+                    Wyślij zgłoszenie
+                </h2>
+
+                <p>
+                    Wybierz, czego dotyczy Twoje zgłoszenie,
+                    a następnie uzupełnij formularz.
+                </p>
+
+            </div>
+
+
+            <!-- =====================================
+                 FORMULARZ
+            ====================================== -->
+
+            <form
+                id="contactForm"
+                action="send.php"
+                method="post"
+                accept-charset="UTF-8"
+            >
+
+
+                <!-- HONEYPOT -->
+
+                <div
+                    class="website-field"
+                    aria-hidden="true"
+                >
+
+                    <label for="website">
+                        Strona internetowa
+                    </label>
+
+                    <input
+                        type="text"
+                        id="website"
+                        name="website"
+                        value=""
+                        tabindex="-1"
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+                <!-- =====================================
+                     RODZAJ ZGŁOSZENIA
+                ====================================== -->
+
+                <fieldset>
+
+                    <legend>
+                        Czego dotyczy zgłoszenie?
+                    </legend>
+
+                    <div class="type-options">
+
+                        <label class="type-option">
+
+                            <input
+                                type="radio"
+                                name="rodzaj_zgloszenia"
+                                value="szkolenie"
+                                required
+                            >
+
+                            Zapis na szkolenie
+
+                        </label>
+
+
+                        <label class="type-option">
+
+                            <input
+                                type="radio"
+                                name="rodzaj_zgloszenia"
+                                value="usluga"
+                                required
+                            >
+
+                            Zgłoszenie usługi IT
+
+                        </label>
+
+                    </div>
+
+                </fieldset>
+
+
+                <!-- =====================================
+                     WYBÓR SZKOLENIA
+                ====================================== -->
+
+                <div
+                    id="trainingField"
+                    class="conditional-field"
+                >
+
+                    <fieldset>
+
+                        <legend>
+                            Wybierz szkolenie
+                        </legend>
+
+                        <div class="form-group">
+
+                            <label for="szkolenie">
+                                Szkolenie
+                            </label>
+
+                            <select
+                                id="szkolenie"
+                                name="szkolenie"
+                            >
+
+                                <option value="">
+                                    -- Wybierz szkolenie --
+                                </option>
+
+                                <option value="Akademia Młodego Informatyka">
+                                    Akademia Młodego Informatyka
+                                </option>
+
+                                <option value="Analiza danych">
+                                    Analiza danych
+                                </option>
+
+                                <option value="MS Access">
+                                    MS Access
+                                </option>
+
+                                <option value="SQL / PL/SQL">
+                                    SQL / PL/SQL
+                                </option>
+
+                                <option value="Płatnik">
+                                    Płatnik
+                                </option>
+
+                                <option value="Symfonia Faktura">
+                                    Symfonia Faktura
+                                </option>
+
+                                <option value="MS Office – poziom 1">
+                                    MS Office – poziom 1
+                                </option>
+
+                                <option value="MS Office – poziom 2">
+                                    MS Office – poziom 2
+                                </option>
+
+                                <option value="Microsoft Excel">
+                                    Microsoft Excel
+                                </option>
+
+                                <option value="MS Office Professional">
+                                    MS Office Professional
+                                </option>
+
+                                <option value="MS Project">
+                                    MS Project
+                                </option>
+
+                                <option value="Profesjonalne prezentacje PowerPoint">
+                                    Profesjonalne prezentacje PowerPoint
+                                </option>
+
+                                <option value="VBA – Visual Basic for Applications">
+                                    VBA – Visual Basic for Applications
+                                </option>
+
+                                <option value="C++">
+                                    C++
+                                </option>
+
+                                <option value="C#">
+                                    C#
+                                </option>
+
+                                <option value="Java">
+                                    Java
+                                </option>
+
+                                <option value="JavaScript – programowanie dynamicznych stron">
+                                    JavaScript – programowanie dynamicznych stron
+                                </option>
+
+                                <option value="PHP i MySQL – programowanie stron">
+                                    PHP i MySQL – programowanie stron
+                                </option>
+
+                                <option value="CAD – poziom 1">
+                                    CAD – poziom 1
+                                </option>
+
+                                <option value="CAD – poziom 2">
+                                    CAD – poziom 2
+                                </option>
+
+                                <option value="CorelDRAW">
+                                    CorelDRAW
+                                </option>
+
+                                <option value="GIMP">
+                                    GIMP
+                                </option>
+
+                                <option value="Photoshop">
+                                    Photoshop
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </fieldset>
+
+                </div>
+
+
+                <!-- =====================================
+                     WYBÓR USŁUGI
+                ====================================== -->
+
+                <div
+                    id="serviceField"
+                    class="conditional-field"
+                >
+
+                    <fieldset>
+
+                        <legend>
+                            Wybierz usługę IT
+                        </legend>
+
+                        <div class="form-group">
+
+                            <label for="usluga">
+                                Usługa
+                            </label>
+
+                            <select
+                                id="usluga"
+                                name="usluga"
+                            >
+
+                                <option value="">
+                                    -- Wybierz usługę --
+                                </option>
+
+                                <option value="Naprawa i serwis komputerów">
+                                    Naprawa i serwis komputerów
+                                </option>
+
+                                <option value="Doradztwo informatyczne">
+                                    Doradztwo informatyczne
+                                </option>
+
+                                <option value="Projektowanie i edycja stron internetowych">
+                                    Projektowanie i edycja stron internetowych
+                                </option>
+
+                                <option value="Projektowanie rozwiązań informatycznych">
+                                    Projektowanie rozwiązań informatycznych
+                                </option>
+
+                                <option value="Marketing IT">
+                                    Marketing IT
+                                </option>
+
+                                <option value="Projektowanie strategii kampanii marketingowych w Internecie">
+                                    Projektowanie strategii kampanii marketingowych w Internecie
+                                </option>
+
+                                <option value="Selekcja kandydatów IT">
+                                    Selekcja kandydatów IT
+                                </option>
+
+                                <option value="Inne usługi IT">
+                                    Inne usługi IT
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </fieldset>
+
+                </div>
+
+
+                <!-- =====================================
+                     DANE KONTAKTOWE
+                ====================================== -->
+
+                <fieldset>
+
+                    <legend>
+                        Dane kontaktowe
+                    </legend>
+
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="imie">
+                                Imię *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="imie"
+                                name="imie"
+                                required
+                                autocomplete="given-name"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="nazwisko">
+                                Nazwisko *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="nazwisko"
+                                name="nazwisko"
+                                required
+                                autocomplete="family-name"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Adres e-mail *
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            required
+                            autocomplete="email"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="telefon">
+                            Telefon
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="telefon"
+                            name="telefon"
+                            autocomplete="tel"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="firma">
+                            Firma / instytucja
+                        </label>
+
+                        <input
+                            type="text"
+                            id="firma"
+                            name="firma"
+                            autocomplete="organization"
+                        >
+
+                    </div>
+
+                </fieldset>
+
+
+                <!-- =====================================
+                     WIADOMOŚĆ
+                ====================================== -->
+
+                <fieldset>
+
+                    <legend>
+                        Dodatkowe informacje
+                    </legend>
+
+                    <div class="form-group">
+
+                        <label for="wiadomosc">
+                            Wiadomość
+                        </label>
+
+                        <textarea
+                            id="wiadomosc"
+                            name="wiadomosc"
+                            placeholder="Wpisz dodatkowe informacje dotyczące zgłoszenia..."
+                        ></textarea>
+
+                    </div>
+
+                </fieldset>
+
+
+                <!-- =====================================
+                     ZGODA
+                ====================================== -->
+
+                <div class="agreement">
+
+                    <input
+                        type="checkbox"
+                        id="zgoda"
+                        name="zgoda"
+                        value="Tak"
+                        required
+                    >
+
+                    <label for="zgoda">
+
+                        Wyrażam zgodę na przetwarzanie moich danych
+                        osobowych w celu obsługi mojego zgłoszenia. *
+
+                    </label>
+
+                </div>
+
+
+                <!-- =====================================
+                     PRZYCISK
+                ====================================== -->
+
+                <button
+                    class="button-submit"
+                    type="submit"
+                >
+
+                    Wyślij zgłoszenie
+
+                </button>
+
+            </form>
+
+        </article>
+
+    </main>
+
+
+    <!-- =========================================
+         STOPKA
+    ========================================= -->
+
+    <footer>
+
+        &copy;
+        <span id="year"></span>
+        Zachodniopomorskie Centrum Informatyki
+
+    </footer>
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================= -->
+
+    <script>
+
+        /* =====================================
+           ROK W STOPCE
+        ====================================== */
+
+        const yearElement =
+            document.getElementById("year");
+
+        if (yearElement) {
+
+            yearElement.textContent =
+                new Date().getFullYear();
+
+        }
+
+
+        /* =====================================
+           POLA FORMULARZA
+        ====================================== */
+
+        const trainingRadio =
+            document.querySelector(
+                'input[value="szkolenie"]'
+            );
+
+        const serviceRadio =
+            document.querySelector(
+                'input[value="usluga"]'
+            );
+
+        const trainingField =
+            document.getElementById(
+                "trainingField"
+            );
+
+        const serviceField =
+            document.getElementById(
+                "serviceField"
+            );
+
+        const szkolenieSelect =
+            document.getElementById(
+                "szkolenie"
+            );
+
+        const uslugaSelect =
+            document.getElementById(
+                "usluga"
+            );
+
+
+        /* =====================================
+           AKTUALIZACJA FORMULARZA
+        ====================================== */
+
+        function updateFormType()
+        {
+
+            if (
+                trainingRadio.checked
+            ) {
+
+                trainingField.classList.add(
+                    "active"
+                );
+
+                serviceField.classList.remove(
+                    "active"
+                );
+
+                szkolenieSelect.required =
+                    true;
+
+                uslugaSelect.required =
+                    false;
+
+                uslugaSelect.value =
+                    "";
+
+            }
+
+            else if (
+                serviceRadio.checked
+            ) {
+
+                serviceField.classList.add(
+                    "active"
+                );
+
+                trainingField.classList.remove(
+                    "active"
+                );
+
+                uslugaSelect.required =
+                    true;
+
+                szkolenieSelect.required =
+                    false;
+
+                szkolenieSelect.value =
+                    "";
+
+            }
+
+        }
+
+
+        trainingRadio.addEventListener(
+            "change",
+            updateFormType
+        );
+
+        serviceRadio.addEventListener(
+            "change",
+            updateFormType
+        );
+
+
+        /* =====================================
+           KOMUNIKAT PO POWROCIE Z SEND.PHP
+        ====================================== */
+
+        const params =
+            new URLSearchParams(
+                window.location.search
+            );
+
+        const status =
+            params.get("status");
+
+        const type =
+            params.get("type");
+
+        const formMessage =
+            document.getElementById(
+                "formMessage"
+            );
+
+
+        if (
+            status === "success" &&
+            formMessage
+        ) {
+
+            let message =
+                "Dziękujemy! Twoje zgłoszenie zostało wysłane.";
+
+            if (
+                type === "szkolenie"
+            ) {
+
+                message =
+                    "Dziękujemy! Twój zapis na szkolenie został wysłany. Skontaktujemy się z Tobą wkrótce.";
+
+            }
+
+            if (
+                type === "usluga"
+            ) {
+
+                message =
+                    "Dziękujemy! Twoje zgłoszenie usługi IT zostało wysłane. Skontaktujemy się z Tobą wkrótce.";
+
+            }
+
+            formMessage.textContent =
+                message;
+
+            formMessage.classList.add(
+                "success"
+            );
+
+        }
+
+
+        if (
+            status === "error" &&
+            formMessage
+        ) {
+
+            formMessage.textContent =
+                "Wystąpił problem podczas wysyłania zgłoszenia. Spróbuj ponownie.";
+
+            formMessage.classList.add(
+                "error"
+            );
+
+        }
+
+
+        /* =====================================
+           USUNIĘCIE PARAMETRÓW Z ADRESU
+        ====================================== */
+
+        if (
+            status === "success" ||
+            status === "error"
+        ) {
+
+            window.history.replaceState(
+                {},
+                document.title,
+                "cs.html"
+            );
+
+        }
+
+    </script>
+
+</body>
+
+</html>

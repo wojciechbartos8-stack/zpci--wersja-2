@@ -1,971 +1,902 @@
 <!DOCTYPE html>
-<html lang="pl-PL">
+<html lang="pl">
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Szkolenie z analizy danych – raportowanie, SQL i bazy danych | ZPCI</title>
+    <title>Szkolenie Analiza danych Szczecin | ZPCI</title>
 
-<meta
-    name="description"
-    content="Praktyczne szkolenie z analizy danych: porządkowanie danych, raportowanie, wizualizacja, podstawy SQL, bazy danych, procesy ETL i interpretacja wyników."
->
+    <meta
+        name="description"
+        content="Praktyczne szkolenie Analiza danych w Szczecinie. Naucz się pozyskiwać, przygotowywać, analizować i wizualizować dane oraz tworzyć raporty i dashboardy."
+    >
 
-<meta
-    name="keywords"
-    content="szkolenie analiza danych, kurs analizy danych, raportowanie, wizualizacja danych, SQL, bazy danych, ETL, szkolenia IT Szczecin, ZPCI"
->
+    <meta
+        name="keywords"
+        content="analiza danych Szczecin, szkolenie analiza danych, Excel, Power Query, Power Pivot, SQL, Power BI, raportowanie, dashboardy, wizualizacja danych, ZPCI"
+    >
 
-<meta name="author" content="Zachodniopomorskie Centrum Informatyki">
-<meta name="robots" content="index, follow, max-image-preview:large">
-<meta name="theme-color" content="#0b2148">
+    <meta
+        name="robots"
+        content="index, follow, max-image-preview:large"
+    >
 
-<link
-    rel="canonical"
-    href="https://www.zpci.pl/szkoleniakursy/analiza-danych.html"
->
+    <meta
+        name="author"
+        content="Zachodniopomorskie Centrum Informatyki"
+    >
 
-<!-- OPEN GRAPH -->
+    <meta
+        name="theme-color"
+        content="#0b2148"
+    >
 
-<meta property="og:type" content="website">
-<meta property="og:locale" content="pl_PL">
-<meta property="og:site_name" content="ZPCI">
+    <link
+        rel="canonical"
+        href="https://www.zpci.pl/szkoleniakursy/analiza-danych.html"
+    >
 
-<meta
-    property="og:title"
-    content="Szkolenie z analizy danych – raportowanie, SQL i bazy danych"
->
+    <link
+        rel="icon"
+        type="image/png"
+        href="../images/Logo+zdjecia/Logotypy/2_Logotypy_okrag.png"
+    >
 
-<meta
-    property="og:description"
-    content="Praktyczna nauka porządkowania, analizowania i wizualizacji danych, tworzenia raportów oraz pracy z podstawami SQL i baz danych."
->
+    <link
+        rel="apple-touch-icon"
+        href="../images/Logo+zdjecia/Logotypy/2_Logotypy_okrag.png"
+    >
 
-<meta
-    property="og:url"
-    content="https://www.zpci.pl/szkoleniakursy/analiza-danych.html"
->
+    <!-- OPEN GRAPH -->
 
-<meta
-    property="og:image"
-    content="https://www.zpci.pl/../images/Analizadanych.png"
->
+    <meta property="og:locale" content="pl_PL">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="ZPCI">
 
-<meta
-    property="og:image:alt"
-    content="Szkolenie z analizy danych w Zachodniopomorskim Centrum Informatyki"
->
+    <meta
+        property="og:title"
+        content="Szkolenie Analiza danych | ZPCI"
+    >
 
-<!-- X / TWITTER -->
+    <meta
+        property="og:description"
+        content="Poznaj skuteczne metody analizy danych, twórz raporty, wykresy i dashboardy oraz podejmuj trafniejsze decyzje w oparciu o dane."
+    >
 
-<meta name="twitter:card" content="summary_large_image">
+    <meta
+        property="og:url"
+        content="https://www.zpci.pl/szkoleniakursy/analiza-danych.html"
+    >
 
-<meta
-    name="twitter:title"
-    content="Szkolenie z analizy danych | ZPCI"
->
+    <meta
+        property="og:image"
+        content="https://www.zpci.pl/images/Analiza-Danych.png"
+    >
 
-<meta
-    name="twitter:description"
-    content="Analiza danych, raportowanie, wizualizacja, podstawy SQL, bazy danych i interpretacja wyników."
->
+    <meta
+        property="og:image:alt"
+        content="Szkolenie Analiza danych w ZPCI"
+    >
 
-<meta
-    name="twitter:image"
-    content="https://www.zpci.pl/../images/Analizadanych.png"
->
+    <meta
+        property="og:image:type"
+        content="image/png"
+    >
 
-<!-- DANE STRUKTURALNE SEO -->
+    <!-- TWITTER / X -->
 
-<script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@graph": [
-        {
-            "@type": "EducationalOrganization",
-            "@id": "https://www.zpci.pl/#organization",
-            "name": "Zachodniopomorskie Centrum Informatyki",
-            "alternateName": "ZPCI",
-            "url": "https://www.zpci.pl/",
-            "email": "biuro@zpci.pl"
-        },
-        {
-            "@type": "Course",
-            "@id": "https://www.zpci.pl/szkoleniakursy/analiza-danych.html#course",
-            "name": "Analiza danych",
-            "description": "Praktyczne szkolenie z analizy danych obejmujące porządkowanie i kontrolę jakości danych, raportowanie, wizualizację, podstawy SQL, bazy danych, procesy ETL oraz interpretację wyników.",
-            "url": "https://www.zpci.pl/szkoleniakursy/analiza-danych.html",
-            "image": "https://www.zpci.pl/../images/Analizadanych.png",
-            "inLanguage": "pl-PL",
-            "provider": {
-                "@id": "https://www.zpci.pl/#organization"
+    <meta
+        name="twitter:card"
+        content="summary_large_image"
+    >
+
+    <meta
+        name="twitter:title"
+        content="Szkolenie Analiza danych | ZPCI"
+    >
+
+    <meta
+        name="twitter:description"
+        content="Pozyskiwanie, przygotowanie, analiza i wizualizacja danych oraz tworzenie raportów i dashboardów."
+    >
+
+    <meta
+        name="twitter:image"
+        content="https://www.zpci.pl/images/Analiza-Danych.png"
+    >
+
+    <meta
+        name="twitter:image:alt"
+        content="Szkolenie Analiza danych w ZPCI"
+    >
+
+    <!-- DANE STRUKTURALNE SEO -->
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "EducationalOrganization",
+                "@id": "https://www.zpci.pl/#organization",
+                "name": "Zachodniopomorskie Centrum Informatyki",
+                "alternateName": "ZPCI",
+                "url": "https://www.zpci.pl/",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://www.zpci.pl/images/Logo+zdjecia/Logotypy/2_Logotypy_okrag.png"
+                },
+                "email": "biuro@zpci.pl"
             },
-            "offers": {
-                "@type": "Offer",
-                "price": "2000.00",
-                "priceCurrency": "PLN",
-                "availability": "https://schema.org/InStock",
-                "url": "https://www.zpci.pl/szkoleniakursy/analiza-danych.html"
-            }
-        },
-        {
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-                {
-                    "@type": "ListItem",
-                    "position": 1,
-                    "name": "Strona główna",
-                    "item": "https://www.zpci.pl/"
-                },
-                {
-                    "@type": "ListItem",
-                    "position": 2,
-                    "name": "Szkolenia i kursy",
-                    "item": "https://www.zpci.pl/szkoleniakursy.html"
-                },
-                {
-                    "@type": "ListItem",
-                    "position": 3,
-                    "name": "Analiza danych",
-                    "item": "https://www.zpci.pl/szkoleniakursy/analiza-danych.html"
+            {
+                "@type": "WebSite",
+                "@id": "https://www.zpci.pl/#website",
+                "url": "https://www.zpci.pl/",
+                "name": "Zachodniopomorskie Centrum Informatyki",
+                "alternateName": "ZPCI",
+                "inLanguage": "pl-PL",
+                "publisher": {
+                    "@id": "https://www.zpci.pl/#organization"
                 }
-            ]
+            },
+            {
+                "@type": "WebPage",
+                "@id": "https://www.zpci.pl/szkoleniakursy/analiza-danych.html#webpage",
+                "url": "https://www.zpci.pl/szkoleniakursy/analiza-danych.html",
+                "name": "Szkolenie Analiza danych",
+                "description": "Praktyczne szkolenie z pozyskiwania, przygotowywania, analizowania i wizualizacji danych.",
+                "inLanguage": "pl-PL",
+                "isPartOf": {
+                    "@id": "https://www.zpci.pl/#website"
+                },
+                "about": {
+                    "@id": "https://www.zpci.pl/szkoleniakursy/analiza-danych.html#course"
+                },
+                "primaryImageOfPage": {
+                    "@type": "ImageObject",
+                    "url": "https://www.zpci.pl/images/Analiza-Danych.png"
+                }
+            },
+            {
+                "@type": "Course",
+                "@id": "https://www.zpci.pl/szkoleniakursy/analiza-danych.html#course",
+                "name": "Analiza danych",
+                "description": "Szkolenie obejmujące pozyskiwanie, przygotowanie, czyszczenie, analizę i wizualizację danych oraz tworzenie raportów i dashboardów.",
+                "url": "https://www.zpci.pl/szkoleniakursy/analiza-danych.html",
+                "inLanguage": "pl-PL",
+                "provider": {
+                    "@id": "https://www.zpci.pl/#organization"
+                },
+                "educationalLevel": "Poziom podstawowy i średniozaawansowany",
+                "teaches": [
+                    "Pozyskiwanie i import danych",
+                    "Czyszczenie i przygotowanie danych",
+                    "Analizę danych",
+                    "Tworzenie wykresów",
+                    "Tabele przestawne",
+                    "Power Query",
+                    "Podstawy SQL",
+                    "Tworzenie raportów i dashboardów",
+                    "Interpretację wyników",
+                    "Formułowanie wniosków i rekomendacji"
+                ]
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Strona główna",
+                        "item": "https://www.zpci.pl/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Szkolenia i kursy",
+                        "item": "https://www.zpci.pl/szkoleniakursy.html"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": "Analiza danych",
+                        "item": "https://www.zpci.pl/szkoleniakursy/analiza-danych.html"
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+
+    <style>
+
+        /* RESET */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-    ]
-}
-</script>
-
-<style>
-
-/* RESET */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f4f6f9;
-    color: #333333;
-    line-height: 1.7;
-}
-
-/* NAGŁÓWEK Z LOGO */
-
-.site-header {
-    position: relative;
-    overflow: hidden;
-    background:
-        radial-gradient(
-            circle at 88% 15%,
-            rgba(255, 255, 255, 0.14),
-            transparent 35%
-        ),
-        linear-gradient(135deg, #0b2148, #1f3b73);
-    color: #ffffff;
-}
-
-.site-header::after {
-    content: "";
-    position: absolute;
-    top: -170px;
-    right: -120px;
-    width: 390px;
-    height: 390px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.05);
-}
-
-.header-inner {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    width: 100%;
-    max-width: 1200px;
-    min-height: 145px;
-    margin: 0 auto;
-    padding: 24px 25px;
-    align-items: center;
-    justify-content: space-between;
-    gap: 30px;
-}
-
-.logo {
-    display: flex;
-    min-width: 0;
-    align-items: center;
-    gap: 16px;
-    color: #ffffff;
-    text-decoration: none;
-}
-
-.logo-image {
-    width: 88px;
-    height: 88px;
-    flex: 0 0 88px;
-    object-fit: contain;
-    border-radius: 50%;
-    background: #ffffff;
-    box-shadow: 0 6px 19px rgba(0, 0, 0, 0.25);
-}
-
-.logo-text {
-    min-width: 0;
-}
-
-.logo-text strong {
-    display: block;
-    margin-bottom: 5px;
-    color: #ffffff;
-    font-size: clamp(1.35rem, 3vw, 2rem);
-    line-height: 1.2;
-}
-
-.logo-text span {
-    display: block;
-    color: #dce8fa;
-    font-size: 1rem;
-}
-
-.header-course {
-    max-width: 440px;
-    padding-left: 24px;
-    border-left: 1px solid rgba(255, 255, 255, 0.25);
-    text-align: right;
-}
-
-.header-course .course-label {
-    margin-bottom: 5px;
-    color: #dce8fa;
-    font-size: 0.92rem;
-    font-weight: bold;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-}
-
-.header-course .course-name {
-    display: block;
-    color: #ffffff;
-    font-size: clamp(1.55rem, 3vw, 2.35rem);
-    line-height: 1.2;
-}
-
-/* MENU */
-
-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 0 10px;
-    background: #16315d;
-}
-
-nav a {
-    display: block;
-    padding: 15px 20px;
-    color: #ffffff;
-    font-weight: bold;
-    text-decoration: none;
-    transition:
-        background-color 0.25s ease,
-        color 0.25s ease;
-}
-
-nav a:hover,
-nav a:focus {
-    background: #244b87;
-}
-
-/* GŁÓWNA TREŚĆ */
-
-main {
-    padding: 32px 20px;
-}
-
-.container {
-    width: 100%;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 35px;
-    background: #ffffff;
-    border-radius: 14px;
-    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.11);
-}
-
-/* BANER */
-
-.banner-wrapper {
-    width: 100%;
-    margin-bottom: 30px;
-    padding: 10px;
-    background: #f2f5fa;
-    border: 1px solid #dce4ef;
-    border-radius: 15px;
-}
-
-.course-banner {
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
-    object-position: center;
-    border-radius: 10px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.14);
-}
-
-/* TYTUŁ SZKOLENIA */
-
-.course-title {
-    margin-bottom: 25px;
-    color: #1f3b73;
-    font-size: clamp(1.8rem, 4vw, 2.6rem);
-    line-height: 1.2;
-}
-
-/* PRZYCISKI */
-
-.button-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin: 20px 0 30px;
-}
-
-.button {
-    display: inline-flex;
-    min-height: 46px;
-    align-items: center;
-    justify-content: center;
-    padding: 12px 22px;
-    border: none;
-    border-radius: 7px;
-    background: #1f3b73;
-    color: #ffffff;
-    font-family: inherit;
-    font-size: 1rem;
-    font-weight: bold;
-    line-height: 1.3;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    transition:
-        background-color 0.25s ease,
-        transform 0.2s ease;
-}
-
-.button:hover,
-.button:focus {
-    background: #16305d;
-    transform: translateY(-2px);
-}
-
-.button-register {
-    background: #c57c00;
-}
-
-.button-register:hover,
-.button-register:focus {
-    background: #9f6400;
-}
-
-.button-price {
-    background: #2e7d32;
-}
-
-.button-price:hover,
-.button-price:focus {
-    background: #215d25;
-}
-
-/* NAGŁÓWKI */
-
-h2 {
-    margin-top: 32px;
-    margin-bottom: 15px;
-    padding-bottom: 8px;
-    color: #1f3b73;
-    font-size: clamp(1.4rem, 3vw, 1.95rem);
-    border-bottom: 2px solid #d9e3f0;
-}
-
-h3 {
-    margin-bottom: 10px;
-    color: #1f3b73;
-}
-
-/* TEKST */
-
-p {
-    margin-bottom: 15px;
-}
-
-ul {
-    margin: 15px 0 22px 25px;
-}
-
-li {
-    margin-bottom: 8px;
-}
-
-li::marker {
-    color: #1f3b73;
-}
-
-/* INFORMACJE ORGANIZACYJNE */
-
-.info-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 18px;
-    margin-top: 20px;
-}
-
-.info-card {
-    height: 100%;
-    padding: 22px;
-    background: #f4f7fc;
-    border-left: 5px solid #1f3b73;
-    border-radius: 10px;
-}
-
-.info-card h3 {
-    margin-bottom: 10px;
-}
-
-/* PROGRAM */
-
-.program-list {
-    columns: 2;
-    column-gap: 45px;
-}
-
-.program-list li {
-    break-inside: avoid;
-}
-
-/* CENA */
-
-.price-box {
-    margin-top: 32px;
-    padding: 26px;
-    background: #e8f7ee;
-    border-left: 5px solid #2e7d32;
-    border-radius: 10px;
-}
-
-.price-box h2 {
-    margin-top: 0;
-    border-bottom-color: #bcdcc4;
-}
-
-.price-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px;
-    margin-top: 20px;
-}
-
-.price-card {
-    padding: 22px;
-    background: #ffffff;
-    border: 1px solid #cfe5d4;
-    border-radius: 10px;
-    text-align: center;
-}
-
-.price-card h3 {
-    margin-bottom: 8px;
-}
-
-.price-value {
-    margin: 0;
-    color: #2e7d32;
-    font-size: clamp(1.45rem, 3vw, 2rem);
-    font-weight: bold;
-}
-
-/* TAKSONOMIA */
-
-.taxonomy-intro {
-    margin-bottom: 22px;
-}
-
-.taxonomy-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 20px;
-    margin-top: 22px;
-}
-
-.taxonomy-card {
-    height: 100%;
-    padding: 22px;
-    background: #f5f8fc;
-    border-top: 5px solid #1f3b73;
-    border-radius: 11px;
-    transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
-}
-
-.taxonomy-card:nth-child(2),
-.taxonomy-card:nth-child(5) {
-    border-top-color: #c57c00;
-}
-
-.taxonomy-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 25px rgba(31, 59, 115, 0.15);
-}
-
-.taxonomy-card h3 {
-    margin-bottom: 12px;
-    font-size: 1.2rem;
-}
-
-.taxonomy-card ul {
-    margin: 0 0 0 20px;
-}
-
-.taxonomy-card li::marker {
-    color: #c57c00;
-}
-
-/* TABELA TAKSONOMII */
-
-.taxonomy-table-wrapper {
-    width: 100%;
-    margin-top: 30px;
-    overflow-x: auto;
-    border: 1px solid #d8e1ed;
-    border-radius: 10px;
-    -webkit-overflow-scrolling: touch;
-}
-
-.taxonomy-table {
-    width: 100%;
-    min-width: 740px;
-    border-collapse: collapse;
-}
-
-.taxonomy-table th,
-.taxonomy-table td {
-    padding: 14px;
-    border: 1px solid #d8e1ed;
-    text-align: left;
-    vertical-align: top;
-}
-
-.taxonomy-table th {
-    background: #1f3b73;
-    color: #ffffff;
-}
-
-.taxonomy-table tbody tr:nth-child(even) {
-    background: #f5f8fc;
-}
-
-.taxonomy-table tbody tr:hover {
-    background: #eaf1fb;
-}
-
-/* ZASTOSOWANIE */
-
-.practice-box {
-    margin-top: 32px;
-    padding: 25px;
-    background: #fff8e8;
-    border-left: 5px solid #c57c00;
-    border-radius: 10px;
-}
-
-.practice-box h2 {
-    margin-top: 0;
-}
-
-/* INFORMACJE DODATKOWE */
-
-.additional-info {
-    margin-top: 32px;
-    padding: 25px;
-    background: #eef4ff;
-    border-left: 5px solid #1f3b73;
-    border-radius: 10px;
-}
-
-.additional-info h2 {
-    margin-top: 0;
-}
-
-.additional-info hr {
-    height: 1px;
-    margin: 22px 0;
-    background: #cbd8e9;
-    border: 0;
-}
-
-.additional-info a:not(.button) {
-    color: #1f3b73;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-.additional-info a:not(.button):hover,
-.additional-info a:not(.button):focus {
-    text-decoration: underline;
-}
-
-/* CZAS TRWANIA */
-
-.duration-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px;
-    margin-top: 18px;
-}
-
-.duration-card {
-    padding: 20px;
-    background: #ffffff;
-    border: 1px solid #d9e3ef;
-    border-radius: 9px;
-}
-
-.duration-card h3 {
-    margin-bottom: 8px;
-}
-
-/* STOPKA */
-
-footer {
-    margin-top: 35px;
-    padding: 20px 15px;
-    background: #1f3b73;
-    color: #ffffff;
-    text-align: center;
-}
-
-footer p {
-    margin: 0;
-}
-
-/* TABLETY */
-
-@media (max-width: 900px) {
-
-    .container {
-        padding: 28px;
-    }
-
-    .info-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .taxonomy-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .program-list {
-        columns: 1;
-    }
-}
-
-/* TELEFONY */
-
-@media (max-width: 650px) {
-
-    .header-inner {
-        min-height: auto;
-        padding: 25px 15px;
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-    }
-
-    .logo {
-        flex-direction: column;
-        gap: 12px;
-        justify-content: center;
-        text-align: center;
-    }
-
-    .logo-image {
-        width: 76px;
-        height: 76px;
-        flex-basis: 76px;
-    }
-
-    .logo-text strong {
-        font-size: 1.35rem;
-    }
-
-    .logo-text span {
-        font-size: 0.92rem;
-    }
-
-    .header-course {
-        max-width: 700px;
-        padding-top: 20px;
-        padding-left: 0;
-        border-top: 1px solid rgba(255, 255, 255, 0.25);
-        border-left: 0;
-        text-align: center;
-    }
-
-    .header-course .course-name {
-        font-size: 1.65rem;
-    }
-
-    nav {
-        flex-direction: column;
-        padding: 0;
-    }
-
-    nav a {
-        width: 100%;
-        padding: 13px 15px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-        text-align: center;
-    }
-
-    main {
-        padding: 18px 10px;
-    }
-
-    .container {
-        padding: 20px 16px;
-        border-radius: 9px;
-    }
-
-    .banner-wrapper {
-        margin-bottom: 22px;
-        padding: 6px;
-        border-radius: 10px;
-    }
-
-    .course-banner {
-        width: 100%;
-        height: auto;
-        border-radius: 7px;
-    }
-
-    .course-title {
-        font-size: 1.65rem;
-    }
-
-    h2 {
-        font-size: 1.35rem;
-    }
-
-    .button-row {
-        flex-direction: column;
-    }
-
-    .button {
-        width: 100%;
-    }
-
-    .price-grid,
-    .taxonomy-grid,
-    .duration-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .info-card,
-    .price-box,
-    .price-card,
-    .taxonomy-card,
-    .practice-box,
-    .additional-info,
-    .duration-card {
-        padding: 20px 16px;
-    }
-}
-
-/* MAŁE TELEFONY */
-
-@media (max-width: 380px) {
-
-    .logo-text strong {
-        font-size: 1.2rem;
-    }
-
-    .header-course .course-name {
-        font-size: 1.45rem;
-    }
-
-    .container {
-        padding: 18px 13px;
-    }
-
-    ul {
-        margin-left: 20px;
-    }
-}
-
-/* DRUKOWANIE */
-
-@media print {
-
-    body {
-        background: #ffffff;
-        color: #000000;
-    }
-
-    nav,
-    .button-row,
-    footer {
-        display: none;
-    }
-
-    .site-header {
-        background: #ffffff;
-        color: #000000;
-    }
-
-    .header-inner {
-        min-height: auto;
-        padding: 10px 0 20px;
-    }
-
-    .logo-image {
-        width: 65px;
-        height: 65px;
-        flex-basis: 65px;
-        box-shadow: none;
-    }
-
-    .logo-text strong,
-    .logo-text span,
-    .header-course .course-label,
-    .header-course .course-name {
-        color: #000000;
-    }
-
-    main {
-        padding: 0;
-    }
-
-    .container {
-        max-width: 100%;
-        padding: 0;
-        box-shadow: none;
-    }
-
-    .banner-wrapper {
-        padding: 0;
-        background: #ffffff;
-        border: 0;
-    }
-
-    .course-banner {
-        width: 100%;
-        height: auto;
-        box-shadow: none;
-    }
-
-    h1,
-    h2,
-    h3,
-    .course-title,
-    .price-value {
-        color: #000000;
-    }
-
-    .info-grid,
-    .price-grid,
-    .taxonomy-grid,
-    .duration-grid {
-        display: block;
-    }
-
-    .info-card,
-    .price-card,
-    .taxonomy-card,
-    .duration-card {
-        margin-bottom: 15px;
-        background: #ffffff;
-        border: 1px solid #000000;
-        box-shadow: none;
-        break-inside: avoid;
-    }
-
-    .taxonomy-table {
-        min-width: 0;
-    }
-
-    .taxonomy-table th {
-        background: #ffffff;
-        color: #000000;
-    }
-
-    .price-box,
-    .practice-box,
-    .additional-info {
-        background: #ffffff;
-        border: 1px solid #000000;
-    }
-}
-
-</style>
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #eef5ff, #ffffff);
+            color: #222;
+            line-height: 1.7;
+        }
+
+        /* NAGŁÓWEK */
+
+        header {
+            position: relative;
+            overflow: hidden;
+            background:
+                radial-gradient(
+                    circle at top right,
+                    rgba(255, 255, 255, 0.14),
+                    transparent 35%
+                ),
+                linear-gradient(135deg, #0b2148, #1f3b73);
+            color: white;
+            padding: 42px 20px;
+            text-align: center;
+        }
+
+        .header-content {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* LOGO ZPCI */
+
+        .header-brand {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 24px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .brand-logo {
+            width: 96px;
+            height: 96px;
+            flex: 0 0 96px;
+            border: 4px solid rgba(255, 255, 255, 0.95);
+            border-radius: 50%;
+            background: white;
+            object-fit: contain;
+            box-shadow: 0 14px 30px rgba(0, 0, 0, 0.25);
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+
+        .header-brand:hover .brand-logo {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 18px 36px rgba(0, 0, 0, 0.32);
+        }
+
+        .brand-copy {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+        }
+
+        .brand-name {
+            max-width: 620px;
+            font-size: clamp(21px, 3vw, 31px);
+            font-weight: 900;
+            line-height: 1.15;
+        }
+
+        .brand-subtitle {
+            margin-top: 6px;
+            color: rgba(255, 255, 255, 0.86);
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+        }
+
+        .header-brand:focus-visible {
+            outline: 3px solid #f2b705;
+            outline-offset: 7px;
+            border-radius: 20px;
+        }
+
+        header h1 {
+            color: white;
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            line-height: 1.2;
+            margin-bottom: 12px;
+        }
+
+        header p {
+            max-width: 760px;
+            margin: 0 auto;
+            color: #e4ecfa;
+            font-size: clamp(1rem, 2vw, 1.15rem);
+            line-height: 1.6;
+        }
+
+        /* MENU */
+
+        nav {
+            background: #16315d;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 0 10px;
+        }
+
+        nav a {
+            display: block;
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            transition:
+                background-color 0.3s ease,
+                color 0.3s ease;
+        }
+
+        nav a:hover,
+        nav a:focus {
+            background: #244b87;
+        }
+
+        /* TREŚĆ */
+
+        main {
+            padding: 35px 20px;
+        }
+
+        .box {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 35px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        /* BANER */
+
+        .banner-wrapper {
+            width: 100%;
+            margin-bottom: 30px;
+            padding: 12px;
+            background: #f4f7fc;
+            border: 1px solid #dce5f3;
+            border-radius: 14px;
+        }
+
+        .course-banner {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-width: 100%;
+            object-fit: contain;
+            object-position: center;
+            border-radius: 10px;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.14);
+        }
+
+        /* PRZYCISKI */
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 11px 18px;
+            background: #1f3b73;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            text-decoration: none;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: bold;
+            text-align: center;
+            cursor: pointer;
+            transition:
+                background-color 0.3s ease,
+                transform 0.2s ease;
+        }
+
+        .button:hover,
+        .button:focus {
+            background: #16305d;
+            transform: translateY(-2px);
+        }
+
+        .button-register {
+            background: #c57c00;
+        }
+
+        .button-register:hover,
+        .button-register:focus {
+            background: #9f6400;
+        }
+
+        /* NAGŁÓWKI I TEKST */
+
+        h2 {
+            color: #1f3b73;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #dce5f3;
+        }
+
+        h3 {
+            color: #1f3b73;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        ul {
+            margin: 15px 0 25px 25px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        li::marker {
+            color: #1f3b73;
+        }
+
+        /* INFORMACJE ORGANIZACYJNE */
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-top: 20px;
+        }
+
+        .info-card {
+            background: #f4f7fc;
+            border-left: 5px solid #1f3b73;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .info-card h3 {
+            margin-bottom: 10px;
+        }
+
+        /* TAKSONOMIA */
+
+        .taxonomy-intro {
+            margin-bottom: 20px;
+        }
+
+        .taxonomy-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-top: 20px;
+        }
+
+        .taxonomy-card {
+            background: #f4f7fc;
+            border-top: 5px solid #1f3b73;
+            padding: 22px;
+            border-radius: 10px;
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .taxonomy-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 18px rgba(31, 59, 115, 0.16);
+        }
+
+        .taxonomy-card h3 {
+            margin-top: 0;
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+        }
+
+        .taxonomy-card ul {
+            margin: 0 0 0 20px;
+        }
+
+        .taxonomy-card li {
+            margin-bottom: 8px;
+        }
+
+        .taxonomy-card li::marker {
+            color: #c57c00;
+        }
+
+        /* TABELA TAKSONOMII */
+
+        .taxonomy-table-wrapper {
+            width: 100%;
+            margin-top: 25px;
+            overflow-x: auto;
+            border-radius: 8px;
+        }
+
+        .taxonomy-table {
+            width: 100%;
+            min-width: 720px;
+            border-collapse: collapse;
+        }
+
+        .taxonomy-table th,
+        .taxonomy-table td {
+            padding: 14px;
+            border: 1px solid #d8e1ef;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .taxonomy-table th {
+            background: #1f3b73;
+            color: white;
+        }
+
+        .taxonomy-table tbody tr:nth-child(even) {
+            background: #f4f7fc;
+        }
+
+        .taxonomy-table tbody tr:hover {
+            background: #eaf1fb;
+        }
+
+        /* ZASTOSOWANIE W PRAKTYCE */
+
+        .practice-box {
+            background: #fff8e8;
+            border-left: 5px solid #c57c00;
+            padding: 22px;
+            margin-top: 30px;
+            border-radius: 8px;
+        }
+
+        .practice-box h2 {
+            margin-top: 0;
+        }
+
+        /* KONTAKT */
+
+        .contact-box {
+            background: #eef4ff;
+            border-left: 5px solid #1f3b73;
+            padding: 22px;
+            margin-top: 30px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .contact-box h2 {
+            margin-top: 0;
+        }
+
+        .contact-box a:not(.button) {
+            color: #1f3b73;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .contact-box a:not(.button):hover,
+        .contact-box a:not(.button):focus {
+            text-decoration: underline;
+        }
+
+        /* STOPKA */
+
+        footer {
+            background: #1f3b73;
+            color: white;
+            text-align: center;
+            padding: 20px 15px;
+            margin-top: 30px;
+        }
+
+        /* TABLETY */
+
+        @media (max-width: 900px) {
+
+            .taxonomy-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .box {
+                padding: 28px;
+            }
+
+        }
+
+        /* TELEFONY */
+
+        @media (max-width: 600px) {
+
+            header {
+                padding: 30px 15px;
+            }
+
+            .header-brand {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .brand-logo {
+                width: 84px;
+                height: 84px;
+                flex-basis: 84px;
+            }
+
+            .brand-copy {
+                align-items: center;
+                text-align: center;
+            }
+
+            .brand-name {
+                font-size: 22px;
+            }
+
+            .brand-subtitle {
+                font-size: 12px;
+            }
+
+            header h1 {
+                font-size: 1.75rem;
+                line-height: 1.25;
+            }
+
+            header p {
+                font-size: 1rem;
+                line-height: 1.5;
+            }
+
+            nav {
+                flex-direction: column;
+                padding: 0;
+            }
+
+            nav a {
+                width: 100%;
+                padding: 13px 15px;
+                text-align: center;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+            }
+
+            main {
+                padding: 18px 10px;
+            }
+
+            .box {
+                padding: 20px 16px;
+                border-radius: 8px;
+            }
+
+            .banner-wrapper {
+                padding: 7px;
+                margin-bottom: 22px;
+                border-radius: 9px;
+            }
+
+            .course-banner {
+                width: 100%;
+                height: auto;
+                border-radius: 7px;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+            .button {
+                width: 100%;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+
+            .taxonomy-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .taxonomy-card,
+            .info-card,
+            .practice-box,
+            .contact-box {
+                padding: 20px 16px;
+            }
+
+        }
+
+        /* MAŁE TELEFONY */
+
+        @media (max-width: 380px) {
+
+            header {
+                padding: 26px 12px;
+            }
+
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            .box {
+                padding: 18px 13px;
+            }
+
+            ul {
+                margin-left: 20px;
+            }
+
+        }
+
+        /* DRUKOWANIE */
+
+        @media print {
+
+            body {
+                background: white;
+                color: black;
+            }
+
+            nav,
+            .buttons,
+            footer {
+                display: none;
+            }
+
+            header {
+                background: white;
+                color: black;
+                padding: 10px 0 20px;
+            }
+
+            .brand-logo {
+                width: 72px;
+                height: 72px;
+                border: 1px solid #cccccc;
+                box-shadow: none;
+            }
+
+            .brand-name,
+            .brand-subtitle,
+            header h1,
+            header p {
+                color: black;
+            }
+
+            main {
+                padding: 0;
+            }
+
+            .box {
+                max-width: 100%;
+                padding: 0;
+                box-shadow: none;
+            }
+
+            .banner-wrapper {
+                padding: 0;
+                background: white;
+                border: none;
+            }
+
+            .course-banner {
+                width: 100%;
+                height: auto;
+                box-shadow: none;
+            }
+
+            h2,
+            h3 {
+                color: black;
+            }
+
+            .info-grid,
+            .taxonomy-grid {
+                display: block;
+            }
+
+            .info-card,
+            .taxonomy-card {
+                background: white;
+                border: 1px solid black;
+                margin-bottom: 15px;
+                break-inside: avoid;
+            }
+
+            .taxonomy-table {
+                min-width: 0;
+            }
+
+            .taxonomy-table th {
+                background: white;
+                color: black;
+            }
+
+            .practice-box,
+            .contact-box {
+                background: white;
+                border: 1px solid black;
+            }
+
+        }
+
+    </style>
 
 </head>
 
 <body>
 
-<header class="site-header">
+<header>
 
-    <div class="header-inner">
+    <div class="header-content">
 
         <a
-            class="logo"
+            class="header-brand"
             href="../index.html"
             aria-label="ZPCI – przejdź do strony głównej"
         >
 
             <img
-                class="logo-image"
-                src="../images/logo+zdjecia/logotypy/2_Logotypy_okrag.png"
+                class="brand-logo"
+                src="../images/Logo+zdjecia/Logotypy/2_Logotypy_okrag.png"
                 alt="Logo Zachodniopomorskiego Centrum Informatyki"
-                width="200"
-                height="200"
+                width="96"
+                height="96"
+                loading="eager"
+                decoding="async"
             >
 
-            <div class="logo-text">
+            <span class="brand-copy">
 
-                <strong>
+                <span class="brand-name">
                     Zachodniopomorskie Centrum Informatyki
-                </strong>
-
-                <span>
-                    Szkolenia komputerowe i usługi informatyczne
                 </span>
 
-            </div>
+                <span class="brand-subtitle">
+                    Szkolenia informatyczne i usługi IT
+                </span>
+
+            </span>
 
         </a>
 
-        <div class="header-course">
+        <h1>Analiza danych</h1>
 
-            <p class="course-label">
-                Szkolenie analityczne
-            </p>
-
-            <strong class="course-name">
-                Analiza danych
-            </strong>
-
-        </div>
+        <p>
+            Poznaj skuteczne metody analizy danych i podejmuj
+            trafne decyzje w oparciu o liczby, informacje i raporty.
+        </p>
 
     </div>
 
@@ -973,27 +904,19 @@ footer p {
 
 <nav aria-label="Menu główne">
 
-    <a href="../index.html">
-        Strona główna
-    </a>
+    <a href="../index.html">Strona główna</a>
 
-    <a href="../szkoleniakursy.html">
-        Szkolenia / Kursy
-    </a>
+    <a href="../szkoleniakursy.html">Szkolenia / Kursy</a>
 
-    <a href="../uslugiit.html">
-        Usługi IT
-    </a>
+    <a href="../uslugiit.html">Usługi IT</a>
 
-    <a href="../kontakt.html">
-        Kontakt
-    </a>
+    <a href="../kontakt.html">Kontakt</a>
 
 </nav>
 
 <main>
 
-    <article class="container">
+    <article class="box">
 
         <!-- BANER -->
 
@@ -1002,9 +925,9 @@ footer p {
             <img
                 class="course-banner"
                 src="../images/Analiza-Danych.png"
-                alt="Szkolenie z analizy danych, raportowania, SQL i baz danych w ZPCI"
-                width="1200"
-                height="750"
+                alt="Szkolenie Analiza danych w ZPCI Szczecin"
+                width="1536"
+                height="1024"
                 loading="eager"
                 fetchpriority="high"
                 decoding="async"
@@ -1012,13 +935,9 @@ footer p {
 
         </div>
 
-        <h1 class="course-title">
-            Szkolenie z analizy danych
-        </h1>
-
         <!-- PRZYCISKI -->
 
-        <div class="button-row">
+        <div class="buttons">
 
             <button
                 class="button"
@@ -1030,192 +949,153 @@ footer p {
 
             <a
                 class="button button-register"
-                href="mailto:biuro@zpci.pl?subject=Zapytanie%20o%20szkolenie%20Analiza%20danych"
+                href="../cs.html"
             >
                 Zapisz się na szkolenie
             </a>
 
-            <a
-                class="button button-price"
-                href="cennik-szkolen.html"
-            >
-                Cennik szkoleń
-            </a>
-
         </div>
 
-        <!-- DLA KOGO -->
+        <!-- KOGO ZAPRASZAMY -->
 
         <section>
 
             <h2>Kogo zapraszamy?</h2>
 
             <p>
-                Szkolenie przeznaczone jest dla osób planujących pracę
-                z analizą danych przy użyciu narzędzi informatycznych.
+                Szkolenie przeznaczone jest dla osób, które chcą nauczyć się
+                pozyskiwać, przygotowywać, analizować i interpretować dane
+                oraz wykorzystywać je w codziennej pracy i podejmowaniu decyzji.
             </p>
 
             <p>
-                Kurs przygotowuje do pracy z danymi, raportowaniem,
-                wizualizacją informacji oraz podstawami baz danych.
-            </p>
-
-            <p>
-                Szkolenie będzie przydatne osobom pracującym w działach
-                administracyjnych, finansowych, księgowych, handlowych,
-                logistycznych, marketingowych i analitycznych.
+                Kurs będzie przydatny pracownikom biurowym, specjalistom,
+                menedżerom, przedsiębiorcom, analitykom, handlowcom oraz
+                wszystkim osobom pracującym z większą ilością danych,
+                raportów, tabel i zestawień.
             </p>
 
         </section>
 
-        <!-- ORGANIZACJA -->
+        <!-- INFORMACJE ORGANIZACYJNE -->
 
         <section>
 
-            <h2>Termin, organizacja i metodyka szkolenia</h2>
+            <h2>Informacje organizacyjne</h2>
 
             <div class="info-grid">
 
-                <article class="info-card">
+                <div class="info-card">
 
                     <h3>Organizacja</h3>
 
                     <p>
-                        Zajęcia prowadzone są w mikrogrupach lub grupach
-                        zorganizowanych. Terminy ustalane są elastycznie.
+                        Zajęcia mogą być prowadzone indywidualnie
+                        lub w grupach, stacjonarnie albo online,
+                        z możliwością dopasowania programu
+                        do potrzeb uczestników.
                     </p>
 
-                </article>
+                </div>
 
-                <article class="info-card">
+                <div class="info-card">
 
                     <h3>Metodyka</h3>
 
                     <p>
-                        Szkolenie ma charakter praktyczny i odbywa się
-                        przy komputerach. Uczestnicy wykonują ćwiczenia
-                        na przykładowych zbiorach danych.
+                        Szkolenie ma charakter praktycznych warsztatów.
+                        Uczestnicy pracują na przykładach,
+                        analizują dane oraz samodzielnie tworzą
+                        raporty i zestawienia.
                     </p>
 
-                </article>
+                </div>
 
-                <article class="info-card">
+                <div class="info-card">
 
-                    <h3>Certyfikaty</h3>
+                    <h3>Certyfikat</h3>
 
                     <p>
-                        Uczestnik otrzymuje certyfikat w języku polskim
-                        i angielskim. Możliwa jest również wersja
-                        rozszerzona lub dodatkowa wersja językowa.
+                        Po ukończeniu szkolenia uczestnik otrzymuje
+                        certyfikat w języku polskim i angielskim.
+                        Możliwe są również dodatkowe wersje językowe.
                     </p>
 
-                </article>
+                </div>
 
             </div>
 
         </section>
 
-        <!-- PROGRAM -->
+        <!-- PROGRAM SZKOLENIA -->
 
         <section>
 
-            <h2>Zakres tematyczny</h2>
+            <h2>Program szkolenia</h2>
 
-            <ul class="program-list">
+            <ul>
 
                 <li>Wprowadzenie do analizy danych</li>
-                <li>Rodzaje i struktury danych</li>
-                <li>Dane jakościowe i ilościowe</li>
-                <li>Źródła danych</li>
-                <li>Gromadzenie i porządkowanie danych</li>
-                <li>Kontrola jakości danych</li>
-                <li>Usuwanie błędów i nieprawidłowych wartości</li>
-                <li>Redundancja danych</li>
-                <li>Duplikaty i brakujące dane</li>
-                <li>Narzędzia analityczne</li>
-                <li>Analiza opisowa</li>
-                <li>Analiza porównawcza</li>
-                <li>Analiza trendów</li>
-                <li>Analiza danych i symulacje</li>
-                <li>Podstawowe miary statystyczne</li>
-                <li>Średnia, mediana i dominanta</li>
-                <li>Minimum, maksimum i rozstęp</li>
-                <li>Filtrowanie i sortowanie danych</li>
-                <li>Grupowanie danych</li>
-                <li>Tworzenie tabel i zestawień</li>
-                <li>Wizualizacja danych</li>
-                <li>Dobór odpowiednich wykresów</li>
-                <li>Tworzenie raportów</li>
-                <li>Projektowanie czytelnych zestawień</li>
+
+                <li>Źródła danych i ich rodzaje</li>
+
+                <li>Pozyskiwanie i import danych</li>
+
+                <li>Ocena jakości danych</li>
+
+                <li>Czyszczenie i przygotowanie danych do analizy</li>
+
+                <li>Sortowanie i filtrowanie danych</li>
+
+                <li>Podstawowe metody analizy danych</li>
+
+                <li>Analiza opisowa i statystyczna</li>
+
+                <li>Wyszukiwanie zależności i trendów</li>
+
+                <li>Analiza porównawcza danych</li>
+
+                <li>Grupowanie i segmentacja danych</li>
+
                 <li>Interpretacja wyników analizy</li>
-                <li>Formułowanie wniosków</li>
-                <li>Wprowadzenie do baz danych</li>
-                <li>Budowa baz danych</li>
-                <li>Tabele, rekordy i pola</li>
-                <li>Relacje pomiędzy tabelami</li>
-                <li>Wprowadzenie do języka SQL</li>
-                <li>Podstawowe zapytania SQL</li>
-                <li>Filtrowanie danych za pomocą SQL</li>
-                <li>Sortowanie wyników zapytań</li>
-                <li>Agregowanie danych</li>
-                <li>Łączenie danych z wielu tabel</li>
-                <li>Podstawy hurtowni danych</li>
-                <li>Procesy ETL</li>
-                <li>Przetwarzanie danych</li>
-                <li>Przygotowanie danych do raportowania</li>
-                <li>Analiza przykładowego zbioru danych</li>
-                <li>Przygotowanie końcowego raportu analitycznego</li>
+
+                <li>Microsoft Excel w analizie danych</li>
+
+                <li>Zaawansowane funkcje i narzędzia analityczne</li>
+
+                <li>Tworzenie tabel przestawnych</li>
+
+                <li>Tworzenie wykresów i wizualizacja danych</li>
+
+                <li>Power Query – importowanie, łączenie i transformacja danych</li>
+
+                <li>Power Pivot – podstawy modelowania danych</li>
+
+                <li>Podstawy języka SQL w analizie danych</li>
+
+                <li>Pobieranie danych z baz danych</li>
+
+                <li>Wprowadzenie do Power BI</li>
+
+                <li>Tworzenie raportów i dashboardów</li>
+
+                <li>Dobór odpowiednich wykresów i form wizualizacji</li>
+
+                <li>Analiza sprzedaży i klientów</li>
+
+                <li>Analiza wyników i wskaźników KPI</li>
+
+                <li>Identyfikacja trendów i zależności</li>
+
+                <li>Tworzenie interaktywnych raportów</li>
+
+                <li>Storytelling z wykorzystaniem danych</li>
+
+                <li>Formułowanie wniosków i rekomendacji</li>
+
+                <li>Praca na praktycznych przykładach biznesowych</li>
 
             </ul>
-
-        </section>
-
-        <!-- CENA -->
-
-        <section class="price-box">
-
-            <h2>Koszt szkolenia</h2>
-
-            <div class="price-grid">
-
-                <article class="price-card">
-
-                    <h3>Cena netto</h3>
-
-                    <p class="price-value">
-                        1626,02 zł
-                    </p>
-
-                </article>
-
-                <article class="price-card">
-
-                    <h3>Cena brutto</h3>
-
-                    <p class="price-value">
-                        2000,00 zł
-                    </p>
-
-                </article>
-
-            </div>
-
-            <p>
-                Podana cena dotyczy przedstawionego zakresu szkolenia.
-                Program, forma organizacyjna i liczba godzin mogą zostać
-                dostosowane do potrzeb uczestników lub firmy.
-            </p>
-
-            <div class="button-row">
-
-                <a
-                    class="button button-price"
-                    href="cennik-szkolen.html"
-                >
-                    Zobacz pełny cennik szkoleń
-                </a>
-
-            </div>
 
         </section>
 
@@ -1227,128 +1107,170 @@ footer p {
 
             <p class="taxonomy-intro">
                 Po zakończeniu szkolenia uczestnik osiąga efekty
-                kształcenia obejmujące wiedzę, rozumienie, praktyczne
-                zastosowanie, analizowanie, ocenianie oraz samodzielne
-                tworzenie raportów i rozwiązań analitycznych.
+                kształcenia w zakresie wiedzy, rozumienia,
+                praktycznego zastosowania, analizy, oceny
+                oraz samodzielnego tworzenia raportów,
+                zestawień i analiz danych.
             </p>
 
             <div class="taxonomy-grid">
 
-                <article class="taxonomy-card">
+                <div class="taxonomy-card">
 
                     <h3>Uczestnik wie</h3>
 
                     <ul>
+
                         <li>czym jest analiza danych,</li>
-                        <li>jakie są rodzaje i struktury danych,</li>
-                        <li>czym są bazy i hurtownie danych,</li>
-                        <li>do czego służy język SQL,</li>
-                        <li>jakie narzędzia służą do analizy danych,</li>
-                        <li>jakie są podstawowe metody wizualizacji danych.</li>
+
+                        <li>jakie są podstawowe źródła danych,</li>
+
+                        <li>jakie etapy obejmuje proces analizy danych,</li>
+
+                        <li>jakie narzędzia mogą być wykorzystywane do analizy,</li>
+
+                        <li>czym są raporty, wskaźniki i dashboardy,</li>
+
+                        <li>jakie są podstawowe zasady wizualizacji danych.</li>
+
                     </ul>
 
-                </article>
+                </div>
 
-                <article class="taxonomy-card">
+                <div class="taxonomy-card">
 
                     <h3>Uczestnik rozumie</h3>
 
                     <ul>
-                        <li>znaczenie jakości danych dla wyników analizy,</li>
-                        <li>różnicę między danymi jakościowymi i ilościowymi,</li>
-                        <li>zasady budowania relacyjnych baz danych,</li>
-                        <li>sposób działania zapytań SQL,</li>
-                        <li>znaczenie właściwego doboru wykresu,</li>
-                        <li>zależność między danymi a formułowanymi wnioskami.</li>
+
+                        <li>znaczenie jakości danych,</li>
+
+                        <li>dlaczego dane należy odpowiednio przygotować,</li>
+
+                        <li>zależność pomiędzy danymi a podejmowaniem decyzji,</li>
+
+                        <li>znaczenie trendów i zależności,</li>
+
+                        <li>wpływ sposobu prezentacji danych na ich interpretację,</li>
+
+                        <li>rolę analizy danych w działalności firmy.</li>
+
                     </ul>
 
-                </article>
+                </div>
 
-                <article class="taxonomy-card">
+                <div class="taxonomy-card">
 
                     <h3>Uczestnik stosuje</h3>
 
                     <ul>
-                        <li>narzędzia do porządkowania danych,</li>
-                        <li>filtrowanie, sortowanie i grupowanie,</li>
-                        <li>podstawowe zapytania języka SQL,</li>
-                        <li>tabele, wykresy i zestawienia,</li>
-                        <li>podstawowe miary statystyczne,</li>
-                        <li>metody przygotowywania raportów.</li>
+
+                        <li>narzędzia do importowania danych,</li>
+
+                        <li>sortowanie i filtrowanie danych,</li>
+
+                        <li>funkcje programu Microsoft Excel,</li>
+
+                        <li>tabele przestawne i wykresy,</li>
+
+                        <li>Power Query do transformacji danych,</li>
+
+                        <li>podstawowe zapytania SQL.</li>
+
                     </ul>
 
-                </article>
+                </div>
 
-                <article class="taxonomy-card">
+                <div class="taxonomy-card">
 
                     <h3>Uczestnik analizuje</h3>
 
                     <ul>
-                        <li>strukturę otrzymanego zbioru danych,</li>
-                        <li>jakość, kompletność i spójność informacji,</li>
-                        <li>trendy i zależności występujące w danych,</li>
-                        <li>przyczyny różnic pomiędzy wynikami,</li>
-                        <li>wyniki zapytań i obliczeń,</li>
-                        <li>przydatność danych dla określonego celu.</li>
+
+                        <li>strukturę i jakość danych,</li>
+
+                        <li>sprzedaż i wyniki działalności,</li>
+
+                        <li>zachowania klientów,</li>
+
+                        <li>trendy i zależności,</li>
+
+                        <li>różnice pomiędzy poszczególnymi grupami danych,</li>
+
+                        <li>wskaźniki i wyniki raportów.</li>
+
                     </ul>
 
-                </article>
+                </div>
 
-                <article class="taxonomy-card">
+                <div class="taxonomy-card">
 
                     <h3>Uczestnik ocenia</h3>
 
                     <ul>
-                        <li>wiarygodność źródła danych,</li>
-                        <li>poprawność wykonanej analizy,</li>
-                        <li>czytelność raportów i wizualizacji,</li>
-                        <li>trafność zastosowanych metod analitycznych,</li>
-                        <li>zgodność wniosków z uzyskanymi wynikami,</li>
-                        <li>przydatność raportu w procesie decyzyjnym.</li>
+
+                        <li>wiarygodność i jakość danych,</li>
+
+                        <li>poprawność przygotowanej analizy,</li>
+
+                        <li>czytelność raportów i wykresów,</li>
+
+                        <li>znaczenie wykrytych zależności,</li>
+
+                        <li>przydatność informacji dla odbiorcy,</li>
+
+                        <li>możliwość wykorzystania wyników w praktyce.</li>
+
                     </ul>
 
-                </article>
+                </div>
 
-                <article class="taxonomy-card">
+                <div class="taxonomy-card">
 
                     <h3>Uczestnik tworzy</h3>
 
                     <ul>
-                        <li>uporządkowane zbiory danych,</li>
-                        <li>zapytania pobierające potrzebne informacje,</li>
-                        <li>tabele, wykresy i zestawienia,</li>
+
+                        <li>własne zestawienia danych,</li>
+
+                        <li>tabele przestawne,</li>
+
+                        <li>wykresy i wizualizacje,</li>
+
                         <li>raporty analityczne,</li>
-                        <li>wnioski i rekomendacje na podstawie danych,</li>
-                        <li>rozwiązania dopasowane do potrzeb organizacji.</li>
+
+                        <li>dashboardy i interaktywne zestawienia,</li>
+
+                        <li>wnioski i rekomendacje oparte na danych.</li>
+
                     </ul>
 
-                </article>
+                </div>
 
             </div>
 
         </section>
 
-        <!-- TABELA TAKSONOMII -->
+        <!-- POZIOMY TAKSONOMII -->
 
         <section>
 
             <h2>Poziomy taksonomii szkolenia</h2>
 
-            <div
-                class="taxonomy-table-wrapper"
-                role="region"
-                aria-label="Tabela poziomów taksonomii szkolenia z analizy danych"
-                tabindex="0"
-            >
+            <div class="taxonomy-table-wrapper">
 
                 <table class="taxonomy-table">
 
                     <thead>
 
                         <tr>
-                            <th scope="col">Poziom</th>
-                            <th scope="col">Efekt kształcenia</th>
-                            <th scope="col">Przykład praktyczny</th>
+
+                            <th>Poziom</th>
+
+                            <th>Efekt kształcenia</th>
+
+                            <th>Przykład praktyczny</th>
+
                         </tr>
 
                     </thead>
@@ -1365,8 +1287,9 @@ footer p {
                             </td>
 
                             <td>
-                                Rozpoznaje rodzaje danych, tabele,
-                                relacje, wykresy i zapytania SQL.
+                                Rozpoznaje źródła danych,
+                                raporty, wskaźniki, wykresy
+                                i podstawowe narzędzia analityczne.
                             </td>
 
                         </tr>
@@ -1376,13 +1299,14 @@ footer p {
                             <td>2. Rozumienie</td>
 
                             <td>
-                                Uczestnik rozumie zasady przetwarzania
-                                i interpretowania danych.
+                                Uczestnik rozumie proces przygotowania
+                                danych oraz znaczenie ich jakości.
                             </td>
 
                             <td>
-                                Wyjaśnia wpływ jakości danych
-                                na poprawność wyników analizy.
+                                Wyjaśnia, dlaczego dane należy
+                                czyścić, porządkować i odpowiednio
+                                prezentować.
                             </td>
 
                         </tr>
@@ -1392,13 +1316,13 @@ footer p {
                             <td>3. Zastosowanie</td>
 
                             <td>
-                                Uczestnik wykorzystuje poznane narzędzia
-                                podczas pracy z informacjami.
+                                Uczestnik wykorzystuje narzędzia
+                                analityczne w praktyce.
                             </td>
 
                             <td>
-                                Filtruje dane, wykonuje obliczenia,
-                                tworzy wykres i proste zapytanie SQL.
+                                Tworzy tabele przestawne, wykresy,
+                                zestawienia i podstawowe raporty.
                             </td>
 
                         </tr>
@@ -1408,13 +1332,13 @@ footer p {
                             <td>4. Analiza</td>
 
                             <td>
-                                Uczestnik analizuje dane oraz
-                                występujące między nimi zależności.
+                                Uczestnik analizuje dane i wyszukuje
+                                zależności, trendy oraz różnice.
                             </td>
 
                             <td>
-                                Wyszukuje trendy, błędy, różnice
-                                i powtarzające się wartości.
+                                Analizuje sprzedaż, klientów,
+                                wyniki pracy lub inne dane biznesowe.
                             </td>
 
                         </tr>
@@ -1425,12 +1349,13 @@ footer p {
 
                             <td>
                                 Uczestnik ocenia jakość danych
-                                i poprawność wykonanej analizy.
+                                i poprawność wyników analizy.
                             </td>
 
                             <td>
-                                Sprawdza źródła danych, zastosowane
-                                obliczenia i wiarygodność wniosków.
+                                Sprawdza wiarygodność danych,
+                                czytelność raportów i przydatność
+                                uzyskanych informacji.
                             </td>
 
                         </tr>
@@ -1440,13 +1365,14 @@ footer p {
                             <td>6. Tworzenie</td>
 
                             <td>
-                                Uczestnik samodzielnie przygotowuje
-                                kompletne opracowanie analityczne.
+                                Uczestnik samodzielnie tworzy
+                                kompletne analizy i raporty.
                             </td>
 
                             <td>
-                                Tworzy raport zawierający zestawienia,
-                                wykresy, wnioski i rekomendacje.
+                                Przygotowuje dashboard,
+                                raport analityczny oraz wnioski
+                                i rekomendacje.
                             </td>
 
                         </tr>
@@ -1466,34 +1392,35 @@ footer p {
             <h2>Zastosowanie umiejętności w pracy</h2>
 
             <p>
-                Uczestnik potrafi samodzielnie przygotować dane do analizy,
-                usunąć błędy i duplikaty, wykonać podstawowe obliczenia
-                oraz przedstawić wyniki w postaci czytelnego raportu.
+                Po ukończeniu szkolenia uczestnik potrafi samodzielnie
+                pozyskać dane, przygotować je do analizy, wykonać
+                odpowiednie obliczenia, odnaleźć zależności oraz
+                przedstawić wyniki w czytelnej formie.
             </p>
 
             <p>
-                Zdobyte umiejętności mogą być wykorzystane podczas
-                przygotowywania raportów sprzedażowych, finansowych,
-                księgowych, marketingowych, kadrowych i logistycznych.
+                Zdobyte umiejętności mogą być wykorzystane między innymi
+                podczas analizy sprzedaży, klientów, kosztów, wyników pracy,
+                danych finansowych oraz innych informacji wykorzystywanych
+                w działalności firmy lub instytucji.
             </p>
 
             <p>
-                Uczestnik potrafi również interpretować uzyskane wyniki,
-                formułować wnioski i wykorzystywać dane do wspierania
-                decyzji podejmowanych w firmie lub instytucji.
+                Uczestnik potrafi również tworzyć raporty, wykresy
+                i dashboardy, które ułatwiają interpretację danych
+                oraz podejmowanie trafniejszych decyzji.
             </p>
 
         </section>
 
-        <!-- INFORMACJE DODATKOWE -->
+        <!-- KONTAKT -->
 
-        <section class="additional-info">
+        <section class="contact-box">
 
-            <h2>Dodatkowe informacje</h2>
+            <h2>Kontakt</h2>
 
             <p>
-                W celu uzyskania szczegółowego programu szkolenia
-                prosimy o kontakt:
+                W sprawie terminów i organizacji szkolenia napisz:
             </p>
 
             <p>
@@ -1502,63 +1429,12 @@ footer p {
                 </a>
             </p>
 
-            <p>
-                Szkolenie prowadzone jest w formie praktycznych ćwiczeń
-                komputerowych nastawionych na pracę z danymi.
-            </p>
-
-            <hr>
-
-            <h3>Czas trwania</h3>
-
-            <div class="duration-grid">
-
-                <article class="duration-card">
-
-                    <h3>Mikrogrupy</h3>
-
-                    <p>
-                        Czas trwania ustalany jest indywidualnie,
-                        zależnie od zakresu materiału.
-                    </p>
-
-                </article>
-
-                <article class="duration-card">
-
-                    <h3>Grupy zorganizowane</h3>
-
-                    <p>
-                        Liczba godzin i harmonogram ustalane są
-                        zgodnie z potrzebami zamawiającego.
-                    </p>
-
-                </article>
-
-            </div>
-
-            <p>
-                Zobacz pełny cennik szkoleń oraz informacje o aktualnych
-                promocjach i rabatach.
-            </p>
-
-            <div class="button-row">
-
-                <a
-                    class="button button-register"
-                    href="mailto:biuro@zpci.pl?subject=Zapytanie%20o%20szkolenie%20Analiza%20danych"
-                >
-                    Zapisz się na szkolenie
-                </a>
-
-                <a
-                    class="button button-price"
-                    href="cennik-szkolen.html"
-                >
-                    Pełny cennik szkoleń
-                </a>
-
-            </div>
+            <a
+                class="button button-register"
+                href="../cs.html"
+            >
+                Zapisz się na szkolenie
+            </a>
 
         </section>
 
@@ -1568,19 +1444,19 @@ footer p {
 
 <footer>
 
-    <p>
-        &copy;
-        <span id="year"></span>
-        Zachodniopomorskie Centrum Informatyki.
-        Wszelkie prawa zastrzeżone.
-    </p>
+    &copy;
+    <span id="year"></span>
+    Zachodniopomorskie Centrum Informatyki
 
 </footer>
 
 <script>
 
-document.getElementById("year").textContent =
-    new Date().getFullYear();
+    const yearElement = document.getElementById("year");
+
+    if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+    }
 
 </script>
 
