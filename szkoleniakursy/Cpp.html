@@ -20,7 +20,7 @@
 
 <meta name="author" content="Zachodniopomorskie Centrum Informatyki">
 <meta name="robots" content="index, follow, max-image-preview:large">
-<meta name="theme-color" content="#0b2148">
+<meta name="theme-color" content="#071a35">
 
 <link
     rel="canonical"
@@ -229,28 +229,55 @@
 }
 </script>
 
+
 <style>
 
-/* ==================================================
-   RESET I USTAWIENIA OGÓLNE
-================================================== */
+/* =========================================================
+   ZPCI – WERSJA 3
+   NOWOCZESNY DESIGN
+========================================================= */
 
 :root {
-    --primary: #1f3b73;
-    --primary-dark: #0b2148;
-    --primary-medium: #16315d;
-    --primary-light: #eef4ff;
-    --accent: #f2b705;
-    --accent-hover: #ffd447;
-    --green: #267044;
-    --green-dark: #1c5734;
-    --background: #f4f6f9;
+
+    --navy-950: #041126;
+    --navy-900: #071a35;
+    --navy-850: #0b2345;
+    --navy-800: #102d55;
+
+    --blue: #1d5fd1;
+    --blue-light: #eaf2ff;
+
+    --gold: #f2b705;
+    --gold-light: #fff4c7;
+
+    --green: #17824b;
+    --green-dark: #116239;
+
     --white: #ffffff;
-    --text: #333333;
-    --muted: #5d6875;
-    --border: #dce5f0;
-    --shadow: 0 12px 32px rgba(11, 33, 72, 0.11);
+    --background: #f3f6fa;
+
+    --text: #263445;
+    --muted: #66758a;
+
+    --border: #dce5ef;
+
+    --shadow-sm:
+        0 5px 18px rgba(4, 17, 38, 0.07);
+
+    --shadow:
+        0 15px 45px rgba(4, 17, 38, 0.10);
+
+    --shadow-hover:
+        0 22px 55px rgba(4, 17, 38, 0.16);
+
+    --radius: 18px;
+
 }
+
+
+/* =========================================================
+   RESET
+========================================================= */
 
 * {
     margin: 0;
@@ -263,12 +290,29 @@ html {
 }
 
 body {
+
     min-height: 100vh;
+
     overflow-x: hidden;
-    font-family: Arial, Helvetica, sans-serif;
-    background: var(--background);
+
+    font-family:
+        Inter,
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        linear-gradient(
+            180deg,
+            #eef3f9 0%,
+            #f7f9fc 50%,
+            #eef3f9 100%
+        );
+
     color: var(--text);
+
     line-height: 1.7;
+
 }
 
 img {
@@ -288,801 +332,1978 @@ select {
     font: inherit;
 }
 
-/* ==================================================
-   NAGŁÓWEK
-================================================== */
+
+/* =========================================================
+   HEADER
+========================================================= */
 
 .site-header {
+
     position: relative;
+
     overflow: hidden;
-    padding: 42px 20px;
+
+    padding:
+        55px
+        20px
+        65px;
+
     background:
+
         radial-gradient(
-            circle at 88% 15%,
-            rgba(255, 255, 255, 0.13),
+            circle at 85% 20%,
+            rgba(29, 95, 209, 0.45),
             transparent 30%
         ),
+
+        radial-gradient(
+            circle at 10% 80%,
+            rgba(242, 183, 5, 0.12),
+            transparent 28%
+        ),
+
         linear-gradient(
             135deg,
-            var(--primary-dark),
-            var(--primary)
+            var(--navy-950),
+            var(--navy-800)
         );
+
     color: var(--white);
-    text-align: center;
+
 }
 
 .site-header::before {
+
     content: "";
+
     position: absolute;
-    top: -160px;
+
+    width: 500px;
+    height: 500px;
+
+    top: -280px;
     right: -130px;
-    width: 390px;
-    height: 390px;
+
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.05);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.08);
+
+}
+
+.site-header::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    bottom: -250px;
+    left: -120px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,0.035);
+
 }
 
 .header-content {
+
     position: relative;
-    z-index: 1;
-    width: 100%;
-    max-width: 1100px;
+
+    z-index: 2;
+
+    width: min(
+        1150px,
+        100%
+    );
+
     margin: 0 auto;
+
+    text-align: center;
+
 }
 
 
-/* ==================================================
-   LOGO ZPCI
-================================================== */
+/* =========================================================
+   LOGO
+========================================================= */
 
 .header-brand {
+
     display: inline-flex;
+
     align-items: center;
+
     justify-content: center;
-    gap: 16px;
-    margin-bottom: 25px;
+
+    gap: 20px;
+
+    margin-bottom: 32px;
+
     color: var(--white);
+
     text-decoration: none;
+
 }
 
 .brand-logo {
-    width: 96px;
-    height: 96px;
-    flex: 0 0 96px;
-    border: 4px solid rgba(255, 255, 255, 0.95);
+
+    width: 92px;
+    height: 92px;
+
+    flex: 0 0 92px;
+
+    padding: 3px;
+
+    border:
+        3px solid
+        rgba(255,255,255,0.95);
+
     border-radius: 50%;
+
     background: var(--white);
+
     object-fit: contain;
-    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.25);
+
+    box-shadow:
+        0 15px 35px
+        rgba(0,0,0,0.3);
+
     transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
 }
 
 .header-brand:hover .brand-logo {
-    transform: translateY(-3px) scale(1.03);
-    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.32);
+
+    transform:
+        translateY(-5px)
+        rotate(2deg)
+        scale(1.04);
+
+    box-shadow:
+        0 20px 45px
+        rgba(0,0,0,0.4);
+
 }
 
 .brand-copy {
+
     display: flex;
+
     flex-direction: column;
+
     align-items: flex-start;
+
     text-align: left;
+
 }
 
 .brand-name {
-    max-width: 620px;
-    font-size: clamp(21px, 3vw, 31px);
+
+    max-width: 680px;
+
+    font-size:
+        clamp(22px, 3vw, 32px);
+
     font-weight: 900;
-    line-height: 1.15;
+
+    line-height: 1.1;
+
 }
 
 .brand-subtitle {
-    margin-top: 6px;
-    color: rgba(255, 255, 255, 0.84);
-    font-size: 14px;
+
+    margin-top: 8px;
+
+    color:
+        rgba(255,255,255,0.72);
+
+    font-size: 13px;
+
     font-weight: 700;
-    letter-spacing: 0.07em;
+
+    letter-spacing: 0.12em;
+
     text-transform: uppercase;
+
 }
 
 .header-brand:focus-visible {
-    outline: 3px solid var(--accent);
-    outline-offset: 7px;
-    border-radius: 20px;
+
+    outline:
+        3px solid
+        var(--gold);
+
+    outline-offset: 8px;
+
+    border-radius: 15px;
+
 }
 
+
+/* =========================================================
+   HEADER TEXT
+========================================================= */
+
 .organization-name {
-    margin-bottom: 8px;
-    color: #d9e6fa;
-    font-size: 1rem;
-    font-weight: bold;
-    letter-spacing: 0.5px;
+
+    display: inline-block;
+
+    margin-bottom: 14px;
+
+    padding:
+        6px
+        14px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.14);
+
+    border-radius: 999px;
+
+    background:
+        rgba(255,255,255,0.06);
+
+    color:
+        #d8e5f7;
+
+    font-size: 0.78rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.12em;
+
     text-transform: uppercase;
+
 }
 
 .site-header h1 {
-    margin-bottom: 13px;
+
+    max-width: 900px;
+
+    margin:
+        0 auto
+        16px;
+
     color: var(--white);
-    font-size: clamp(2rem, 5vw, 3.4rem);
-    line-height: 1.15;
+
+    font-size:
+        clamp(
+            2.2rem,
+            5vw,
+            4rem
+        );
+
+    font-weight: 900;
+
+    line-height: 1.08;
+
+    letter-spacing: -0.03em;
+
 }
 
 .header-description {
-    max-width: 760px;
+
+    max-width: 780px;
+
     margin: 0 auto;
-    color: #e5edf9;
-    font-size: clamp(1rem, 2.1vw, 1.2rem);
+
+    color:
+        #dbe7f7;
+
+    font-size:
+        clamp(
+            1rem,
+            2vw,
+            1.2rem
+        );
+
 }
 
-/* ==================================================
+
+/* =========================================================
    MENU
-================================================== */
+========================================================= */
 
 .main-nav {
-    position: relative;
-    z-index: 10;
-    background: var(--primary-medium);
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 100;
+
+    background:
+        rgba(7,26,53,0.96);
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,0.08);
+
+    box-shadow:
+        0 8px 25px
+        rgba(4,17,38,0.15);
+
+    backdrop-filter:
+        blur(14px);
+
 }
 
 .nav-container {
+
     display: flex;
-    width: min(1100px, 100%);
+
+    width:
+        min(1150px, 100%);
+
+    min-height: 62px;
+
     margin: 0 auto;
-    padding: 0 12px;
+
+    padding:
+        0 15px;
+
     align-items: center;
+
     justify-content: center;
+
     flex-wrap: wrap;
+
 }
 
 .main-nav a {
-    display: block;
-    padding: 15px 20px;
-    color: var(--white);
-    font-weight: bold;
+
+    position: relative;
+
+    display: flex;
+
+    min-height: 62px;
+
+    padding:
+        0 22px;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color:
+        rgba(255,255,255,0.86);
+
+    font-size: 0.94rem;
+
+    font-weight: 800;
+
     text-decoration: none;
+
     transition:
-        background-color 0.25s ease,
-        color 0.25s ease;
+        color 0.25s ease,
+        background 0.25s ease;
+
+}
+
+.main-nav a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 0;
+
+    width: 0;
+
+    height: 3px;
+
+    border-radius: 3px;
+
+    background:
+        var(--gold);
+
+    transform:
+        translateX(-50%);
+
+    transition:
+        width 0.25s ease;
+
 }
 
 .main-nav a:hover,
 .main-nav a:focus-visible {
-    background: #244b87;
-    color: var(--white);
+
+    color:
+        var(--white);
+
+    background:
+        rgba(255,255,255,0.05);
+
 }
 
-.main-nav a:focus-visible,
-.button:focus-visible {
-    outline: 3px solid var(--accent);
-    outline-offset: 3px;
+.main-nav a:hover::after,
+.main-nav a:focus-visible::after {
+
+    width: 55%;
+
 }
 
-/* ==================================================
-   GŁÓWNA TREŚĆ
-================================================== */
+.main-nav a:focus-visible {
+
+    outline:
+        2px solid
+        var(--gold);
+
+    outline-offset: -4px;
+
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
 
 main {
-    padding: 30px 20px;
+
+    padding:
+        42px
+        18px
+        65px;
+
 }
 
 .course-container {
-    width: 100%;
-    max-width: 1100px;
+
+    width: min(
+        1150px,
+        100%
+    );
+
     margin: 0 auto;
-    padding: 35px;
-    background: var(--white);
-    border: 1px solid #e2e8f0;
-    border-radius: 16px;
-    box-shadow: var(--shadow);
+
 }
 
-/* ==================================================
-   BANER
-================================================== */
+
+/* =========================================================
+   HERO / BANER
+========================================================= */
 
 .banner-wrapper {
-    width: 100%;
-    margin-bottom: 30px;
-    padding: 10px;
-    background: #f2f6fb;
-    border: 1px solid var(--border);
-    border-radius: 16px;
+
+    position: relative;
+
+    margin-bottom: 28px;
+
+    padding: 12px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #edf3fb
+        );
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:
+        22px;
+
+    box-shadow:
+        var(--shadow);
+
 }
 
 .course-banner {
-    display: block;
+
     width: 100%;
-    max-width: 100%;
+
     height: auto;
-    object-fit: contain;
-    object-position: center;
-    border-radius: 11px;
-    box-shadow: 0 7px 21px rgba(0, 0, 0, 0.14);
+
+    border-radius:
+        15px;
+
+    box-shadow:
+        0 10px 35px
+        rgba(4,17,38,0.13);
+
+    transition:
+        transform 0.4s ease;
+
 }
 
-/* ==================================================
-   PRZYCISKI
-================================================== */
+.banner-wrapper:hover .course-banner {
+
+    transform:
+        scale(1.01);
+
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
 
 .button-row {
+
     display: flex;
-    margin-bottom: 30px;
+
+    margin:
+        0 0 35px;
+
+    gap: 13px;
+
     flex-wrap: wrap;
-    gap: 12px;
+
 }
 
 .button {
+
     display: inline-flex;
-    min-height: 47px;
-    padding: 12px 22px;
+
+    min-height: 50px;
+
+    padding:
+        13px
+        23px;
+
     align-items: center;
+
     justify-content: center;
+
+    gap: 8px;
+
     border: 0;
-    border-radius: 7px;
-    background: var(--primary);
-    color: var(--white);
-    font-weight: bold;
-    line-height: 1.25;
+
+    border-radius:
+        10px;
+
+    background:
+        var(--blue);
+
+    color:
+        var(--white);
+
+    font-weight: 800;
+
+    line-height: 1.2;
+
     text-align: center;
+
     text-decoration: none;
+
     cursor: pointer;
+
+    box-shadow:
+        0 8px 20px
+        rgba(29,95,209,0.18);
+
     transition:
-        background-color 0.25s ease,
-        transform 0.2s ease;
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+
 }
 
 .button:hover {
-    background: var(--primary-medium);
-    transform: translateY(-2px);
+
+    background:
+        #174fae;
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 12px 27px
+        rgba(29,95,209,0.25);
+
+}
+
+.button:focus-visible {
+
+    outline:
+        3px solid
+        var(--gold);
+
+    outline-offset: 4px;
+
 }
 
 .button-register {
-    background: #b97000;
+
+    background:
+        linear-gradient(
+            135deg,
+            #d89000,
+            #b66e00
+        );
+
+    box-shadow:
+        0 8px 20px
+        rgba(182,110,0,0.18);
+
 }
 
 .button-register:hover {
-    background: #945b00;
+
+    background:
+        linear-gradient(
+            135deg,
+            #b66e00,
+            #925700
+        );
+
 }
 
 .button-price {
-    background: var(--green);
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--green),
+            #126439
+        );
+
+    box-shadow:
+        0 8px 20px
+        rgba(23,130,75,0.18);
+
 }
 
 .button-price:hover {
-    background: var(--green-dark);
+
+    background:
+        linear-gradient(
+            135deg,
+            #126439,
+            #0c512e
+        );
+
 }
 
-/* ==================================================
-   TYPOGRAFIA
-================================================== */
+
+/* =========================================================
+   SEKCJE
+========================================================= */
+
+.course-container section {
+
+    margin-bottom: 35px;
+
+    padding:
+        30px;
+
+    background:
+        var(--white);
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:
+        var(--radius);
+
+    box-shadow:
+        var(--shadow-sm);
+
+}
+
+.course-container section:last-child {
+
+    margin-bottom: 0;
+
+}
 
 h2 {
-    margin-top: 34px;
-    margin-bottom: 16px;
-    padding-bottom: 8px;
-    color: var(--primary);
-    font-size: clamp(1.45rem, 3vw, 2rem);
-    line-height: 1.25;
-    border-bottom: 2px solid var(--border);
+
+    position: relative;
+
+    margin:
+        0 0 20px;
+
+    padding:
+        0 0 14px;
+
+    color:
+        var(--navy-850);
+
+    font-size:
+        clamp(
+            1.45rem,
+            3vw,
+            2rem
+        );
+
+    font-weight: 900;
+
+    line-height: 1.2;
+
+    letter-spacing:
+        -0.02em;
+
+}
+
+h2::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 0;
+
+    width: 55px;
+
+    height: 4px;
+
+    border-radius: 5px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--gold),
+            var(--blue)
+        );
+
 }
 
 h3 {
+
     margin-bottom: 10px;
-    color: var(--primary);
-    font-size: 1.2rem;
+
+    color:
+        var(--navy-850);
+
+    font-size: 1.12rem;
+
+    font-weight: 900;
+
     line-height: 1.3;
+
 }
 
 p {
+
     margin-bottom: 15px;
+
+}
+
+p:last-child {
+
+    margin-bottom: 0;
+
 }
 
 ul {
-    margin: 15px 0 24px 25px;
+
+    margin:
+        15px 0
+        24px
+        23px;
+
 }
 
 li {
+
     margin-bottom: 8px;
+
 }
 
 li::marker {
-    color: var(--primary);
+
+    color:
+        var(--blue);
+
 }
 
-/* ==================================================
-   INFORMACJE ORGANIZACYJNE
-================================================== */
+
+/* =========================================================
+   INFO GRID
+========================================================= */
 
 .info-grid {
+
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(0,1fr)
+        );
+
     gap: 18px;
-    margin-top: 20px;
+
+    margin:
+        24px 0;
+
 }
 
 .info-card {
+
+    position: relative;
+
     height: 100%;
-    padding: 22px;
-    background: #f5f8fc;
-    border-left: 5px solid var(--primary);
-    border-radius: 10px;
-}
 
-.info-card p:last-child {
-    margin-bottom: 0;
-}
+    padding: 24px;
 
-/* ==================================================
-   PROGRAM
-================================================== */
+    overflow: hidden;
 
-.program-list {
-    columns: 2;
-    column-gap: 48px;
-}
+    background:
+        linear-gradient(
+            145deg,
+            #f8fbff,
+            #eef4fb
+        );
 
-.program-list li {
-    break-inside: avoid;
-}
+    border:
+        1px solid
+        var(--border);
 
-/* ==================================================
-   TAKSONOMIA
-================================================== */
+    border-radius:
+        14px;
 
-.taxonomy-intro {
-    max-width: 900px;
-}
-
-.taxonomy-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 20px;
-    margin-top: 24px;
-}
-
-.taxonomy-card {
-    height: 100%;
-    padding: 22px;
-    background: #f5f8fc;
-    border-top: 5px solid var(--primary);
-    border-radius: 12px;
     transition:
         transform 0.25s ease,
         box-shadow 0.25s ease;
+
 }
 
-.taxonomy-card:nth-child(2),
-.taxonomy-card:nth-child(5) {
-    border-top-color: #c57c00;
+.info-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--blue),
+            #5b91e9
+        );
+
+}
+
+.info-card:hover {
+
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        var(--shadow);
+
+}
+
+.info-card p:last-child {
+
+    margin-bottom: 0;
+
+}
+
+
+/* =========================================================
+   PROGRAM
+========================================================= */
+
+.program-list {
+
+    columns: 2;
+
+    column-gap: 50px;
+
+    list-style: none;
+
+    margin-left: 0;
+
+}
+
+.program-list li {
+
+    position: relative;
+
+    break-inside: avoid;
+
+    margin-bottom: 10px;
+
+    padding:
+        9px
+        12px
+        9px
+        34px;
+
+    background:
+        #f7f9fc;
+
+    border:
+        1px solid
+        #e6edf5;
+
+    border-radius:
+        9px;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+
+}
+
+.program-list li::before {
+
+    content: "?";
+
+    position: absolute;
+
+    left: 12px;
+
+    top: 8px;
+
+    color:
+        var(--green);
+
+    font-weight: 900;
+
+}
+
+.program-list li::marker {
+
+    content: "";
+
+}
+
+.program-list li:hover {
+
+    background:
+        var(--blue-light);
+
+    transform:
+        translateX(3px);
+
+}
+
+
+/* =========================================================
+   TAXONOMIA
+========================================================= */
+
+.taxonomy-intro {
+
+    max-width:
+        900px;
+
+    color:
+        var(--muted);
+
+}
+
+.taxonomy-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(0,1fr)
+        );
+
+    gap: 18px;
+
+    margin-top: 25px;
+
+}
+
+.taxonomy-card {
+
+    position: relative;
+
+    height: 100%;
+
+    padding: 24px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #f4f7fb
+        );
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:
+        14px;
+
+    box-shadow:
+        0 6px 20px
+        rgba(4,17,38,0.05);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+
+}
+
+.taxonomy-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 5px;
+
+    background:
+        var(--blue);
+
+}
+
+.taxonomy-card:nth-child(2)::before,
+.taxonomy-card:nth-child(5)::before {
+
+    background:
+        var(--gold);
+
+}
+
+.taxonomy-card:nth-child(3)::before {
+
+    background:
+        var(--green);
+
 }
 
 .taxonomy-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 11px 27px rgba(31, 59, 115, 0.14);
+
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        var(--shadow);
+
 }
 
 .taxonomy-card h3 {
-    margin-bottom: 13px;
+
+    margin-bottom: 15px;
+
 }
 
 .taxonomy-card ul {
-    margin: 0 0 0 20px;
+
+    margin:
+        0 0 0 19px;
+
+}
+
+.taxonomy-card li {
+
+    margin-bottom: 7px;
+
 }
 
 .taxonomy-card li::marker {
-    color: #c57c00;
+
+    color:
+        var(--blue);
+
 }
 
-/* ==================================================
-   TABELA TAKSONOMII
-================================================== */
+
+/* =========================================================
+   TABELA
+========================================================= */
 
 .taxonomy-table-wrapper {
+
     width: 100%;
-    margin-top: 30px;
+
+    margin-top: 25px;
+
     overflow-x: auto;
-    border: 1px solid #d7e1ed;
-    border-radius: 11px;
-    -webkit-overflow-scrolling: touch;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:
+        13px;
+
+    -webkit-overflow-scrolling:
+        touch;
+
+    box-shadow:
+        0 5px 18px
+        rgba(4,17,38,0.05);
+
 }
 
 .taxonomy-table {
+
     width: 100%;
+
     min-width: 760px;
-    border-collapse: collapse;
-    background: var(--white);
+
+    border-collapse:
+        collapse;
+
+    background:
+        var(--white);
+
 }
 
 .taxonomy-table th,
 .taxonomy-table td {
-    padding: 14px;
-    border: 1px solid #d7e1ed;
-    text-align: left;
-    vertical-align: top;
+
+    padding:
+        15px;
+
+    border:
+        1px solid
+        var(--border);
+
+    text-align:
+        left;
+
+    vertical-align:
+        top;
+
 }
 
 .taxonomy-table th {
-    background: var(--primary);
-    color: var(--white);
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--navy-850),
+            var(--blue)
+        );
+
+    color:
+        var(--white);
+
+    font-weight:
+        800;
+
+}
+
+.taxonomy-table tbody tr {
+
+    transition:
+        background 0.2s ease;
+
 }
 
 .taxonomy-table tbody tr:nth-child(even) {
-    background: #f5f8fc;
+
+    background:
+        #f7f9fc;
+
 }
 
 .taxonomy-table tbody tr:hover {
-    background: #eaf1fb;
+
+    background:
+        #eaf2ff;
+
 }
 
-/* ==================================================
-   ZASTOSOWANIE PRAKTYCZNE
-================================================== */
+
+/* =========================================================
+   PRACTICE BOX
+========================================================= */
 
 .practice-box {
-    margin-top: 34px;
-    padding: 25px;
-    background: #fff8e5;
-    border-left: 5px solid #c57c00;
-    border-radius: 11px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fffdf4,
+            #fff7dc
+        ) !important;
+
+    border:
+        1px solid
+        #f0d98a !important;
+
 }
 
-.practice-box h2 {
-    margin-top: 0;
+.practice-box h2::after {
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--gold),
+            #d89100
+        );
+
 }
 
-/* ==================================================
-   INFORMACJE DODATKOWE
-================================================== */
+
+/* =========================================================
+   INFO BOX
+========================================================= */
 
 .info-box {
-    margin-top: 34px;
-    padding: 26px;
-    background: var(--primary-light);
-    border-left: 5px solid var(--primary);
-    border-radius: 11px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #eef5ff,
+            #f8fbff
+        ) !important;
+
+    border:
+        1px solid
+        #cbdcf3 !important;
+
 }
 
-.info-box h2 {
-    margin-top: 0;
-}
+.info-box h2::after {
 
-.info-box hr {
-    height: 1px;
-    margin: 24px 0;
-    background: #cbd8e9;
-    border: 0;
+    background:
+        linear-gradient(
+            90deg,
+            var(--blue),
+            var(--gold)
+        );
+
 }
 
 .info-box a:not(.button) {
-    color: var(--primary);
-    font-weight: bold;
-    overflow-wrap: anywhere;
-    text-decoration: none;
+
+    color:
+        var(--blue);
+
+    font-weight:
+        800;
+
+    overflow-wrap:
+        anywhere;
+
+    text-decoration:
+        none;
+
 }
 
 .info-box a:not(.button):hover {
-    text-decoration: underline;
+
+    text-decoration:
+        underline;
+
 }
 
-/* ==================================================
-   CZAS I CENA
-================================================== */
+.info-box hr {
+
+    height: 1px;
+
+    margin:
+        27px 0;
+
+    background:
+        #cbd8e9;
+
+    border: 0;
+
+}
+
+
+/* =========================================================
+   CZAS / CENA
+========================================================= */
 
 .training-details {
+
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 20px;
-    margin: 22px 0;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(0,1fr)
+        );
+
+    gap: 18px;
+
+    margin:
+        22px 0;
+
 }
 
 .detail-card {
+
     height: 100%;
-    padding: 24px;
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-top: 5px solid var(--primary);
-    border-radius: 12px;
-    box-shadow: 0 8px 23px rgba(31, 59, 115, 0.09);
+
+    padding: 25px;
+
+    background:
+        var(--white);
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:
+        14px;
+
+    box-shadow:
+        0 7px 22px
+        rgba(4,17,38,0.07);
+
+}
+
+.detail-card:first-child {
+
+    border-top:
+        5px solid
+        var(--blue);
+
 }
 
 .detail-card:nth-child(2) {
-    border-top-color: var(--green);
+
+    border-top:
+        5px solid
+        var(--green);
+
 }
 
 .detail-card h3 {
-    margin-bottom: 12px;
+
+    margin-bottom:
+        13px;
+
 }
 
 .detail-card ul {
+
     margin-bottom: 0;
+
 }
 
 .price {
-    margin-bottom: 7px;
-    color: var(--green);
-    font-size: clamp(1.55rem, 3vw, 2.1rem);
-    font-weight: bold;
+
+    margin-bottom:
+        5px;
+
+    color:
+        var(--green);
+
+    font-size:
+        clamp(
+            1.8rem,
+            4vw,
+            2.5rem
+        );
+
+    font-weight:
+        900;
+
+    line-height:
+        1.1;
+
 }
 
 .price-note {
-    margin-bottom: 0;
-    color: var(--muted);
-    font-size: 0.95rem;
+
+    color:
+        var(--muted);
+
+    font-size:
+        0.94rem;
+
 }
 
-/* ==================================================
-   STOPKA
-================================================== */
+
+/* =========================================================
+   FOOTER
+========================================================= */
 
 footer {
-    margin-top: 35px;
-    padding: 24px 15px;
-    background: var(--primary-dark);
-    color: var(--white);
-    text-align: center;
+
+    padding:
+        30px
+        15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--navy-950),
+            var(--navy-850)
+        );
+
+    color:
+        rgba(255,255,255,0.78);
+
+    text-align:
+        center;
+
+    border-top:
+        4px solid
+        var(--gold);
+
 }
 
 footer p {
+
     margin: 0;
+
+    font-size:
+        0.9rem;
+
 }
 
-/* ==================================================
+
+/* =========================================================
    TABLETY
-================================================== */
+========================================================= */
 
-@media (max-width: 900px) {
-
-    .course-container {
-        padding: 28px;
-    }
+@media (max-width: 950px) {
 
     .info-grid {
-        grid-template-columns: 1fr;
+
+        grid-template-columns:
+            1fr;
+
     }
 
     .taxonomy-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0,1fr)
+            );
+
     }
 
     .program-list {
+
         columns: 1;
+
     }
+
 }
 
-/* ==================================================
+
+/* =========================================================
    TELEFONY
-================================================== */
+========================================================= */
 
 @media (max-width: 650px) {
 
     .site-header {
-        padding: 32px 15px;
+
+        padding:
+            38px
+            15px
+            45px;
+
     }
 
     .header-brand {
-        flex-direction: column;
-        gap: 12px;
+
+        flex-direction:
+            column;
+
+        gap: 13px;
+
     }
 
     .brand-logo {
-        width: 84px;
-        height: 84px;
-        flex-basis: 84px;
+
+        width: 82px;
+        height: 82px;
+
+        flex-basis: 82px;
+
     }
 
     .brand-copy {
-        align-items: center;
-        text-align: center;
+
+        align-items:
+            center;
+
+        text-align:
+            center;
+
     }
 
     .brand-name {
-        font-size: 22px;
+
+        font-size:
+            22px;
+
     }
 
     .brand-subtitle {
-        font-size: 12px;
+
+        font-size:
+            11px;
+
     }
 
     .organization-name {
-        font-size: 0.82rem;
+
+        font-size:
+            0.72rem;
+
     }
 
     .site-header h1 {
-        font-size: 1.85rem;
+
+        font-size:
+            1.9rem;
+
     }
 
     .header-description {
-        font-size: 1rem;
+
+        font-size:
+            0.98rem;
+
+    }
+
+
+    /* MENU */
+
+    .main-nav {
+
+        position:
+            relative;
+
     }
 
     .nav-container {
-        flex-direction: column;
+
+        flex-direction:
+            column;
+
         padding: 0;
+
     }
 
     .main-nav a {
+
         width: 100%;
-        padding: 13px 15px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-        text-align: center;
+
+        min-height:
+            52px;
+
+        border-bottom:
+            1px solid
+            rgba(255,255,255,0.08);
+
     }
 
+    .main-nav a::after {
+
+        display:
+            none;
+
+    }
+
+
+    /* MAIN */
+
     main {
-        padding: 18px 10px;
+
+        padding:
+            20px
+            10px
+            40px;
+
     }
 
     .course-container {
-        padding: 20px 16px;
-        border-radius: 10px;
+
+        width: 100%;
+
     }
 
+
+    /* BANNER */
+
     .banner-wrapper {
-        margin-bottom: 22px;
-        padding: 6px;
-        border-radius: 11px;
+
+        padding:
+            6px;
+
+        border-radius:
+            13px;
+
     }
 
     .course-banner {
-        width: 100%;
-        height: auto;
-        border-radius: 8px;
+
+        border-radius:
+            9px;
+
     }
 
+
+    /* BUTTONS */
+
     .button-row {
-        flex-direction: column;
+
+        flex-direction:
+            column;
+
     }
 
     .button {
+
         width: 100%;
+
     }
+
+
+    /* SEKCJE */
+
+    .course-container section {
+
+        padding:
+            23px
+            17px;
+
+        border-radius:
+            13px;
+
+    }
+
+    h2 {
+
+        font-size:
+            1.42rem;
+
+    }
+
+
+    /* TAXONOMY */
 
     .taxonomy-grid,
     .training-details {
-        grid-template-columns: 1fr;
+
+        grid-template-columns:
+            1fr;
+
     }
 
     .taxonomy-card,
     .info-card,
-    .practice-box,
-    .info-box,
     .detail-card {
-        padding: 20px 16px;
+
+        padding:
+            20px
+            17px;
+
     }
 
-    h2 {
-        font-size: 1.4rem;
+
+    /* PROGRAM */
+
+    .program-list li {
+
+        padding:
+            9px
+            10px
+            9px
+            31px;
+
     }
+
 }
 
-/* ==================================================
+
+/* =========================================================
    MAŁE TELEFONY
-================================================== */
+========================================================= */
 
 @media (max-width: 380px) {
 
     .site-header h1 {
-        font-size: 1.6rem;
+
+        font-size:
+            1.65rem;
+
     }
 
-    .course-container {
-        padding: 18px 13px;
+    .course-container section {
+
+        padding:
+            20px
+            14px;
+
     }
 
     ul {
-        margin-left: 20px;
+
+        margin-left:
+            19px;
+
     }
+
 }
 
-/* ==================================================
+
+/* =========================================================
+   REDUKCJA ANIMACJI
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+
+        scroll-behavior:
+            auto;
+
+    }
+
+    *,
+    *::before,
+    *::after {
+
+        transition:
+            none !important;
+
+        animation:
+            none !important;
+
+    }
+
+}
+
+
+/* =========================================================
    DRUKOWANIE
-================================================== */
+========================================================= */
 
 @media print {
 
     body {
-        background: var(--white);
-        color: #000000;
-        font-size: 12px;
+
+        background:
+            var(--white);
+
+        color:
+            #000;
+
+        font-size:
+            12px;
+
     }
 
     .main-nav,
     .button-row,
     footer {
-        display: none;
+
+        display:
+            none;
+
     }
 
     .site-header {
-        padding: 10px 0 20px;
-        background: var(--white);
-        color: #000000;
+
+        padding:
+            10px
+            0
+            20px;
+
+        background:
+            var(--white);
+
+        color:
+            #000;
+
     }
 
     .brand-logo {
-        width: 72px;
-        height: 72px;
-        border: 1px solid #cccccc;
-        box-shadow: none;
+
+        width:
+            72px;
+
+        height:
+            72px;
+
+        border:
+            1px solid
+            #ccc;
+
+        box-shadow:
+            none;
+
     }
 
     .brand-name,
     .brand-subtitle,
     .site-header h1,
     .header-description {
-        color: #000000;
+
+        color:
+            #000;
+
     }
 
     main {
-        padding: 0;
+
+        padding:
+            0;
+
     }
 
     .course-container {
-        max-width: 100%;
-        padding: 0;
-        border: 0;
-        box-shadow: none;
+
+        max-width:
+            100%;
+
+    }
+
+    .course-container section {
+
+        margin-bottom:
+            20px;
+
+        padding:
+            15px;
+
+        border:
+            1px solid
+            #000;
+
+        box-shadow:
+            none;
+
+        break-inside:
+            avoid;
+
     }
 
     .banner-wrapper {
-        padding: 0;
-        background: var(--white);
-        border: 0;
+
+        padding:
+            0;
+
+        background:
+            var(--white);
+
+        border:
+            0;
+
+        box-shadow:
+            none;
+
     }
 
     .course-banner {
-        width: 100%;
-        height: auto;
-        box-shadow: none;
+
+        box-shadow:
+            none;
+
     }
 
     h2,
     h3,
     .price {
-        color: #000000;
+
+        color:
+            #000;
+
     }
 
     .info-grid,
     .taxonomy-grid,
     .training-details {
-        display: block;
+
+        display:
+            block;
+
     }
 
     .info-card,
     .taxonomy-card,
     .detail-card {
-        margin-bottom: 14px;
-        background: var(--white);
-        border: 1px solid #000000;
-        box-shadow: none;
-        break-inside: avoid;
+
+        margin-bottom:
+            14px;
+
+        background:
+            var(--white);
+
+        border:
+            1px solid
+            #000;
+
+        box-shadow:
+            none;
+
     }
 
     .program-list {
-        columns: 1;
+
+        columns:
+            1;
+
     }
 
     .taxonomy-table {
-        min-width: 0;
+
+        min-width:
+            0;
+
     }
 
     .taxonomy-table th {
-        background: var(--white);
-        color: #000000;
+
+        background:
+            var(--white);
+
+        color:
+            #000;
+
     }
 
     .practice-box,
     .info-box {
-        background: var(--white);
-        border: 1px solid #000000;
+
+        background:
+            var(--white) !important;
+
+        border:
+            1px solid
+            #000 !important;
+
     }
+
 }
 
 </style>
 
 </head>
 
+
 <body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
 <header class="site-header">
 
@@ -1098,8 +2319,8 @@ footer p {
                 class="brand-logo"
                 src="../images/Logo+zdjecia/Logotypy/2_Logotypy_okrag.png"
                 alt="Logo Zachodniopomorskiego Centrum Informatyki"
-                width="96"
-                height="96"
+                width="92"
+                height="92"
                 loading="eager"
                 decoding="async"
             >
@@ -1118,17 +2339,31 @@ footer p {
 
         </a>
 
-        <h1>Szkolenie C++ – programowanie od podstaw</h1>
+
+        <div class="organization-name">
+            ZPCI • SZKOLENIA IT
+        </div>
+
+
+        <h1>
+            Szkolenie C++ – programowanie od podstaw
+        </h1>
+
 
         <p class="header-description">
             Praktyczna nauka algorytmów, tworzenia programów,
             programowania obiektowego oraz budowania aplikacji
-            w języku C++
+            w języku C++.
         </p>
 
     </div>
 
 </header>
+
+
+<!-- =====================================================
+     MENU
+===================================================== -->
 
 <nav
     class="main-nav"
@@ -1157,637 +2392,843 @@ footer p {
 
 </nav>
 
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
 <main>
 
-    <article class="course-container">
+<article class="course-container">
 
-        <!-- BANER -->
 
-        <div class="banner-wrapper">
+<!-- =====================================================
+     BANER
+===================================================== -->
 
-            <img
-                class="course-banner"
-                src="../images/C%2B%2B.png"
-                alt="Szkolenie C++ – programowanie od podstaw"
-                width="1200"
-                height="750"
-                loading="eager"
-                fetchpriority="high"
-                decoding="async"
-            >
+<div class="banner-wrapper">
 
-        </div>
+    <img
+        class="course-banner"
+        src="../images/C%2B%2B.png"
+        alt="Szkolenie C++ – programowanie od podstaw"
+        width="1200"
+        height="750"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+    >
 
-        <!-- PRZYCISKI -->
+</div>
 
-        <div class="button-row">
 
-            <button
-                class="button"
-                type="button"
-                onclick="window.print()"
-            >
-                Drukuj
-            </button>
+<!-- =====================================================
+     PRZYCISKI
+===================================================== -->
 
-            <a
-                class="button button-register"
-                href="../cs.html"
-            >
-                Zapisz się na szkolenie
-            </a>
+<div class="button-row">
 
-            <a
-                class="button button-price"
-                href="cennik-szkolen.html"
-            >
-                Cennik szkoleń
-            </a>
+    <button
+        class="button"
+        type="button"
+        onclick="window.print()"
+    >
+        Drukuj
+    </button>
 
-        </div>
+    <a
+        class="button button-register"
+        href="../cs.html"
+    >
+        Zapisz się na szkolenie
+    </a>
 
-        <!-- DLA KOGO -->
+    <a
+        class="button button-price"
+        href="cennik-szkolen.html"
+    >
+        Cennik szkoleń
+    </a>
 
-        <section>
+</div>
 
-            <h2>Kogo zapraszamy?</h2>
 
-            <p>
-                Szkolenie przeznaczone jest dla wszystkich osób
-                chcących rozpocząć pracę z programowaniem
-                w języku <strong>C++</strong>.
-            </p>
+<!-- =====================================================
+     DLA KOGO
+===================================================== -->
 
-            <p>
-                Uczestnik zdobywa praktyczne umiejętności tworzenia
-                programów oraz pracy z podstawowymi i zaawansowanymi
-                strukturami języka.
-            </p>
+<section>
 
-            <p>
-                Kurs będzie odpowiedni dla osób początkujących,
-                uczniów, studentów, pracowników firm oraz wszystkich,
-                którzy chcą poznać podstawy algorytmiki i programowania
-                obiektowego.
-            </p>
+    <h2>
+        Kogo zapraszamy?
+    </h2>
 
-        </section>
+    <p>
+        Szkolenie przeznaczone jest dla wszystkich osób
+        chcących rozpocząć pracę z programowaniem
+        w języku <strong>C++</strong>.
+    </p>
 
-        <!-- ORGANIZACJA -->
+    <p>
+        Uczestnik zdobywa praktyczne umiejętności tworzenia
+        programów oraz pracy z podstawowymi i zaawansowanymi
+        strukturami języka.
+    </p>
 
-        <section>
+    <p>
+        Kurs będzie odpowiedni dla osób początkujących,
+        uczniów, studentów, pracowników firm oraz wszystkich,
+        którzy chcą poznać podstawy algorytmiki i programowania
+        obiektowego.
+    </p>
 
-            <h2>Termin, organizacja i metodyka szkolenia</h2>
+</section>
 
-            <div class="info-grid">
 
-                <article class="info-card">
+<!-- =====================================================
+     ORGANIZACJA
+===================================================== -->
 
-                    <h3>Organizacja</h3>
+<section>
 
-                    <p>
-                        Zajęcia realizowane są w trybie indywidualnym
-                        lub dla grup zorganizowanych.
-                    </p>
+    <h2>
+        Termin, organizacja i metodyka szkolenia
+    </h2>
 
-                </article>
+    <div class="info-grid">
 
-                <article class="info-card">
+        <article class="info-card">
 
-                    <h3>Uczestnicy</h3>
-
-                    <p>
-                        Zapraszamy osoby prywatne, pracowników firm,
-                        uczniów, studentów oraz przedstawicieli instytucji.
-                    </p>
-
-                </article>
-
-                <article class="info-card">
-
-                    <h3>Metodyka</h3>
-
-                    <p>
-                        Szkolenie prowadzone jest w formie praktycznych
-                        ćwiczeń programistycznych wykonywanych przy komputerze.
-                    </p>
-
-                </article>
-
-            </div>
+            <h3>
+                Organizacja
+            </h3>
 
             <p>
-                Terminy zajęć ustalane są indywidualnie i mogą zostać
-                dopasowane do dostępności uczestnika lub grupy.
+                Zajęcia realizowane są w trybie indywidualnym
+                lub dla grup zorganizowanych.
             </p>
 
-        </section>
+        </article>
 
-        <!-- CERTYFIKAT -->
 
-        <section>
+        <article class="info-card">
 
-            <h2>Kwalifikacje po ukończeniu szkolenia</h2>
+            <h3>
+                Uczestnicy
+            </h3>
 
             <p>
-                Po zakończeniu szkolenia uczestnik otrzymuje certyfikat
-                w języku polskim i angielskim.
+                Zapraszamy osoby prywatne, pracowników firm,
+                uczniów, studentów oraz przedstawicieli instytucji.
             </p>
+
+        </article>
+
+
+        <article class="info-card">
+
+            <h3>
+                Metodyka
+            </h3>
 
             <p>
-                Uczestnik zdobywa umiejętności pozwalające samodzielnie
-                projektować algorytmy, pisać kod źródłowy, wykrywać błędy
-                oraz tworzyć proste aplikacje w języku C++.
+                Szkolenie prowadzone jest w formie praktycznych
+                ćwiczeń programistycznych wykonywanych przy komputerze.
             </p>
 
-        </section>
+        </article>
 
-        <!-- PROGRAM -->
+    </div>
 
-        <section>
 
-            <h2>Przykładowe zagadnienia szkolenia</h2>
+    <p>
+        Terminy zajęć ustalane są indywidualnie i mogą zostać
+        dopasowane do dostępności uczestnika lub grupy.
+    </p>
 
-            <ul class="program-list">
+</section>
 
-                <li>Wprowadzenie do języka C++</li>
 
-                <li>Instalacja i konfiguracja środowiska programistycznego</li>
+<!-- =====================================================
+     CERTYFIKAT
+===================================================== -->
 
-                <li>Budowa pierwszego programu</li>
+<section>
 
-                <li>Kompilowanie i uruchamianie kodu</li>
+    <h2>
+        Kwalifikacje po ukończeniu szkolenia
+    </h2>
 
-                <li>Algorytmy programistyczne</li>
+    <p>
+        Po zakończeniu szkolenia uczestnik otrzymuje certyfikat
+        w języku polskim i angielskim.
+    </p>
 
-                <li>Schematy blokowe i pseudokod</li>
+    <p>
+        Uczestnik zdobywa umiejętności pozwalające samodzielnie
+        projektować algorytmy, pisać kod źródłowy, wykrywać błędy
+        oraz tworzyć proste aplikacje w języku C++.
+    </p>
 
-                <li>Typy danych</li>
+</section>
 
-                <li>Zmienne i stałe</li>
 
-                <li>Operatory arytmetyczne</li>
+<!-- =====================================================
+     PROGRAM
+===================================================== -->
 
-                <li>Operatory logiczne i porównania</li>
+<section>
 
-                <li>Wprowadzanie i wyprowadzanie danych</li>
+    <h2>
+        Przykładowe zagadnienia szkolenia
+    </h2>
 
-                <li>Instrukcje warunkowe</li>
+    <ul class="program-list">
 
-                <li>Instrukcja switch</li>
+        <li>Wprowadzenie do języka C++</li>
+        <li>Instalacja i konfiguracja środowiska programistycznego</li>
+        <li>Budowa pierwszego programu</li>
+        <li>Kompilowanie i uruchamianie kodu</li>
+        <li>Algorytmy programistyczne</li>
+        <li>Schematy blokowe i pseudokod</li>
+        <li>Typy danych</li>
+        <li>Zmienne i stałe</li>
+        <li>Operatory arytmetyczne</li>
+        <li>Operatory logiczne i porównania</li>
+        <li>Wprowadzanie i wyprowadzanie danych</li>
+        <li>Instrukcje warunkowe</li>
+        <li>Instrukcja switch</li>
+        <li>Pętle programistyczne</li>
+        <li>Pętla for</li>
+        <li>Pętla while</li>
+        <li>Pętla do while</li>
+        <li>Tworzenie i wywoływanie funkcji</li>
+        <li>Parametry i wartości zwracane</li>
+        <li>Przeciążanie funkcji</li>
+        <li>Tablice jednowymiarowe</li>
+        <li>Tablice wielowymiarowe</li>
+        <li>Napisy i operacje na tekstach</li>
+        <li>Wskaźniki i referencje</li>
+        <li>Dynamiczne zarządzanie pamięcią</li>
+        <li>Struktury danych</li>
+        <li>Typy wyliczeniowe</li>
+        <li>Programowanie obiektowe</li>
+        <li>Klasy i obiekty</li>
+        <li>Pola i metody klasy</li>
+        <li>Konstruktory i destruktory</li>
+        <li>Hermetyzacja danych</li>
+        <li>Dziedziczenie</li>
+        <li>Polimorfizm</li>
+        <li>Klasy abstrakcyjne</li>
+        <li>Obsługa wyjątków</li>
+        <li>Operacje na plikach</li>
+        <li>Standardowa biblioteka C++</li>
+        <li>Kontenery biblioteki STL</li>
+        <li>Wektory, listy i mapy</li>
+        <li>Algorytmy biblioteki standardowej</li>
+        <li>Tworzenie aplikacji</li>
+        <li>Podstawy projektowania GUI</li>
+        <li>Wykorzystanie bibliotek Open Source</li>
+        <li>Debugowanie programu</li>
+        <li>Testowanie kodu</li>
+        <li>Dobre praktyki programistyczne</li>
+        <li>Organizacja większego projektu</li>
+        <li>Projekt końcowy</li>
 
-                <li>Pętle programistyczne</li>
+    </ul>
 
-                <li>Pętla for</li>
+</section>
 
-                <li>Pętla while</li>
 
-                <li>Pętla do while</li>
+<!-- =====================================================
+     TAKSONOMIA
+===================================================== -->
 
-                <li>Tworzenie i wywoływanie funkcji</li>
+<section>
 
-                <li>Parametry i wartości zwracane</li>
+    <h2>
+        Taksonomia efektów kształcenia
+    </h2>
 
-                <li>Przeciążanie funkcji</li>
+    <p class="taxonomy-intro">
 
-                <li>Tablice jednowymiarowe</li>
+        Po zakończeniu szkolenia uczestnik osiąga efekty
+        kształcenia w zakresie wiedzy, rozumienia, praktycznego
+        stosowania, analizowania, oceniania oraz samodzielnego
+        tworzenia programów w języku C++.
 
-                <li>Tablice wielowymiarowe</li>
+    </p>
 
-                <li>Napisy i operacje na tekstach</li>
 
-                <li>Wskaźniki i referencje</li>
+    <div class="taxonomy-grid">
 
-                <li>Dynamiczne zarządzanie pamięcią</li>
 
-                <li>Struktury danych</li>
+        <article class="taxonomy-card">
 
-                <li>Typy wyliczeniowe</li>
+            <h3>
+                Uczestnik wie
+            </h3>
 
-                <li>Programowanie obiektowe</li>
+            <ul>
 
-                <li>Klasy i obiekty</li>
+                <li>
+                    czym jest język C++ i do czego jest używany,
+                </li>
 
-                <li>Pola i metody klasy</li>
+                <li>
+                    jak zbudowany jest program komputerowy,
+                </li>
 
-                <li>Konstruktory i destruktory</li>
+                <li>
+                    czym są zmienne, typy danych i operatory,
+                </li>
 
-                <li>Hermetyzacja danych</li>
+                <li>
+                    jak działają instrukcje warunkowe i pętle,
+                </li>
 
-                <li>Dziedziczenie</li>
+                <li>
+                    czym są funkcje, klasy i obiekty,
+                </li>
 
-                <li>Polimorfizm</li>
-
-                <li>Klasy abstrakcyjne</li>
-
-                <li>Obsługa wyjątków</li>
-
-                <li>Operacje na plikach</li>
-
-                <li>Standardowa biblioteka C++</li>
-
-                <li>Kontenery biblioteki STL</li>
-
-                <li>Wektory, listy i mapy</li>
-
-                <li>Algorytmy biblioteki standardowej</li>
-
-                <li>Tworzenie aplikacji</li>
-
-                <li>Podstawy projektowania GUI</li>
-
-                <li>Wykorzystanie bibliotek Open Source</li>
-
-                <li>Debugowanie programu</li>
-
-                <li>Testowanie kodu</li>
-
-                <li>Dobre praktyki programistyczne</li>
-
-                <li>Organizacja większego projektu</li>
-
-                <li>Projekt końcowy</li>
+                <li>
+                    jak przebiega kompilowanie kodu źródłowego.
+                </li>
 
             </ul>
 
-        </section>
+        </article>
 
-        <!-- TAKSONOMIA -->
 
-        <section>
+        <article class="taxonomy-card">
 
-            <h2>Taksonomia efektów kształcenia</h2>
+            <h3>
+                Uczestnik rozumie
+            </h3>
 
-            <p class="taxonomy-intro">
-                Po zakończeniu szkolenia uczestnik osiąga efekty
-                kształcenia w zakresie wiedzy, rozumienia, praktycznego
-                stosowania, analizowania, oceniania oraz samodzielnego
-                tworzenia programów w języku C++.
+            <ul>
+
+                <li>
+                    zasady tworzenia algorytmów,
+                </li>
+
+                <li>
+                    kolejność wykonywania instrukcji programu,
+                </li>
+
+                <li>
+                    różnicę między zmienną a stałą,
+                </li>
+
+                <li>
+                    zasady przekazywania danych do funkcji,
+                </li>
+
+                <li>
+                    podstawy programowania obiektowego,
+                </li>
+
+                <li>
+                    znaczenie poprawnego zarządzania pamięcią.
+                </li>
+
+            </ul>
+
+        </article>
+
+
+        <article class="taxonomy-card">
+
+            <h3>
+                Uczestnik stosuje
+            </h3>
+
+            <ul>
+
+                <li>
+                    zmienne, operatory i typy danych,
+                </li>
+
+                <li>
+                    instrukcje warunkowe i pętle,
+                </li>
+
+                <li>
+                    funkcje i parametry,
+                </li>
+
+                <li>
+                    tablice oraz podstawowe kontenery,
+                </li>
+
+                <li>
+                    klasy, obiekty i metody,
+                </li>
+
+                <li>
+                    narzędzia do kompilowania i debugowania kodu.
+                </li>
+
+            </ul>
+
+        </article>
+
+
+        <article class="taxonomy-card">
+
+            <h3>
+                Uczestnik analizuje
+            </h3>
+
+            <ul>
+
+                <li>
+                    treść zadania programistycznego,
+                </li>
+
+                <li>
+                    strukturę przygotowanego algorytmu,
+                </li>
+
+                <li>
+                    przepływ danych w programie,
+                </li>
+
+                <li>
+                    przyczyny błędów kompilacji,
+                </li>
+
+                <li>
+                    przyczyny niepoprawnego działania aplikacji,
+                </li>
+
+                <li>
+                    wydajność zastosowanego rozwiązania.
+                </li>
+
+            </ul>
+
+        </article>
+
+
+        <article class="taxonomy-card">
+
+            <h3>
+                Uczestnik ocenia
+            </h3>
+
+            <ul>
+
+                <li>
+                    poprawność przygotowanego algorytmu,
+                </li>
+
+                <li>
+                    czytelność kodu źródłowego,
+                </li>
+
+                <li>
+                    zgodność programu z wymaganiami,
+                </li>
+
+                <li>
+                    dobór odpowiednich struktur danych,
+                </li>
+
+                <li>
+                    możliwość uproszczenia kodu,
+                </li>
+
+                <li>
+                    poprawność wyników działania aplikacji.
+                </li>
+
+            </ul>
+
+        </article>
+
+
+        <article class="taxonomy-card">
+
+            <h3>
+                Uczestnik tworzy
+            </h3>
+
+            <ul>
+
+                <li>
+                    własne algorytmy programistyczne,
+                </li>
+
+                <li>
+                    programy wykorzystujące funkcje i tablice,
+                </li>
+
+                <li>
+                    klasy i obiekty reprezentujące dane,
+                </li>
+
+                <li>
+                    aplikacje zapisujące i odczytujące pliki,
+                </li>
+
+                <li>
+                    projekty wykorzystujące biblioteki C++,
+                </li>
+
+                <li>
+                    rozwiązania dopasowane do określonych wymagań.
+                </li>
+
+            </ul>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     TABELA TAKSONOMII
+===================================================== -->
+
+<section>
+
+    <h2>
+        Poziomy taksonomii szkolenia
+    </h2>
+
+    <div
+        class="taxonomy-table-wrapper"
+        role="region"
+        aria-label="Tabela poziomów taksonomii szkolenia C++"
+        tabindex="0"
+    >
+
+        <table class="taxonomy-table">
+
+            <thead>
+
+                <tr>
+
+                    <th scope="col">
+                        Poziom
+                    </th>
+
+                    <th scope="col">
+                        Efekt kształcenia
+                    </th>
+
+                    <th scope="col">
+                        Przykład praktyczny
+                    </th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+                <tr>
+
+                    <td>
+                        1. Wiedza
+                    </td>
+
+                    <td>
+                        Uczestnik zna podstawową składnię
+                        i elementy języka C++.
+                    </td>
+
+                    <td>
+                        Rozpoznaje zmienne, operatory,
+                        instrukcje warunkowe, pętle i funkcje.
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        2. Rozumienie
+                    </td>
+
+                    <td>
+                        Uczestnik rozumie sposób działania
+                        programu komputerowego.
+                    </td>
+
+                    <td>
+                        Wyjaśnia kolejność wykonywania instrukcji
+                        i przepływ danych w programie.
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        3. Zastosowanie
+                    </td>
+
+                    <td>
+                        Uczestnik wykorzystuje poznane elementy
+                        języka podczas pisania kodu.
+                    </td>
+
+                    <td>
+                        Tworzy program wykorzystujący zmienne,
+                        pętle, funkcje i tablice.
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        4. Analiza
+                    </td>
+
+                    <td>
+                        Uczestnik analizuje kod oraz
+                        przyczyny występujących błędów.
+                    </td>
+
+                    <td>
+                        Lokalizuje błąd logiczny, składniowy
+                        lub problem z działaniem programu.
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        5. Ocena
+                    </td>
+
+                    <td>
+                        Uczestnik ocenia poprawność,
+                        czytelność i wydajność rozwiązania.
+                    </td>
+
+                    <td>
+                        Porównuje dwa algorytmy i wybiera
+                        rozwiązanie lepiej spełniające wymagania.
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        6. Tworzenie
+                    </td>
+
+                    <td>
+                        Uczestnik samodzielnie projektuje
+                        i wykonuje aplikację w języku C++.
+                    </td>
+
+                    <td>
+                        Przygotowuje projekt zawierający klasy,
+                        funkcje, obsługę danych i interfejs użytkownika.
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PRAKTYKA
+===================================================== -->
+
+<section class="practice-box">
+
+    <h2>
+        Zastosowanie umiejętności w praktyce
+    </h2>
+
+    <p>
+        Uczestnik potrafi samodzielnie przygotować algorytm,
+        napisać kod źródłowy, skompilować program oraz usunąć
+        podstawowe błędy pojawiające się podczas jego działania.
+    </p>
+
+    <p>
+        Zdobyte umiejętności mogą zostać wykorzystane podczas
+        tworzenia aplikacji komputerowych, programów narzędziowych,
+        prostych gier, systemów przetwarzających dane oraz
+        rozwiązań wykorzystujących programowanie obiektowe.
+    </p>
+
+    <p>
+        Kurs stanowi również przygotowanie do dalszej nauki
+        programowania, algorytmiki, struktur danych oraz tworzenia
+        bardziej zaawansowanych aplikacji.
+    </p>
+
+</section>
+
+
+<!-- =====================================================
+     INFORMACJE
+===================================================== -->
+
+<section class="info-box">
+
+    <h2>
+        Dodatkowe informacje
+    </h2>
+
+    <p>
+        W sprawie szczegółowego programu, terminów i organizacji
+        szkolenia prosimy o kontakt:
+    </p>
+
+    <p>
+
+        <a href="mailto:biuro@zpci.pl">
+            biuro@zpci.pl
+        </a>
+
+    </p>
+
+    <p>
+        Program szkolenia może zostać dostosowany do poziomu
+        wiedzy oraz potrzeb uczestnika lub grupy.
+    </p>
+
+
+    <hr>
+
+
+    <div class="training-details">
+
+
+        <article class="detail-card">
+
+            <h3>
+                Czas trwania
+            </h3>
+
+            <ul>
+
+                <li>
+                    Szkolenie indywidualne:
+                    <strong>18 godzin</strong>
+                </li>
+
+                <li>
+                    Szkolenie grupowe:
+                    <strong>20 godzin</strong>
+                </li>
+
+            </ul>
+
+        </article>
+
+
+        <article class="detail-card">
+
+            <h3>
+                Cena szkolenia
+            </h3>
+
+            <p class="price">
+                399 zł
             </p>
 
-            <div class="taxonomy-grid">
-
-                <article class="taxonomy-card">
-
-                    <h3>Uczestnik wie</h3>
-
-                    <ul>
-                        <li>czym jest język C++ i do czego jest używany,</li>
-                        <li>jak zbudowany jest program komputerowy,</li>
-                        <li>czym są zmienne, typy danych i operatory,</li>
-                        <li>jak działają instrukcje warunkowe i pętle,</li>
-                        <li>czym są funkcje, klasy i obiekty,</li>
-                        <li>jak przebiega kompilowanie kodu źródłowego.</li>
-                    </ul>
-
-                </article>
-
-                <article class="taxonomy-card">
-
-                    <h3>Uczestnik rozumie</h3>
-
-                    <ul>
-                        <li>zasady tworzenia algorytmów,</li>
-                        <li>kolejność wykonywania instrukcji programu,</li>
-                        <li>różnicę między zmienną a stałą,</li>
-                        <li>zasady przekazywania danych do funkcji,</li>
-                        <li>podstawy programowania obiektowego,</li>
-                        <li>znaczenie poprawnego zarządzania pamięcią.</li>
-                    </ul>
-
-                </article>
-
-                <article class="taxonomy-card">
-
-                    <h3>Uczestnik stosuje</h3>
-
-                    <ul>
-                        <li>zmienne, operatory i typy danych,</li>
-                        <li>instrukcje warunkowe i pętle,</li>
-                        <li>funkcje i parametry,</li>
-                        <li>tablice oraz podstawowe kontenery,</li>
-                        <li>klasy, obiekty i metody,</li>
-                        <li>narzędzia do kompilowania i debugowania kodu.</li>
-                    </ul>
-
-                </article>
-
-                <article class="taxonomy-card">
-
-                    <h3>Uczestnik analizuje</h3>
-
-                    <ul>
-                        <li>treść zadania programistycznego,</li>
-                        <li>strukturę przygotowanego algorytmu,</li>
-                        <li>przepływ danych w programie,</li>
-                        <li>przyczyny błędów kompilacji,</li>
-                        <li>przyczyny niepoprawnego działania aplikacji,</li>
-                        <li>wydajność zastosowanego rozwiązania.</li>
-                    </ul>
-
-                </article>
-
-                <article class="taxonomy-card">
-
-                    <h3>Uczestnik ocenia</h3>
-
-                    <ul>
-                        <li>poprawność przygotowanego algorytmu,</li>
-                        <li>czytelność kodu źródłowego,</li>
-                        <li>zgodność programu z wymaganiami,</li>
-                        <li>dobór odpowiednich struktur danych,</li>
-                        <li>możliwość uproszczenia kodu,</li>
-                        <li>poprawność wyników działania aplikacji.</li>
-                    </ul>
-
-                </article>
-
-                <article class="taxonomy-card">
-
-                    <h3>Uczestnik tworzy</h3>
-
-                    <ul>
-                        <li>własne algorytmy programistyczne,</li>
-                        <li>programy wykorzystujące funkcje i tablice,</li>
-                        <li>klasy i obiekty reprezentujące dane,</li>
-                        <li>aplikacje zapisujące i odczytujące pliki,</li>
-                        <li>projekty wykorzystujące biblioteki C++,</li>
-                        <li>rozwiązania dopasowane do określonych wymagań.</li>
-                    </ul>
-
-                </article>
-
-            </div>
-
-        </section>
-
-        <!-- TABELA TAKSONOMII -->
-
-        <section>
-
-            <h2>Poziomy taksonomii szkolenia</h2>
-
-            <div
-                class="taxonomy-table-wrapper"
-                role="region"
-                aria-label="Tabela poziomów taksonomii szkolenia C++"
-                tabindex="0"
-            >
-
-                <table class="taxonomy-table">
-
-                    <thead>
-
-                        <tr>
-                            <th scope="col">Poziom</th>
-                            <th scope="col">Efekt kształcenia</th>
-                            <th scope="col">Przykład praktyczny</th>
-                        </tr>
-
-                    </thead>
-
-                    <tbody>
-
-                        <tr>
-
-                            <td>1. Wiedza</td>
-
-                            <td>
-                                Uczestnik zna podstawową składnię
-                                i elementy języka C++.
-                            </td>
-
-                            <td>
-                                Rozpoznaje zmienne, operatory,
-                                instrukcje warunkowe, pętle i funkcje.
-                            </td>
-
-                        </tr>
-
-                        <tr>
-
-                            <td>2. Rozumienie</td>
-
-                            <td>
-                                Uczestnik rozumie sposób działania
-                                programu komputerowego.
-                            </td>
-
-                            <td>
-                                Wyjaśnia kolejność wykonywania instrukcji
-                                i przepływ danych w programie.
-                            </td>
-
-                        </tr>
-
-                        <tr>
-
-                            <td>3. Zastosowanie</td>
-
-                            <td>
-                                Uczestnik wykorzystuje poznane elementy
-                                języka podczas pisania kodu.
-                            </td>
-
-                            <td>
-                                Tworzy program wykorzystujący zmienne,
-                                pętle, funkcje i tablice.
-                            </td>
-
-                        </tr>
-
-                        <tr>
-
-                            <td>4. Analiza</td>
-
-                            <td>
-                                Uczestnik analizuje kod oraz
-                                przyczyny występujących błędów.
-                            </td>
-
-                            <td>
-                                Lokalizuje błąd logiczny, składniowy
-                                lub problem z działaniem programu.
-                            </td>
-
-                        </tr>
-
-                        <tr>
-
-                            <td>5. Ocena</td>
-
-                            <td>
-                                Uczestnik ocenia poprawność,
-                                czytelność i wydajność rozwiązania.
-                            </td>
-
-                            <td>
-                                Porównuje dwa algorytmy i wybiera
-                                rozwiązanie lepiej spełniające wymagania.
-                            </td>
-
-                        </tr>
-
-                        <tr>
-
-                            <td>6. Tworzenie</td>
-
-                            <td>
-                                Uczestnik samodzielnie projektuje
-                                i wykonuje aplikację w języku C++.
-                            </td>
-
-                            <td>
-                                Przygotowuje projekt zawierający klasy,
-                                funkcje, obsługę danych i interfejs użytkownika.
-                            </td>
-
-                        </tr>
-
-                    </tbody>
-
-                </table>
-
-            </div>
-
-        </section>
-
-        <!-- ZASTOSOWANIE PRAKTYCZNE -->
-
-        <section class="practice-box">
-
-            <h2>Zastosowanie umiejętności w praktyce</h2>
-
-            <p>
-                Uczestnik potrafi samodzielnie przygotować algorytm,
-                napisać kod źródłowy, skompilować program oraz usunąć
-                podstawowe błędy pojawiające się podczas jego działania.
+            <p class="price-note">
+                Na życzenie wystawiamy fakturę VAT.
             </p>
 
-            <p>
-                Zdobyte umiejętności mogą zostać wykorzystane podczas
-                tworzenia aplikacji komputerowych, programów narzędziowych,
-                prostych gier, systemów przetwarzających dane oraz
-                rozwiązań wykorzystujących programowanie obiektowe.
-            </p>
+        </article>
 
-            <p>
-                Kurs stanowi również przygotowanie do dalszej nauki
-                programowania, algorytmiki, struktur danych oraz tworzenia
-                bardziej zaawansowanych aplikacji.
-            </p>
+    </div>
 
-        </section>
 
-        <!-- INFORMACJE DODATKOWE -->
+    <p>
+        Zobacz pełny cennik szkoleń oraz informacje o aktualnych
+        promocjach i rabatach.
+    </p>
 
-        <section class="info-box">
 
-            <h2>Dodatkowe informacje</h2>
+    <div class="button-row">
 
-            <p>
-                W sprawie szczegółowego programu, terminów i organizacji
-                szkolenia prosimy o kontakt:
-            </p>
+        <a
+            class="button button-register"
+            href="../cs.html"
+        >
+            Zapisz się na szkolenie
+        </a>
 
-            <p>
-                <a href="mailto:biuro@zpci.pl">
-                    biuro@zpci.pl
-                </a>
-            </p>
+        <a
+            class="button button-price"
+            href="cennik-szkolen.html"
+        >
+            Zobacz cennik szkoleń
+        </a>
 
-            <p>
-                Program szkolenia może zostać dostosowany do poziomu
-                wiedzy oraz potrzeb uczestnika lub grupy.
-            </p>
+    </div>
 
-            <hr>
+</section>
 
-            <div class="training-details">
 
-                <article class="detail-card">
-
-                    <h3>Czas trwania</h3>
-
-                    <ul>
-                        <li>
-                            Szkolenie indywidualne:
-                            <strong>18 godzin</strong>
-                        </li>
-
-                        <li>
-                            Szkolenie grupowe:
-                            <strong>20 godzin</strong>
-                        </li>
-                    </ul>
-
-                </article>
-
-                <article class="detail-card">
-
-                    <h3>Cena szkolenia</h3>
-
-                    <p class="price">
-                        399 zł
-                    </p>
-
-                    <p class="price-note">
-                        Na życzenie wystawiamy fakturę VAT.
-                    </p>
-
-                </article>
-
-            </div>
-
-            <p>
-                Zobacz pełny cennik szkoleń oraz informacje o aktualnych
-                promocjach i rabatach.
-            </p>
-
-            <div class="button-row">
-
-                <a
-                    class="button button-register"
-                    href="../cs.html"
-                >
-                    Zapisz się na szkolenie
-                </a>
-
-                <a
-                    class="button button-price"
-                    href="cennik-szkolen.html"
-                >
-                    Zobacz cennik szkoleń
-                </a>
-
-            </div>
-
-        </section>
-
-    </article>
+</article>
 
 </main>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <footer>
 
     <p>
+
         &copy;
+
         <span id="year"></span>
+
         Zachodniopomorskie Centrum Informatyki.
+
         Wszelkie prawa zastrzeżone.
+
     </p>
 
 </footer>
 
+
 <script>
 
-const yearElement = document.getElementById("year");
+const yearElement =
+    document.getElementById("year");
 
 if (yearElement) {
-    yearElement.textContent = new Date().getFullYear();
+
+    yearElement.textContent =
+        new Date().getFullYear();
+
 }
 
 </script>
+
 
 </body>
 

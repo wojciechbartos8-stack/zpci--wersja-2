@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html lang="pl-PL">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Szkolenie VBA Szczecin – makra i automatyzacja MS Office | ZPCI</title>
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+    Szkolenie VBA Szczecin – makra i automatyzacja MS Office | ZPCI
+</title>
 
 <meta
     name="description"
@@ -47,6 +55,7 @@
     href="../images/Logo+zdjecia/Logotypy/2_Logotypy_okrag.png"
 >
 
+
 <!-- OPEN GRAPH -->
 
 <meta property="og:locale" content="pl_PL">
@@ -70,7 +79,7 @@
 
 <meta
     property="og:image"
-    content="https://www.zpci.pl/images/szkolenieVBA.png"
+    content="https://www.zpci.pl/images/VBA.png"
 >
 
 <meta
@@ -82,6 +91,7 @@
     property="og:image:type"
     content="image/png"
 >
+
 
 <!-- TWITTER / X -->
 
@@ -102,7 +112,7 @@
 
 <meta
     name="twitter:image"
-    content="https://www.zpci.pl/images/szkolenieVBA.png"
+    content="https://www.zpci.pl/images/VBA.png"
 >
 
 <meta
@@ -110,10 +120,14 @@
     content="Szkolenie VBA – Visual Basic for Applications w ZPCI"
 >
 
+
+<!-- DANE STRUKTURALNE -->
+
 <script type="application/ld+json">
 {
     "@context": "https://schema.org",
     "@graph": [
+
         {
             "@type": "EducationalOrganization",
             "@id": "https://www.zpci.pl/#organization",
@@ -126,6 +140,7 @@
             },
             "email": "biuro@zpci.pl"
         },
+
         {
             "@type": "WebSite",
             "@id": "https://www.zpci.pl/#website",
@@ -137,6 +152,7 @@
                 "@id": "https://www.zpci.pl/#organization"
             }
         },
+
         {
             "@type": "WebPage",
             "@id": "https://www.zpci.pl/szkoleniakursy/vba-visual-basic-for-applications.html#webpage",
@@ -152,9 +168,10 @@
             },
             "primaryImageOfPage": {
                 "@type": "ImageObject",
-                "url": "https://www.zpci.pl/images/szkolenieVBA.png"
+                "url": "https://www.zpci.pl/images/VBA.png"
             }
         },
+
         {
             "@type": "Course",
             "@id": "https://www.zpci.pl/szkoleniakursy/vba-visual-basic-for-applications.html#course",
@@ -178,39 +195,52 @@
                 "Automatyzacja raportów i przetwarzania danych"
             ]
         },
+
         {
             "@type": "BreadcrumbList",
             "itemListElement": [
+
                 {
                     "@type": "ListItem",
                     "position": 1,
                     "name": "Strona główna",
                     "item": "https://www.zpci.pl/"
                 },
+
                 {
                     "@type": "ListItem",
                     "position": 2,
                     "name": "Szkolenia i kursy",
                     "item": "https://www.zpci.pl/szkoleniakursy.html"
                 },
+
                 {
                     "@type": "ListItem",
                     "position": 3,
                     "name": "VBA – Visual Basic for Applications",
                     "item": "https://www.zpci.pl/szkoleniakursy/vba-visual-basic-for-applications.html"
                 }
+
             ]
         }
+
     ]
 }
 </script>
 
+
 <style>
+
+/* RESET */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+
+/* BODY */
 
 body {
     font-family: Arial, Helvetica, sans-serif;
@@ -219,7 +249,10 @@ body {
     line-height: 1.7;
 }
 
-/* NAGŁÓWEK */
+
+/* =========================
+   NAGŁÓWEK
+========================= */
 
 header {
     background: linear-gradient(135deg, #0b2148, #1f3b73);
@@ -228,14 +261,14 @@ header {
     text-align: center;
 }
 
-
-/* LOGO ZPCI */
-
 .header-content {
     width: 100%;
     max-width: 1100px;
     margin: 0 auto;
 }
+
+
+/* LOGO */
 
 .header-brand {
     display: inline-flex;
@@ -251,11 +284,12 @@ header {
     width: 96px;
     height: 96px;
     flex: 0 0 96px;
-    border: 4px solid rgba(255, 255, 255, 0.95);
+    border: 4px solid rgba(255,255,255,0.95);
     border-radius: 50%;
     background: white;
     object-fit: contain;
-    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.25);
+
     transition:
         transform 0.2s ease,
         box-shadow 0.2s ease;
@@ -263,7 +297,7 @@ header {
 
 .header-brand:hover .brand-logo {
     transform: translateY(-3px) scale(1.03);
-    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.32);
+    box-shadow: 0 18px 36px rgba(0,0,0,0.32);
 }
 
 .brand-copy {
@@ -282,7 +316,7 @@ header {
 
 .brand-subtitle {
     margin-top: 6px;
-    color: rgba(255, 255, 255, 0.86);
+    color: rgba(255,255,255,0.86);
     font-size: 14px;
     font-weight: 700;
     letter-spacing: 0.07em;
@@ -305,7 +339,10 @@ header p {
     color: #e3ebfa;
 }
 
-/* MENU */
+
+/* =========================
+   MENU
+========================= */
 
 nav {
     background: #16315d;
@@ -321,7 +358,9 @@ nav a {
     padding: 15px 20px;
     text-decoration: none;
     font-weight: bold;
-    transition: background 0.3s ease;
+
+    transition:
+        background 0.3s ease;
 }
 
 nav a:hover,
@@ -329,7 +368,10 @@ nav a:focus {
     background: #244b87;
 }
 
-/* GŁÓWNA TREŚĆ */
+
+/* =========================
+   GŁÓWNA TREŚĆ
+========================= */
 
 main {
     padding: 35px 20px;
@@ -341,22 +383,39 @@ main {
     margin: 0 auto;
     padding: 35px;
     border-radius: 14px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
 }
 
-/* GRAFIKA */
+
+/* =========================
+   GRAFIKA BANNEROWA
+========================= */
+
+/*
+   WAŻNE:
+   Banner NIE jest przycinany.
+   Zachowuje oryginalne proporcje.
+*/
 
 .course-image {
     width: 100%;
-    max-height: 500px;
-    object-fit: cover;
+    height: auto;
+    max-width: 100%;
+    max-height: none;
+
+    object-fit: contain;
+
     display: block;
-    margin-bottom: 30px;
+    margin: 0 auto 30px;
+
     border-radius: 12px;
-    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 5px 18px rgba(0,0,0,0.15);
 }
 
-/* PRZYCISKI */
+
+/* =========================
+   PRZYCISKI
+========================= */
 
 .buttons {
     display: flex;
@@ -368,14 +427,19 @@ main {
 .button {
     display: inline-block;
     padding: 11px 18px;
+
     background: #1f3b73;
     color: white;
+
     text-decoration: none;
     border: none;
     border-radius: 6px;
+
     font-size: 1rem;
     font-weight: bold;
+
     cursor: pointer;
+
     transition:
         background 0.3s ease,
         transform 0.2s ease;
@@ -396,13 +460,19 @@ main {
     background: #9f6400;
 }
 
-/* NAGŁÓWKI */
+
+/* =========================
+   NAGŁÓWKI
+========================= */
 
 h2 {
     color: #1f3b73;
+
     margin-top: 30px;
     margin-bottom: 10px;
+
     padding-bottom: 7px;
+
     border-bottom: 2px solid #e1e9f5;
 }
 
@@ -410,7 +480,10 @@ p {
     margin-bottom: 15px;
 }
 
-/* LISTA PROGRAMU */
+
+/* =========================
+   PROGRAM SZKOLENIA
+========================= */
 
 .program-list {
     margin: 15px 0 25px 25px;
@@ -425,7 +498,10 @@ p {
     color: #1f3b73;
 }
 
-/* TAKSONOMIA */
+
+/* =========================
+   TAKSONOMIA
+========================= */
 
 .taxonomy-intro {
     margin-bottom: 20px;
@@ -440,9 +516,12 @@ p {
 
 .taxonomy-card {
     background: #f4f7fc;
+
     border-top: 5px solid #1f3b73;
+
     padding: 22px;
     border-radius: 10px;
+
     transition:
         transform 0.25s ease,
         box-shadow 0.25s ease;
@@ -450,7 +529,7 @@ p {
 
 .taxonomy-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 18px rgba(31, 59, 115, 0.15);
+    box-shadow: 0 8px 18px rgba(31,59,115,0.15);
 }
 
 .taxonomy-card h3 {
@@ -471,7 +550,10 @@ p {
     color: #c57c00;
 }
 
-/* POZIOMY TAKSONOMII */
+
+/* =========================
+   TABELA TAKSONOMII
+========================= */
 
 .taxonomy-levels {
     margin-top: 25px;
@@ -487,7 +569,9 @@ p {
 .taxonomy-table th,
 .taxonomy-table td {
     padding: 14px;
+
     border: 1px solid #d8e1ef;
+
     text-align: left;
     vertical-align: top;
 }
@@ -505,23 +589,35 @@ p {
     background: #eaf1fb;
 }
 
-/* ZASTOSOWANIE W PRACY */
+
+/* =========================
+   ZASTOSOWANIE W PRACY
+========================= */
 
 .work-benefits {
     background: #fff8e8;
+
     border-left: 5px solid #c57c00;
+
     padding: 22px;
     margin-top: 25px;
+
     border-radius: 8px;
 }
 
-/* KONTAKT */
+
+/* =========================
+   KONTAKT
+========================= */
 
 .contact-box {
     background: #eef5ff;
+
     border-radius: 8px;
+
     padding: 20px;
     margin-top: 30px;
+
     text-align: center;
 }
 
@@ -539,19 +635,30 @@ p {
     text-decoration: underline;
 }
 
-/* STOPKA */
+
+/* =========================
+   STOPKA
+========================= */
 
 footer {
     background: #1f3b73;
+
     color: white;
+
     text-align: center;
+
     padding: 20px;
+
     margin-top: 30px;
 }
 
-/* TABLETY */
+
+/* =========================
+   TABLETY
+========================= */
 
 @media (max-width: 900px) {
+
     .taxonomy {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -559,11 +666,16 @@ footer {
     .box {
         padding: 25px;
     }
+
 }
 
-/* TELEFONY */
+
+/* =========================
+   TELEFONY
+========================= */
 
 @media (max-width: 600px) {
+
     header {
         padding: 25px 15px;
     }
@@ -596,6 +708,9 @@ footer {
         font-size: 1.75rem;
     }
 
+
+    /* MENU */
+
     nav {
         flex-direction: column;
         padding: 0;
@@ -603,10 +718,17 @@ footer {
 
     nav a {
         width: 100%;
+
         padding: 13px 15px;
+
         text-align: center;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+
+        border-bottom:
+            1px solid rgba(255,255,255,0.12);
     }
+
+
+    /* TREŚĆ */
 
     main {
         padding: 18px 12px;
@@ -617,10 +739,22 @@ footer {
         border-radius: 9px;
     }
 
+
+    /* BANNER */
+
     .course-image {
-        max-height: 280px;
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        max-height: none;
+
+        object-fit: contain;
+
         margin-bottom: 22px;
     }
+
+
+    /* PRZYCISKI */
 
     .buttons {
         flex-direction: column;
@@ -631,18 +765,29 @@ footer {
         text-align: center;
     }
 
+
+    /* NAGŁÓWKI */
+
     h2 {
         font-size: 1.35rem;
     }
 
+
+    /* TAKSONOMIA */
+
     .taxonomy {
         grid-template-columns: 1fr;
     }
+
 }
 
-/* DRUKOWANIE */
+
+/* =========================
+   DRUKOWANIE
+========================= */
 
 @media print {
+
     body {
         background: white;
         color: black;
@@ -663,7 +808,9 @@ footer {
     .brand-logo {
         width: 72px;
         height: 72px;
+
         border: 1px solid #cccccc;
+
         box-shadow: none;
     }
 
@@ -680,12 +827,23 @@ footer {
 
     .box {
         max-width: 100%;
+
         box-shadow: none;
+
         padding: 0;
     }
 
+
+    /* BANNER W DRUKU */
+
     .course-image {
-        max-height: 300px;
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        max-height: none;
+
+        object-fit: contain;
+
         box-shadow: none;
     }
 
@@ -700,8 +858,11 @@ footer {
 
     .taxonomy-card {
         border: 1px solid black;
+
         margin-bottom: 15px;
+
         background: white;
+
         break-inside: avoid;
     }
 
@@ -715,13 +876,23 @@ footer {
         background: white;
         border: 1px solid black;
     }
+
 }
+
 </style>
+
 </head>
+
 
 <body>
 
+
+<!-- =========================
+     NAGŁÓWEK
+========================= -->
+
 <header>
+
     <div class="header-content">
 
         <a
@@ -754,7 +925,10 @@ footer {
 
         </a>
 
-        <h1>VBA – Visual Basic for Applications</h1>
+
+        <h1>
+            VBA – Visual Basic for Applications
+        </h1>
 
         <p>
             Tworzenie makr, funkcji i automatyzacji
@@ -762,28 +936,60 @@ footer {
         </p>
 
     </div>
+
 </header>
 
+
+<!-- =========================
+     MENU
+========================= -->
+
 <nav aria-label="Menu główne">
-    <a href="../index.html">Strona główna</a>
-    <a href="../szkoleniakursy.html">Szkolenia / Kursy</a>
-    <a href="../uslugit.html">Usługi IT</a>
-    <a href="../kontakt.html">Kontakt</a>
+
+    <a href="../index.html">
+        Strona główna
+    </a>
+
+    <a href="../szkoleniakursy.html">
+        Szkolenia / Kursy
+    </a>
+
+    <a href="../uslugiit.html">
+        Usługi IT
+    </a>
+
+    <a href="../kontakt.html">
+        Kontakt
+    </a>
+
 </nav>
 
+
+<!-- =========================
+     TREŚĆ
+========================= -->
+
 <main>
+
     <article class="box">
+
+
+        <!-- BANNER -->
 
         <img
             class="course-image"
-            src="../images/szkolenieVBA.png"
+            src="../images/VBA.png"
             alt="Szkolenie VBA – Visual Basic for Applications w ZPCI Szczecin"
             loading="eager"
             fetchpriority="high"
             decoding="async"
         >
 
+
+        <!-- PRZYCISKI -->
+
         <div class="buttons">
+
             <button
                 class="button"
                 type="button"
@@ -794,14 +1000,21 @@ footer {
 
             <a
                 class="button button-register"
-                href="zapis-na-szkolenie.html"
+                href="../cs.html"
             >
                 Zapisz się na szkolenie
             </a>
+
         </div>
 
+
+        <!-- KOGO ZAPRASZAMY -->
+
         <section>
-            <h2>Kogo zapraszamy?</h2>
+
+            <h2>
+                Kogo zapraszamy?
+            </h2>
 
             <p>
                 Szkolenie przeznaczone jest dla osób chcących tworzyć własne
@@ -815,10 +1028,17 @@ footer {
                 ograniczyć liczbę błędów oraz usprawnić obsługę dokumentów
                 i danych.
             </p>
+
         </section>
 
+
+        <!-- ORGANIZACJA -->
+
         <section>
-            <h2>Organizacja szkolenia</h2>
+
+            <h2>
+                Organizacja szkolenia
+            </h2>
 
             <p>
                 Zajęcia prowadzone są indywidualnie lub grupowo. Terminy
@@ -829,46 +1049,125 @@ footer {
                 Program może zostać dostosowany do poziomu wiedzy uczestników
                 oraz zadań wykonywanych przez nich w pracy.
             </p>
+
         </section>
 
+
+        <!-- CERTYFIKATY -->
+
         <section>
-            <h2>Certyfikaty</h2>
+
+            <h2>
+                Certyfikaty
+            </h2>
 
             <p>
                 Po zakończeniu szkolenia uczestnik otrzymuje certyfikat
                 w języku polskim i angielskim. Istnieje również możliwość
                 przygotowania certyfikatu w dodatkowej wersji językowej.
             </p>
+
         </section>
 
+
+        <!-- PROGRAM -->
+
         <section>
-            <h2>Program szkolenia</h2>
+
+            <h2>
+                Program szkolenia
+            </h2>
 
             <ul class="program-list">
-                <li>Wprowadzenie do automatyzacji zadań w MS Office</li>
-                <li>Obsługa karty Deweloper</li>
-                <li>Rejestrowanie i uruchamianie makr</li>
-                <li>Środowisko programistyczne VBA</li>
-                <li>Edytor Visual Basic Editor</li>
-                <li>Moduły, procedury i funkcje</li>
-                <li>Zmienne, stałe i typy danych</li>
-                <li>Obiekty, właściwości i metody</li>
-                <li>Instrukcje warunkowe</li>
-                <li>Pętle i automatyczne przetwarzanie danych</li>
-                <li>Operacje na arkuszach, komórkach i zakresach</li>
-                <li>Praca z tabelami i danymi</li>
-                <li>Operacje na plikach i folderach</li>
-                <li>Obsługa błędów</li>
-                <li>Wyzwalacze i obsługa zdarzeń</li>
-                <li>Tworzenie własnych funkcji</li>
-                <li>Tworzenie formularzy VBA</li>
-                <li>Przyciski, pola tekstowe i listy wyboru</li>
-                <li>Praktyczne przykłady automatyzacji pracy</li>
+
+                <li>
+                    Wprowadzenie do automatyzacji zadań w MS Office
+                </li>
+
+                <li>
+                    Obsługa karty Deweloper
+                </li>
+
+                <li>
+                    Rejestrowanie i uruchamianie makr
+                </li>
+
+                <li>
+                    Środowisko programistyczne VBA
+                </li>
+
+                <li>
+                    Edytor Visual Basic Editor
+                </li>
+
+                <li>
+                    Moduły, procedury i funkcje
+                </li>
+
+                <li>
+                    Zmienne, stałe i typy danych
+                </li>
+
+                <li>
+                    Obiekty, właściwości i metody
+                </li>
+
+                <li>
+                    Instrukcje warunkowe
+                </li>
+
+                <li>
+                    Pętle i automatyczne przetwarzanie danych
+                </li>
+
+                <li>
+                    Operacje na arkuszach, komórkach i zakresach
+                </li>
+
+                <li>
+                    Praca z tabelami i danymi
+                </li>
+
+                <li>
+                    Operacje na plikach i folderach
+                </li>
+
+                <li>
+                    Obsługa błędów
+                </li>
+
+                <li>
+                    Wyzwalacze i obsługa zdarzeń
+                </li>
+
+                <li>
+                    Tworzenie własnych funkcji
+                </li>
+
+                <li>
+                    Tworzenie formularzy VBA
+                </li>
+
+                <li>
+                    Przyciski, pola tekstowe i listy wyboru
+                </li>
+
+                <li>
+                    Praktyczne przykłady automatyzacji pracy
+                </li>
+
             </ul>
+
         </section>
 
+
+        <!-- TAKSONOMIA -->
+
         <section>
-            <h2>Taksonomia efektów kształcenia</h2>
+
+            <h2>
+                Taksonomia efektów kształcenia
+            </h2>
 
             <p class="taxonomy-intro">
                 Po zakończeniu szkolenia uczestnik osiąga efekty kształcenia
@@ -876,145 +1175,388 @@ footer {
                 analizy, oceny oraz samodzielnego tworzenia rozwiązań VBA.
             </p>
 
+
             <div class="taxonomy">
 
+
                 <div class="taxonomy-card">
-                    <h3>Uczestnik wie</h3>
+
+                    <h3>
+                        Uczestnik wie
+                    </h3>
 
                     <ul>
-                        <li>czym jest język VBA i do czego służy,</li>
-                        <li>jak działa środowisko Visual Basic Editor,</li>
-                        <li>czym są makra, procedury i funkcje,</li>
-                        <li>jakie są podstawowe typy danych,</li>
-                        <li>czym są obiekty, właściwości i metody,</li>
-                        <li>jakie możliwości daje automatyzacja pracy.</li>
+
+                        <li>
+                            czym jest język VBA i do czego służy,
+                        </li>
+
+                        <li>
+                            jak działa środowisko Visual Basic Editor,
+                        </li>
+
+                        <li>
+                            czym są makra, procedury i funkcje,
+                        </li>
+
+                        <li>
+                            jakie są podstawowe typy danych,
+                        </li>
+
+                        <li>
+                            czym są obiekty, właściwości i metody,
+                        </li>
+
+                        <li>
+                            jakie możliwości daje automatyzacja pracy.
+                        </li>
+
                     </ul>
+
                 </div>
 
+
                 <div class="taxonomy-card">
-                    <h3>Uczestnik rozumie</h3>
+
+                    <h3>
+                        Uczestnik rozumie
+                    </h3>
 
                     <ul>
-                        <li>zasady działania kodu VBA,</li>
-                        <li>sposób wykonywania instrukcji programu,</li>
-                        <li>różnicę między procedurą a funkcją,</li>
-                        <li>działanie instrukcji warunkowych i pętli,</li>
-                        <li>zasady obsługi zdarzeń,</li>
-                        <li>znaczenie prawidłowej obsługi błędów.</li>
+
+                        <li>
+                            zasady działania kodu VBA,
+                        </li>
+
+                        <li>
+                            sposób wykonywania instrukcji programu,
+                        </li>
+
+                        <li>
+                            różnicę między procedurą a funkcją,
+                        </li>
+
+                        <li>
+                            działanie instrukcji warunkowych i pętli,
+                        </li>
+
+                        <li>
+                            zasady obsługi zdarzeń,
+                        </li>
+
+                        <li>
+                            znaczenie prawidłowej obsługi błędów.
+                        </li>
+
                     </ul>
+
                 </div>
 
+
                 <div class="taxonomy-card">
-                    <h3>Uczestnik umie</h3>
+
+                    <h3>
+                        Uczestnik umie
+                    </h3>
 
                     <ul>
-                        <li>rejestrować, edytować i uruchamiać makra,</li>
-                        <li>tworzyć zmienne i stałe,</li>
-                        <li>stosować instrukcje warunkowe,</li>
-                        <li>wykorzystywać pętle,</li>
-                        <li>pracować z arkuszami i zakresami komórek,</li>
-                        <li>tworzyć własne funkcje i procedury.</li>
+
+                        <li>
+                            rejestrować, edytować i uruchamiać makra,
+                        </li>
+
+                        <li>
+                            tworzyć zmienne i stałe,
+                        </li>
+
+                        <li>
+                            stosować instrukcje warunkowe,
+                        </li>
+
+                        <li>
+                            wykorzystywać pętle,
+                        </li>
+
+                        <li>
+                            pracować z arkuszami i zakresami komórek,
+                        </li>
+
+                        <li>
+                            tworzyć własne funkcje i procedury.
+                        </li>
+
                     </ul>
+
                 </div>
 
+
                 <div class="taxonomy-card">
-                    <h3>Uczestnik analizuje</h3>
+
+                    <h3>
+                        Uczestnik analizuje
+                    </h3>
 
                     <ul>
-                        <li>powtarzalne zadania wykonywane w pracy,</li>
-                        <li>strukturę istniejącego kodu VBA,</li>
-                        <li>przyczyny występowania błędów,</li>
-                        <li>przepływ danych między procedurami,</li>
-                        <li>możliwości usprawnienia dokumentów,</li>
-                        <li>sposoby skrócenia czasu wykonywania zadań.</li>
+
+                        <li>
+                            powtarzalne zadania wykonywane w pracy,
+                        </li>
+
+                        <li>
+                            strukturę istniejącego kodu VBA,
+                        </li>
+
+                        <li>
+                            przyczyny występowania błędów,
+                        </li>
+
+                        <li>
+                            przepływ danych między procedurami,
+                        </li>
+
+                        <li>
+                            możliwości usprawnienia dokumentów,
+                        </li>
+
+                        <li>
+                            sposoby skrócenia czasu wykonywania zadań.
+                        </li>
+
                     </ul>
+
                 </div>
 
+
                 <div class="taxonomy-card">
-                    <h3>Uczestnik ocenia</h3>
+
+                    <h3>
+                        Uczestnik ocenia
+                    </h3>
 
                     <ul>
-                        <li>poprawność działania napisanego kodu,</li>
-                        <li>czy dane zadanie warto zautomatyzować,</li>
-                        <li>wydajność zastosowanego rozwiązania,</li>
-                        <li>czytelność i bezpieczeństwo kodu,</li>
-                        <li>przydatność makra w codziennej pracy,</li>
-                        <li>możliwe sposoby rozwoju aplikacji.</li>
+
+                        <li>
+                            poprawność działania napisanego kodu,
+                        </li>
+
+                        <li>
+                            czy dane zadanie warto zautomatyzować,
+                        </li>
+
+                        <li>
+                            wydajność zastosowanego rozwiązania,
+                        </li>
+
+                        <li>
+                            czytelność i bezpieczeństwo kodu,
+                        </li>
+
+                        <li>
+                            przydatność makra w codziennej pracy,
+                        </li>
+
+                        <li>
+                            możliwe sposoby rozwoju aplikacji.
+                        </li>
+
                     </ul>
+
                 </div>
 
+
                 <div class="taxonomy-card">
-                    <h3>Uczestnik tworzy</h3>
+
+                    <h3>
+                        Uczestnik tworzy
+                    </h3>
 
                     <ul>
-                        <li>własne makra automatyzujące zadania,</li>
-                        <li>procedury i funkcje użytkownika,</li>
-                        <li>formularze do wprowadzania danych,</li>
-                        <li>narzędzia przetwarzające dane,</li>
-                        <li>automatyczne raporty i zestawienia,</li>
-                        <li>własne rozwiązania dopasowane do pracy.</li>
+
+                        <li>
+                            własne makra automatyzujące zadania,
+                        </li>
+
+                        <li>
+                            procedury i funkcje użytkownika,
+                        </li>
+
+                        <li>
+                            formularze do wprowadzania danych,
+                        </li>
+
+                        <li>
+                            narzędzia przetwarzające dane,
+                        </li>
+
+                        <li>
+                            automatyczne raporty i zestawienia,
+                        </li>
+
+                        <li>
+                            własne rozwiązania dopasowane do pracy.
+                        </li>
+
                     </ul>
+
                 </div>
 
             </div>
+
         </section>
+
+
+        <!-- POZIOMY -->
 
         <section>
-            <h2>Poziomy taksonomii szkolenia</h2>
+
+            <h2>
+                Poziomy taksonomii szkolenia
+            </h2>
 
             <div class="taxonomy-levels">
+
                 <table class="taxonomy-table">
+
                     <thead>
+
                         <tr>
-                            <th>Poziom</th>
-                            <th>Efekt kształcenia</th>
-                            <th>Przykład podczas szkolenia</th>
+
+                            <th>
+                                Poziom
+                            </th>
+
+                            <th>
+                                Efekt kształcenia
+                            </th>
+
+                            <th>
+                                Przykład podczas szkolenia
+                            </th>
+
                         </tr>
+
                     </thead>
 
+
                     <tbody>
-                        <tr>
-                            <td>1. Wiedza</td>
-                            <td>Uczestnik zna podstawowe pojęcia języka VBA.</td>
-                            <td>Rozpoznaje zmienne, procedury, funkcje i obiekty.</td>
-                        </tr>
 
                         <tr>
-                            <td>2. Rozumienie</td>
-                            <td>Uczestnik rozumie sposób działania kodu.</td>
-                            <td>Wyjaśnia działanie pętli i instrukcji warunkowych.</td>
+
+                            <td>
+                                1. Wiedza
+                            </td>
+
+                            <td>
+                                Uczestnik zna podstawowe pojęcia języka VBA.
+                            </td>
+
+                            <td>
+                                Rozpoznaje zmienne, procedury, funkcje i obiekty.
+                            </td>
+
                         </tr>
 
-                        <tr>
-                            <td>3. Zastosowanie</td>
-                            <td>Uczestnik wykorzystuje poznane instrukcje.</td>
-                            <td>Tworzy makro wykonujące określone zadanie.</td>
-                        </tr>
 
                         <tr>
-                            <td>4. Analiza</td>
-                            <td>Uczestnik analizuje problem i istniejący kod.</td>
-                            <td>Odnajduje przyczynę błędu w procedurze.</td>
+
+                            <td>
+                                2. Rozumienie
+                            </td>
+
+                            <td>
+                                Uczestnik rozumie sposób działania kodu.
+                            </td>
+
+                            <td>
+                                Wyjaśnia działanie pętli i instrukcji warunkowych.
+                            </td>
+
                         </tr>
 
-                        <tr>
-                            <td>5. Ocena</td>
-                            <td>Uczestnik ocenia poprawność rozwiązania.</td>
-                            <td>Testuje makro i wybiera lepszy sposób wykonania zadania.</td>
-                        </tr>
 
                         <tr>
-                            <td>6. Tworzenie</td>
-                            <td>Uczestnik projektuje własne rozwiązanie.</td>
-                            <td>Buduje formularz lub aplikację automatyzującą pracę.</td>
+
+                            <td>
+                                3. Zastosowanie
+                            </td>
+
+                            <td>
+                                Uczestnik wykorzystuje poznane instrukcje.
+                            </td>
+
+                            <td>
+                                Tworzy makro wykonujące określone zadanie.
+                            </td>
+
                         </tr>
+
+
+                        <tr>
+
+                            <td>
+                                4. Analiza
+                            </td>
+
+                            <td>
+                                Uczestnik analizuje problem i istniejący kod.
+                            </td>
+
+                            <td>
+                                Odnajduje przyczynę błędu w procedurze.
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                5. Ocena
+                            </td>
+
+                            <td>
+                                Uczestnik ocenia poprawność rozwiązania.
+                            </td>
+
+                            <td>
+                                Testuje makro i wybiera lepszy sposób wykonania zadania.
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                6. Tworzenie
+                            </td>
+
+                            <td>
+                                Uczestnik projektuje własne rozwiązanie.
+                            </td>
+
+                            <td>
+                                Buduje formularz lub aplikację automatyzującą pracę.
+                            </td>
+
+                        </tr>
+
                     </tbody>
+
                 </table>
+
             </div>
+
         </section>
 
+
+        <!-- ZASTOSOWANIE -->
+
         <section class="work-benefits">
-            <h2>Zastosowanie wiedzy w pracy</h2>
+
+            <h2>
+                Zastosowanie wiedzy w pracy
+            </h2>
 
             <p>
                 Uczestnik potrafi samodzielnie rozpoznać zadania, które można
@@ -1028,32 +1570,61 @@ footer {
                 danych, obsługi dokumentów, generowania zestawień oraz
                 ograniczania powtarzalnych czynności wykonywanych ręcznie.
             </p>
+
         </section>
 
+
+        <!-- KONTAKT -->
+
         <section class="contact-box">
-            <h2>Kontakt</h2>
+
+            <h2>
+                Kontakt
+            </h2>
 
             <p>
                 W sprawie terminów i organizacji szkolenia napisz:
-                <a href="mailto:biuro@zpci.pl">biuro@zpci.pl</a>
+                <a href="mailto:biuro@zpci.pl">
+                    biuro@zpci.pl
+                </a>
             </p>
+
         </section>
 
+
     </article>
+
 </main>
 
+
+<!-- =========================
+     STOPKA
+========================= -->
+
 <footer>
-    &copy; <span id="year"></span>
+
+    &copy;
+    <span id="year"></span>
+
     Zachodniopomorskie Centrum Informatyki
+
 </footer>
 
+
 <script>
-const yearElement = document.getElementById("year");
+
+const yearElement =
+    document.getElementById("year");
 
 if (yearElement) {
-    yearElement.textContent = new Date().getFullYear();
+
+    yearElement.textContent =
+        new Date().getFullYear();
+
 }
+
 </script>
+
 
 </body>
 </html>
